@@ -1,4 +1,4 @@
-package com.example.codey.ui.login
+package com.example.codey.ui.register
 
 data class DataUser(
     val id: String? = null,

@@ -9,17 +9,17 @@
     <item
         android:id="@+id/navigation_materi"
         android:icon="@drawable/materi"
-        android:title="Materi"/>
+        android:title="@string/title_materi"/>
 
     <item
         android:id="@+id/navigation_latihan"
         android:icon="@drawable/latihan"
-        android:title="Latihan"/>
+        android:title="@string/title_latihan"/>
 
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/profile"
-        android:title="Profile"/>
+        android:title="@string/title_profile"/>
 
 
 </menu>
