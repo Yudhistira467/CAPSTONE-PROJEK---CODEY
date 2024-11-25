@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "405990342952",
+    "project_id": "codey-capstone",
+    "storage_bucket": "codey-capstone.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405990342952:android:62e959152cb98702d7901d",
+        "android_client_info": {
+          "package_name": "com.example.codey"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq__fmq9gh3SbNSh6-7Pn3sywFqZVX--g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
