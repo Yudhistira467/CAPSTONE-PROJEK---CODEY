@@ -52,7 +52,15 @@ class LoginActivity : AppCompatActivity() {
                     for (userSnapshot in dataSnapshot.children){
                         val dataUser = userSnapshot.getValue(DataUser::class.java)
 
-                        if (dataUser != null && dataUser.password == password){
+
+                        if (dataUser != null && dataUser.password == password) {
+                            val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                            val editor = sharedPreferences.edit()
+                            editor.putString("LOGGED_IN_EMAIL", dataUser.email)
+                            editor.putString("LOGGED_IN_USERNAME", dataUser.username)
+                            editor.apply()
+
+
                             Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                             finish()
