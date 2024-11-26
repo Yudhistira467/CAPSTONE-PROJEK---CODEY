@@ -1,0 +1,3742 @@
+Instruction,Input,Output,materi,question_id
+Edit the following Python code such that it will print an array containing the seven days of the week.,"days = [""Monday"", ""Thuesday"", ""Wednesday"", ""Thrusday"", ""Friday""]
+
+for day in days:
+    print(day)","days = [""Monday"", ""Tuesday"", ""Wednesday"", ""Thursday"", ""Friday"", ""Saturday"", ""Sunday""]
+
+for day in days:
+    print(day)",Introduction Python,2
+Generate a code snippet to print a pattern of stars in Python.,rows = 5,"# Use two for loops to print pattern
+for i in range(0, rows):
+    for j in range(0, i + 1):
+        print(""* "", end="""")
+    print(""\r"")",Introduction Python,11
+Create a Python program to loop through a given list and print each item on a new line.,"my_list = [""apples"", ""oranges"", ""bananas""]","for item in my_list:
+    print(item)",Introduction Python,58
+Write a Python program to print the 3 most common elements of a given list.,"Input = [2, 5, 3, 7, 8, 5, 10, 19, 20]","from collections import Counter
+
+Input = [2, 5, 3, 7, 8, 5, 10, 19, 20] 
+  
+Counter = Counter(Input) 
+  
+most_occur = Counter.most_common(3)
+
+for i in most_occur: 
+    print(i[0], "":"", i[1])",Introduction Python,72
+"Design a Python program to read in a list of list of strings, eliminate duplicate entries, sort them and print out the result.","[['b', 'a', 'd'], ['c', 'a', 'd'], ['a', 'f', 'g']]","def removeduplicates(list_of_string):
+    result = []
+    for item in list_of_string:
+        if item not in result:
+            result.append(item)
+    result.sort()
+    return result
+
+list_of_string = [['b', 'a', 'd'], ['c', 'a', 'd'], ['a', 'f', 'g']]
+print(removeduplicates(list_of_string))",Introduction Python,76
+Edit a python program to print the square of a number input by the user.,"num = input(""Enter a number: "")","num = input(""Enter a number: "")
+
+num = int(num)
+
+print(""The square of the number is:"", num**2)",Introduction Python,84
+Find the most efficient Python code to print all the divisors of an input number.,input = 28,"# Python Program to find the factors of a number
+
+# define a function
+def print_divisors(input):
+
+    # find all factors of the input number
+    for i in range(1, input + 1):
+        if input % i == 0:
+            print (i)
+
+# take input from the user
+input = 28
+
+# print the divisors
+print_divisors(input)",Introduction Python,96
+You are given the following string. Write a Python program to print how many times each word appears in the string.,"input_string = ""This is an exmaple of a string.""","def count_words(input_string):
+  words_count = {}
+  words = input_string.split()
+  for word in words:
+    if word in words_count:
+      words_count[word] += 1
+    else:
+      words_count[word] = 1
+  return words_count
+
+words_count = count_words(input_string)
+print(words_count)",Introduction Python,112
+Edit this python code to make the output print in descending order (from highest to lowest).,"my_list = [10,2,5,1,20]
+
+for x in my_list:
+    print(x)","my_list = [10,2,5,1,20]
+
+for x in my_list:
+    print(x)
+    
+for x in sorted(my_list, reverse=True):
+    print(x)",Introduction Python,126
+"Write a Python program to split a given string into substrings of fixed length, and print the substrings in a single line seperated by comma.",PythonProgramming,"def split_string(string, length):
+    substrings = [string[i:i+length] for i in range(0, len(string), length)]
+    return ','.join(substrings)",Introduction Python,140
+Develop an algorithm in Python to print an array in reverse order.,"[1, 2, 3, 4, 5]","def reverse_array(arr):
+    return arr[::-1]
+
+arr = [1, 2, 3, 4, 5]
+print(reverse_array(arr))",Introduction Python,149
+Create a Python script to print out each word that begins with a vowel in a sentence.,Sentence: The quick brown fox jumped over the lazy dog,"for word in sentence.split():
+    if word[0].lower() in 'aeiou':
+        print(word)",Introduction Python,160
+Write a Python program to traverse a tree data structure and print all the nodes in preorder.,"tree 
+	 /   \   
+    1     2 
+  /      / \ 
+ 3      4   5","def preorder(tree): 
+    if tree: 
+        print(tree.val) 
+        preorder(tree.left) 
+        preorder(tree.right) 
+  
+# Driver code  
+tree = Node(1) 
+tree.left = Node(2) 
+tree.right = Node(3) 
+tree.left.left = Node(4) 
+tree.left.right = Node(5) 
+  
+preorder(tree)",Introduction Python,161
+Create a program to print the following ASCII art using python.,"( _ _ )
+| o o |
+|  ^  |
+| \_/ |","print('  ( _ _ )')
+print('  | o o |')
+print('  |  ^  |')
+print('  | \_/ |')",Introduction Python,171
+Create a Python program to print out a multiplication table. The table should print out the first 10 multiples of a given number.,2,"number = int(input(""Please enter a number:""))
+
+for i in range(1, 11):
+ print(f'{number} * {i} = {number*i}')",Introduction Python,177
+Use a basic linear regression model in Python to predict the price of a house based on its size and number of rooms.,"Example data: 
+Size: 500, Rooms: 4","import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Create
+data = {'Size': [500], 
+'Rooms': [4]}
+
+df = pd.DataFrame(data)
+
+# Train
+X = df[['Size','Rooms']] 
+Y = df['Price'] 
+  
+reg = LinearRegression().fit(X, Y) 
+  
+# Predict
+reg.predict([[500,4]]) # Predicted price: 1715.667543",Introduction Python,180
+"Using the input provided, write a Python program to print the sum of the numbers in both lists.","list1 = [7, 4, 5] 
+list2 = [8, 10, 4]","list3 = list1 + list2
+
+total = 0
+
+for num in list3:
+    total += num 
+
+print(total)  # output: 29",Introduction Python,183
+write a python code to print the common elements in between two given sets.,"set1 = {1, 2, 3, 4, 5, 6, 7}
+set2 = {2, 4, 5, 6}","def common_elements(set1, set2): 
+    return set1 & set2
+
+print(common_elements({1,2,3,4,5,6,7}, {2,4,5,6}))",Introduction Python,194
+Generate a python program to print the given sentence in reverse.,"Sentence: ""This is an example""","def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string(""This is an example""))",Introduction Python,223
+"Once you have generated a list of strings, write a Python program to print the same in reverse order.","L2= [""This"", ""is"", ""another"", ""list"", ""of"", ""strings""]","def reverse_list(L2):
+    L2.reverse()
+    return L2",Introduction Python,231
+Create a basic web scraper in Python using the requests library and the Beautiful Soup library. The web scraper should take a URL as an argument and print the text content of the page.,Url: https://example.com,"import requests
+from bs4 import BeautifulSoup
+
+# Define the URL
+url = 'https://example.com'
+
+# Make a request
+response = requests.get(url)
+
+# Parse the HTML
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Print the text contents
+print(soup.text)",Introduction Python,242
+Write a Python program to print out the factorial of a number.,7,"def factorial(x):
+    factorial = 1
+    while x > 1:
+        factorial = factorial * x
+        x = x - 1
+    return factorial
+
+number = 7
+result = factorial(number)
+print(result)",Introduction Python,275
+Construct a for loop in Python to print all the values from a list of numbers.,"mylist = [1, 2, 3, 4, 5]","for x in mylist: 
+  print(x)",Introduction Python,285
+Write a Python program to divide two numbers and print the quotient and the remainder.,"Number1: 15
+Number2: 4","def divide(num1, num2):
+    quotient = num1 // num2
+    remainder = num1 % num2
+    return quotient, remainder
+
+quotient, remainder = divide(15, 4)
+print(""Quotient :"", quotient)
+print(""Remainder :"", remainder)",Introduction Python,317
+Develop a program to print all unique strings from a given array of strings,"[""Hello"", ""World"", ""Hello"", ""Python""]","def unique_strings(strings):
+    unique_strings = []
+    for string in strings:
+        if string not in unique_strings:
+            unique_strings.append(string)
+    return unique_strings
+
+strings = [""Hello"", ""World"", ""Hello"", ""Python""]
+result = unique_strings(strings)
+print(result)",Introduction Python,318
+Write a Python program to print the following string pattern.,*__*__*,"for i in range(3):
+    for j in range(3):
+        if (i == j) or (i + j == 2):
+            print('*', end="""")
+        else:
+            print('_', end="""")
+    print()",Introduction Python,329
+Create a Python program to search a string and print the index of all instances of a specific character.,"string = ""abcdefghi""
+character = ""d""","def search_character(string, character):
+ indices = []
+ for i in range(len(string)):
+  if string[i] == character:
+   indices.append(i)
+ return indices
+
+print(search_character(string, character)) # [3]",Introduction Python,335
+Develop a Python code to print a string in reverse order.,"""Hello, World!""","str = ""Hello, World!""
+
+# loop to iterate through string
+for i in range(len(str)-1, -1, -1):
+  print(str[i],end="""")
+
+print()",Introduction Python,345
+Write a Python program to print all combinations of three numbers from the given list.,"num_list = [1, 2, 3, 4]","import itertools 
+  
+# initializing list 
+num_list = [1, 2, 3, 4] 
+  
+# printing all possible combinations 
+result = itertools.combinations(num_list, 3) 
+  
+# printing the result 
+print(""All possible combinations are : "") 
+for item in result: 
+    print(item)",Introduction Python,350
+Write a Python program to accept a string input from the user and print each character in a list.,"String: ""Hello World""","user_input = input(""Enter a string: "")
+
+char_list = []
+
+for char in user_input:
+ char_list.append(char)
+
+print(char_list)",Introduction Python,354
+Write a Python snippet to print the difference between the largest and smallest values in a given array.,"[1,2,3,4,5]","def diff_max_min(numbers):
+    return max(numbers) - min(numbers)
+  
+if __name__ == '__main__':
+    nums = [1,2,3,4,5]
+    diff = diff_max_min(nums)
+    print(diff)",Introduction Python,359
+"Generate code in Python to accept student information like name, age, course and print it.","Name: John Doe
+Age: 23
+Course: Data Science","name = ""John Doe""
+age = 23
+course = ""Data Science""
+
+print(""Name: "" + name)
+print(""Age: "" + str(age))
+print(""Course: "" + course)",Introduction Python,361
+Write a Python program to print even numbers from 0 to the number provided,N = 30,"def print_even_numbers(N):
+    for x in range(0, N+1):
+        if x%2 == 0:
+            print(x)",Introduction Python,367
+"Write a Python program to print a Fibonacci sequence with a length of n, where n is a given number that is equal to or greater than 0.",n = 5,"def fibonacci(n):
+ # Base Case
+ if n == 0: 
+ return []
+ elif n == 1: 
+ return [0] 
+
+ # Recursive Case
+ else: 
+ l = fibonacci(n-1) 
+ l.append(l[-1]+l[-2]) 
+ return l
+
+# Driver Program 
+n = 5
+print(fibonacci(n)) 
+# Output: [0, 1, 1, 2, 3]",Introduction Python,373
+"Convert the following code from Java to Python:
+
+public class HelloWorld {
+ public static void main(String[] args) {
+ System.out.println(""Hello World"");
+ }
+}","public class HelloWorld { 
+ public static void main(String[] args) {
+ System.out.println(""Hello World"");
+ }
+}","def main():
+ print(""Hello World"")
+
+if __name__ == ""__main__"":
+ main()",Introduction Python,377
+"Given a number, write a Python program to print the multiplication table of that number.",Number: 5,"for i in range(1, 11):
+ print(5, 'X', i, '=', 5*i)",Introduction Python,420
+Write a Python program to print a given dictionary where the keys are numbers between 1 and 3 and the values are a list from 1 to the number key.,-,"d = {1: [1], 2: [1,2], 3: [1,2,3]}
+for k,v in d.items():
+    print(k,v)",Introduction Python,445
+"Create a Python program that, given an input integer, will print out a dictionary with the numbers from 1 to the input value and their squares.",number = 15,"def create_dict_squares(number):
+    squares_dict = {}
+
+    for i in range(1, number + 1):
+        squares_dict[i] = i**2
+
+    return squares_dict",Introduction Python,449
+Write Python code to print the number present in an inputted string.,"string_1 = ""The temperature is 24 degrees Celsius""","def print_numbers_in_string(string):
+    numbers = [int(s) for s in string.split() if s.isdigit()]
+    print(numbers)
+
+string_1 = ""The temperature is 24 degrees Celsius""
+print_numbers_in_string(string_1)
+
+# Output
+# [24]",Introduction Python,464
+Create a program in Python to print all elements of a given set.,"{10, 20, 30}","my_set = {10, 20, 30}
+for i in my_set:
+    print(i)",Introduction Python,466
+Create a Python program for calculating the Fibonacci sequence. The program should print the n-th number of the sequence.,n: 7,"def fibonacci(n): 
+ if n <= 0: 
+ return 0 
+ elif n == 1: 
+ return 1 
+ else: 
+ return fibonacci(n-1) + fibonacci(n-2) 
+
+n = 7 
+print(fibonacci(n)) # Output: 13",Introduction Python,470
+Generate a Python source code to print the last element from a given list.,"['Apple', 'Orange', 'Banana']","arr = ['Apple', 'Orange', 'Banana']
+last_element = arr[-1]
+print(last_element)  # Result: Banana",Introduction Python,496
+Write a Python program to print out the restults of a list of functions,"functions = [max, min, sum]
+list = [1,2,3,4,5]","def print_results(functions, list): 
+  for func in functions: 
+    print(func.__name__ + "": "" + str(func(list)))
+    
+print_results(functions, list)",Introduction Python,504
+"Given a Python dictionary, find the most common value in the dictionary and print it out.","d = {‘python’: 20, ‘java’: 10, ‘c++’: 15, ‘C#’: 15}","from collections import Counter 
+
+d = {‘python’: 20, ‘java’: 10, ‘c++’: 15, ‘C#’: 15}
+
+#Get most common value
+data = Counter(d) 
+most_common_value = data.most_common(1)[0][0]  
+
+#Print out most common value
+print(most_common_value)",Introduction Python,526
+Write a Python program to compare two lists of strings and print unique values in each list.,"list1 = [""cat"", ""dog"", ""bird""]
+list2 = [""dog"", ""mouse"", ""elephant""]","list1_unique = []
+list2_unique = []
+
+for a in list1:
+    if a not in list2:
+        list1_unique.append(a)
+        
+for b in list2:
+    if b not in list1:
+        list2_unique.append(b)
+
+print(""Unique elements in List 1: "", list1_unique)
+print(""Unique elements in List 2: "", list2_unique)",Introduction Python,530
+Create a function in Python to print a dictionary in a formatted way,"d={'Name':'Donald Trump', 'Age': 70, 'Profession': 'President'}","def print_dict(d):
+    for key, value in d.items():
+        print(f""{key}: {value}"")
+
+print_dict(d)
+
+# Output: 
+Name: Donald Trump
+Age: 70
+Profession: President",Introduction Python,543
+Compose a Python program to print the first hundred odd numbers.,Not appliable,"# declaring an empty list
+odds = []
+
+# looping for a range of 1 to 100
+for n in range(1,101):
+# check if the number is odd
+ if n % 2 != 0:
+  # add the odd numbers to the list
+  odds.append(n)
+
+# print the list
+print(odds)",Introduction Python,556
+Create a for-loop in Python to print a list of strings that contain only the vowels from a given list of strings.,"words = [""apple"", ""bear"", ""cat"", ""dog""]","for word in words:
+    vowels = """"
+    for x in word:
+        if x in ('a', 'e', 'i', 'o', 'u'):
+            vowels += x
+    print(vowels)",Introduction Python,599
+"Given a list of integers, write a Python program to print the latest 3 largest numbers.","[5, 1, 10, 25, 74, 17, 2]","def print_largest_three_numbers(numbers): 
+    numbers.sort(reverse=True) 
+    print(*numbers[:3], sep = "", "") 
+
+print_largest_three_numbers([5, 1, 10, 25, 74, 17, 2])
+
+Output:
+74, 25, 17",Introduction Python,629
+Optimize an existing Python code snippet to print all even numbers between 1 and 10.,"num = 1
+while num<=10:
+    print(num)
+    num+=1","num = 0
+while num<=10:
+    if num % 2 == 0:
+        print(num)
+    num+=1",Introduction Python,650
+Write a for loop to print all the keys and values of a Python dictionary.,"my_dict = {
+    ""name"": ""John"",
+    ""age"": 30,
+    ""city"": ""New York""
+}","for key,value in my_dict.items(): 
+    print(key,"" :"",value)",Introduction Python,657
+Create a function in Python to print Pascal's Triangle of a given number of rows.,6,"def pascal_triangle(n):
+    triangle = []
+
+    for i in range(n):
+        row = [1] * (i+1)
+        triangle.append(row)
+
+        for j in range(1,i):
+            row[j] = triangle[i-1][j-1] + triangle[i-1][j]
+
+    for row in triangle:
+        print(row)
+
+pascal_triangle(6) 
+# Output: [1]
+# [1, 1]
+# [1, 2, 1]
+# [1, 3, 3, 1]
+# [1, 4, 6, 4, 1]
+# [1, 5, 10, 10, 5, 1]",Introduction Python,671
+Write a Python program to print out the triangle pattern given an height n as input.,height = 4,"def print_triangle(n): 
+
+    for i in range(n): 
+        for j in range(i+1): 
+            print(""*"",end="""") 
+        print() 
+  
+n = 4
+print_triangle(n)
+
+# Output
+# *
+# **
+# ***
+# ****",Introduction Python,777
+Create a Python program to sort and print out the elements of an array of integers.,"[17, 41, 5, 22, 54, 6, 29, 3, 13]","arr = [17, 41, 5, 22, 54, 6, 29, 3, 13]
+
+arr.sort()
+
+print(arr)
+
+# Output: [3, 5, 6, 13, 17, 22, 29, 41, 54]",Introduction Python,783
+Create a program in Python to compute and print the factorial of a given number.,Number: 5,"def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+num = 5
+
+print(""The factorial of"", num, ""is"", factorial(num))",Introduction Python,813
+Develop a python code to print a dictionary’s key-value pairs in sorted order of keys.,"{'a': 5, 'c': 10, 'b': 4}","my_dict = {'a': 5, 'c': 10, 'b': 4}
+
+for key in sorted(my_dict):
+    print(key, my_dict[key])
+
+# Output:
+# a 5
+# b 4
+# c 10",Introduction Python,827
+Create a python script to print the following output with the help of list and dictionary.,"{
+    ""Name"": ""Harry"",
+    ""Age"": 23,
+    ""Country"": ""India""
+}","name = {
+    ""Harry""
+}
+age = {
+    23
+}
+country = {
+    ""India""
+}
+
+data_list = [name, age, country]
+
+for item in data_list:
+    print(item)",Introduction Python,859
+Create a script in Python to print the squares of all numbers in the given list.,"[1, 2, 3, 4, 5]","for n in [1, 2, 3, 4, 5]:
+ print(n**2)",Introduction Python,877
+Write a Python program to calculate the sum of two numbers (input in separate lines) and print it.,"2
+3","num1 = int(input())
+num2 = int(input())
+sum_of_nums
+print(sum_of_nums)",Introduction Python,886
+Write a Python program to print a calendar of the given month and year,"month = 11
+year = 2020","import calendar
+
+c = calendar.TextCalendar(calendar.SUNDAY)
+str = c.formatmonth(year, month)
+print(str)",Introduction Python,894
+Embed a mathematical expression in Python and print the expression.,x**3 + 2*x**2 + 3,"expression = 'x**3 + 2*x**2 + 3'
+
+print(eval(expression))",Introduction Python,930
+Write a Python program to print the largest number from a given list.,"my_list = [1, 5, 10, 20, 8]","my_list = [1, 5, 10, 20, 8]
+
+largest = max(my_list)
+print(""The largest number from the given list is: "" + str(largest))",Introduction Python,933
+Create a python list comprehension to print the square of each odd number in a given list.,"[1, 2, 3, 4, 5, 6]","[x**2 for x in [1, 2, 3, 4, 5, 6] if x % 2 != 0]",Introduction Python,945
+Develop a Python code to print the pairs of the numbers in the given list which adds up to the given target number.,"[1, 5, 9, 4], 10","def pairs_adding_to_target(nums, target): 
+ 
+	result = [] 
+	for i in range(0, len(nums)): 
+		for j in range(i+1, len(nums))	: 
+			if nums[i] + nums[j] == target:	 
+				result.append([nums[i], nums[j]]) 
+	return result 
+
+result = pairs_adding_to_target([1, 5, 9, 4], 10)
+print(result)",Introduction Python,950
+Write a Python program to print a frequency table for the given data.,"data = [2, 4, 7, 1, 6, 4, 7, 2, 6, 3]","from collections import Counter
+
+data = [2, 4, 7, 1, 6, 4, 7, 2, 6, 3]
+
+counts = Counter(data)
+
+for item, count in counts.items():
+    print(f'{item} : {count}')
+
+# Output
+# 2 : 2
+# 4 : 2
+# 7 : 2
+# 1 : 1
+# 6 : 2
+# 3 : 1",Introduction Python,1000
+"Using the data provided, write a Python program to find and print the root of the quadratic equation ax2 + bx + c = 0","a = 1, b = 5, c = 6","import math
+
+a = 1
+b = 5
+c = 6
+
+# calculate the discriminant
+d = (b**2) - (4*a*c)
+
+# find the two solutions 
+sol1 = (-b-math.sqrt(d))/(2*a)
+sol2 = (-b+math.sqrt(d))/(2*a)
+
+print('The solutions are {0} and {1}'.format(sol1, sol2))",Introduction Python,1023
+Generate a Python program to search for a given number in an array of integers and print out its index if it exsits.,"my_array = [2, 3, 5, 7, 11]
+number = 3","def search_in_array(my_array, number):
+  for i, val in enumerate(my_array):
+    if val == number:
+      return i
+  return -1",Introduction Python,1045
+Modify the following Python code to select and print out the negative elements from an array.,"[3,4,1,-6,9,10,-2,-8,-4]","my_list = [3,4,1,-6,9,10,-2,-8,-4]
+
+def select_negative_elements(my_list):
+    negative_elements = []
+
+    for x in my_list:
+        if x < 0:
+            negative_elements.append(x)
+
+    return negative_elements
+
+print(select_negative_elements(my_list))",Introduction Python,1058
+"Implement a basic linear search algorithm in Python that searches a list of numbers for a given target value and returns the index of the target value if it is present, otherwise it returns -1.","arr = [1, 3, 5, 6, 9, 17],
+target = 6","def linear_search(arr, target):
+ for i in range(len(arr)):
+ if arr[i] == target:
+ return i
+ return -1
+
+print(linear_search(arr, target)) # 3 (index of 6)",Introduction Python,1065
+Add code in python to the given argument to iterate over a list of numbers and print the even numbers.,"[1,2,3,4,5]","# Iterate over numbers
+for num in [1,2,3,4,5]:
+  # Check for even
+  if(num % 2 == 0):
+    # Print the even numbers
+    print(num)",Introduction Python,1067
+Generate a valid Python code that will print the given message,Hello World!,"print(""Hello World!"")",Introduction Python,1068
+Write a Python function to print prime numbers between two given numbers.,"low = 5, high = 10","def print_prime_numbers_between_two_numbers(low, high): 
+    for numb in range(low,high + 1): 
+        if numb > 1: 
+            for i in range(2,numb): 
+                if (numb % i) == 0: 
+                    break
+            else: 
+                print(numb) 
+
+#calling the function
+print_prime_numbers_between_two_numbers(5, 10)",Introduction Python,1077
+Create a Python program to print out the prime numbers between the given input range.,"min = 1
+max = 10","def print_primes(min, max):
+  for num in range(min, max+1):
+    if num > 1:
+      for i in range(2, num):
+        if (num % i) == 0:
+          break
+      else:
+        print(num)
+  
+# Driver Code
+min = 1
+max = 10
+
+print_primes(min, max)
+
+# Output:
+# 2
+# 3
+# 5
+# 7",Introduction Python,1088
+Construct a for loop in Python to print the characters in a string.,"""Hello World""","for char in ""Hello World"":
+    print(char)",Introduction Python,1133
+Write a python program to print the elements in a list which are not repeated more than once.,"[1, 2, 3, 2, 4, 2, 3]","result = []
+for ele in list:
+    if list.count(ele) == 1:
+        result.append(ele)
+print(result) # Output: [1, 4]",Introduction Python,1151
+Create a for loop statement in Python to iterate over a list and print the each item in the list.,"[1,2,3,4,5]","for i in [1,2,3,4,5]:
+    print(i)",Introduction Python,1181
+Write a Python script to print the size and color of shoes in a list.,"shoes = [('size', 10), ('color', 'blue'), ('size', 8), ('color', 'green')]","def print_size_color(shoes):
+    for size, color in shoes:
+        print('size:', size, 'color:', color)
+
+print_size_color(shoes)",Introduction Python,1201
+"Given a string, write a python program to print the next largest palindrome.","""1234""","def next_largest_palindrome(num):
+    # convert string to a number
+    num = int(num)
+    # increment number by 1
+    num += 1
+    while not is_palindrome(str(num)):
+        # increment number by 1
+        num += 1
+
+    return num
+
+def is_palindrome(num):
+    return num == num[::-1]
+
+print(next_largest_palindrome(""1234""))
+
+# Output: 1331",Introduction Python,1231
+Write a code in Python to print the following string:,"""Welcome to the amazing world of programming!""","print(""Welcome to the amazing world of programming!"")",Introduction Python,1242
+Create a Python program to print out the given string in all uppercase.,"""This is a test string""","string = ""This is a test string""
+
+print(string.upper())",Introduction Python,1244
+Create a python program to print the total number of vowels in a given string,"string = ""This is a sample string ""","def count_vowels(string):
+    count = 0
+    for character in string:
+        if character in 'aeiouAEIOU':
+            count += 1
+    return count",Introduction Python,1247
+Create a program in Python to generate and print all possible permutations of a given set of characters.,"[A, B, C]","import itertools
+ 
+def permutations(characters):
+ permut = itertools.permutations(characters)
+
+ for p in list(permut): 
+ print("""".join(p))
+
+# Usage
+characters = ['A', 'B', 'C']
+permutations(characters)
+
+# Output
+ABC
+ACB
+BAC
+BCA
+CAB
+CBA",Introduction Python,1260
+Upload a python program on GitHub which will print the total number of vowels in a given string.,"String = ""Hello World!""","import re
+
+def count_vowels(string):
+    vowels = re.findall(r'[aeiou]', string, re.I)
+    return len(vowels)
+
+if __name__ == '__main__':
+    string = ""Hello World!""
+    print(""Number of vowels in the given string:"", count_vowels(string))",Introduction Python,1266
+Can you provide a Python script to print the largest and smallest number from a given list?,"[1, 6, 4, -3, 7, 8, 11]","def largest_smallest(arr):
+    max_num = arr[0]
+    min_num = arr[0]
+
+    for i in arr:
+        if i > max_num:
+            max_num = i
+        if i < min_num:
+            min_num = i
+
+    print(""The largest number is"", max_num, ""and the smallest number is"", min_num)",Introduction Python,1268
+Edit the following Python program to print out the key-value pair of a dictionary.,"d = {'Name': 'John', 'Age': 30, 'City': 'New York'}","d = {'Name': 'John', 'Age': 30, 'City': 'New York'}
+ 
+for key, value in d.items():
+    print(f'{key}: {value}')",Introduction Python,1342
+Write a python program to print the least common multiple of two integers,"6, 8","def lcm(x, y):
+  if x > y:
+    greater = x
+  else:
+    greater = y
+  while(True):
+    if((greater % x == 0) and (greater % y == 0)):
+      lcm = greater
+      break
+    greater += 1
+  return lcm",Introduction Python,1343
+Edit the following line of code in Python to print out the result.,print(3 + 5 x 2),print(3 + (5 * 2)),Introduction Python,1347
+Write a Python program to extract the first letter of each word in a sentence and print it as an acronym.,This is a sample sentence.,SIS,Introduction Python,1354
+Create a for loop in python to print all the items in the given list.,"List = [1, 2, 3, 4]","for item in List:
+    print(item)",Introduction Python,1364
+Create a Python program to parse a CSV string and print each row in a readable format.,"CSVString = ""John Doe, 22, ABC Street, 07777\nMary Smith, 26, XYZ Street, 02222""","import csv 
+  
+csvString = ""John Doe, 22, ABC Street, 07777\nMary Smith, 26, XYZ Street, 02222""
+  
+# Convert CSV String to List
+csvList = csvString.split('\n')
+  
+# Print each Row of CSV 
+for row in csvList: 
+    print(row)",Introduction Python,1394
+Create a program in Python which will print the names of the top 3 numbers in a given list.,"[1, 43, 124, 87, 92]","""""""
+Print the names of the top 3 numbers in a given list 
+""""""
+ 
+my_list = [1, 43, 124, 87, 92]
+
+# Sort the list
+my_list.sort(reverse=True)
+
+# Print the top 3 numbers
+print(my_list[0], ""is the first biggest number"")
+print(my_list[1], ""is the second biggest number"")
+print(my_list[2], ""is the third biggest number"")",Introduction Python,1396
+Make a function to print out all substrings of a given string in Python,"str = ""coding""","def print_substrings(str):
+    for i in range(len(str)):
+        for j in range(i+1, len(str)+1):
+            print(str[i:j])
+
+if __name__ == ""__main__"":
+    str = ""coding""
+    print_substrings(str)",Introduction Python,1429
+Create a simple Python program to calculate the sum of two numbers and print out the result.,"Number 1: 3
+Number 2: 5","num1 = 3
+num2 = 5
+
+result = num1 + num2
+
+print(f'The sum of {num1} and {num2} is {result}')",Introduction Python,1451
+Change the following Python code to work with python 3 and print output “My name is Mary”.,print 'My name is Mary',print('My name is Mary'),Introduction Python,1462
+Generate Python code to print the first ‘n’ elements of the Fibonacci series.,7,"def print_fibonacci_series(n):
+    a, b = 0, 1
+    for i in range(n):
+        print(a)
+        a, b = b, a + b
+
+print_fibonacci_series(7)",Introduction Python,1463
+Generate a Python program which reads a string as input and removes all vowels present in the string and print out the revised string.,apple,"def removeVowels(string): 
+    vowels = ('a', 'e', 'i', 'o', 'u')  
+    revised_string = """"
+    for letter in string:
+        if letter.lower() not in vowels:
+            revised_string += letter 
+    return revised_string
+    
+string = ""apple""
+reviseString = removeVowels(string)
+print(""Revised string ="", reviseString)",Introduction Python,1491
+Create a basic Python program to classify a list of positive and negative integer numbers.,"List of numbers: [2, 4, -3, 6, -7, 0]","positive_numbers = []
+negative_numbers = []
+
+for num in numbers:
+ if num > 0:
+  positive_numbers.append(num)
+ else:
+  negative_numbers.append(num)
+
+print('Positive numbers:', positive_numbers)
+print('Negative numbers:', negative_numbers)",Introduction Python,1495
+Create a command-line program in Python which takes in three command-line arguments. The program should add the three arguments and print the result in the console.,1 6 3,"import sys
+
+if __name__ == '__main__':
+ args = sys.argv[1:]
+ if len(args) != 3:
+ print('Error: Not enough arguments provided')
+ else:
+ result = int(args[0]) + int(args[1]) + int(args[2])
+ print('Result: ' + str(result))",Introduction Python,1518
+Create a Python program to print an encrypted message using a given cipher key.,"message = ""hellohello""
+cipher_key = 3","#Input
+message = ""hellohello""
+cipher_key = 3
+
+#Solution
+alphabet = ""abcdefghijklmnopqrstuvwxyz"";
+cipher = alphabet[cipher_key:] + alphabet[:cipher_key]
+
+encoded_message = """"
+for char in message:
+ encoded_message += cipher[alphabet.find(char)]
+
+print(encoded_message) # khoorkhoor",Introduction Python,1522
+Write a Python program to take a list of words as input and print all of the words with at least 4 letters.,"['apple', 'cat', 'elephant', 'banana', 'dog']","words = ['apple', 'cat', 'elephant', 'banana', 'dog']
+
+filtered_words = []
+
+for word in words:
+    if len(word) >= 4:
+        filtered_words.append(word)
+
+print(filtered_words)",Introduction Python,1529
+Create a Python Program to perform a linear search on given data and print the index of the found element.,"data = [7, 4, 3, 11, 9]","def linear_search(data, target):
+    for i in range(len(data)):
+        if (data[i] == target):
+            return i
+    return -1
+
+data = [7, 4, 3, 11, 9]
+target = 11
+
+index = linear_search(data, target)
+if index != -1:
+    print(""Element"", target, ""is present at index"", index)
+else:
+    print(""Element is not present in the given array"")",Introduction Python,1531
+Create a Python program to print out the largest palindrome number from a list of numbers.,"Example list of numbers [4, 12, 25, 98, 9989]","def is_palindrome(n):
+ return str(n) == str(n)[::-1]
+
+def largest_palindrome(nums):
+ largest = 0
+ for n in nums:
+ if is_palindrome(n):
+ largest = max(n, largest)
+ return largest
+
+nums = [4, 12, 25, 98, 9989]
+largest = largest_palindrome(nums)
+print(f'Largest palindrome from the list is {largest}')",Introduction Python,1558
+"Given a list of strings, write a Python code snippet to print all strings that begin with a letter 'a'.","[""apple"", ""banana"", ""orange"", ""avocado""]","for item in [""apple"", ""banana"", ""orange"", ""avocado""]:
+ if item.startswith('a'):
+ print(item)
+
+# Output:
+apple
+avocado",Introduction Python,1570
+Edit the following python code to print all the elements of a list that are divisible by 7.,"my_list = [14, 35, 42, 49, 56, 63, 70]","my_list = [14, 35, 42, 49, 56, 63, 70]
+
+for element in my_list:
+ if element % 7 == 0:
+ print(element) 
+  
+# Output:
+14
+ 
+42
+ 
+49
+ 
+56
+ 
+63
+ 
+70",Introduction Python,1585
+Create a Python program to print a given string with each character's ASCII code.,Hello world!,"def print_ascii(text):
+    '''This function will print a given string with each character's ASCII code.'''
+    for ch in text:
+        print(f'{ch} : {ord(ch)}')
+
+print_ascii('Hello world!')
+
+# Output:
+# H : 72
+# e : 101
+# l : 108
+# l : 108
+# o : 111
+#  : 32
+# w : 119
+# o : 111
+# r : 114
+# l : 108
+# d : 100
+# ! : 33",Introduction Python,1599
+"Create a function in Python to find all elements in a list that are negative, and print them.","list = [-3, 0, 5, -9, 8]","def find_negatives(l):
+  negative_numbers = []
+  for num in l:
+    if num < 0:
+      negative_numbers.append(num)
+  print(negative_numbers)
+
+find_negatives(list) # prints [-3, -9]",Introduction Python,1612
+Write a Python program to print the count of all even numbers in the given list.,"my_list = [1, 2, 3, 4, 5, 6, 7, 8]","my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+
+count = 0
+for i in my_list:
+    if i % 2 == 0:
+        count += 1
+
+print(count)",Introduction Python,1619
+Edit the given Python code to print the multiplication table for given number.,number = 5,"number = 5
+for i in range(1, 11): 
+    print(number, 'x', i, '=', number*i)",Introduction Python,1636
+Write a Python code to print the items in a dictionary in the order of their occurrence in the dictionary.,"d = {1 : 'Red', 2 : 'Green', 3 : 'Blue'}","for key, value in d.items():
+    print(key, value)",Introduction Python,1646
+Write a Python program to print a Welcome message for the user.,Username: John,"print(""Welcome John!"")",Introduction Python,1663
+Generate a program in Python to print the union of two given sets.,"[1, 2, 3], [2, 3, 4, 5]","def union_sets(set1, set2):
+    return list(set(set1) | set(set2))
+
+set1 = [1, 2, 3]
+set2 = [2, 3, 4, 5]
+
+print(union_sets(set1, set2)",Introduction Python,1665
+"Create a python program to accept two inputs from the user, a number and a string, and print the string the given number of times.","3, Hello","num = int(input(""Enter a number: ""))
+string = input(""Enter a string: "")
+
+for i in range(num):
+ print(string)",Introduction Python,1673
+Generate a Python program to print out all possible permutation of a given list of elements.,"[1, 2, 3]","def permutations(input_list):
+    if len(input_list) == 1:
+        return input_list
+    output_list = []
+    for value in input_list:
+        temp_list = input_list[:]
+        temp_list.remove(value)
+        permutations_list = permutations(temp_list)
+        for sub_list in permutations_list:
+            output_list.append([value] + sub_list)
+    return output_list",Introduction Python,1707
+Modify the provided Python program to print out the numbers from 1 to 10,"for i in range(11):
+    print(i)","for i in range(1, 11):
+    print(i)",Introduction Python,1712
+Generate a Python function to print a pattern of stars,n = 5,"def starPattern(n):
+    # outer loop to handle number of rows
+    for i in range(0, n):
+        # inner loop to handle number of columns
+        for j in range(0, i + 1):
+            # printing stars
+            print(""* "", end="""")
+        # ending line after each row
+        print(""\r"")
+
+# Driver code
+n = 5
+starPattern(n)",Introduction Python,1725
+Create a basic Python script that converts all strings in a given dictionary to uppercase.,"{""name"": ""John"", ""age"": 45, ""location"": ""San Francisco""}","d = {""name"": ""John"", ""age"": 45, ""location"": ""San Francisco""}
+for key in d:
+ d[key] = str(d[key]).upper()
+
+print(d)
+# Output: {""name"": ""JOHN"", ""age"": 45, ""location"": ""SAN FRANCISCO""}",Introduction Python,1746
+Create a simple python script to parse a given JSON string and print all the keys and their corresponding values.,"{""name"": ""John"", ""age"": 30, ""city"": ""New York""}","import json
+
+json_str = '{""name"": ""John"", ""age"": 30, ""city"": ""New York""}'
+json_data = json.loads(json_str)
+
+for key, value in json_data.items():
+    print('{}: {}'.format(key, value))",Introduction Python,1767
+"Make a program in Python to print a staircase of height 'n', where n is an integer.",5,"def staircase(n): 
+    for i in range(0, n): 
+        for j in range(0, n - i - 1): 
+            print(end="" "") 
+        for j in range(0, i + 1): 
+            print(""#"", end="""") 
+        print(""\r"") 
+  
+# Driver code 
+n = 5
+staircase(n)",Introduction Python,1810
+Create a for-loop in Python to iterate over a list and print each element.,"words = [""these"", ""are"", ""some"", ""words""]","words = [""these"", ""are"", ""some"", ""words""]
+for word in words:
+  print(word)",Introduction Python,1836
+Utilize the Python in-built module to print the calendar for the given month.,"Month: 5
+Year: 2021","# import the module
+import calendar
+
+# print the calendar 
+print(calendar.month(2021, 5))",Introduction Python,1843
+Use Python to calculate and print the sum of values in an array.,"[1,2,3,4,5]","arr = [1,2,3,4,5] 
+sum = 0
+for i in arr: 
+    sum+=i 
+    print(sum)
+
+# Output 
+# 15",Introduction Python,1864
+Can you write a Python program to print out the elements in a given list with their frequency?,"[1, 2, 3, 2, 4, 1, 1]","my_list = [1, 2, 3, 2, 4, 1, 1]
+
+frequency_dict = {}
+
+for num in my_list:
+    if num in frequency_dict:
+        frequency_dict[num] = frequency_dict[num] + 1
+    else:
+        frequency_dict[num] = 1
+
+for num, freq in frequency_dict.items():
+    print(""{} : {}"".format(num, freq))",Introduction Python,1877
+Modify the following Python program to print the sum of all its elements.,"# Given a list
+
+list = [1, 2, 3, 4, 5]","# Given a list
+
+list = [1, 2, 3, 4, 5]
+ 
+# Calculate sum
+sum_val = 0
+for num in list:
+ sum_val += num
+ 
+# Print the result
+print(sum_val) # returns 15",Introduction Python,1879
+Compose a Python method to print the flat list from a given 2D list.,"Input:  
+test_list = [[5, [6, 13]], [4], [4, [6, 7]]]","def flat_list(lst): 
+  flat_lst = [] 
+  for sublist in lst: 
+    if type(sublist) == int: 
+      flat_lst.append(sublist) 
+    else: 
+      for ele in sublist: 
+        flat_lst.append(ele) 
+  return flat_lst 
+
+result = flat_list(test_list) 
+  
+print(""The flattened list is:"", result)",Introduction Python,1883
+Construct a Python program to take a list of numbers as input and print out the largest number in the list.,"[5, 10, 2, 9, 6]","def largestNumber(list):
+  max = list[0]
+  for num in list:
+    if num > max:
+      max = num
+  return max
+
+list = [5, 10, 2, 9, 6]
+print(largestNumber(list)) # Output: 10",Introduction Python,1897
+Create a function in Python to print all the prime numbers in an array.,"array = [2, 4, 6, 7, 11, 15]","def print_primes(arr):
+    for i in arr:
+        if i > 1:
+            for j in range(2,i):
+                if (i % j) == 0:
+                    break
+            else:
+                print(i)
+
+print_primes(array)",Introduction Python,1913
+Generate a python statement to print a descriptive message about a given string.,"string = ""Hello World!""","print(f""Given string is {string}, and its length is {len(string)}"")",Introduction Python,1925
+Write a Python program to print the number of permutations of length n where each element can take a value between 0 and (n-1).,n = 4,"def countPermutations(n):
+ # if n is 0 or 1, return 1 as there is 1 permutation
+ if n <= 1:
+ return 1
+ 
+ # recursive calculation
+ result = n * countPermutations(n - 1)
+ 
+ return result
+
+countPermutations(4) # returns 24",Introduction Python,1926
+Construct a for loop in Python to iterate over a list and print out each item in the list.,"myList = [1, 2, 3, 4]","for element in myList: 
+ print(element)",Introduction Python,1928
+Write a Python program to compare two lists and print out the one that is greater in length.,"list1 = [1, 2, 3, 4] 
+list2 = [3, 4]","def compare_list_length(list1, list2):
+    if len(list1) > len(list2):
+        return list1
+    else:
+        return list2
+
+list1 = [1, 2, 3, 4]
+list2 = [3, 4]
+longer_list = compare_list_length(list1, list2)
+print(longer_list) # Output: [1, 2, 3, 4]",Introduction Python,1967
+"Extend the python code below to print ""hello world"" 5 times.","for i in range(3):
+    print(""hello"")","for i in range(5):
+    print(""hello world"")",Introduction Python,1982
+Write a function in Python to print every other element in a list.,"[1, 2, 3, 4, 5]","def print_every_other(lst):
+ for i in range(0, len(lst), 2):
+ print(lst[i])",Introduction Python,1986
+Edit the code below to print the output using the Python format() method.,"number1 = 2
+number2 = 3
+
+print('The sum of the numbers is ' + number1 + number2)","number1 = 2
+number2 = 3
+
+print('The sum of the numbers is {}'.format(number1 + number2))",Introduction Python,2009
+Use an if-else statement in Python to print a message depending on the value of a given integer.,"//Integer
+int x = 15;","if (x > 10) {
+    print('The number is greater than 10')
+} else {
+    print('The number is less or equal than 10')
+}",Introduction Python,2012
+Generate a Python program to iterate over a list of numbers and print out only the even numbers.,"[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","for num in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+ if num % 2 == 0:
+ print(num)",Introduction Python,2030
+Generate a Python program to print the characters at even positions in a given string.,Hello World!,"def even_positions(string):
+    result = """"
+    for i in range(0, len(string), 2):
+        result += string[i]
+    return result
+
+print(even_positions(""Hello World!""))",Introduction Python,2031
+Generate a Python function to print all the even numbers from 0 to a given number.,10,"def print_even_numbers(n):
+    for i in range(0, n+1):
+        if i % 2 == 0:
+            print(i)
+
+print_even_numbers(10)",Introduction Python,2060
+Design a Python script to print out a list of unique numbers from 0 to N.,N = 10,"numbers = [i for i in range(0, N+1)]
+unique_numbers = list(set(numbers))
+
+print(unique_numbers)",Introduction Python,2063
+Write a python program to print the items in the following dictionary,"dictionary = {
+  ""fruit"": ""apple"",
+  ""animal"": ""dog""
+}","for key,val in dictionary.items():
+    print(f""{key}: {val}"")",Introduction Python,2075
+Implement a function in Python to print all the uppercase letters from a given string.,"String: ""Hello World""","def print_uppercase(s):
+    for c in s:
+        if c.isupper():
+            print(c)
+
+print_uppercase(""Hello World"")
+# Output:
+# H
+# W",Introduction Python,2091
+Write a Python program to compare two strings and print the number of times the second string appears in the first string.,"""The quick brown fox jumps over the lazy dog"", ""fox""","def count_word_occurrence(str1, str2):
+    count = 0
+    for word in str1.split():
+        if word == str2:
+            count += 1
+
+    return count
+
+occurrence = count_word_occurrence(""The quick brown fox jumps over the lazy dog"", ""fox"")
+print(occurrence)",Introduction Python,2098
+"Given a JSON object, write a python program to print the square of every value, only if the value is even.","{
+ ""a"": 1,
+ ""b"": 2,
+ ""c"": 3,
+ ""d"": 4
+}","import json
+
+data = {
+ ""a"": 1,
+ ""b"": 2,
+ ""c"": 3,
+ ""d"": 4
+}
+
+for key, value in data.items():
+ if value % 2 == 0:
+ print(value**2)",Introduction Python,2118
+Construct a nested loop in Python to print out the following elements in a new line.,"[1,2,3], [4,5,6], [7,8,9]","for x in [1,2,3]:
+  for y in [4,5,6]:
+      for z in [7,8,9]:
+          print(x,y,z)",Introduction Python,2126
+Write a Python code snippet to print out the first ten entries in a given dictionnary.,"dict = {‘a’: 1, ‘b’: 2, ‘c’: 3, ‘d’: 4, ‘e’: 5, ‘f’: 6, ‘g’: 7, ‘h’: 8, ‘i’: 9, ‘j’: 10}","for key, value in dict.items():
+    if key < 'k':
+        print(key, value)",Introduction Python,2134
+Write a Python program to generate and print a random list of size n.,8,"import random
+
+def generate_random_list(n):
+    random_list = []
+    for i in range(n):
+        random_list.append(random.randint(0, 100))
+    return random_list
+
+n = 8
+random_list = generate_random_list(n)
+print(random_list)",Introduction Python,2144
+"Given a number of queues, each containing numbers, write python code to find and print out the numbers at the front of each queue.","queue1 = [5, 2, 9, 4]
+queue2 = [7, 8, 3, 6]","def print_front_elements_from_queues(queue_list):
+    for queue in queue_list:
+        print(queue[0])
+
+queue_list = [queue1, queue2]
+
+print_front_elements_from_queues(queue_list) # This should print 5 and 7",Introduction Python,2159
+Create a program in Python which will take in a sentence and print out each word in reverse.,'This sentence will be reversed',"string = 'This sentence will be reversed'
+
+words = string.split()
+
+for word in words:
+	print(word[::-1], end="" "")
+
+# Output: sihT ecnetnes lliw eb desrever",Introduction Python,2176
+Can you make a Python program to print out the Fibonacci sequence up to the nth element of the sequence?,8,"def Fibonacci(n):
+  a = 0
+  b = 1
+  if n < 0:
+    print(""Incorrect input"")
+  elif n == 0:
+    return 0
+  elif n == 1:
+    return 1
+  else:
+    for i in range(2,n):
+      c = a + b
+      a = b
+      b = c
+    return b
+
+print(Fibonacci(8)) # Output: 13",Introduction Python,2193
+Create a basic Python application to return the similarity between two strings using fuzzywuzzy.,"The two strings are: ""Apple"" and ""Apples"".","# Import the necessary modules
+import fuzzywuzzy 
+from fuzzywuzzy import process
+
+# The two strings to compare 
+str1 = 'Apple'
+str2 = 'Apples'
+
+# Compare the two strings
+score = fuzzywuzzy.fuzz.ratio(str1, str2)
+
+# Print the similarity score
+print(score)
+
+# Output 
+100",Introduction Python,2206
+Write a basic web scraper in Python using the BeautifulSoup library. The scraper should take as input a URL and output the text on the page.,Input URL: https://en.wikipedia.org/wiki/Web_scraping,"import requests
+from bs4 import BeautifulSoup
+
+url = ""https://en.wikipedia.org/wiki/Web_scraping"" 
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+text = soup.find_all('p')
+for t in text:
+    print(t.text)",Introduction Python,2249
+Write a Python program to print out the Fibonacci series up to n numbers where n is a user input.,User input n = 10,"# Python Program to print the Fibonacci series up to n numbers
+
+n = int(input(""Enter the value of 'n': ""))
+
+# first two numbers
+a = 0
+b = 1
+
+print(""Fibonacci Series:"") 
+print(a, b, end="" "") 
+  
+for i in range(2,n):
+               
+    c = a + b
+    a = b
+    b = c
+    print(c, end = "" "")
+    
+print()",Introduction Python,2277
+Design a loop in a Python program to print the Fibonacci series up to the nth term.,n=10,"def fibonacci(n): 
+    a = 0
+    b = 1
+    if n < 0: 
+        print(""Incorrect input"") 
+    elif n == 0: 
+        return a 
+    elif n == 1: 
+        return b 
+    else: 
+        for i in range(2,n): 
+            c = a + b 
+            a = b 
+            b = c 
+        return b 
+print(fibonacci(n))",Introduction Python,2292
+Generate a piece of Python code to print the reversed version of a list.,"[1, 2, 3]","print(list(reversed([1, 2, 3])))",Introduction Python,2300
+Write a python program to print the name and age of all customers in a list.,"customers = [
+ {'name': 'John', 'age': 25},
+ {'name': 'Bob', 'age': 40},
+ {'name': 'Alice', 'age': 10},
+ {'name': 'Mark', 'age': 35},
+]","for customer in customers:
+  print(f""Name: {customer['name']}, Age: {customer['age']}"")",Introduction Python,2317
+Design a Python program to print out all possible permutations of a 3 character string.,ABC,"def permutation(str):
+    if len(str) == 0:
+        return []
+    if len(str) == 1:
+        return [str]
+    l = [] 
+    for i in range(len(str)):
+       m = str[i] 
+       remLst = permutation(str[:i] + str[i+1:])
+       for p in remLst:
+           l.append(m + p)
+    return l
+
+string = 'ABC'
+l = permutation(string)
+for s in l:
+    print(s)",Introduction Python,2336
+Create a data structure to store and print all the codes for the top 10 programming languages.,"C, C++, Python, Java, C#, JavaScript, PHP, Rust, Swift, Go","codes = {
+    'C': 'c',
+    'C++': 'cpp',
+    'Python': 'py',
+    'Java': 'java',
+    'C#': 'cs',
+    'JavaScript': 'js',
+    'PHP': 'php',
+    'Rust': 'rs',
+    'Swift': 'swift',
+    'Go': 'go'
+}
+
+for key, value in codes.items():
+    print('{}: {}'.format(key, value))",Introduction Python,2337
+Write a function in Python to print the Fibonacci sequence up to the nth term.,n = 10,"def fibonacci(n): 
+    a = 0
+    b = 1
+    if n < 0: 
+        print(""Incorrect input"") 
+    elif n == 0: 
+        return a 
+    elif n == 1: 
+        return b 
+    else: 
+        for i in range(2,n): 
+            c = a + b 
+            a = b 
+            b = c 
+        return b 
+    
+print(""Fibonacci sequence:"")
+for i in range(n):
+    print(fibonacci(i))",Introduction Python,2344
+Create a program in Python that takes a word as an argument and print it in reverse.,'Hello World',"def reverse(word):
+    return word[::-1]
+
+print(reverse('Hello World'))",Introduction Python,2377
+"Write a Python program to print out the count of vowels, consonants and digits in an input string.",This is an example string including digits123.,"Vowels: 10
+Consonants: 12
+Digits: 3",Introduction Python,2421
+Create a Python script to print the absolute difference between two given numbers.,"9, 5","def absolute_difference(A, B): 
+    return abs(A - B) 
+  
+# Driver Code 
+A = 9
+B = 5
+print(absolute_difference(A, B))",Introduction Python,2432
+Write a Python program to print the day of week for a specific date.,"Date: ""21 October 2020""","import datetime
+
+date_str = ""21 October 2020""
+date = datetime.datetime.strptime(date_str, ""%d %B %Y"")
+print(date.strftime(""%A""))",Introduction Python,2468
+Construct a python program to print out the number of distinct elements in a string.,"""hello world!""","def count_unique(s):
+    seen = set()
+    count = 0
+    
+    for character in s:
+        if character not in seen:
+            seen.add(character)
+            count += 1
+            
+    return count
+
+print(count_unique(""hello world!""))",Introduction Python,2470
+Write a Python program to loop through a list and print each element of the list.,"[1, 2, 3, 4]","for x in [1, 2, 3, 4]:
+    print(x)",Introduction Python,2474
+Create a Python script to loop over a list of numbers and print out each value if it is greater than five.,"list = [1, 2, 3, 4, 5, 6, 7, 8]","def loop_list(list):
+    for i in list:
+        if i > 5:
+            print(i)",Introduction Python,2503
+"Design a Python program to solve the following problem: Given two strings of equal length, print the number of differences.","str1 = ""abcd"", str2 = ""abcx""","def diff_characters(str1, str2):
+ diff_count = 0
+
+ for i in range(len(str1)):
+     if str1[i] != str2[i]:
+         diff_count += 1
+
+ return diff_count
+
+str1 = ""abcd""
+str2 = ""abcx""
+
+print(diff_characters(str1, str2))
+
+# Output: 1",Introduction Python,2515
+"Given the following input JSON data, write a Python program to print out all the elements that have an even length.","Input data:{""apple"":[""red"",""green""],""pear"":[""green""],""grapes"":[""green"",""red""],""banana"":[""yellow""]}","import json
+
+data = '{""apple"":[""red"",""green""],""pear"":[""green""],""grapes"":[""green"",""red""],""banana"":[""yellow""]}'
+
+json_data = json.loads(data)
+
+for item in json_data.items():
+    if len(item[1]) % 2 == 0:
+        print(item[0])",Introduction Python,2525
+Develop a Python program to find and print the first non-repeating character from a given string.,"""Hello, world!""","def non_repeating_character(string):
+    for c in string:
+        if string.count(c) == 1:
+            return c
+    return 'No result'
+
+print(non_repeating_character('Hello, world!'))",Introduction Python,2568
+Generate a code in Python to print the length of the given string.,Hello world,"string = 'Hello world'
+
+# print the length of string
+print(len(string))",Introduction Python,2574
+Create a basic web scraper in Python to parse HTML.,<p>This is some text</p><a href='www.example.com/'>Click Here</a>,"#import library
+import bs4
+
+#store HTML data
+html_data = '<p>This is some text</p><a href='www.example.com/'>Click Here</a>'
+
+#parse HTML data
+soup = bs4.BeautifulSoup(html_data, 'html.parser')
+
+#get all tags
+all_tags = soup.find_all()
+
+#print result
+for tag in all_tags:
+ print(tag)",Introduction Python,2589
+Create an optimized Python program to print all prime numbers in a given range.,Apr-15,"def is_prime(n):
+    if n <= 1:
+        return False
+  
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+  
+    return True
+ 
+start = 4
+end = 15
+ 
+for num in range(start, end+1):
+   if is_prime(num):
+       print(num)",Introduction Python,2607
+Create an algorithm in Python to print the binary representation of a given number.,23,"def binary_rep(num):
+    binary_string = """"
+    while num>0:
+        remainder = num%2
+        binary_string = str(remainder) + binary_string
+        num = num//2
+
+    print(binary_string)
+
+binary_rep(23) # prints 10111",Introduction Python,2620
+"Edit the following Python code to print ""Hello World"" in a loop 10 times.","for i in range(5):
+    print(""Hello World"")","for i in range(10):
+    print(""Hello World"")",Introduction Python,2622
+Create a basic script in Python that can automatically sort a list of items by price.,"items = [
+    {
+        'name': 'Sprite',
+        'price': 1.99
+    },
+    {
+        'name': 'Coca Cola',
+        'price': 3.99
+    },
+    {
+        'name': 'Pepsi',
+        'price': 2.99
+    }
+]","items.sort(key=lambda x: x['price'])
+
+print(items)
+# Output:
+[{'name': 'Sprite', 'price': 1.99},
+{'name': 'Pepsi', 'price': 2.99},
+{'name': 'Coca Cola', 'price': 3.99}]",Introduction Python,2628
+Create a Python program to search through a list of names and print out any names that contain the letter 'a'.,"names = [""John"", ""Paul"", ""George"", ""Ringo"", ""Adam"", ""Peter"", ""Alice"", ""Karen"", ""Jerry""]","names = [""John"", ""Paul"", ""George"", ""Ringo"", ""Adam"", ""Peter"", ""Alice"", ""Karen"", ""Jerry""]
+
+for name in names:
+ if 'a' in name:
+ print(name)
+
+# Output
+Adam
+Alice
+Karen",Introduction Python,2648
+Write a Python program to parse a JSON data and print the values.,"{""name"": ""John"", ""age"": 30, ""city"": ""New York""}","""""""
+Write a Python program to parse a JSON data and print the values
+""""""
+
+import json
+
+# Load the input data as a json string
+data = '{""name"": ""John"", ""age"": 30, ""city"": ""New York""}'
+
+# Parse the json string into a dictionary
+parsed_data = json.loads(data)
+
+# Print out the values
+for key, value in parsed_data.items():
+    print(f'{key}: {value}')",Introduction Python,2678
+Implement a Python parser to print return a list of words from a given string.,"""Hello, World!""","def parse_words(string):
+    words = []
+
+    for word in string.split("" ""):
+        words.append(word.strip(""!,.? \n\t\r\""\'-""))
+    return words
+
+result = parse_words(""Hello, World!"")
+print(result)
+##
+Output: ['Hello', 'World']",Introduction Python,2688
+"Create an algorithm in Python to print the numbers from 1 to n in increasing order, except for any numbers which are divisible by 3 should be printed as ""Fizz"".",`n = 20`,"def fizz(n):
+    for i in range(1, n+1):
+        if i % 3 == 0:
+            print(""Fizz"")
+        else:
+            print(i)
+
+#example
+fizz(20) # prints 1, 2, Fizz, 4, 5, Fizz, 7, 8, Fizz, 10, 11, Fizz, 13, 14, Fizz, 16, 17, Fizz, 19, 20",Introduction Python,2693
+Create a Python program to find the two smallest integers in an array and print the output.,"[5, 7, 12, 3, 8]","def findSmallestInteger(arr):
+    smallest = float('inf')
+    second_smallest = float('inf')
+    for num in arr:
+        if num < smallest:
+            second_smallest = smallest 
+            smallest = num
+        if num < second_smallest and num > smallest:
+            second_smallest = num
+    return (smallest, second_smallest)",Introduction Python,2728
+Write a Python script to print the frequency of occurrence of characters in a given string.,"text = ""Hello World""","def char_frequency(text):
+    chars = {}
+    for c in text:
+        if c not in chars:
+            chars[c] = 0
+        chars[c] += 1
+    return chars
+    
+print(char_frequency(text))",Introduction Python,2736
+Generate a Python program to print all possible permutations of a given string.,"Input string: ""ABC""","from itertools import permutations 
+  
+# Get all permutations of length 2 
+# and length 2 
+perm = permutations(""ABC"", 2) 
+  
+# Print the obtained permutations 
+for i in list(perm): 
+    print(i) 
+
+# Get all permutations of length 3 
+# and length 3 
+perm = permutations(""ABC"") 
+  
+# Print the obtained permutations 
+for i in list(perm): 
+    print(i)",Introduction Python,2741
+Generate a Python program to print the Fibonacci series up to n-th term.,The n value is 6.,"def Fibonacci(n): 
+    a = 0
+    b = 1
+    if n < 0: 
+        print(""Incorrect input"") 
+    elif n == 0: 
+        return a 
+    elif n == 1: 
+        return b 
+    else: 
+        for i in range(2,n): 
+            c = a + b 
+            a = b 
+            b = c 
+        return b 
+  
+print(Fibonacci(6))",Introduction Python,2751
+Write a Python script to print out all prime numbers in a given list.,"[4, 15, 22, 50, 119]","import math
+
+def is_prime(n):
+    for i in range(2, int(math.sqrt(n))+1):
+        if n % i == 0: 
+            return False
+    return True
+
+input_list = [4, 15, 22, 50, 119]
+
+for num in input_list:
+    if is_prime(num):
+        print(num)
+
+# Output: 
+# 4
+# 15
+# 50
+# 119",Introduction Python,2776
+Build a list comprehension in Python to print numbers divisible by 3 and not divisible by 7 in the range of 30 to 50,Range: 30 to 50,"divisible_by_3_or_7 = [n for n in range(30,51) if n % 3 == 0 and n % 7 != 0]
+print(divisible_by_3_or_7) # output: [30, 33, 36, 39, 42, 45, 48]",Introduction Python,2780
+Write a method in Python to print each element in a given dictionary.,"{
+    ""Alice"": 23,
+    ""Bob"": 30,
+    ""John"": 27
+}","def printDict(dictionary): 
+    for key in dictionary: 
+        print(""{}: {}"".format(key, dictionary[key])) 
+
+dict = {
+    ""Alice"": 23,
+    ""Bob"": 30,
+    ""John"": 27
+}
+printDict(dict)",Introduction Python,2819
+Create a Python function to print out all the prime numbers between two integers.,"start = 10, end = 25","def print_primes(start, end):
+ for n in range(start, end + 1):
+ if is_prime(n):
+ print(n)
+ 
+def is_prime(n):
+ if n <= 1:
+ return False
+ elif n <= 3:
+ return True
+ elif (n % 2 == 0) or (n % 3 == 0):
+ return False
+ 
+ i = 5
+ while i ** 2 <= n:
+ if (n % i == 0) or (n % (i + 2) == 0):
+ return False
+ i += 6
+ 
+ return True
+
+print_primes(10, 25)",Introduction Python,2840
+Write a function in Python to Print a given string in Reverse order.,"string = ""Welcome to my site!""","def reverseString(string):
+    revString = ''
+    for i in range(len(string)-1, -1, -1):
+        revString += string[i]
+    return revString",Introduction Python,2875
+Create a loop in Python to print the following sentence 5 times.,"""I love coding!""","for i in range(5):
+    print(""I love coding!"")",Introduction Python,2882
+Create a program in Python to print the following output.,"string = ""programming""","str = ""programming""
+print(str[::-1])
+
+Output: gnimmargorp",Introduction Python,2897
+"Create a Python script to print out the values in a given dictionary, with each key and value on a separate line.","my_dict = {'a': 1, 'b': 2, 'c': 3}","for k, v in my_dict.items():
+    print(f'{k}: {v}')",Introduction Python,2902
+Write a Python program to print out all possible pairs of two lists.,"list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']","for i in list1:
+    for j in list2:
+        print(i,j)
+
+# Output:
+# (1, 'a')
+# (1, 'b')
+# (1, 'c')
+# (2, 'a')
+# (2, 'b')
+# (2, 'c')
+# (3, 'a')
+# (3, 'b')
+# (3, 'c')",Introduction Python,2910
+Create a for loop in Python to iterate over a list of numbers and print only the even numbers.,"my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","for num in my_list:
+    if num % 2 == 0:
+        print(num)",Introduction Python,2917
+"Rewrite the following Python code in Java.
+
+myString = ""Hello World""
+print(myString[0:5])",No input,"String myString = ""Hello World"";
+System.out.println(myString.substring(0,5));",Introduction Python,2921
+"Using the input dictionary as a guide, implement a Python function to print out the list of values for each key.","my_dict = {""Alice"": 25, ""Bob"": 21, ""Eve"": 45}","def print_values(dict_in):
+    for key,value in dict_in.items():
+        print(key, "":"", value)
+
+print_values(my_dict)",Introduction Python,2931
+Optimize the following Python code to print the numbers in reverse.,"for i in range(1,11):
+    print(i)","for i in reversed(range(1,11)):
+    print(i)",Introduction Python,2935
+Create a Python program to print out the following message and its variables.,Name: John,"name = ""John""
+
+print(""Hello "" + name + ""!"")  # Outputs: ""Hello John!""",Introduction Python,2960
+Design a Python program to print out the list of prime numbers up to the input value.,25,"def printPrimeNum(n): 
+  
+    prime_list = [] 
+   
+    for num in range(2, n + 1): 
+        prime = True
+        for i in range(2, num): 
+            if (num % i == 0): 
+                prime = False
+        if prime:
+            prime_list.append(num) 
+              
+    print(prime_list)
+  
+  
+num = 25 
+printPrimeNum(num)",Introduction Python,2979
+Write a Python program to print the key of the element in a dictionary that has the maximum value.,"{'a': 3, 'b': 6, 'c': 9, 'd': 12}","dictionary = {'a': 3, 'b': 6, 'c': 9, 'd': 12}
+
+max_value = max(dictionary.values())
+for key, value in dictionary.items():
+ if value == max_value:
+ print(key)",Introduction Python,2984
+"Generate a program in Python to remove all vowels from a sentence, and print the resulting string to the console.",This is a sentence,"def remove_vowels(word):
+    new_word = """"
+    for i in word:
+        if i not in ""aeiouAEIOU"":
+            new_word += i
+    return new_word
+
+sentence = ""This is a sentence""
+print(remove_vowels(sentence))",Introduction Python,2988
+Write a Python script to print all prime numbers from 1 to n,n = 10,"def print_primes(n):
+    for num in range(2, n+1):
+        for i in range(2, num):
+            if (num % i) == 0:
+                break
+        else:
+            print(num)
+
+print_primes(10)",Introduction Python,3021
+Write a Python program to traverse a two-dimensional array and print each row.,"[
+    [1, 2, 3],
+    [4, 5, 6]
+]","def traverse_2d_list(list2d):
+    for row in list2d:
+        print(row)",Introduction Python,3050
+Write a Python program to print the numbers of a specified list after removing even numbers from it.,"[1, 2, 3, 4, 5, 6, 7, 8, 9]","def remove_even_numbers(numbers):
+    odd_numbers = []
+    for number in numbers:
+        if number % 2 != 0:
+            odd_numbers.append(number)
+    return odd_numbers
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+odd_numbers = remove_even_numbers(numbers)
+print(odd_numbers)",Introduction Python,3081
+Generate a Python program to print the most popular item in a list.,"A list of integers [1, 5, 9, 1, 4, 5, 9]","from collections import Counter
+
+def most_popular(arr):
+    cnt = Counter()
+    for number in arr:
+        cnt[number] += 1
+    return cnt.most_common(1)[0][0]
+
+result = most_popular([1, 5, 9, 1, 4, 5, 9])
+print(result)",Introduction Python,3101
+Create a code that would prompt the user for a given number and print out the Python equivalent of the given number.,number = 10,"def user_number(number):
+    number_py = '{}'.format(number)
+    print(""The Python equivalent of {} is {}"".format(number, number_py))",Introduction Python,3153
+Write a Python script to print the frequency of all unique words in a given string.,"""Hello world, hello programmer""","words = ""Hello world, hello programmer"".split()
+
+word_freq = {}
+for word in words:
+    if word not in word_freq:
+        word_freq[word] = 1 
+    else:
+        word_freq[word] += 1
+
+for key, value in word_freq.items():
+    print(f""{key} : {value}"")",Introduction Python,3171
+Print the Fibonacci sequence up to a given number in Python.,10,"# Declare a function
+def Fibonacci(num):
+    a = 0
+    b = 1
+    
+    # Iterate
+    for i in range(num):
+        print(a, end="" "")
+        c = a + b
+        a = b
+        b = c
+    print()
+    
+# Print the sequence
+Fibonacci(10)",Introduction Python,3193
+Generate a Python program to print a square matrix of size n containing the numbers from 11 to n*n.,3,"n = 3
+
+output_matrix = [[0 for x in range(n)] for y in range(n)] 
+  
+num = 1
+  
+for i in range (0, n):    
+ for j in range(0, n):     
+ output_matrix[i][j] = num    
+ num = num + 1    
+  
+for i in range(0, n):
+ for j in range(0, n):
+ print(output_matrix[i][j], end = "" "")
+ print("""")",Introduction Python,3236
+Use a for-loop in Python to print the ASCII value of each character in a given string.,"string = ""Hello""","for i in range(len(string)):
+    print(ord(string[i]))  # Output: 72, 101, 108, 108, 111",Introduction Python,3239
+Design a FOR loop algorithm in Python to print all numbers starting from one to the given number.,10,"for i in range(1, 11): 
+    print(i)",Introduction Python,3245
+"Create a Python program to determine if a given string is a palindrome and if so, print it.","String = ""racecar""","# Function to check if a string is a palindrome
+def isPalindrome(s):
+ # Reverse the string
+ rev_s = s[::-1]
+
+ # Check if the string is the same as its reverse
+ if (s == rev_s):
+ return True
+ return False
+
+# Driver code
+s = 'racecar'
+
+# Check if the given word is a palindrome
+if (isPalindrome(s)):
+ print(s)",Introduction Python,3250
+Convert the following basic Python code into its equivalent JavaScript code.,"for i in range(1, 5):
+    print(i)","for(let i = 1; i < 5; i++){
+    console.log(i);
+}",Introduction Python,3284
+Design a Python function to print out all permutations of a given string.,"""ABC""","def permute(s):
+    if len(s) == 1:
+        return s
+
+    perms = []
+    for i in range(len(s)):
+        element = s[i]
+
+        remaining_elements = s[:i] + s[i+1:]
+        z = permute(remaining_elements)
+
+        for t in z:
+            perms.append(element + t)
+
+    return perms
+
+print(permute(""ABC""))",Introduction Python,3315
+Write a function in Python to print a random permutation of array elements.,"input_array = [1, 2, 3, 4, 5]","import random
+def random_permutation(input_array):
+    perm = []
+    while(len(input_array) > 0):
+        el = random.choice(input_array)
+        perm.append(el)
+        input_array.remove(el)
+    return perm",Introduction Python,3320
+Design a program in Python to print out the prime numbers from 2 to a given upper limit.,upper_limit = 20,"def is_prime(upper_limit):
+    for num in range(2, upper_limit+1):
+        if num > 1:
+            for i in range(2, num):
+                if (num % i) == 0:
+                    break
+            else:
+                print(num, end="" "")
+
+upper_limit = 20
+is_prime(upper_limit)",Introduction Python,3341
+Develop a Python script to print out the prime numbers up to a given limit.,An integer limit of 100.,"def is_prime(n):
+ if n == 1:
+ return False
+ for i in range(2, n):
+ if n % i == 0:
+ return False
+ return True
+
+# Print out prime numbers from 1 to 100
+limit = 100
+
+for i in range(1, limit+1):
+ if is_prime(i):
+ print(i)",Introduction Python,3369
+Create a Python function to print all elements in a nested list.,"nested_list = [1, [2, 3], 4, [[5, 6], 7], 8, [9]]","def print_elements(nested_list):
+    
+    for item in nested_list:
+        if type(item) == list:
+            print_elements(item)
+        else:
+            print(item)
+
+print_elements(nested_list)",Introduction Python,3371
+Generate a Python code which calls a function to print the following array?,"[1,3,7,9,10]","arr = [1,3,7,9,10]
+
+def print_array(arr):
+    '''This function prints the elements of an array'''
+    for ele in arr:
+        print(ele)
+
+print_array(arr)",Introduction Python,3399
+"Edit the following code snippet to print out ""Hello World"" instead of ""Hello Python""","print(""Hello Python"")","print(""Hello World"")",Introduction Python,3411
+Write a Python program to print out the even numbers in the given list.,"list = [1, 4, 5, 6, 7, 8]","#Print out even numbers from the given list
+for num in list:
+    if (num % 2 == 0):
+        print(num)",Introduction Python,3447
+Develop a program in Python to store 5 integer numbers in a list and print out the maximum value.,"[7, 9, 23, 0, 4]","numbers = [7, 9, 23, 0, 4]
+
+maximum = max(numbers)
+
+print(""The maximum value is: ""+ str(maximum))",Introduction Python,3461
+"Write a Python program to take a user's input, store it in a variable, and then print out a greeting combining the user's name and the value they entered.","Name: Allan 
+Value: 5","name = input(""Name: "")
+value = input(""Value: "")
+print(""Hello {}, your value is {}"".format(name, value))",Introduction Python,3462
+Create a for loop in Python to print out the numbers in a given list in reverse order.,"[1,2,3,4,5]","list = [1,2,3,4,5]
+for i in reversed(list):
+    print(i)",Introduction Python,3468
+Write a code snippet in Python to print out the contents of a given dictionary.,"{""apple"": 1, ""banana"": 2, ""carrot"": 3}","dictionary = {""apple"": 1, ""banana"": 2, ""carrot"": 3}
+
+for item in dictionary:
+  print(""{}: {}"".format(item, dictionary[item]))",Introduction Python,3531
+Modify the following python code to print the count of values greater than 5.,"data = [1,2,3,4,5,6,7,8,9]","data = [1,2,3,4,5,6,7,8,9]
+
+count = 0
+for value in data:
+  if value > 5:
+    count += 1
+
+print(count)",Introduction Python,3532
+Develop Python code to print all possible permutations of a given string.,"string = ""abc""","def permutations(string): 
+    if string == """": 
+        return [''] 
+          
+    prev_list = permutations(string[1:]) 
+    next_list = [] 
+    char = string[0] 
+    for word in prev_list: 
+        for j in range(len(word) + 1): 
+            next_list.append(word[:j] + char + word[j:]) 
+    return next_list 
+
+string = ""abc""
+perm_list = permutations(string) 
+print (perm_list)",Introduction Python,3538
+"Generate code for a Python for loop that prints ""Hello World"" n times.",Number = 5,"for i in range(5):
+ print(""Hello World"")",Introduction Python,3558
+Generate a Python program to print the elements of a given array in reverse order.,"arr = [3, 7, 2, 5]","def print_reverse(arr):
+    for i in range(len(arr)-1, -1, -1):
+        print(arr[i])",Introduction Python,3584
+Suggest a completion of the following Python code to print all perfect squares between 25 and 45.,for n in range():,"for n in range(25, 46):
+    if n ** 0.5 == int(n ** 0.5):
+        print(n)",Introduction Python,3607
+Write a Python program to print a formatted price list with a given list of expenses.,"expenses = {
+    ""bread"": 2.50,
+    ""butter"": 4.50,
+    ""cake"": 12.75,
+    ""sugar"": 6.95
+}","def print_price_list(expenses):
+    print(""Price list of items available:"")
+    print(""-"" * 30)
+    print(""Item\tPrice"")
+    print(""-"" * 30)
+    for item in expenses.keys():
+        print(""{}\t{}"".format(item, expenses[item]))
+    print(""-"" * 30)",Introduction Python,3630
+Optimize a Python program to print the sum of the 10 smallest even numbers larger than a user-defined number.,num = 20,"num = int(input(""Enter a number: ""))
+
+# Find the 10 smallest even numbers larger than the user-defined number
+numbers = []
+total = 0
+for i in range(num+1, num+21):
+ if i%2 == 0:
+  numbers.append(i)
+  total += i
+  
+print('The sum is', total)",Introduction Python,3662
+Create a program to print out the pyramid pattern in Python.,rows = 5,"for i in range(rows):
+    for j in range(i):
+        print(""#"", end="""")
+    print()",Introduction Python,3681
+Write a Python code fragment to print all the leap years between two years.,"start_year = 2010
+end_year = 2020","for year in range(start_year, end_year+1):
+    if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+        print(year)",Introduction Python,3686
+Generate a Python script to print an inverted triangle pattern made up of asterisks.,5,"def inverted_triangle(length):
+    for i in range(length, 0, -1):
+        for j in range(length - i):
+            print(' ', end="""")
+        for j in range(2 * i - 1):
+            print('*', end="""")
+        print()
+
+inverted_triangle(5)
+
+# Output:
+# *****
+#  ***
+#   *",Introduction Python,3710
+Design a loop in Python to iterate over the elements of a list and print the elements in reverse order.,"[10, 15, 20]","my_list = [10, 15, 20]
+for i in my_list[::-1]:
+    print(i)",Introduction Python,3717
+"Generate a class in Python, implementing the __init__ and __str__ methods to initialize a variable and print its value.","name = ""John Doe""","class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+p = Person('John Doe')
+print(p)",Introduction Python,3724
+Create a basic Python program that prints out the class average for a list of student grades.,"[80, 85, 90, 75, 95]","numbers = [80, 85, 90, 75, 95]
+
+total = 0
+for number in numbers:
+ total += number
+
+class_average = total / len(numbers)
+print(class_average)",Introduction Python,3738
+Generate a python program to print the ordered combination of the elements of the given list.,"[1, 2, 3]","def ordered_combination(arr):
+    result = []
+
+    # Generate all permutations using library function 
+    permutations = itertools.permutations(arr, len(arr)) 
+
+    # Append each permutation in a list  
+    for permutation in permutations: 
+        result.append(list(permutation)) 
+  
+    # Return the list of ordered combinations
+    return result",Introduction Python,3756
+Create a Python program to read in a list of items and print them out in reverse order.,"[""Apple"", ""Pear"", ""Banana"", ""Orange""]","my_list = [""Apple"", ""Pear"", ""Banana"", ""Orange""]
+
+for item in reversed(my_list):
+ print(item)",Introduction Python,3787
+Create a Python Program to print the Fibonacci sequence up to n terms,Print the Fibonacci sequence up to the 5th term,"def Fibonacci(n):
+      
+    # First and second number in the sequence 
+    Fib_list = [0, 1]
+    
+    # Generate the Fibonacci sequence up to n terms
+    for i in range(2,n): 
+        Fib_list.append(Fib_list[i-2] + Fib_list[i-1])
+    return Fib_list
+
+# Driver code 
+n = 5
+print(Fibonacci(n))",Introduction Python,3788
+"Create a Python program to print out the sum of all even numbers between the given range, inclusive.","start = 2
+end = 10","def sum_even_numbers(start, end):
+ result = 0
+ for n in range(start, end+1):
+ if n % 2 == 0:
+ result += n
+ return result
+
+print(sum_even_numbers(2, 10))",Introduction Python,3791
+Produce code to print out the multiplication table of a given number in Python.,Number: 5,"# Program to print the multiplication table
+num = 5
+
+# Iterate from 1 to 10
+for i in range(1,11):
+ print(f'{num} X {i} = {num * i}')",Introduction Python,3823
+"Write a python code to find all numbers in a given string, and print them out.","""There are 45.8 apples and 12.3 oranges.""","import re
+
+string = ""There are 45.8 apples and 12.3 oranges.""
+numbers = re.findall(r""[-+]?\d*\.\d+|\d+"", string)
+print(numbers)
+
+# Output: ['45.8', '12.3']",Introduction Python,3889
+"Read an uncommented Python program, comment all the lines, and print the commented version.","def func_name(param1, param2):
+    a = param1 + param2
+    b = param1 * param2
+    return a, b","def func_name(param1, param2):
+    # Add two parameters
+    a = param1 + param2
+    
+    # Multiply two parameters
+    b = param1 * param2
+    
+    # Return a and b
+    return a, b",Introduction Python,3926
+Edit the given Python code to add a feature which will print the squares of given numbers.,"def printNumbers(a, b): 
+    for i in range(a, b + 1): 
+        print(i, end = "" "")","def printNumbers(a, b): 
+    for i in range(a, b + 1): 
+        print(i, end = "" "") 
+    print(""\n"")
+    for i in range(a, b + 1):
+        print(i*i, end = "" "")",Introduction Python,3932
+Generate a Python script to identify which words in a given list appear more than 3 times and print them out.,"words = ['blue', 'red', 'green', 'red', 'yellow', 'blue', 'blue', 'orange']","words = ['blue', 'red', 'green', 'red', 'yellow', 'blue', 'blue', 'orange']
+from collections import Counter
+word_counts = Counter(words)
+words_appearing_more_than_3_times = [word for word, count in word_counts.items() if count > 3]
+print(words_appearing_more_than_3_times)",Introduction Python,3937
+Create a recursive function in Python to print the sum of the natural numbers up to the given number.,limit = 5,"def sum_natural_numbers(limit):
+    if limit < 2:
+        return limit
+    else:
+        return limit + sum_natural_numbers(limit-1)
+
+#print the sum 
+print(sum_natural_numbers(limit))",Introduction Python,3942
+"Write an API endpoint for a basic user authentication system in Python. It should accept a username and password, validate them, and return a token if the user is valid.","username: john
+password: pass123","import jwt
+ 
+@app.route('/auth', methods=['POST'])
+def auth():
+ username = request.form.get('username')
+ password = request.form.get('password')
+ 
+ # authenticate the user here
+ 
+ token = jwt.encode({'username': username}, app.config['SECRET_KEY'])
+ 
+ return token",Introduction Python,3981
+"Rewrite the following Javascript code as a Python code that solves the same problem.
+
+Given an array of numbers, find the square root of each number and print it.","[2, 3, 4, 5]","import math
+
+numbers = [2, 3, 4, 5]
+
+for number in numbers:
+ print(math.sqrt(number))
+
+# Output
+# 1.414
+# 1.732
+# 2.000
+# 2.236",Introduction Python,3991
+Write a python program to calculate the mean of a list of numbers and display the mean using print statement.,"[2, 6, 9, 8, 4, 5]","list = [2, 6, 9, 8, 4, 5]
+sum = 0 
+for num in list:
+ sum += num 
+
+# calculate mean
+mean = sum / len(list)
+
+# print mean
+print(""Mean:"", mean)
+
+# Output
+Mean: 5.8",Introduction Python,3994
+Develop a code in Python to print the nth Fibonacci number.,6,"def Fibonacci(n): 
+    if n<0: 
+        print(""Incorrect input"") 
+    # First Fibonacci number is 0 
+    elif n==1: 
+        return 0
+    # Second Fibonacci number is 1 
+    elif n==2: 
+        return 1
+    else: 
+        return Fibonacci(n-1)+Fibonacci(n-2) 
+
+print(Fibonacci(6))",Introduction Python,4018
+Please provide Python code to print out all the prime numbers in a list of numbers.,"list_of_numbers = [2, 3, 4, 5, 6, 7, 8, 9, 11]","def is_prime(num):
+  for i in range(2, num):
+    if num % i == 0:
+      return False
+  return True
+
+list_of_numbers = [2, 3, 4, 5, 6, 7, 8, 9, 11] 
+for i in list_of_numbers:
+  if is_prime(i):
+    print(i)",Introduction Python,4036
+Create a python program to print all two dimensional subarrays in a given two-dimensional array,"two_dimensional_array = [[1, 2, 3],
+                        [4, 5, 6],
+                        [7, 8, 9]]","for i in range(len(two_dimensional_array)): 
+    for j in range(i+1): 
+        for k in range(len(two_dimensional_array[i])): 
+            print(two_dimensional_array[j][k], end="" "") 
+        print()",Introduction Python,4053
+Can you create a Python script to print out the two smallest elements from an array of numbers?,"[45, 24, 2, 17, 78]","def smallest_two_elements(nums):
+    min1 = min(nums)
+    nums.remove(min1)
+    min2 = min(nums)
+    
+    print(min1, min2)
+
+smallest_two_elements([45, 24, 2, 17, 78])",Introduction Python,4085
+Create a Python script to print the first n even numbers.,n = 10,"n = 10
+
+for i in range(1, n+1):
+ if i % 2 == 0:
+ print(i)",Introduction Python,4160
+"Given a Python dictionary, print out the keys and values that are duplicated.","my_dict = {'a': 'apple', 'b': 'banana', 'c': 'apple'}","for key, value in my_dict.items():
+    if my_dict.values().count(value) > 1:
+        print(key, value)",Introduction Python,4184
+Generate a Python script to print all the prime numbers in a given range.,Range = 2 to 20,"for n in range(2, 21): 
+   if n > 1: 
+       for i in range(2, n//2 + 2): 
+           if (n % i) == 0: 
+               break
+       else: 
+           print(n)",Introduction Python,4211
+Create a Python script to perform sentiment analysis on a given piece of text. Use the TextBlob package to detect the sentiment of the text and print out the sentiment score.,"Text: ""The movie was great! I really enjoyed watching it.""","import textblob
+
+text = ""The movie was great! I really enjoyed watching it.""
+
+blob = textblob.TextBlob(text)
+sentiment = blob.sentiment
+
+print(""Sentiment score:"", sentiment.polarity)",Introduction Python,4225
+"Create a function in Python to execute the following rule: given an array of integers, find the pair of adjacent elements that has the largest sum and print the sum.","[5, 0, -1, 7, 20]","def find_largest_sum(lst):
+    largest_sum = 0
+    for i in range(len(lst) - 1):
+        current_sum = lst[i] + lst[i+1]
+        if current_sum > largest_sum:
+            largest_sum = current_sum
+    return largest_sum",Introduction Python,4251
+Solve this basic algebra problem in Python.,5x - 4 = 35,x = (35 + 4)/5,Introduction Python,4254
+Create a program in Python to print out the elements in a list in reverse order.,"List = [""A"", ""B"", ""C"", ""D""]","list = [""A"", ""B"", ""C"", ""D""]
+
+for i in range(len(list)-1, -1, -1):
+    print(list[i])",Introduction Python,4267
+"Given a language (example: Python), write a function to convert a string (example: ""Hello World!) to a list.",Python,"def str_to_list(string):
+    return string.split(' ')",Introduction Python,4273
+Create a Python program to print out all the combination of a given set of numbers.,"[1, 2, 3]","def combinations(arr):
+    res = []
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            res.append([arr[i], arr[j]])
+    return res
+
+print(combinations([1, 2, 3]))",Introduction Python,4280
+Modify a basic Python algorithm to increase the speed of the program.,"list_of_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","def faster_sum(arr):
+ total = 0
+ # looping over the array and adding the elements
+ # to the variable total
+ for i in range(0, len(arr)):
+ total += arr[i]
+ return total
+
+list_of_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# using the faster_sum() function
+result = faster_sum(list_of_numbers)
+print(result)",Introduction Python,4314
+Create a Python script to iterate over a list of words and print them out one by one.,"['cat', 'dog', 'bird']","for word in ['cat', 'dog', 'bird']:
+    print(word)",Introduction Python,4363
+Write a Python program to concatenate two strings and print the combined string.,"The two strings are - ""I love"", ""Programming"".","string1 = 'I love'
+string2 = 'Programming'
+
+output = string1 + string2
+
+print(output)
+
+# Output
+I love Programming",Introduction Python,4398
+"Write a Python program to print all the numbers from 1 to n (inclusive), where n is a given number.",n = 20,"for i in range(1, n+1): 
+ print(i)",Introduction Python,4407
+Create a Python program to print the even numbers from a given list.,"[1, 2, 3, 4, 5, 6, 7, 8, 9]","[2, 4, 6, 8]",Introduction Python,4439
+Write a Python program to print an empty square based on size,Size = 8,"def print_square(size): 
+
+    # loop to print size number of lines 
+    for _ in range(size): 
+
+        # print stars on each line 
+        print(""*"" * size) 
+
+if __name__ == '__main__':
+    size = 8
+    print_square(size)",Introduction Python,4442
+Generate a Python code to print all the animal types entered in a list,"[""dog"", ""cat"", ""mouse"", ""snake""]","animal_list = [""dog"", ""cat"", ""mouse"", ""snake""] 
+
+for animal in animal_list:
+    print(animal)",Introduction Python,4457
+"Come up with a python program to join two strings x and y, and then print the resulting combined string.","x = ""Hello""; y = ""World""","x = ""Hello""
+y = ""World""
+
+result = x + y
+print(result)",Introduction Python,4507
+Create a python script to read a JSON object and print out its values.,"{
+ ""name"": ""Adam"",
+ ""age"": 24,
+ ""city"": ""New York""
+}","import json
+
+data = json.loads('{ ""name"": ""Adam"", ""age"": 24, ""city"": ""New York"" }')
+
+print(""Name: "", data['name']) 
+print(""Age: "", data['age']) 
+print(""City: "", data['city'])",Introduction Python,4515
+Use a Python print function to write a statement that takes an input message and prints the message in all uppercase letters.,"""Hello world!""","message = 'Hello world!'
+
+print(message.upper()) // HELLO WORLD!",Introduction Python,4520
+Design a Python code to Print the length of the string entered by user.,"stringInput = ""Hello World!""","stringLength = len(stringInput)
+
+print(""The length of the string is: "", stringLength)",Introduction Python,4530
+"In Python, create a function to check if a given number is prime, and then print out all prime numbers between 0 and that number.",Number : 25,"def is_prime(number):
+    if number <= 1:
+        return False
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
+
+def print_primes(upper_limit):
+    for i in range(2, upper_limit+1):
+        if is_prime(i):
+            print(i)
+
+print_primes(25)",Introduction Python,4548
+Generate a Python script to print the elements of a list in reverse order.,"[1, 2, 3, 4, 5]","my_list = [1, 2, 3, 4, 5]
+
+for i in reversed(my_list):
+    print(i)",Introduction Python,4585
+"Create a basic Python script that takes a user input, filters out any characters that are not letters or numbers, and prints the input after filtering.","This input contains "" special characters!","import re
+
+input_string = ""This input contains \"" special characters!""
+filtered_string = re.sub(r'[^a-zA-Z0-9]', '', input_string)
+
+print(filtered_string) # Output: Thisinputcontainsspecialcharacters",Introduction Python,4590
+Modify the following Python code to print the sum of the elements in a given list (without using the sum() function).,"my_list = [1, 5, 4, -3, 10]","my_list = [1, 5, 4, -3, 10]
+
+total = 0
+
+for num in my_list:
+ total += num
+
+print(total) # prints 17",Introduction Python,4595
+"Write a Python code snippet to search and print all items in the list that starts with substring ""java"".","arr = [""python"", ""c++"", ""java"", ""java-script""]","arr = [""python"", ""c++"", ""java"", ""java-script""]
+
+result = []
+for item in arr:
+    if item.startswith(""java""):
+        result.append(item)
+print(result)",Introduction Python,4603
+Can you provide a Python code to print the largest item in a given list?,"[9, 2, 6, 10, 4]","# Find the largest element in a list
+
+def find_largest(lst):
+    max_val = float('-inf')
+    for val in lst:
+        if val > max_val:
+            max_val = val
+    return max_val
+
+# Test
+lst = [9, 2, 6, 10, 4]
+print(find_largest(lst)) # 10",Introduction Python,4618
+Generate a Python program to read a list of integers and print its elements in reversed order.,"The input should include a sample list of integers for testing the program, for example: [1, 3, 6, 8, 10]","list_of_ints = [1, 3, 6, 8, 10]
+
+list_of_ints.reverse()
+
+print(list_of_ints) # [10, 8, 6, 3, 1]",Introduction Python,4644
+Create a Python script to generate 10 random numbers and print their sum.,<noinput>.,"import random
+
+nums = random.sample(range(100), 10)
+total = 0
+
+for num in nums:
+    total += num
+
+print(total)",Introduction Python,4652
+Create a basic web-scrapper program in Python that downloads the entire HTML of a given website.,https://example.com,"import requests
+response = requests.get(""https://example.com"")
+html = response.text",Introduction Python,4693
+Create a Python script to print out the most common words in the text.,The quick brown fox jumps over the lazy dog.,"from collections import Counter
+
+text = ""The quick brown fox jumps over the lazy dog.""
+words = text.split()
+
+word_counts = Counter(words)
+most_common_words = word_counts.most_common()
+
+for word, count in most_common_words:
+    print(word, count)
+# Output:
+# the 2
+# quick 1
+# brown 1
+# fox 1
+# jumps 1
+# over 1
+# lazy 1
+# dog 1",Introduction Python,4695
+Update the given Python program to print the result in reverse order.,"numbers = [1, 2, 3, 4, 5, 6]","numbers = [1, 2, 3, 4, 5, 6]
+
+for x in reversed(numbers):
+    print(x)",Introduction Python,4714
+Generate Python code to print the sum of two user-defined variables.,"var1 = 3 
+var2 = 7","var1 = 3
+var2 = 7
+
+sum = var1 + var2
+print('The sum of var1 and var2 is ' + str(sum)) # prints 'The sum of var1 and var2 is 10'",Introduction Python,4746
+Develop a Python script to print all possible words with a given set of letters.,"letters = ('a', 'c', 'd', 'e', 'm')","import itertools 
+
+letters = ('a', 'c', 'd', 'e', 'm') 
+
+for words in itertools.permutations(letters): 
+    print(''.join(words))",Introduction Python,4750
+Write a Python program to parse the following JSON and print out the values of the type and message keys.,"{
+  ""type"": ""error"",
+  ""message"": ""An error occurred""
+}","import json
+
+data = '{""type"": ""error"", ""message"": ""An error occurred""}'
+
+json_data = json.loads(data)
+print(json_data[""type""]) # prints ""error""
+print(json_data[""message""]) # prints ""An error occurred""",Introduction Python,4760
+Examine a given Python program and modify it to only print out characters which are palindromes.,"my_string = ""I like mangoes""","my_string = ""I like mangoes""
+
+for char in my_string:
+	if char == char[::-1]:
+		print(char)",Introduction Python,4767
+Create a loop in Python to print every permutation of a list of strings.,"[""Hello"", ""World"", ""Foo"", ""Bar""]","import itertools 
+  
+# list of strings 
+list_of_strings = [""Hello"", ""World"", ""Foo"", ""Bar""] 
+  
+# using itertools 
+# to get the permutations 
+permutations = itertools.permutations(list_of_strings) 
+  
+# printing permutations 
+for i in list(permutations): 
+    print(i)",Introduction Python,4775
+Create a Python program for simulating a bouncing ball with a bouncing height of 10 meters. The program should print out the time at which the ball reaches the ground.,The initial velocity of the ball is 20 m/s.,"import math
+
+# initial velocity
+v0 = 20
+# height
+h = 10
+# time to reach ground
+t = (v0 * 2) / 9.81
+
+print(""The ball will reach the ground in {:.2f} seconds"".format(t))",Introduction Python,4779
+"Write a Python script to generate a basic HTML page with a title, header, body, and footer sections.",The page title: Sample Page,"<html>
+ <head>
+ <title>Sample Page</title>
+ </head>
+ <body>
+ <h1>Sample Page</h1>
+
+ <p>This page has a header, a body, and a footer.</p>
+
+ <footer>
+ <p>This is the footer.</p>
+ </footer>
+ </body>
+</html>",Introduction Python,4798
+Create a python for loop to print the elements of a given list l.,"l = [1, 2, 3, 4, 5, 6]","for element in l:
+    print(element)",Introduction Python,4800
+Write a Python program to print all unique values in a dictionary.,"sample_dict = {'key1': 1, 'key2': 2, 'key3': 3, 'key4': 1}","def printUniqueValues(dictionary):
+    unique_values = set()
+
+    for key in dictionary:
+        if dictionary[key] not in unique_values:
+            unique_values.add(dictionary[key])
+
+    print(unique_values)
+
+printUniqueValues(sample_dict)",Introduction Python,4815
+Generate a Python program to print all odd numbers from an array of integers.,"[3, 5, 7, 10, 15]","def printOddNumbers(array):
+  for number in array:
+    if number % 2 != 0:
+      print(number)
+
+array = [3, 5, 7, 10, 15]
+printOddNumbers(array)",Introduction Python,4818
+Write a Python script to print the Fibonacci series from 0 to n.,10,"def Fibonacci(n): 
+   a = 0
+   b = 1
+   if n < 0: 
+      print(""Incorrect input"") 
+   elif n == 0: 
+      return a 
+   elif n == 1: 
+      return b 
+   else: 
+      for i in range(2,n+1): 
+          c = a + b 
+          a = b 
+          b = c 
+      return b 
+  
+print(Fibonacci(10))",Introduction Python,4821
+Create a Python function to print the Fibonacci series up to a given range.,range: 10,"def Fibonacci(n): 
+    if n<0: 
+        print(""Incorrect input"") 
+    # First Fibonacci number is 0 
+    elif n==1: 
+        return 0
+    # Second Fibonacci number is 1 
+    elif n==2: 
+        return 1
+    else: 
+        return Fibonacci(n-1)+Fibonacci(n-2) 
+   
+# Driver Program 
+result = []
+for i in range(1,10): 
+    result.append(Fibonacci(i))
+    
+print(result)",Introduction Python,4858
+Write a Python program to print out a histogram for a list of numbers.,"numbers = [1,2,3,4,5,3,2,1,3,2,5,6,7,5,4]","numbers = [1, 2, 3, 4, 5, 3, 2, 1, 3, 2, 5, 6, 7, 5, 4]
+
+for i in numbers:
+    print('*' * i)
+
+# Output should be
+# *
+# **
+# ***
+# ****
+# *****
+# ***
+# **
+# *
+# ***
+# **
+# *****
+# ******
+# *******
+# *****
+# ****",Introduction Python,4864
+Develop a Python program to print the second-largest element of an array.,"arr = [10, 3, 5, 22, 4]","def second_largest(arr):
+    largest = float(""-inf"")
+    second_largest = float(""-inf"") 
+    for i in arr:
+        if i > largest:
+            second_largest = largest
+            largest = i
+        elif i > second_largest and i != largest:
+            second_largest = i
+    return second_largest
+
+arr = [10, 3, 5, 22, 4]
+print(second_largest(arr))",Introduction Python,4890
+"Generate a simple Python script to compute basic statistics (mean, median and mode) for a given list of numbers.","[7, 10, 16, 1, 18]","def compute_statistics(nums):
+ mean = sum(nums)/len(nums)
+ median = sorted(nums)[len(nums)//2]
+ mode = max([(nums.count(i), i) for i in set(nums)], key=lambda x:x[0])[1]
+ print('Mean:', mean)
+ print('Median:', median)
+ print('Mode:', mode)
+
+compute_statistics([7, 10, 16, 1, 18])",Introduction Python,4905
+Create python code to print the first n numbers of the Fibonacci sequence,n = 10,"def print_fibonacci_sequence(n):
+    # Initialize the first two numbers of the sequence
+    num1 = 0
+    num2 = 1
+    # Use a for loop to print the the sequence in the right order
+    for i in range(n):
+        print(num1, end=' ')
+        num3 = num1 + num2
+        num1 = num2
+        num2 = num3
+
+# Test
+print_fibonacci_sequence(10)",Introduction Python,4923
+You are given a Python program that prints random numbers. Improve the program to print a random number between 0 and 10.,"import random
+
+for i in range(5):
+    print(random.randint(0, 50))","import random
+
+for i in range(5):
+    print(random.randint(0, 10))",Introduction Python,4928
+Generate a loop in Python using a list of words and print out the length of each word.,"A list of strings [""apple"", ""pie"", ""is"", ""delicious""]","words = [""apple"", ""pie"", ""is"", ""delicious""]
+
+for word in words:
+ print(len(word))",Introduction Python,4932
+Generate a code that will print out all substrings of a given string.,python,"def substrings(s):
+    sub_str_list = []
+    for i in range(len(s)):
+        for j in range(i + 1, len(s)+1):
+            sub_str = s[i:j]
+            sub_str_list.append(sub_str)
+    return sub_str_list
+
+result = substrings(""python"")
+print(result)",Introduction Python,4965
+"Using Python, create a command line program to print out the frequency of a given string in a given text.","text = 'This is an example string.'
+string = 'example'","def countSubstring(text, string):
+ count = 0
+ for i in range(len(text)):
+ if text[i:i+len(string)] == string:
+ count += 1
+ return count
+
+print(countSubstring(text, string))",Introduction Python,4970
+"Given an integer input, write a Python program to find the maximum value of the input and print out the result.","3, 5, 7","input_list = [3, 5, 7]
+ 
+max_value = max(input_list)
+ 
+print(max_value) # prints 7",Introduction Python,4996
+Write a function to print the following pattern in Python.,n = 3,"def print_pattern(n): 
+  
+    # outer loop to handle number of rows 
+    for i in range(1,n+1): 
+      
+        # inner loop to handle number of columns 
+        for j in range(1,i+1): 
+          
+            # printing stars 
+            print('* ', end="""") 
+       
+        # ending line after each row 
+        print(""\r"") 
+  
+# Driver Code 
+n = 3
+print_pattern(n)
+
+Output:
+* 
+* * 
+* * *",Introduction Python,5013
+"Edit the following Python script to randomly select 10 numbers between 10 and 20, store them in the list lst, and print them out.",lst = [],"import random
+lst = random.sample(range(10, 21), 10)
+print(lst)",Introduction Python,5033
+Create a function in Python to print the first n numbers of the Fibonacci series.,6,"def Fibonacci(n): 
+ a = 0
+ b = 1
+if n<0: 
+ print(""Incorrect input"") 
+elif n==0: 
+ print(a) 
+elif n==1: 
+ print(b) 
+else: 
+ print(a)
+ print(b)
+ for i in range(2,n): 
+ c = a + b 
+ a = b 
+ b = c 
+ print(b)",Introduction Python,5079
+Write a python program to iterate over two lists and print only the common items.,"list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]","list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]
+
+for i in list1:
+  if i in list2: 
+    print(i)",Introduction Python,5081
+Generate a Python code to print the frequencies of the characters of a given string.,"""Hello World!""","freq={}
+for ch in ""Hello World!"":
+ if ch in freq:
+ freq[ch] +=1
+ else:
+ freq[ch] = 1
+
+for key, value in freq.items():
+ print(""{}:{}"".format(key,value))",Introduction Python,5086
+Create a basic scoring engine in Python that takes two numbers and returns the higher of the two.,"5, 6","def higher_number(num1, num2):
+ if num1 > num2:
+ return num1
+ else:
+ return num2
+
+print(higher_number(5, 6)) # 6",Introduction Python,5092
+Implement a basic sorting algorithm for an array of strings in Python.,"['banana', 'apple', 'orange']","def sort_array(arr):
+    for i in range(len(arr)):
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[i]:
+                arr[i], arr[j] = arr[j], arr[i]
+    return arr",Introduction Python,5102
+Write a python script to print the nth Fibonacci number.,6,"""""""
+Python script to print the nth Fibonacci number
+""""""
+
+def fibonacci(num):
+    a, b = 0, 1
+    for _ in range(num):
+        a, b = b, a+b
+    return a
+
+num = int(input(""Enter a number: ""))
+print(""The Fibonacci number at position {0} is {1}"".format(num, fibonacci(num)))",Introduction Python,5108
+Write a Python program to print a given number with commas separating the thousands.,12345678,"n = 12345678
+# method 1
+ print(""{:,}"".format(n))
+# method 2 
+print(f""{n:,}"")",Introduction Python,5121
+Create a function in Python to print a number pyramid given a height.,3,"def pyramid(h): 
+    
+    for i in range(0, h): 
+        for j in range(0, h-i-1): 
+            print(end="" "") 
+        for j in range(0, i+1): 
+            print(""* "", end="""") 
+        print(""\r"") 
+
+pyramid(3)",Introduction Python,5123
+Modify the given program to print the output in reverse order,"def print_list(lst):
+    for i in lst:
+        print(i)
+
+word_list = [""Python"", ""is"", ""fun""]
+
+print_list(word_list)","def print_list_reverse(lst):
+    for i in reversed(lst):
+        print(i)
+
+word_list = [""Python"", ""is"", ""fun""]
+
+print_list_reverse(word_list)",Introduction Python,5134
+Create a python program to print out all combinations of elements from two lists.,"list1 = [1,2,3]
+list2 = [5,6,7]","for i in list1:
+    for j in list2:
+        print(i, j)",Introduction Python,5135
+"Edit the following Python program to print all the numbers in a given list, one number per line.","[1, 2, 3, 4, 5]","list = [1, 2, 3, 4, 5]
+
+for num in list:
+    print(num)",Introduction Python,5209
+Create a function in Python to print a sorted list of the given input string.,Input string: computer,"def sortString(inputString): 
+  
+    words = inputString.split() 
+    words.sort() 
+  
+    for i in words: 
+        print(i) 
+          
+sortString(inputString)",Introduction Python,5223
+Write a Python function to convert USD to Euro and print the new value to the console.,Input amount: 12.5 USD,"def usd_to_euro(amount):
+  euro = amount * 0.9
+  print(amount, ""USD is equal to"", euro, ""Euros."")
+  
+usd_to_euro(12.5)",Introduction Python,5236
+Edit the given Python program to print 'Happy Holidays' 10 times.,"for i in range(10):
+    print('Hello World')","for i in range(10):
+    print('Happy Holidays')",Introduction Python,5276
+"Generate a Python program to print a numbers pyramid of size n, with the first line of the pyramid containing n consecutive numbers.",10,"n = int(input())
+ 
+for i in range(1, n + 1):
+ for j in range(1, i + 1):
+  print(j, end="""")
+ print("""")
+ 
+for i in range(n - 1, 0, -1):
+ for j in range(1, i + 1):
+  print(j, end="""")
+ print("""")",Introduction Python,5291
+Create a Python script to print out only the even numbers from a list of numbers.,"list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","for num in list: 
+    if (num % 2 == 0):
+        print(num, end = ' ')",Introduction Python,5299
+Design an algorithm in Python to read in a matrix of integers and print the sum of each row.,"[[1, 2, 3],
+[4, 5, 6], 
+[7, 8, 9]]","def rowSum(matrix):
+    row_sums = []
+    for row in matrix:
+        row_sum = 0
+        for num in row:
+            row_sum += num
+        row_sums.append(row_sum)
+    return row_sums
+
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+print(rowSum(matrix)) # [6, 15, 24]",Introduction Python,5303
+Create an algorithm in Python to print all the prime numbers between two given numbers.,"Range: (2, 10)","def printPrimeNumbers(start, end):
+ 
+ for num in range(start, end + 1):
+   if num > 1:
+      for i in range(2, num):
+          if (num % i) == 0:
+              break
+      else:
+          print(num)
+          
+start = 2
+end = 10
+print(""Prime numbers between"", start, ""and"", end, ""are:"")
+printPrimeNumbers(start, end)",Introduction Python,5327
+Write a Python program to print food items along with their prices from a given dictionary of food items and prices.,"food_items = {
+ 'Burger': 3.99,
+ 'Fries': 1.99,
+ 'Pizza': 12.99 
+}","for item, price in food_items.items():
+ print(f'{item}: ${price}')",Introduction Python,5336
+Generate a python program to print out all the factors of a number n.,n = 10,"def factor_of(n):
+    result = []
+    for i in range(1, n + 1):
+        if n % i == 0:
+            result.append(i)
+    return result",Introduction Python,5361
+Modify the given Python function to print out the reversed list first and then find the sum of the numbers.,"def reverse_list(numbers):
+ return numbers[::-1]","def reverse_list(numbers):
+ reversed_list = numbers[::-1]
+ print(reversed_list)
+ return sum(reversed_list)",Introduction Python,5370
+"Create a program in Python which will take in a list of strings, and print out the longest string in the list.","['foo', 'test', 'longstring', 'bar']","def longest_string(str_list): 
+    longest_str = '' 
+    for str in str_list: 
+        if len(str) > len(longest_str): 
+            longest_str = str 
+  
+    return longest_str 
+
+string_list = ['foo', 'test', 'longstring', 'bar'] 
+long_string = longest_string(string_list) 
+
+print(long_string)",Introduction Python,5406
+Write a Python code to compare two list and print the elements which are common between them.,"list1 = [2, 3, 5, 8]
+list2 = [1, 4, 5, 9]","list1 = [2, 3, 5, 8]
+list2 = [1, 4, 5, 9]
+
+common_elements =  [element for element in list1 if element in list2]
+
+print(common_elements)",Introduction Python,5417
+Modify this Python program to print the greatest common divisor of two numbers.,"num1 = 5, num2 = 6","def gcd(x, y):
+    while y != 0:
+        (x, y) = (y, x % y)
+    return x
+
+num1 = 5
+num2 = 6
+
+print(""GCD is:"", gcd(num1, num2))",Introduction Python,5421
+Create a Python function to print out all the words in a given string with the letter e.,"str = ""Hello World""","def print_words_with_e(str): 
+    words = str.split() 
+    for word in words: 
+        if 'e' in word: 
+            print(word) 
+
+print_words_with_e(str)",Introduction Python,5426
+Optimize the following Python program to print numbers from 1 to 100 without using a loop.,"def print_numbers():
+    num = 1
+    while num <=100:
+        print(num)
+        num += 1","def print_numbers():
+    if num <= 100:
+        print(num)
+        print_numbers(num + 1)
+
+print_numbers(1)",Introduction Python,5435
+"Using Python, create a program to print a random element from a list.","[""apple"", ""banana"", ""mango"", ""pear"", ""grape""]","import random
+
+# list of fruits
+fruits = [""apple"", ""banana"", ""mango"", ""pear"", ""grape""]
+
+# generate a random index
+randomIndex = random.randint(0, len(fruits)-1)
+
+# select and print the random fruit
+randomFruit = fruits[randomIndex]
+print(""Random fruit: "" + randomFruit)",Introduction Python,5436
+Write a Python program to multiply two given numbers and print their product,"num1 = 10
+num2 = 8","product = num1 * num2
+print(product)",Introduction Python,5446
+Generate a Python program to calculate the sum of all numbers in a list and print it out.,"[1, 2, 3, 4, 5]","def sum_list(l):
+    result = 0
+    for num in l:
+        result += num
+    return result
+
+list = [1, 2, 3, 4, 5]
+print(sum_list(list))",Introduction Python,5451
+Create a python code to print the frequency of each character in a string.,"String: ""Hello World""","for char in ""Hello World"":
+    print(char, "":"", ""Hello World"".count(char))",Introduction Python,5452
+Develop a Python program to print a value based on a comparison between two numbers,"a = 10
+b = 20","if a < b:
+    print(""A is less than B"")
+else:
+    print(""A is not less than B"")",Introduction Python,5474
+Write Python code to print the fibonnaci sequence up to the given number.,Input: 10,"""""""
+Print the Fibonacci sequence up to the given number
+""""""
+
+def fibonacci(n):
+    # Base case
+    if n == 0 or n == 1:
+        return n
+ 
+    # Recursive case
+    return fibonacci(n-1) + fibonacci(n-2)
+ 
+# Print the Fibonacci sequence up to the given number
+n = 10
+for i in range(n + 1):
+    print(fibonacci(i))",Introduction Python,5475
+Write a Python program to evaluate a simple expression and print the output.,"""7*6+20""","def evaluate_expression(exp):
+  return eval(exp) 
+
+expression = ""7*6+20""
+output = evaluate_expression(expression)
+print(output)",Introduction Python,5497
+Create a Python script to print out all the numbers in a given range that are divisible by a given number.,"lower = 1
+upper = 50
+divisible = 5","def printDivisible(lower, upper, divisible):
+    for i in range(lower, upper + 1):
+        if i % divisible == 0:
+            print(i)
+
+printDivisible(lower, upper, divisible)",Introduction Python,5527
+Generate a complete python code to print the output shown.,I love Python,"print(""I love Python"")",Introduction Python,5531
+Write a web scraper in Python to extract all the links from a given webpage and print them.,https://www.example.com/,"from bs4 import BeautifulSoup
+import requests
+
+# Get html of desired webpage
+url = ""https://www.example.com/""
+r = requests.get(url)
+html = r.text
+
+# Parse html using BeautifulSoup
+soup = BeautifulSoup(html, 'html.parser')
+
+# Extract all links
+links = []
+for link in soup.find_all('a'):
+    links.append(link.get('href'))
+
+# Print all links
+print(links)",Introduction Python,5534
+EDIT this Python function to print the number of characters in its argument.,"def print_length(text):
+    print(""Length of text is "" + text.length())","def print_length(text):
+    print(""Length of text is "" + str(len(text)))",Introduction Python,5538
+Write a Python program to print the top 5 most frequent words in a given sentence.,"""Python is an interpreted, high-level, general-purpose programming language.""","import collections
+ 
+sentence = ""Python is an interpreted, high-level, general-purpose programming language.""
+ 
+# Split sentence into words
+words = sentence.split()
+ 
+# Set the counter for words
+counter = collections.Counter(words)
+ 
+# Find top 5 most frequent words
+result = counter.most_common(5)
+print(result)",Introduction Python,5557
+Create a Python script to print the sum of all numbers divisible by 3 or 7 in a list.,"[1, 2, 3, 4, 5, 6, 7, 8, 9 ,10, 11, 12, 13, 14]","nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
+total = 0
+
+for num in nums:
+    if (num % 3 == 0) or (num % 7 == 0):
+        total += num
+
+print(total)   # Output: 42",Introduction Python,5560
+Create a basic Python program to list all the odd numbers from 0 to a user-specified number,user_number = 10,"def odd_numbers(num):
+ for n in range(num+1):
+ if n % 2 != 0:
+ print(n)
+
+odd_numbers(user_number)
+# Output: 1, 3, 5, 7, 9",Introduction Python,5580
+Write a Python program to print the multiplication table for a given number.,Number: 8,"def printMultiplicationTable(num):
+
+ for i in range(1, 11):
+ print(""{} x {} = {}"".format(num, i, num * i))
+
+printMultiplicationTable(8) 
+# Output:
+# 8 x 1 = 8
+# 8 x 2 = 16
+# 8 x 3 = 24
+# 8 x 4 = 32
+# 8 x 5 = 40
+# 8 x 6 = 48
+# 8 x 7 = 56
+# 8 x 8 = 64
+# 8 x 9 = 72
+# 8 x 10 = 80",Introduction Python,5599
+"Write a python program to parse and print out the name, email, and phone number from a given string.","John Doe, foobar@example.com, 123-456-7890","def parse_contact_info(string):
+    name = string.split("", "")[0]
+    email = string.split("", "")[1]
+    phone_number = string.split("", "")[2]
+    print(f""Name: {name} \nEmail: {email} \nPhone Number: {phone_number}"")",Introduction Python,5608
+Create a Python script to print an nxn matrix containing all the numbers from 1 to n²,5,"def print_matrix(n):  
+    matrix = [[0 for x in range(n)] for y in range(n)] 
+    k = 1
+  
+    for i in range(0, n): 
+  
+        for j in range(0, n): 
+  
+            matrix[i][j] = k
+            k = k + 1
+  
+    for i in range(0, n): 
+  
+        for j in range(0, n): 
+            print(matrix[i][j], end = "" "")
+    
+        print("""")",Introduction Python,5621
+"Create a program in Python that takes an integer n as input and prints out n lines of ""Hello World!""",5,"def hello_world_lines(n):
+    for i in range(n):
+        print(""Hello World!"")",Introduction Python,5626
+"Create a Python program to print the nth Fibonacci number in the sequence, where n is provided as an input.",n = 10,"def Fibonacci(n): 
+	a = 0
+	b = 1
+	if n < 0: 
+		print(""Incorrect input"") 
+	elif n == 0: 
+		return a 
+	elif n == 1: 
+		return b 
+	else: 
+		for i in range(2,n+1): 
+			c = a + b 
+			a = b 
+			b = c 
+		return b 
+
+print(Fibonacci(10))",Introduction Python,5725
+Generate a Python script to create a list of numbers in the range 0-n (inclusive) and print it.,n = 10,"n = 10
+
+list_numbers = []
+for i in range(0,n+1):
+    list_numbers.append(i)
+
+print(list_numbers)",Introduction Python,5733
+Create a Python script to print out the multiplication table for the given number.,4,"def printMultTable(n):
+    for i in range(1, 11):
+        print(n, 'x', i, '=', n*i)
+
+printMultTable(4)",Introduction Python,5777
+Create a Python program to print out a listed dictionary.,"my_dict = {'Name': 'John', 'Age': 26, 'Gender': 'Male'}","for key, value in my_dict.items(): 
+  print(f""{key}: {value}"")",Introduction Python,5787
+"Edit the following Python code to print out ""Hello World"" 5 times.","print(""Hello World"")","for i in range(5):
+    print(""Hello World"")",Introduction Python,5821
+Write a python script to print out every possible combination of letters given a list of characters,"[""a"", ""b"", ""c""]","from itertools import product
+
+# Create a function to generate every possible combination
+def generate_combinations(chars):
+    for combination in product(*chars):
+        combination = """".join(combination)
+        print(combination)
+        
+# Input list of characters
+chars = [""a"",""b"",""c""]
+
+# Generate all combinations
+generate_combinations(chars)",Introduction Python,5837
+Write a Python script to loop through a list of numbers and print out only the even numbers.,"List of numbers: [3, 7, 10, 15, 17, 20]","my_list = [3, 7, 10, 15, 17, 20]
+
+for number in my_list: 
+  if (number % 2 == 0): 
+    print(number)",Introduction Python,5872
+Analyze a given list of numbers and print out the mean and variance using Python.,"numbers = [2, 4, 6, 9, 12, 13]","def analyze_list(numbers):
+ mean = 0
+ for num in numbers:
+ mean += num
+ mean /= len(numbers)
+ 
+ variance = 0
+ for num in numbers:
+ variance += (num - mean)**2
+ variance /= len(numbers)
+ 
+ print(""Mean:"", mean)
+ print(""Variance:"", variance)",Introduction Python,5884
+Write a Python program to print the factorial of a number.,5,"def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+num = 5
+print(""The factorial of"", num, ""is"", factorial(num))",Introduction Python,5886
+Generate Python code to print the smallest number in a given list of numbers.,"[24, 14, 67, 89, 34, 52]","list_of_numbers = [24, 14, 67, 89, 34, 52]
+print(min(list_of_numbers))",Introduction Python,5896
+Create a basic function in Python to extract the first digit from a number.,Number: 2458,"def firstDigit(num):
+	return int(str(num)[0])
+
+num = 2458
+print(firstDigit(num)) # 2",Introduction Python,5910
+Create a for-loop in Python to loop through the items in a list and print their elements.,"names = ['John', 'Kate', 'Mike', 'Alex']","for name in names:
+    print(name)",Introduction Python,5914
+Create a program in Python to print the following pattern,n = 5,"def print_pattern(n):
+    for i in range(1, n+1):
+        for j in range(1, i+1):
+            print(j, end="""")
+        print("""")
+
+print_pattern(5)",Introduction Python,5923
+Write a python program to print the Fibonacci series upto n terms.,6,"def fibonacci_series(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else: 
+        return fibonacci_series(n-1) + fibonacci_series(n-2)
+
+for i in range(6):
+    print(fibonacci_series(i), end=', ')",Introduction Python,5946
+Compose a piece of code to print the length of a given string.,"""Python""","string = ""Python""
+print(""Length of the given string is:"", len(string))",Introduction Python,5958
+Write a function in Python to print the top n elements of an array.,"[2, 3, 4, 5, 1], top_n = 3","def max_n_elements(arr, n):
+    res = []
+    for i in range(n):
+        max_val = max(arr)
+        res.append(max_val)
+        arr.remove(max_val)
+        
+    return res
+    
+arr = [2, 3, 4, 5, 1] 
+top_n = 3
+print(max_n_elements(arr, top_n))",Introduction Python,5974
+Debug the following Python program to print the given output.,"a = [3,4,6,2,1]
+for x in a:
+ print(x)
+Expected Output:
+1
+2
+3
+4
+6","a = [3,4,6,2,1]
+for x in a:
+ print(x)
+a.sort() 
+for x in a:
+ print(x) 
+
+Output:
+1
+2
+3
+4
+6",Introduction Python,5978
+Create a Python program to find and print all pairs of numbers from a given array of integers whose sum is equal to a given number.,"[3, 4, 2, 8, 5, 6], the number should be 10","array = [3, 4, 2, 8, 5, 6]
+sum = 10
+
+def find_pair(array,sum):
+ for i in range (len(array)-1):
+  for j in range (i+1, len(array)):
+   if array[i] + array[j] == sum:
+    print(""Pair found:"",array[i], array[j])
+
+find_pair(array,sum)",Introduction Python,5989
+Write a Python code snippet to print Hello multipe times as per a given number.,number = 10,"for i in range(number):
+    print(""Hello"")",Introduction Python,6007
+Design an algorithm in Python to print out binary numbers between 1 and N.,3,"def print_binary(n):
+ if n == 0:
+  return
+ 
+ print_binary(n-1)
+ print(bin(n))
+ 
+print_binary(3)
+ 
+# Output: 
+# 0b1
+# 0b10
+# 0b11",Introduction Python,6009
+Create a Python program to parse a list of strings and print the words with odd length.,"['abc', 'hello', 'world']","list = ['abc', 'hello', 'world']
+
+for word in list:
+    if (len(word) % 2 != 0):
+        print(word)",Introduction Python,6012
+Generate code to print each element of a list of strings in Python.,"[""apple"", ""banana"", ""cherry""]","for item in [""apple"", ""banana"", ""cherry""]:
+    print(item)",Introduction Python,6021
+Create a Python program to read in 15 integers and print the sum of them.,"[1, 5, 9, 0, 2, 4, 7, 8, 6, 10, 3, 11, 12, 13, 14]","def sum_nums(nums):
+    total = 0
+    for num in nums:
+        total += num
+    return total
+
+lst = [1, 5, 9, 0, 2, 4, 7, 8, 6, 10, 3, 11, 12, 13, 14]
+total = sum_nums(lst)
+print(total)",Introduction Python,6062
+Write a python statement to print out the elements of the given list.,"my_list = [1, 2, 3]",print(my_list),Introduction Python,6084
+Modify the below Python code to print the type of a given input.,input_value = 4,"input_value = 4
+
+print(type(input_value))",Introduction Python,6085
+Generate a Python program to read in an array of integers and print out the largest two integers.,"[2, 10, 5, 8, 1]","array = [2, 10, 5, 8, 1]  
+array.sort()
+
+print(""The largest two integers are:"")
+print(array[-1], array[-2])",Introduction Python,6094
+Build a program in Python to print out the first n prime numbers.,The value of n: 10,"def n_primes(n):
+    count = 0
+    number = 2
+
+    while count < n:
+        is_prime = True
+
+        for i in range (2, number): 
+            if number % i == 0:
+                is_prime = False
+        
+        if is_prime: 
+            print(number, end="" "")
+            count += 1
+
+        number += 1
+
+
+n_primes(10)",Introduction Python,6116
+Create a Python program to print out the output as shown.,"A list of numbers [1, 2, 3, 4, 5].","list = [1, 2, 3, 4, 5]
+print(""The list is: "")
+for i in list:
+print(i, end="" "")",Introduction Python,6131
+Create a basic web scraper in Python that takes a URL as input and returns the text content of that URL.,https://www.example.com,"import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.example.com'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+text = soup.get_text()
+
+print(text)",Introduction Python,6143
+Create a script in Python to print out the 5 most frequent words in a given input string.,"input=""Python is a great programming language""","from collections import Counter
+
+input = ""Python is a great programming language""
+words = input.split()
+
+counts = Counter(words)
+
+for word, count in counts.most_common(5):
+    print(word, count)",Introduction Python,6144
+Create a Python program to iterate through a dictionary and print out all the values.,"{""a"":1, ""b"":2, ""c"":3, ""d"":4}","my_dict = {""a"":1, ""b"":2, ""c"":3, ""d"":4}
+
+for key, value in my_dict.items():
+    print(value)",Introduction Python,6155
+Generate a Python program to print out the even numbers from a given list.,"[1, 2, 3, 4, 5, 6, 7, 8, 9]","list = [1,2,3,4,5,6,7,8,9] 
+
+for num in list: 
+    if num % 2 == 0: 
+       print(num, end = "" "")",Introduction Python,6184
+Write a Python program to print the maximum number from a given list.,"[5, 4, 2, 7, 12]","def max_num(nums):
+    max = nums[0]
+    for num in nums[1:]:
+        if num > max:
+            max = num
+    return max
+
+nums = [5, 4, 2, 7, 12]
+print(max_num(nums))",Introduction Python,6190
+Write a Python program to print the given list after removing even numbers from it.,"[3, 5, 7, 4, 8, 10]","list_odd = [] 
+for num in [3, 5, 7, 4, 8, 10]:
+    if num %2 != 0:
+        list_odd.append(num)
+        
+print(list_odd)",Introduction Python,6216
+Build a Python program to print out the 3 largest odd numbers in a given list.,"[4, 7, -1, 2, 8, 5]","list_of_nums = [4, 7, -1, 2, 8, 5]
+
+largest_odd_numbers = []
+
+for num in list_of_nums:
+    if num % 2 != 0 and len(largest_odd_numbers) < 3:
+        largest_odd_numbers.append(num)
+
+largest_odd_numbers.sort()
+print (largest_odd_numbers)",Introduction Python,6243
+"Create a Python script that parses a JSON string and complete the following tasks: (1) convert the string to an object, (2) sort the object by keys, and (3) print the object in a formatted way.","{""a"": 3, ""b"": 1, ""c"": 2}","import json 
+
+# Convert the string to an object 
+data = json.loads('{""a"": 3, ""b"": 1, ""c"": 2}')
+
+# Sort the object by keys 
+sorted_data = {k: data[k] for k in sorted(data.keys())}
+
+# Print the object in a formatted way 
+print(json.dumps(sorted_data, indent=4))",Introduction Python,6267
+Write a python program to print out the character frequency of a given string.,String: hello world!,"string = 'hello world!'
+
+freq = {} 
+for i in string: 
+    if i in freq: 
+        freq[i] += 1
+    else: 
+        freq[i] = 1
+
+print (""count of all characters in hello world! is :\n ""
+                    +  str(freq))
+
+# Output would be 
+count of all characters in hello world! is :
+ {'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1, '!': 1}",Introduction Python,6298
+Create a basic Python program to split a given string in words and save them in an array.,"String = ""This is a sentence.""","string = ""This is a sentence.""
+words = string.split("" "")
+print(words)
+# Output: ['This', 'is', 'a', 'sentence.']",Introduction Python,6311
+"Using a for loop and if block, write a Python program to print numbers divisible by 5.","Start: 1
+End: 20","for num in range(1, 20): 
+    if num % 5 == 0: 
+        print(num)",Introduction Python,6325
+"Given a string ""Hello World"", write a Python program to generate an encrypted version of the string.",Hello World,"encrypted_string = ''
+for c in 'Hello World':
+ encrypted_string += chr(ord(c) + 3)
+
+print(encrypted_string) # Khoor Zruog",Introduction Python,6327
+Write a loop in Python to iterate through a list and print all elements that have an even length.,"List: [""apples"", ""oranges"", ""bananas"", ""pineapples""]","list_x = [""apples"", ""oranges"", ""bananas"", ""pineapples""]
+for item in list_x:
+ if(len(item) % 2 == 0):
+  print(item)
+#output: apples, oranges, pineapples",Introduction Python,6351
+Write a Python function to print the first n rows of Pascal's triangle.,5,"def pascal_triangle(rows): 
+ triangle = [[1]] 
+ for i in range(rows - 1): 
+ last_row = triangle[-1]
+ new_row = [1] 
+ for j in range(len(last_row) - 1): 
+ new_row.append(last_row[j] + last_row[j+1]) 
+ new_row.append(1) 
+ triangle.append(new_row)
+ 
+ for row in triangle: 
+ print(row)
+
+pascal_triangle(5)",Introduction Python,6364
+Write a Python program to print all the numbers from the given list which are divisible by 7.,"[7, 14, 21, 28, 35, 42, 49]","def divisible_by_seven(number_list):
+    for i in number_list:
+        if i % 7 == 0:
+            print(i)",Introduction Python,6372
+"Write a Python script to print all prime numbers between two numbers, a and b (where a<b).","a = 11
+b = 20","for num in range(a, b+1): 
+   if num > 1: 
+       for i in range(2, num): 
+           if (num % i) == 0: 
+               break
+       else: 
+           print(num)",Introduction Python,6398
+Write a Python program to print the square root of a given number input from the user.,"""64""","import math
+
+num = float(input(""Enter a number: ""))
+
+# checking if the number is negative
+if num < 0:
+    print(""The square root of the given number cannot be computed"")
+else:
+    print(""The square root of the given number is:"",math.sqrt(num))",Introduction Python,6429
+Write a Python program to print the elements of a list from the last to the first.,"_list = [1,2,3,4,5]","_list = [1,2,3,4,5]
+
+# Iterate through the list in reverse order
+for i in range(len(_list) - 1, -1, -1): 
+    print(_list[i]) 
+  
+# Output: 
+# 5 
+# 4 
+# 3 
+# 2 
+# 1",Introduction Python,6440
+Generate a correct Python program to print out the sequence of numbers in ascending order from a given list.,"[10, 5, 2, 8, 12]","for i in sorted([10, 5, 2, 8, 12]):
+        print(i)",Introduction Python,6452
+Generate a Python program to implement basic authentication.,No input.,"import base64
+
+def basic_auth(username, password):
+    user_pass = username + ':' + password
+    encoded_user_pass = base64.b64encode(user_pass.encode('UTF-8'))
+
+    return ""Basic "" + encoded_user_pass.decode('UTF-8')
+
+# Example usage
+user = 'my_username'
+pass = 'my_password'
+auth_header = basic_auth(user, pass)",Introduction Python,6465
+Design a Python script to print out the names and ages of people in a given list.,"[{""name"": ""John"", ""age"": 30}, {""name"": ""Mary"", ""age"": 25}, {""name"": ""Greg"", ""age"": 28}]","def print_names_and_ages(people):
+    for person in people:
+        print(""Name: {}\nAge: {}"".format(person['name'], person['age']))",Introduction Python,6471
+Modify the following python code to take in an argument to carry out a specific operation and print it out.,"def operation():
+    result = 2*2
+    print(result)","def operation(op):
+    result = eval(op)
+    print(result)
+
+operation('2*2') # prints 4",Introduction Python,6474
+Manipulate a python dictionary to print the duplicate keys in a key-value pair.,"dictionary = {'a': 1, 'c': 3, 'b': 2, 'd': 4, 'a': 1}","for key, value in dictionary.items():
+    if dictionary.count(key) > 1:
+        print(key)",Introduction Python,6481
+"Generate a Bash script that runs a Python program. The Python program should receive a string as input, print its size, and then sort the string in alphabetical order.","Sample string: ""Hello, world""","#!/bin/bash
+# Script to run Python program
+
+input_string=""Hello, world""
+
+python <<END
+
+input_string=""$input_string""
+
+print(""Input string:"", input_string)
+print(""Size of string:"", len(input_string))
+print(""Sorted string:"", ''.join(sorted(input_string)))
+
+END",Introduction Python,6493
+Create a Python program to print out the elements of a list in reverse order.,"mylist = [1, 2, 3, 4, 5]","# Creating a new reversed list
+reversed_list = mylist[::-1]
+
+# Iterating through the list and printing each element
+for num in reversed_list:
+    print(num)",Introduction Python,6554
+Write a Python code to store and print the multiplication table of a given number.,num = 5,"# Function to print the multiplication table
+def print_multiplication_table(num):
+    # Iterate over numbers from 1 to 10
+    for i in range(1, 11):
+        print('{0} x {1} = {2}'.format(num, i, num*i))
+
+print_multiplication_table(5)",Introduction Python,6591
+Modify the following Python code to print the length of a given string.,"string = ""Hello World!""
+
+def print_length(string):
+    print(string)","string = ""Hello World!""
+
+def print_length(string):
+    print(len(string))",Introduction Python,6629
+Write a Python program to process an array of strings. The program should print out the characters in each string in reverse order.,"[ ""Hello"", ""World"" ]","# Input array
+arr = [""Hello"", ""World""]
+
+# Loop through each string
+for s in arr:
+ # Print the string in reverse order
+ print(s[::-1])
+
+# Output
+olleH
+dlroW",Introduction Python,6637
+Write a Python program to remove the duplicates in a list and print the list in ascending order.,"[10,7,9,12,11,7,9,10]","""""""
+Write a Python program to remove the duplicates in a list and print the list in ascending order
+""""""
+
+def remove_duplicates_ascending(l):
+    return sorted(list(set(l)))
+
+if __name__ == ""__main__"":
+    l = [10,7,9,12,11,7,9,10]
+    res = remove_duplicates_ascending(l)
+    print(res) # [7, 9, 10, 11, 12]",Introduction Python,6654
+Edit the following Python program to print all the even numbers from 0 to 10.,"for i in range(10):
+    print(i)","for i in range(11):
+  if i % 2 == 0:
+    print(i)",Introduction Python,6660
+Write a Python program to print out the grade of a student based on the given marks,60,"def get_grade(marks):
+    if marks >= 90:
+        grade = ""A+""
+    elif marks >= 80 and marks < 90:
+        grade = ""A""
+    elif marks >= 70 and marks < 80:
+        grade = ""B+""
+    elif marks >= 60 and marks < 70:
+        grade = ""B""
+    elif marks >= 50 and marks < 60:
+        grade = ""C+""
+    else:
+        grade = ""F""
+    
+    print(""Grade: %s"" %grade)
+
+marks = 60
+get_grade(marks)",Introduction Python,6671
+Write a Python program to print the numbers of a specified list after removing even numbers from it.,"data_list = [12, 17, 24, 29, 18, 11, 16]","def remove_even_numbers(data_list):
+    return [x for x in data_list if x%2 != 0]
+
+print(remove_even_numbers(data_list))",Introduction Python,6702
+Build a command-line tool in Python 3 that will print a table of Prime Numbers up to a specified number (argument).,Max number: 100,"#!/usr/bin/env python3
+
+import sys
+
+maximum = int(sys.argv[1])
+
+print('Prime numbers up to {}:'.format(maximum))
+print('----------------------------')
+
+for num in range(2, maximum+1):
+    prime = True
+    for i in range(2, num):
+        if num % i == 0:
+            prime = False
+            break
+
+    if prime:
+        print(num, end=' ')",Introduction Python,6712
+You need to edit an existing Python program. The program to accept and print a sentence.,"str1 = ""Hello World""","str1 = ""Hello World""
+
+print(str1)",Introduction Python,6724
+Create a Python program to detect and print the number of vowels in a given string.,Hi everyone,"def number_of_vowels(s):
+    count = 0
+    for char in s:
+        if char in 'aeiouAEIOU':
+            count += 1
+    return count
+
+s = 'Hi everyone'
+print('The number of vowels in the given string is :', number_of_vowels(s))",Introduction Python,6742
+Create a Python code snippet to print the number of elements in an array,"arr = [1, 2, 3, 4]","arr = [1, 2, 3, 4]
+
+print(len(arr))",Introduction Python,6747
+Create a basic Python program to generate a string of unique random characters.,Length of the string: 10,"import random
+import string
+
+def generateRandomString(length):
+ characters = string.ascii_lowercase + string.ascii_uppercase + string.digits
+
+ return ''.join(random.choice(characters) for _ in range(length))
+
+print(generateRandomString(10))",Introduction Python,6776
+Implement a basic algorithm in Python to calculate the nth Fibonacci number.,6,"def fibonacci(n):
+ if n == 0:
+ return 0
+ elif n == 1:
+ return 1
+ else:
+ return fibonacci(n - 1) + fibonacci(n - 2)
+ 
+print(fibonacci(6)) // 8",Introduction Python,6779
+Create a Python 2 program to print the following pattern.,"Pattern to display:
+
+1
+2 3
+4 5 6
+7 8 9 10","for i in range(1, 11):
+    for j in range(1, i+1):
+        print(i+(j-1)*i, end="" "")
+    print()",Introduction Python,6803
+Edit the Python code to print the sum of two given numbers.,"a = 1
+b = 2","a = 1 
+b = 2
+sum = a + b 
+print(sum) # 3",Introduction Python,6804
+Generate a Python code to print the symmetric differences between two sets.,"Set1 = {1, 3, 4, 8} 
+Set2 = {2, 3, 5, 6}","# Define sets
+Set1 = {1, 3, 4, 8} 
+Set2 = {2, 3, 5, 6}
+
+# Compute the symmetric difference
+difference = Set1.symmetric_difference(Set2) 
+  
+# Print the symmetric differences 
+print(""The symmetric differences between the two sets :"", difference)",Introduction Python,6822
+Create a basic web scraper using Python to retrieve the content of a web page.,URL: https://www.example.com,"import requests
+from bs4 import BeautifulSoup
+
+url = ""https://www.example.com""
+
+page = requests.get(url)
+
+soup = BeautifulSoup(page.text, 'html.parser')
+
+content = soup.find_all('p')
+
+print(content)",Introduction Python,6823
+Write a Python code which will print out the number of words in a string.,Example string,"def wordCount(str): 
+    count = len(str.split()) 
+    return count 
+
+print(wordCount(""Example string"")) 
+
+# Output: 2",Introduction Python,6824
+Create a Python program to print the numbers in descending order.,"[10, 3, 5, 8, 7]","lst = [10, 3, 5, 8, 7]
+
+lst.sort(reverse=True)
+
+for n in lst:
+    print(n)",Introduction Python,6856
+Create a basic program in Python that takes in two numbers and calculates the product.,"int a = 5;
+int b = 10;","def product(a, b):
+ 	return a * b
+ 
+print(product(5, 10))",Introduction Python,6858
+Write a python program to repeatedly ask the user for a string and print the number of vowels in the string.,Example string: hello,"while True:
+    s = input(""Enter a string: "")
+    count = 0
+    for i in s:
+        if(i=='a' or i=='e' or i=='i' or i=='o' or i=='u'):
+            count+=1
+    print(""The number of vowels in the string:"", count)",Introduction Python,6860
+Create a Python script to compare two sets of data and print the differences.,"set1 = [1, 2, 3, 4, 5]
+set2 = [2, 4, 6, 8, 10]","set1 = [1, 2, 3, 4, 5]
+set2 = [2, 4, 6, 8, 10]
+
+difference = []
+for i in set1:
+ if i not in set2:
+ difference.append(i)
+ 
+print(f""The difference between set1 and set2 is: {difference}"")",Introduction Python,6862
+Write a Python program to allow a user to input a sentence and print the words in the sentence in reverse order.,This is my sentence.,"def reverse_words_in_sentence(sentence):
+    words_list = sentence.split()
+    words_list.reverse()
+    reversed_sentence = "" "".join(words_list)
+    return reversed_sentence
+
+sentence = ""This is my sentence.""
+result = reverse_words_in_sentence(sentence)
+print(result)",Introduction Python,6865
+"Given a list of strings, write a python program to sort the list alphabetically and print it.","strings = [""ada"", ""javascript"", ""c++"", ""python""]","strings = [""ada"", ""javascript"", ""c++"", ""python""]
+
+strings.sort()
+
+print(strings)
+# Output: ['ada', 'c++', 'javascript', 'python']",Introduction Python,6878
+Generate a Python script to iterate through a list and print each element.,"lst = [""hello"", ""how"", ""are"", ""you""]","for item in lst:
+  print(item)",Introduction Python,6906
+Generate Python code to print out the number of times each character appears in a string.,string = 'mississippi',"from collections import Counter
+
+string = 'mississippi'
+c = Counter(string)
+for char, count in c.most_common():
+    print(f""{char}: {count}"")",Introduction Python,6914
+"Given a list of numbers, create a Python script to print all the elements greater than 50.","[2, 60, 5, 4, 78, 32, 99]","nums = [2, 60, 5, 4, 78, 32, 99]
+
+for num in nums:
+    if num > 50:
+        print(num)",Introduction Python,6970
+Edit this Python program to print a concatenated string of two given strings with a space between them?,"""Hello"" and ""World""","string1 = ""Hello""
+string2 = ""World""
+
+# Concatenate two strings
+concatenated_string = string1 + "" "" + string2 
+
+# Print the result
+print(concatenated_string)",Introduction Python,6981
+Write a Python program to print out all even numbers in a given range.,"1, 10","def print_even_numbers(start, end):
+    for i in range(start, end + 1):
+        if i % 2 == 0:
+            print(i)
+
+if __name__ == '__main__':
+    print_even_numbers(1, 10)
+
+# Output
+2
+4
+6
+8
+10",Introduction Python,7011
+Write a code snippet in Python to print the last 3 characters of a given string,"string = ""Hello, World!""",print(string[-3:]),Introduction Python,7015
+Build a Python program to print the smallest number in a list.,"[3, 5, 2, 8, 1]","def smallest_list(list_numbers):
+    smallest = list_numbers[0]
+    for i in list_numbers[1:]:
+        if i < smallest:
+            smallest = i
+    return smallest",Introduction Python,7021
+Create a basic Python program that includes a function to find the greatest common divisor (GCD) of two numbers.,int num1 = 21; int num2 = 15,"def gcd(x, y): 
+    while(y): 
+        x, y = y, x % y 
+  
+    return x 
+  
+# Driver code
+num1 = 21
+num2 = 15
+  
+print(""The GCD is"", gcd(num1, num2))",Introduction Python,7038
+Create a Python function to print every character in a given string.,"string = ""Hello World!""","# Python Function
+def printChars(string): 
+    # Iterate over the string 
+    for i in range(len(string)):  
+        print(string[i]) 
+  
+# Test
+string = ""Hello World!""
+printChars(string)",Introduction Python,7044
+Write a basic web scraper in Python using the requests and BeautifulSoup libraries to extract the titles of articles from a given URL.,https://en.wikipedia.org/wiki/Python_(programming_language),"import requests
+from bs4 import BeautifulSoup
+
+url = 'https://en.wikipedia.org/wiki/Python_(programming_language)'
+r = requests.get(url)
+soup = BeautifulSoup(r.content, 'html.parser')
+
+articles = soup.find_all('h1', class_='firstHeading')
+for article in articles:
+ print(article.text)",Introduction Python,7077
+Create a basic Python script that executes a calculation of the total cost of a purchase (price * quantity).,"price = 10
+quantity = 3","#calculate the total
+total_cost = price * quantity
+
+#print the total
+print(total_cost) # Output: 30",Introduction Python,7137
+Create a program in Python to print the greatest of three numbers.,"2, 4, 3","def get_max(x, y, z):
+    if (x > y) and (x > z):
+        maximum = x
+    elif (y > x) and (y > z):
+        maximum = y
+    else:
+        maximum = z
+
+    return maximum
+
+result = get_max(2, 4, 3)
+print(result)",Introduction Python,7139
+Optimize a given Python code to print the factorial of a number.,5,"def factorial(n): 
+    factorial = 1
+  
+    for i in range(1, n+1): 
+        factorial = factorial * i 
+    print(factorial) 
+  
+number = 5
+factorial(number)",Introduction Python,7151
+Write a Python program to extract all words from a sentence and print them.,The quick brown fox,"sentence = ""The quick brown fox""
+words = sentence.split("" "")
+
+for word in words:
+ print(word)
+
+# Output
+# The
+# quick
+# brown
+# fox",Introduction Python,7155
+Write Python code to print the following at the end of the code.,* * * * *,"for i in range(5):
+    for j in range(5):
+        print(""*"", end="" "")
+    print()",Introduction Python,7178
+Create a Python program to print the sum of two given numbers,"2, 3","def add_two_numbers(a, b):
+    return a + b",Introduction Python,7180
+Write a Python program to process a list of numbers and print out the maximum and minimum values.,"[4, 19, -3, 27, -9, 5]","numbers = [4, 19, -3, 27, -9, 5]
+
+max_num = max(numbers)
+min_num = min(numbers)
+
+print(""The maximum number in the list is {}"".format(max_num))
+print(""The minimum number in the list is {}"".format(min_num))",Introduction Python,7232
+Design a Python program to print out all prime numbers in a range,Number Range between 1 and 10,"def is_prime(n):
+    for i in range(2, n):
+        if n%i == 0:
+            return False
+    return True
+
+for num in range(1, 10):
+    if is_prime(num):
+        print(num)",Introduction Python,7289
+Create a Python3 program to process a list of strings and print each string in uppercase.,"['this', 'is', 'a', 'list', 'of', 'strings']","list_of_strings = ['this', 'is', 'a', 'list', 'of', 'strings']
+
+for string in list_of_strings:
+    print(string.upper())",Introduction Python,7319
+Design a Python program to print all keywords in a given paragraph.,The best way to learn a programming language is to practice coding.,"text = ""The best way to learn a programming language is to practice coding.""
+words = text.split()
+
+keywords = [""for"", ""if"", ""while"", ""in"", ""range"", ""def"", ""import"", ""from"", ""as"", ""return""]
+
+for word in words:
+    if word in keywords:
+        print(word)",Introduction Python,7339
+Write a function in Python to traverse a multi-dimensional array and print each item in the array.,"[[1,2,3], [4,5,6], [7,8,9]]","def traverse_array(arr): 
+ if isinstance(arr, list) or isinstance(arr, tuple): 
+ for item in arr:
+ traverse_array(item)
+ else:
+ print(arr)
+
+arr = [[1,2,3], [4,5,6], [7,8,9]] 
+traverse_array(arr)",Introduction Python,7366
+Write a code snippet in Python to print Pascal’s triangle for a given value of n.,4,"def printPascalTriangle(n) : 
+    for line in range(1, n + 1) : 
+        C = 1 
+        for i in range(1, line + 1) : 
+            print(C, end = """") 
+            C = int(C * (line - i) / i); 
+        print("""") 
+
+n = 4
+printPascalTriangle(n)",Introduction Python,7458
+Create a basic Python script that computes the sum of two variables and stores the result in a third variable.,"x = 5
+y = 8","# compute the sum of x and y
+result = x + y
+
+# store the result in a third variable
+z = result
+
+#print the result
+print(z) # Output: 13",Introduction Python,7464
+Develop a script in Python to print out all the combinations of a given list of numbers.,"[1,2,3,4]","import itertools
+
+lst = [1,2,3,4]
+
+# Get all possible combinations of the list
+result = list(itertools.combinations(lst, 2))
+
+# Print the combinations
+for combination in result:
+    print(combination)",Introduction Python,7516
+Construct a for loop in Python to iterate over a given list and print the elements.,"my_list = [1, 2, 3, 4, 5]","for i in my_list:
+    print(i)",Introduction Python,7532
+Write a python program to print the following pattern.,n = 5,"def pattern(n):
+  # Outer loop 
+    for i in range(0, n): 
+      
+    # Inner loop to handle number of columns 
+    # values changing according to outer loop 
+      for j in range(0, i+1): 
+        
+    # Printing stars 
+        print(""* "",end="""") 
+    
+    # Ending line after each row 
+      print(""\r"") 
+  
+# Driver Code 
+pattern(5)",Introduction Python,7558

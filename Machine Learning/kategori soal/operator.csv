@@ -1,0 +1,2578 @@
+Instruction,Input,Output,materi,question_id
+Create a for-loop in Python and use it to find the sum of a list of integers.,"[1, 4, 9, 16, 25]","total = 0
+for num in [1, 4, 9, 16, 25]:
+  total += num
+print(total)",Operator,60
+Generate a Python program to remove a key-value pair in a dictionary.,"d = { 'a': 10, 'b': 20, 'c':30 }","def remove_pair(d, key):
+ if key in d:
+ del d[key]
+ return d
+ 
+d = { 'a': 10, 'b': 20, 'c':30 }
+remove_pair(d, 'c')",Operator,78
+Write a Python code to generate the Fibonacci sequence up to n-th number.,7,"def fibonacciSequence(n): 
+    fibSequence = []
+    a, b = 0, 1
+    while b < n:
+        fibSequence.append(b)
+        a, b = b, a + b
+    return fibSequence
+
+n = 7
+
+print(fibonacciSequence(n)) // [1, 1, 2, 3, 5]",Operator,104
+Create a function to calculate the midpoint between two 3-dimensional points using Python.,"point1 = [35.0, 43.0, 81.0]
+point2 = [82.0, 54.0, 19.0]","def midpoint3D(point1, point2): 
+    x_mid = (point1[0] + point2[0]) / 2
+    y_mid = (point1[1] + point2[1]) / 2
+    z_mid = (point1[2] + point2[2]) / 2
+    return [x_mid, y_mid, z_mid]
+
+point1 = [35.0, 43.0, 81.0]
+point2 = [82.0, 54.0, 19.0]
+midpoint = midpoint3D(point1, point2)
+print(midpoint) # [58.5, 48.5, 50.0]",Operator,115
+Edit the given Python code to reverse the order of the letters in a string without using any in-built string functions.,"string = ""Hello World!""","def reverse_string(string):
+    reversed_string = """"
+    for i in range(len(string) - 1, -1, -1):
+        reversed_string += string[i]
+    return reversed_string
+
+string = ""Hello World!"" 
+reverse_string(string)",Operator,127
+Write a Python program to convert a timestamp (in seconds) to a date format (dd-mm-yyyy).,timestamp: 1591123259,"import datetime
+
+# Function to convert the timestamp 
+def getDateTime(timestamp):
+ return datetime.datetime.fromtimestamp(timestamp).strftime(""%d-%m-%Y"")
+
+# Driver program
+timestamp = 1591123259
+print(getDateTime(timestamp))
+# Output: 17-06-2020",Operator,137
+Convert the below pseudo-code into valid Python code.,"x = 0
+
+while x<10:
+    x = x + 2
+    if x==4:
+        continue
+    print(x)","x = 0
+
+while x < 10:
+    x = x + 2
+    if x == 4:
+        continue
+    print(x)",Operator,139
+"Using the input provided, add a try/except block to the given Python code.","for n in file_name[:20]:
+    print(n)","try:
+    for n in file_name[:20]:
+        print(n)
+except Exception as e:
+    print(e)",Operator,174
+Create a Python program that updates the dictionary with the new key-value pair.,"dictionary = {'apple': 1, 'banana': 2, 'orange': 3}
+key = 'mango'
+value = 4","dictionary = {'apple': 1, 'banana': 2, 'orange': 3}
+key = 'mango'
+value = 4
+
+dictionary[key] = value
+print(dictionary)
+# {'apple': 1, 'banana': 2, 'orange': 3, 'mango': 4}",Operator,193
+Write an optimization function for finding the minimum of a two-dimensional scalar field in Python.,"a scalar field represented as a 2D array (e.g. [[2, 1], [4, 3]] where value at position [i][j] is 2i + j)","def findMin(scalarField):
+ minVal = float('inf')
+ minInd = (-1, -1)
+ for i in range(len(scalarField)):
+ for j in range(len(scalarField[i])):
+ val = scalarField[i][j]
+ if val < minVal:
+ minVal = val
+ minInd = (i, j)
+ return minInd",Operator,244
+"Create a Python program to validate user input. The program should take a string and only return ""valid"" if the string contains only the characters a-z, 0-9, and _ .","text_string = ""valid_string123""","text_string = input()
+
+valid_characters = ""abcdefghijklmnopqrstuvwxyz0123456789_""
+
+is_valid = True
+
+for c in text_string:
+ if c not in valid_characters:
+ is_valid = False
+
+if is_valid:
+ print ""Valid""
+else:
+ print ""Invalid""",Operator,245
+De-duplicate the given list using a dictionary in Python?,"[10, 20, 30, 10, 40, 20]","input_list = [10, 20, 30, 10, 40, 20]
+unique_list = list(dict.fromkeys(input_list))
+print(unique_list)",Operator,296
+Write a code to generate a two-dimensional array with zeros shapes in Python,"Row = 3, Column = 3","""""""
+Write a code to generate a two-dimensional array with zeros shapes in Python
+""""""
+
+def generate_zeros_array(row,col):
+    return [[0] * col for _ in range(row)]
+
+# Example
+row = 3
+col = 3
+
+array = generate_zeros_array(row, col)
+print(array)
+# Output: [[0, 0, 0], [0, 0, 0], [0, 0, 0]]",Operator,300
+Write a Python program to find the n-th smallest number in the following list,"[2, 3, 5, 7, 11] n = 2","def nth_smallest(input_list, n):
+    input_list.sort()
+    return input_list[n-1]
+
+input_list = [2, 3, 5, 7, 11]
+n = 2
+result = nth_smallest(input_list, n)
+print(result)",Operator,302
+Create an auto-complete suggestion engine that takes in a prefix string and returns a set of valid words.,prefix = 'pyth',"def auto_complete(prefix):
+    valid_words = []
+    words_list = get_words_list()
+
+    for word in words_list:
+        if word.startswith(prefix):
+            valid_words.append(word)
+    return set(valid_words)
+
+prefix = 'pyth'
+print(auto_complete(prefix))
+# Output: {'python', 'pythagorean', 'pythagoras', 'pythons'}",Operator,312
+Design a hash table in Python that can store a given key-value pair.,Key: apple; Value: red,"class HashTable:
+ def __init__(self):
+ self.table = {}
+
+ def put(self, key, value):
+ self.table[key] = value
+
+ def get(self, key):
+ return self.table[key]
+
+# example
+hash_table = HashTable()
+hash_table.put('apple', 'red')
+hash_table.get('apple') # returns 'red'",Operator,339
+Create a code snippet in Java to parse a comma-separated string into a list of strings.,"""Ruby,Python,JavaScript""","String str = ""Ruby,Python,JavaScript"";
+List<String> list = Arrays.asList(str.split("",""));
+
+// Output 
+// [Ruby,Python,JavaScript]",Operator,416
+Write a code to implement linear search in a 1-d array in Python.,"Input array: [1,2,3,4]
+Target element: 3","def linearSearch(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+
+print(linearSearch([1,2,3,4], 3)) # Output: 2",Operator,436
+Generate an algorithm in Python that sorts the given array of numbers in the non-decreasing order.,"arr = [1, 9, 3, 8, 4]","def bubble_sort(arr): 
+    n = len(arr)
+  
+    for i in range(n-1): 
+        for j in range(0, n-i-1): 
+            if arr[j] > arr[j+1] : 
+                arr[j], arr[j+1] = arr[j+1], arr[j] 
+  
+arr = [1, 9, 3, 8, 4]
+
+bubble_sort(arr) 
+
+print (""Sorted array is:"") 
+for i in range(len(arr)): 
+    print (""%d"" %arr[i])",Operator,447
+Write a Python function to find all possible n-letter words from a given list of letters.,"[""a"",""b"",""c""], n = 2","def find_words_length_n(letters, n):
+    words = set()
+    for combo in itertools.combinations_with_replacement(letters, n):
+        for perm in itertools.permutations(combo):
+            words.add("""".join(perm))
+    return words
+
+words = find_words_length_n([""a"",""b"",""c""], 2)
+print(words)",Operator,456
+Create a Python script to calculate and display the distance between two points in 2-dimensional space.,"Two points: (5,3) & (2,2)","import math
+ 
+def distance(p1,p2):
+ x1,y1 = p1
+ x2,y2 = p2
+ d = math.sqrt((x2-x1)**2+(y2-y1)**2)
+ return d
+ 
+x1,y1 = (5,3)
+x2,y2 = (2,2)
+print(f""The distance between 2 points ({x1},{y1}) & ({x2},{y2}) is: {distance((x1,y1),(x2,y2))}"")
+
+// Output:
+The distance between 2 points (5,3) & (2,2) is: 3.1622776601683795",Operator,493
+Create a Python program that takes a list of tuples as input and generates a dictionary where each tuple is a key-value pair,"[('apple', 'fruit'), ('goat', 'animal'), ('three', 'number')]","my_dict = {
+ 'apple': 'fruit',
+ 'goat': 'animal',
+ 'three': 'number'
+}",Operator,506
+Write a Python function that takes a list of strings and returns the concatenation of all the elements with a separator/delimiter.,"strings = [""Sample"",""Text"",""Hello""]","def concatenate_strings(strings, separator):
+ return separator.join(strings)",Operator,557
+Write an if-else statement for a simple weather notification system in Python.,"If the temperature is between 60 and 75 degrees, print a message that it is “Perfect Weather"".","if 60 <= temperature <= 75:
+   print(""It's Perfect Weather!"")
+else:
+   print(""The weather is not so great."")",Operator,575
+Store the provided data into a key-value object in Python.,"first_name: John
+
+last_name: Doe
+
+age: 28","person_data = {
+    ""first_name"": ""John"",
+    ""last_name"": ""Doe"",
+    ""age"": 28
+}",Operator,668
+Modify the following code to reverse a string without using the built-in reverse() method in Python.,"""Hello World!""","def reverseString(string):
+    newString = """"
+    length = len(string)
+    for i in range(length - 1, -1, -1):
+        newString += string[i]
+    return newString
+
+print(reverseString(""Hello World!""))",Operator,670
+Create a function to classify a given text into list of pre-defined categories.,"text = 'I'm writing a Python program now'
+categories = ['Python', 'Java', 'HTML', 'C++']","text = 'I'm writing a Python program now'
+categories = ['Python', 'Java', 'HTML', 'C++']
+
+def classify(text, categories):
+  for category in categories:
+    if category in text:
+      return category
+  return ""Not found""
+
+print(classify(text, categories))",Operator,752
+Use an if-else statement in Python to determine if a number is even or odd.,n = 7,"if n % 2 == 0:
+    print(n, 'is an even number')
+else:
+    print(n, 'is an odd number')",Operator,775
+Generate a program in Python to evaluate the following expression: (x*x) − (𝑦*𝑦),"x=10
+y=5","x = 10
+y = 5
+
+result = (x*x) - (y*y)
+print(result)",Operator,853
+Create a Python function that takes in an array-like data structure and returns the difference of its maximum and minimum values.,"[100, 45, 56, 30, 90, 100]","def get_difference(arr):
+    return max(arr) - min(arr)
+
+input_arr = [100, 45, 56, 30, 90, 100]
+difference = get_difference(input_arr)
+print(difference)  # Output: 70",Operator,885
+Generate a two-dimensional array of ones using Python.,"r = 4, c = 5","import numpy as np 
+
+arr = np.ones((r,c))",Operator,889
+Write a Python program to find the first non-repeated character of a given string.,"string = ""teststring""","def first_non_repeated_char(string):
+    for ch in string:
+        if string.count(ch) == 1:
+            return ch",Operator,932
+Create a functional programming program to calculate the value of the Fibonacci number up to the n-th number in Python.,The number should be 9.,"def fibonacci(n):
+ if n < 0:
+ raise ValueError(""Negative number"")
+ if n == 0 or n == 1:
+ return n
+ return fibonacci(n-1) + fibonacci(n-2)
+ 
+# calculate 9th Fibonacci number
+print(fibonacci(9))",Operator,1020
+Write a Python program to find the first non-repeating character in a given list.,"lst = [1, 2, 3, 4, 4, 3, 2, 1]","def first_non_repeating_char(lst):
+    dct = {}
+    
+    for l in lst:
+        if l in dct:
+            dct[l] += 1
+        else:
+            dct[l] = 1
+            
+    for l in lst:
+        if dct[l] == 1:
+            return l
+            
+    return None
+
+lst = [1, 2, 3, 4, 4, 3, 2, 1]
+print(first_non_repeating_char(lst))",Operator,1022
+Encode a given URL using percent-encoding.,https://www.example.com/search?q=python,"String url = ""https://www.example.com/search?q=python"";
+String encodedUrl = URLEncoder.encode(url, ""UTF-8"");
+System.out.println(encodedUrl);  // https%3A%2F%2Fwww.example.com%2Fsearch%3Fq%3Dpython",Operator,1071
+Implement a function in Python to find the length of a given string without using the len() built-in function.,"""Hello World!""","def getStringLength(my_string): 
+    # Initialize counter  
+    count = 0
+  
+    for s in my_string: 
+        count+= 1
+  
+    return count",Operator,1079
+Re-structure the following code so that it can be written using a for loop in Python.,"i = 1
+while i < 5:
+ print(i)
+ i += 1","for i in range(1, 5):
+    print(i)",Operator,1129
+Rewrite the following Python program using the try/except approach.,"a = 3
+b = 0
+c = a / b","try:
+    c = a / b
+except ZeroDivisionError:
+   print(""Division by zero error!"")",Operator,1137
+Create a Python program to convert a comma-separated string into a list.,"""1,2,3,4,5""","string = ""1,2,3,4,5""
+list = string.split("","")
+print(list)",Operator,1160
+Write a Python program that calculates the distance between two points on a two-dimensional plane.,"Point1 (x1: 3, y1: 4); Point2 (x2: -9, y2: -2)","#include <iostream>
+#include <math.h>
+
+int main() 
+{ 
+    int x1 = 3; 
+    int y1 = 4; 
+
+    int x2 = -9; 
+    int y2 = -2;
+
+    float distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); 
+
+    std::cout << ""Distance between the two points is: "" << distance << std::endl; 
+
+    return 0; 
+}",Operator,1179
+"Edit the given Python program so that it prints the current date, in the format YYYY-mm-dd.","print(""Hello!"")","from datetime import date
+
+print(""Hello!"")
+
+current_date = date.today().strftime(""%Y-%m-%d"")
+print(""Today's date is"", current_date)",Operator,1195
+Re-write the following code snippet in Python:,"let nums = [1, 2, 3, 4, 5];
+let squaredNums = nums.map(num => num * num);","nums = [1, 2, 3, 4, 5]
+squared_nums = list(map(lambda num: num * num, nums))",Operator,1208
+Write a script in python that can take a magnitude and corresponding angle (in degrees) and convert it to vectors in three-dimensional space.,"magnitude: 5
+angle: 90","import math
+
+def magnitude_to_vector(magnitude, angle):
+    x = magnitude * math.cos(math.radians(angle))
+    y = magnitude * math.sin(math.radians(angle))
+    z = 0
+    
+    return (x, y, z)
+
+result = magnitude_to_vector(5, 90)
+
+print(f""The vector is {result}"")",Operator,1271
+Edit the following Python code to calculate the sum of all the elements in a two-dimensional array.,"arr = [[1,2,3], [4,5,6], [7,8,9]]","arr = [[1,2,3], [4,5,6], [7,8,9]]
+
+sum = 0
+
+for row in arr:
+ for col in row:
+  sum = sum + col
+
+print(""Sum:"", sum)",Operator,1310
+Use Python to modify a JSON object for specific key-value pairs.,"Object: {name: Tom, age: 25, occupation: Data Scientist, hobbies: [Reading, Badminton]}","# Modify a JSON object
+
+import json
+
+object = {'name': 'Tom', 'age': 25, 'occupation': 'Data Scientist', 'hobbies': ['Reading', 'Badminton']}
+
+if 'occupation' in object:
+    object['occupation'] = 'AI Engineer'
+
+if 'hobbies' in object:
+    object['hobbies'].append('Cycling')
+
+print(json.dumps(object,indent=2))",Operator,1319
+Create a function in Python that takes a two-dimensional array with n rows and m columns and returns the transposed array.,"[ [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9] ]","def transpose(matrix):
+    num_rows = len(matrix)
+    num_cols = len(matrix[0])
+    transposed = [ [0 for j in range(num_rows)] for i in range(num_cols) ]
+    for i in range(num_rows):
+        for j in range(num_cols):
+            transposed[j][i] = matrix[i][j]
+    return transposed",Operator,1330
+Write a method in Python to calculate the sum of two numbers without using any built-in functions.,"3, 5","def sum_two_numbers(a, b):
+    result = 0
+
+    for i in range(b):
+        result += a
+
+    return result
+
+a = 3
+b = 5
+
+print(sum_two_numbers(a, b))",Operator,1355
+Generate a Python script using Scikit-Learn for performing k-means clustering on a given dataset.,"Dataset: The dataset consists of three features x1, x2 and x3.","import numpy as np
+from sklearn.cluster import KMeans
+
+data = np.array([[x1, x2, x3]]) #replace x1, x2 and x3 with the features in the dataset
+
+kmeans = KMeans(n_clusters=3).fit(data)
+clusters = kmeans.predict(data)",Operator,1359
+Create a Python program to optimize a given function using the Nelder-Mead method.,"def f(x):
+ return x[0]**2 + 4*x[1]**2
+[3, -2]","from scipy.optimize import minimize
+def f(x):
+    return x[0]**2 + 4*x[1]**2
+
+res = minimize(f, [3, -2], method='nelder-mead')
+
+print(res.x)",Operator,1393
+Write a Python program that will determine the maximum number of unique paths a person can take from one point to another in a two-dimensional grid.,"grid = [
+[0,1],
+[1,1]
+]","def unique_paths(grid):
+ rows = len(grid)
+ cols = len(grid[0])
+ 
+ dp = [[0 for i in range(cols)] for j in range(rows)]
+ 
+ for i in range(rows):
+ for j in range(cols):
+ if i == 0 or j == 0:
+ dp[i][j] = 1
+ else:
+ dp[i][j] = dp[i][j-1] + dp[i-1][j]
+ 
+ return dp[-1][-1]
+ 
+print(unique_paths(grid))
+# Output: 2",Operator,1426
+Refactor the following Python code to use list comprehension instead of for-loops.,"my_list = [1, 2, 3, 4, 5] 
+new_list = []
+
+for item in my_list:
+ if item % 2 == 0:
+ new_list.append(item**2)","my_list = [1, 2, 3, 4, 5] 
+new_list = [x**2 for x in my_list if x % 2 == 0]",Operator,1430
+Design a python program to return the n-th element of a given list.,"list_input = [1, 3, 5, 7, 9]
+n = 3","def get_nth_element(list_input, n):
+    return list_input[n]
+
+print(get_nth_element(list_input, n))",Operator,1498
+Create a Python script that takes a text and replaces all occurrences of a given word to its upper-case version.,"Text: ""The quick brown fox jumps over the lazy dog"" and the word to replace: ""quick""","import re
+ 
+text = ""The quick brown fox jumps over the lazy dog""
+ 
+replaced = re.sub(r'quick', ""QUICK"", text) 
+ 
+print(replaced) #prints ""The QUICK brown fox jumps over the lazy dog""",Operator,1502
+Automatically refactor a subsection of Python code that uses two for-loops.,"for x in range(3):
+    for y in range(4):
+        print(x, '-', y)","for x, y in itertools.product(range(3), range(4)):
+    print(x, ""-"", y)",Operator,1506
+Write a python program to generate a dictionary object from a list containing key-value tuples.,"my_list = [('key1', 'value1'), ('key2', 'value2')]",my_dict = dict(my_list),Operator,1508
+Create a program in Python that calculates the median of an array of integers without using the built-in function.,"[1, 2, 3, 4, 5]","def median(arr): 
+ n = len(arr) 
+ arr.sort() 
+
+ # check for even case 
+ if n % 2 == 0: 
+ return (arr[int((n - 1)/2)] +
+ arr[int(n/2)]) / 2
+
+else: 
+ return arr[int(n/2)] 
+
+# test
+arr = [1, 2, 3, 4, 5] 
+print(""Median ="", median(arr)) 
+
+# Output: Median = 3.0",Operator,1559
+Generate a Python script that computes the area of an ellipse given its semi-major axis and semi-minor axis as inputs.,"Semi-major axis = 5
+Semi-minor axis = 3","import math
+
+# Semi-Major Axis
+a = 5
+
+# Semi-Minor Axis
+b = 3
+
+# Calculate the area of an ellipse
+area = math.pi * a * b
+
+print(""The area of the ellipse is"", area)",Operator,1565
+Design a Python program to find the first prime number greater than a user-specified number.,15,"def find_prime_number(n):
+    number = n + 1
+    while True:
+        counter = 0
+        for i in range(2, number):
+          if number % i == 0:
+            counter = 1
+        if counter == 0:
+            break
+        number += 1
+    return number
+
+num = int(input(""Enter a number:""))
+prime = find_prime_number(num)
+
+print(prime)",Operator,1701
+Make a visual representation of the following data-set in Python using Matplotlib.,"X = [2,4,6,8,10]
+Y = [5,10,15,20,25]","import matplotlib.pyplot as plt
+
+X = [2,4,6,8,10]
+Y = [5,10,15,20,25]
+
+plt.plot(X,Y)
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Visual Representation')
+plt.grid()
+plt.show()",Operator,1720
+Write a script in Python to sort the given list of numbers in non-decreasing order,"[3, 2, 7, 1, 9, 5]","def sortNumbers(nums): 
+    for i in range(len(nums)-1): 
+        minPos = i 
+        for j in range(i+1,len(nums)): 
+            if nums[minPos] > nums[j]: 
+                minPos = j 
+        nums[i],nums[minPos] = nums[minPos],nums[i] 
+
+nums = [3, 2, 7, 1, 9, 5]
+sortNumbers(nums) 
+print(nums)",Operator,1732
+Develop a python program to find the maximum sum of non-consecutive elements of a given integer list.,"[2, 3, 5, 6, 20, 9]","def find_max_non_consecutive_sum(arr):
+    incl = 0
+    excl = 0
+     
+    for i in arr:
+        new_excl = max(incl, excl)   
+        incl = excl + i 
+        excl = new_excl 
+       
+    return max(incl, excl)",Operator,1752
+Write a function in Python that converts a given date-time string into a specified timestamp format.,"String date-time: ""2020-05-02 15:30:00""
+Timestamp format: %Y/%m/%d %H:%M:%S","import datetime
+def convert_datetime_to_timestamp(date_time, timestamp_format):
+    return datetime.strptime(date_time, ""%Y-%m-%d %H:%M:%S"").strftime(timestamp_format)",Operator,1770
+Write a Python program to extract the n-th element from the given list of lists.,"[[1,2,3], [4,5,6], [7,8,9]]","def get_nth_element(list_of_lists, n):
+    return [item[n] for item in list_of_lists]",Operator,1817
+Create a Python program to find the sum of all elements in the following two-dimensional list.,"[[1,2], [3,4]]","def sum_list(list_two_dim): 
+    sum = 0
+    for row in list_two_dim: 
+        sum += sum(row) 
+    return sum",Operator,1830
+Write a single-line Python code to delete a key-value pair from a dictionary.,"my_dictionary = {'name': 'John', 'age': 20, 'job': 'Software Engineer', 'city': 'Berlin'}",my_dictionary.pop('city'),Operator,1846
+Create an AI-friendly program in Python to remove duplicates from a list of numbers.,"list1 = [1, 2, 3, 2, 4, 5, 1];","def remove_duplicates(list1): 
+    new_list = [] 
+    for num in list1: 
+        if num not in new_list: 
+            new_list.append(num) 
+    return new_list 
+
+remove_duplicates(list1)",Operator,1880
+Create a Python program to convert a given string to an integer by removing all non-numeric characters.,"""29A3B8746""","def remove_non_numeric(str):
+ res = """"
+ for c in str:
+ if c.isnumeric():
+ res += c
+ return int(res)
+
+s = ""29A3B8746""
+integer = remove_non_numeric(s)
+print(integer) // 2938746",Operator,1904
+Generate a python program to sort a collection of data given in the form of a 2-dimensional array.,"[[1, 2],[2, 6], [3, 4], [4, 5]]","def sortArray(arr): 
+  arr.sort(key = lambda x: x[1]) 
+  return arr 
+  
+# Driver Code 
+arr = [[1, 2],[2, 6], [3, 4], [4, 5]] 
+
+print (sortArray(arr))",Operator,1924
+Write a Python program to reverse a list without using any built-in function.,"[1, 2, 3, 4, 5]","def reverseList(l):
+  revList = []
+  for i in range(len(l)-1,-1,-1):
+    revList.append(l[i])
+  return revList
+
+lst = [1, 2, 3, 4, 5]
+print(reverseList(lst))",Operator,1955
+Generate a subroutine in Python to convert a string date of the format DD/MM/YYYY to the Unix timestamp type.,"String date: ""25/12/2021""","import datetime
+
+def convert_to_unix_time_stamp(date):
+    date_object = datetime.datetime.strptime(date, ""%d/%m/%Y"")
+    
+    return date_object.timestamp()",Operator,1992
+"Using Python, create a program to filter out all non-prime numbers from a list.","myList = [2, 4, 5, 20, 44]","def filterPrimes(myList):
+    result = []
+    for i in myList:
+        is_prime = True
+        for j in range(2,i):
+            if i % j == 0:
+                is_prime = False
+                break
+        if is_prime:
+            result.append(i)
+    return result
+
+print(filterPrimes(myList)) #[2, 5]",Operator,2026
+Develop a virtual assistant command in Python to generate a random number between two user-supplied numbers.,"Minimum number: 10
+Maximum number: 20","import random
+
+min_num = int(input(""Enter minimum number: ""))
+max_num = int(input(""Enter maximum number: ""))
+
+print(random.randint(min_num, max_num)) # random number between 10 and 20",Operator,2033
+"Using the provided data, create a Python program that can categorize a book as fiction or non-fiction.","{""title"": ""The Catcher in the Rye"", ""author"": ""JD Salinger"", ""genre"": ""Novel""}","import json
+
+data = '{""title"": ""The Catcher in the Rye"", ""author"": ""JD Salinger"", ""genre"": ""Novel""}'
+book_data = json.loads(data)
+
+if book_data[""genre""] == ""Novel"":
+ print(""Book is fiction"")
+else:
+ print(""Book is not fiction"")",Operator,2089
+"Write a Python program to generate a dictionary which contains (i, i*i) such that i is an int between 1 and N.",N = 10,"""""""
+A Python program to generate a dictionary which contains (i, i*i) such that i is an int between 1 and N
+""""""
+
+N = 10
+my_dict = {}
+
+# Generate the dictionary
+for i in range(1, N+1):
+    my_dict[i] = i * i
+
+# Print the dictionary
+print(my_dict)",Operator,2114
+Write a Python program to optimize a set of points in a 3-dimensional plane.,"points = [[10, 12, 13], [1, 8, 9], [3, 5, 7]]","import scipy.optimize as opt
+
+def objective(x):
+ return sum([x[i]**2 for i in range(len(x))])
+
+def constraint1(x):
+ return 16 - x[0]**2 - x[1]**2 - x[2]**2
+
+cons = [{'type': 'ineq','fun': constraint1}]
+
+x = [0, 0, 0]
+
+solution = opt.minimize(objective, x, constraints=cons)
+
+print(solution)",Operator,2116
+Write a commmand-line script that sums all numbers from 0 to N where N is provided as input.,N = 10,"# python code
+import sys
+
+input_val = int(sys.argv[1])
+sum = 0
+
+for i in range(input_val + 1):
+    sum += i
+    
+print(""Sum from 0 to {} is = {}"".format(input_val, sum))",Operator,2178
+Develop an algorithm in Python for finding the maximum index of an array's sub-array.,"arr = [2, 3, 4, 5, 7, 9, 11]","def findMaxIndex(arr):
+    """"""This function finds the maximum index of an array's sub-array.""""""
+    maxIndex = 0
+    currentMax = 0
+    for i in range(1, len(arr)):
+        if arr[i] > arr[currentMax]:
+            maxIndex = i
+            currentMax = i
+    return maxIndex
+
+arr = [2, 3, 4, 5, 7, 9, 11]
+maxIndex = findMaxIndex(arr)
+print(maxIndex) # Output: 5",Operator,2199
+"Write an Python script to extract the year, month and day from a given date in the format ""dd/mm/yyyy"".","""27/09/2017""","import datetime
+
+date_string = ""27/09/2017""
+
+date_object = datetime.datetime.strptime(date_string, ""%d/%m/%Y"")
+
+print(""Year:"", date_object.year)
+print(""Month:"", date_object.month)
+print(""Day:"", date_object.day)",Operator,2219
+Generate a Python program to calculate the maximum possible sum of a sub-array in an array of integers.,"A list of integers [-2, 4, -1, 5, 6]","def max_subarray_sum(arr):
+    current_sum = 0
+    max_sum = 0
+
+    for x in arr:
+        current_sum += x
+        if current_sum < 0:
+            current_sum = 0
+        if current_sum > max_sum:
+            max_sum = current_sum
+    return max_sum
+
+result = max_subarray_sum([-2, 4, -1, 5, 6])
+print(result)",Operator,2251
+Create code in Python to check the right-hand side of a list and remove any elements which are divisible by 3.,"arr = [12, 15, 3, 8, 10, 24]","arr = [12, 15, 8, 10]
+arr[:] = [x for x in arr if x % 3 != 0]",Operator,2253
+Generate a function in Python to populate a dictionary data-structure with a list of numerical values.,"[1, 2, 3, 4, 5]","def populateDict(lst):
+    my_dict = {}
+    for i in lst:
+        my_dict[i] = i
+    return my_dict
+
+my_numbers = [1, 2, 3, 4, 5]
+my_dict = populateDict(my_numbers)
+print(my_dict)",Operator,2258
+Generate a Python program that computes the Euclidean distance between two points in a two-dimensional space.,"Point A - x: 3, y: 5
+Point B - x: 7, y: 6","import math
+
+# Define the two points
+pointA = (3, 5) 
+pointB = (7, 6)
+
+# Calculate the Euclidean distance
+distance = math.sqrt( (pointB[0] - pointA[0])**2 + (pointB[1] - pointA[1])**2 )
+
+print(""The Euclidean distance between the two points is:"", distance)",Operator,2311
+"Given a JSON object containing a list of key/value pairs, write a Python function to sort the list by value.","{
+  ""a"": 23,
+  ""b"": 42,
+  ""c"": 16
+}","def sort_by_value(data):
+ sorted_list = sorted(data.items(), key=lambda kv: kv[1])
+ return sorted_list
+ 
+print(sort_by_value({""a"": 23, ""b"": 42, ""c"": 16}))
+# Output -> [('c', 16), ('a', 23), ('b', 42)]  # sorted by value",Operator,2365
+Create a class Cell in Python using object-oriented programming.,<no input>,"class Cell:
+    def __init__(self, row, col):
+        self.row = row
+        self.col = col 
+
+    def move_left(self):
+        self.col -= 1
+
+    def move_right(self):
+        self.col += 1
+
+    def move_up(self):
+        self.row -= 1
+
+    def move_down(self):
+        self.row += 1",Operator,2439
+Develop a Python program to display the Fibonacci sequence up to n-th term.,10,"def fibonacci(n): 
+    a = 0
+    b = 1
+    if n < 0: 
+        print(""Incorrect input"") 
+    elif n == 0: 
+        return a 
+    elif n == 1: 
+        return b 
+    else: 
+        for i in range(2,n): 
+            c = a + b 
+            a = b 
+            b = c 
+        return b 
+  
+# Driver Program 
+print(fibonacci(10))",Operator,2477
+"Create an SHA-2 encryption algorithm in Python using a provided string ""abc"".",abc,"import hashlib
+
+s = 'abc'.encode(""utf-8"")
+
+hash_object = hashlib.sha256(s)
+hex_dig = hash_object.hexdigest()
+print(hex_dig)",Operator,2524
+Classify a set of programming language names into high-level languages and low-level languages.,"JavaScript, Python, C, Assembly","High Level Languages: 
+1. JavaScript 
+2. Python
+
+Low Level Languages: 
+1. C 
+2. Assembly",Operator,2566
+Generate a Python function that takes as input a UTF-8 encoded string and returns a string where the characters in odd positions of the original string are repeated.,string = ‘HelloWorld’,"def repeat_char(s):
+    result = ''
+    for i,c in enumerate(s):
+        if i % 2 == 0:
+            result += c
+        else:
+            result += c*2
+    return result
+
+print(repeat_char('HelloWorld'))
+# Output: HeellooWorrlld",Operator,2593
+Maxminizing a Black-Box function (Python),"A Black box function:
+
+def black_box (x):
+  return x ** 2 + 40","import scipy.optimize
+
+# define the black box function
+def black_box(x):
+    return x ** 2 + 40
+
+# set the initial parameters 
+start = (0, 0)
+
+# minimize the black box function
+res = scipy.optimize.minimize(black_box, start, method=""L-BFGS-B"")
+
+# print the result
+print(res.x) # prints [0.]",Operator,2636
+Write a Python script to rewrite the four-digit year of birth in the YYYY-MM-DD format.,Year: 1985,"def formatYear (birthYear):
+ return str(birthYear)+""-01-01""",Operator,2641
+Write a Python function to recognize a date (in “DD/MM/YYYY” format) in a string,The deadline is 23/05/2020,"def recognize_date(s):
+    '''This function recognizes a date (in DD/MM/YYYY format) in a string.'''
+    # Regex for DD/MM/YYYY format
+    format_regex = re.compile(r'\d{2}/\d{2}/\d{4}') 
+    match = format_regex.search(s)
+    if match:
+        date = match.group()
+        return date
+    else:
+        return None",Operator,2680
+Generate a random 6-digit number using Python,No input,"import random
+
+def generate_random_number(): 
+    random_number = random.randint(100000, 999999) 
+    return random_number
+
+generatedNumber = generate_random_number() 
+print(generatedNumber)",Operator,2691
+Write a function in Python to compute the sum of all elements in a given 2-dimensional array.,"[[2, 3], [2, 5], [5, 6], [4, 5]]","def arraySum(arr): 
+  sum = 0
+  for sublist in arr: 
+    for item in sublist: 
+      sum = sum + item 
+  return sum 
+
+print(arraySum([[2, 3], [2, 5], [5, 6], [4, 5]])) 
+
+# Output: 29",Operator,2694
+Create a function in Python to sort this list of high-scores in descending order.,"[150, 160, 233, 700, 800, 1200]","def sortScores(scores):
+    return sorted(scores, reverse=True)",Operator,2707
+Generate a code snippet to insert a key-value pair into a given dictionary.,"dict = {'I': 1, 'love': 2, 'coding': 3}
+key = 'Python'
+value = 10",dict['Python'] = 10,Operator,2772
+Create a Python program to classify a given set of data using a k-nearest neighbors algorithm.,"data = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]","import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+
+data = np.array([[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]])
+
+# Create the model
+model = KNeighborsClassifier()
+
+# Train the model
+model.fit(data[:, 0].reshape(-1, 1), data[:, 1].reshape(-1, 1))
+
+# Output the result
+print(model.predict([[2]])) # [[3]]",Operator,2825
+"Using the given functions, write a Python program that takes an n-dimensional vector vector as an argument and returns its norm.","def vector_length(vector): 
+    return math.sqrt(sum(c * c for c in vector))","def vector_norm(vector):
+    return vector_length(vector)
+
+vector = [1, 2, 3]
+norm = vector_norm(vector)
+print(norm)",Operator,2835
+"Write a Python program to generate a dictionary that contains numbers (between 1 and n) in the form (x, x*x).",n = 8,"nums = {x: x*x for x in range(1, n+1)}
+print(nums)",Operator,2884
+"Using a built-in sorting algorithm, write a Python program to sort a given list of integers.","[3, 4, 6, 1, 9, 5, 2]","def sort_list(arr):
+    return sorted(arr)
+
+my_list = [3, 4, 6, 1, 9, 5, 2]
+sorted_list = sort_list(my_list)
+print(sorted_list)",Operator,2891
+Create a python program to convert the given time value to 24-hour time format.,time = '08:45 PM',time_24_hour = '20:45',Operator,2927
+Generate a json response from a python method that takes two parameters and returns a dictionary of key-value mappings.,"param1 = 'key1'
+param2 = 'value1'","def generate_response(param1, param2):
+    # dictionary of key-value mappings
+    key_value_mappings = {
+        param1: param2
+    }
+
+    # create json response
+    json_response = json.dumps(key_value_mappings)
+
+    return json_response",Operator,2942
+Write a Python program for searching a 2-dimensional array for a target value.,"arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+target = 8","def search(arr, target):
+ for row in arr:
+  for element in row:
+   if element == target:
+    return True
+ return False
+
+result = search(arr, target)
+print(result) # True",Operator,2947
+Create a python function that reads comma-separated values to generate a dataframe.,"Name, Age, City
+Jane, 36, London
+John, 24, Paris","def csv_to_df(csv):
+    # Create an empty list
+    df = []
+
+    # Add each row as a list
+    lines = csv.split(""\n"")
+    for line in lines:
+        df.append(line.split("",""))
+
+    # Convert list into a DataFrame
+    import pandas as pd
+    df = pd.DataFrame(df[1:], columns=df[0])
+    return df",Operator,2987
+Write a Python program to detect out-of-range values in a given column of a data set.,"column = ""Salary""
+dataset = {
+ ""John"": {""Salary"": 75000, ""Age"": 30},
+ ""Sam"": {""Salary"": 90000, ""Age"": 45},
+ ""Jill"": {""Salary"": 120000, ""Age"": 25},
+ ""Thomas"": {""Salary"": 80000, ""Age"": 40}
+}","for row in dataset.values():
+ salary = row['Salary']
+ if salary < 40000 or salary > 100000:
+ print(""Out-of-range value: {}"".format(salary))",Operator,2997
+Create a machine learning model using Python and Scikit-Learn that can classify emails as either spam or ham.,CSV file containing features extracted from Spam and Ham emails.,Machine learning model using Python and Scikit-Learn that can classify emails as either spam or ham.,Operator,2999
+Implement a K-Means clustering algorithm in Python to cluster the given set of points into three clusters.,"dataset = [[2, 4], [5, 8], [3, 7], [9, 2], [7, 1]]","import numpy as np 
+from sklearn.cluster import KMeans 
+
+dataset = [[2, 4], [5, 8], [3, 7], [9, 2], [7, 1]]
+
+X = np.array(dataset) 
+
+kmeans = KMeans(n_clusters=3, random_state=0).fit(X)
+
+labels = kmeans.labels_
+
+for i in range(len(X)):
+ print(""datapoint:"", X[i], ""belongs to cluster"", labels[i])",Operator,3000
+"Given a json-formatted string, create a python program to parse it into a dict.","data = '{""name"": ""John"",""age"": 30,""address"": {""city"": ""New York"",""state"": ""NY""}}'","import json
+
+data = '{""name"": ""John"",""age"": 30,""address"": {""city"": ""New York"",""state"": ""NY""}}'
+
+data_dict = json.loads(data)",Operator,3069
+Rewrite the following JavaScript string-manipulation function in Python.,"function fix_string(s) {
+  s = s.replace(/\s/g, '');
+  s = s.toLowerCase();
+  s = s.split('').reverse().join('');
+  return s;
+}","def fix_string(s): 
+    s = s.replace("" "", """") 
+    s = s.lower() 
+    s = """".join(reversed(s)) 
+    return s",Operator,3082
+Create a python program that takes a list of user-defined objects as input and prints a summary of the objects.,"[{'name': 'John', 'age': 23}, {'name': 'Mary', 'age': 35}]","def print_summary(object_list):
+    for object in object_list:
+        print('Name: {}\nAge: {}\n'.format(object['name'], object['age']))
+
+print_summary([{'name': 'John', 'age': 23}, {'name': 'Mary', 'age': 35}])",Operator,3085
+Create a function in Python that will convert a given string of text into its equivalent URL-safe slug format.,This is a sample string,"def url_slug(text):
+ '''Takes text and converts it to url-safe slug format.
+ 
+ Args:
+ text (str): Text to be converted to slug
+ 
+ Returns:
+ str: slugified text
+ '''
+ 
+ text = text.lower()
+ text = re.sub(r'\s+', '-', text)
+ text = re.sub(r'[^\w-]', '', text)
+ return text",Operator,3174
+Generate a Python script to sort an array of strings in case-insensitive order.,"[""Apple"", ""banana"", ""APple""]","def sort_strings(arr):
+    arr_lower = [element.lower() for element in arr]
+    sorted_lower = sorted(arr_lower)
+
+    sorted_arr = [arr[arr_lower.index(element)] for element in sorted_lower]
+
+    return sorted_arr
+
+arr = [""Apple"", ""banana"", ""APple""]
+sorted_arr = sort_strings(arr)
+print(sorted_arr) # prints [""APple"", ""Apple"", ""banana""]",Operator,3206
+Edit the following object-oriented Python code to use inheritance.,"class A:
+    def __init__(self, x):
+        self.x = x
+    
+    def get_x(self):
+        return self.x
+
+class B:
+    def modify_x(self, x):
+        self.x = x + 1","class A:
+    def __init__(self, x):
+        self.x = x
+    
+    def get_x(self):
+        return self.x
+
+class B(A):
+    def modify_x(self, x):
+        A.modify_x(self, x)
+        self.x += 1",Operator,3211
+Can you write a function in Python that takes in a 2-dimensional array of integers and returns the lowest element in the array?,"[[3, 4, 5], [2, 7, 8], [12, 1, 9]]","def find_min(matrix): 
+    result = float('inf') 
+    for row in matrix: 
+        result = min(result, min(row))
+    return result 
+
+matrix = [[3, 4, 5], [2, 7, 8], [12, 1, 9]]
+print(find_min(matrix)) # Output: 1",Operator,3216
+"Given a Python dictionary, write a function that prints out the key-value pairs in alphabetical order.","{
+ 'Mark': '68',
+ 'Carol': '35',
+ 'John': '42'
+}","def print_dict_alphabetically(dictionary):
+    sorted_keys = sorted(dictionary.keys())
+    for key in sorted_keys:
+        print(f""{key}: {dictionary[key]}"")
+
+print_dict_alphabetically({
+ 'Mark': '68',
+ 'Carol': '35',
+ 'John': '42'
+})",Operator,3285
+"Write a python program to clean up a string by removing punctuation, non-alphanumeric regions  or converting to lowercase.","example_string = ""This i$n't a siMPle StrinG""","import string
+
+example_string = ""This i$n't a siMPle StrinG""
+new_string = example_string.translate(str.maketrans('', '', string.punctuation)).replace(' ', '').lower()
+print(new_string)
+
+Output:
+thisisntasimplestring",Operator,3314
+Write a python statement to extract the first element from a 3-item tuple.,"Tuple: (3, 4, 5)","first_element = (3, 4, 5)[0]",Operator,3344
+Create a Python program to rotate a 2-dimensional array clockwise.,"[[1, 2],
+ [3, 4]]","def rotate_sqr_matrix_clockwise(matrix):
+    N = len(matrix)
+    res = [[0] * N for i in range(N)]
+    for i in range(N):
+        for j in range(N): 
+            res[i][j] = matrix[N - 1 - j][i] 
+    return res",Operator,3379
+Optimize the following Python code by replacing the for-loop with a list comprehension,"def hipsterify(sentence):
+  hipster_sentence = []
+
+  for i in range(len(sentence)):
+    hipster_sentence.append(""hipster "" + sentence[i])
+
+  return ' '.join(hipster_sentence)","def hipsterify(sentence):
+  return ' '.join([""hipster "" + word for word in sentence])",Operator,3386
+Write a Python program to parse a set of given comma-separated numbers in a string.,"string = ""1,2,3,4,5,6""","# Parsing the string
+numbers = [int(num) for num in string.split(',')]
+
+print(numbers)",Operator,3417
+Create a Python program to calculate the formula 2*sqrt(x+2).,x = 10,"import math
+
+x = 10
+
+result = 2*math.sqrt(x+2)
+
+print(result ) # 12.0",Operator,3419
+Write a script in Python which takes a two-dimensional array as input and finds the smallest number in the array.,"array = [[2,3,4], [5,6,7], [-1,2,0]]","def find_smallest(array):
+    smallest_item = array[0][0]
+    for row in array:
+        for item in row:
+            if item < smallest_item:
+                smallest_item = item
+    return smallest_item",Operator,3424
+Write a python program to extract the non-vowel words in a sentence.,This machine learning project is challenging.,"def extract_words(sentence):
+    non_vowel_words = []
+    words = sentence.split()
+    vowels = ['a','e','i','o','u','A','E','I','O','U']
+    for word in words:
+        if not any(char in vowels for char in word):
+            non_vowel_words.append(word) 
+    return non_vowel_words",Operator,3433
+Optimize the following Python code to use built-in functions.,"def removeDuplicates(array): 
+    for i in range (len(array)): 
+        for j in range (i + 1, len(array)): 
+            if array[i] == array[j]: 
+                array.pop(j)","def removeDuplicates(array): 
+    finalArray = []
+    for element in array: 
+        if element not in finalArray: 
+            finalArray.append(element)
+    return finalArray",Operator,3476
+Develop an algorithm to find the least common multiple of two non-negative integers using Python.,"12, 18","# Find the greatest common denominator
+def gcd(num1, num2):
+    if num2 == 0:
+        return num1
+    else:
+        return gcd(num2, num1 % num2)
+
+# Find the least common multiple
+def lcm(num1, num2):
+    return (num1 * num2) // gcd(num1, num2)
+
+num1 = 12
+num2 = 18
+
+print(lcm(num1, num2))",Operator,3484
+Create an algorithm in Python that takes in a two-dimensional array (matrix) and returns a flattened version of the array.,"matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9]]","def flattenMatrix(matrix):
+    return [elem for row in matrix for elem in row]
+
+matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9]] 
+
+flatMatrix = flattenMatrix(matrix)
+print(flatMatrix)
+
+# Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]",Operator,3491
+Develop a Python script to delete all non-alphabetic characters in a string.,String with non-alphabetic characters- '123hello!?,"def remove_non_alpha(string):
+    new_string = """"
+    for char in string:
+        if char.isalpha():
+            new_string += char
+    return new_string",Operator,3535
+Generate a code snippet in Python to convert a string with the following format to a dictionary. (name1=123&name2=456&name3=789).,name1=123&name2=456&name3=789,"inp = ""name1=123&name2=456&name3=789""
+kv = inp.split(""&"")
+d = {}
+for i in kv:
+    k,v = i.split(""="")
+    d[k] = v
+
+print(d)",Operator,3545
+Generate a script in Python to run a linear regression model using scikit-learn.,[7 5 3 9 8 4] [7 3 4 6],"import numpy as np
+from sklearn.linear_model import LinearRegression
+
+x = np.array([[7,5,3,9,8,4]]).T
+y = np.array([7,3,4,6])
+
+model = LinearRegression()
+model.fit(x, y)
+
+preds = model.predict(x)
+
+print(f""R-squared score: {model.score(x,y)}"")
+print(f""Coefficients: {model.coef_}"")
+print(f""Predictions: {preds}"")",Operator,3556
+Modify this Python program to compute the sum of all elements in a multi-dimensional array.,"multi_dim_array = [[1,2], [3,4], [15,16]]","def sum_multi_dim_array(multi_dim_array):
+    # init sum to 0 
+    sum = 0 
+  
+    # iterate over rows 
+    for row in multi_dim_array: 
+  
+        # iterate over columns 
+        for num in row: 
+  
+            # add number to sum 
+            sum += num 
+  
+    return sum",Operator,3560
+Generate a Python program to optimize a low-cost route between two points,startX = 0 and endX = 10,"def optimize_route(startX, endX):
+    best_route = [startX]
+    next_x = startX
+
+    while next_x < endX:
+        best_cost = float(""inf"")
+        for x in range(next_x+1, endX+1):
+            cost = abs(x - next_x)
+            if cost < best_cost:
+                best_cost = cost
+                next_x = x
+        best_route.append(next_x)
+
+    return best_route",Operator,3577
+Write a Python script that reads in a user-defined data set and prints the top-5 highest values contained in the data set.,"[100.0, 74.0, 56.2, 45.5, 27.8, 21.0, 8.2, 4.1]","data = [100.0, 74.0, 56.2, 45.5, 27.8, 21.0, 8.2, 4.1]
+
+def get_top_five_values(data):
+    sorted_data = sorted(data, reverse=True)
+    top_five_values = sorted_data[:5]
+    return top_five_values
+
+top_five_values = get_top_five_values(data)
+print(top_five_values)",Operator,3579
+Create a Python script to generate all possible 3-letter words from a 4-letter alphabet.,"alphabet = ['a', 'b', 'c', 'd']","import itertools
+
+alphabet = ['a', 'b', 'c', 'd']
+words = [''.join(i) for i in itertools.combinations_with_replacement(alphabet, 3)]
+print(words)",Operator,3580
+Write a Python script to convert a list of positive integers to a comma-separated string.,"[1, 2, 3, 4]","def convert_list_to_string(list): 
+  string = """"
+  for num in list:
+    string += str(num) + "",""
+  return string
+
+print(convert_list_to_string([1, 2, 3, 4]))
+
+# Output: ""1,2,3,4,""",Operator,3597
+Generate a program in Python to evaluate the accuracy of a machine-learning model.,"from sklearn.svm import SVC
+clf = SVC(kernel='poly', degree=2, gamma=0.05)","import numpy as np
+from sklearn.metrics import accuracy_score
+
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+# Calculating the accuracy
+accuracy = accuracy_score(y_test, y_pred)
+
+print(""Accuracy: "" + str(accuracy))",Operator,3641
+Create a function in Python to convert a given time from 12-hour clock format to 24-hour clock format.,3:45pm,"def time_conversion(time):
+    # Get hour and convert it to 24-hour format
+    hour = int(time[:2])
+    if time[-2:] == ""PM"":
+        hour += 12
+    # Get minutes
+    min = time[-5:-3]
+
+    return str(hour) + "":"" + min
+
+# Test
+print(time_conversion(""3:45pm"")) # 15:45",Operator,3643
+Generate code to de-serialize JSON into Python objects,"data_json = '{""name"":""John Doe"",""age"":18,""hobbies"":[""reading"",""swimming"",""gaming""],""contact"":{""email"":""johndoe@example.com"",""mobile"":""+1900000000""}}'","import json
+
+data = json.loads(data_json)
+
+# Output:
+data = {
+ ""name"": ""John Doe"",
+ ""age"": 18,
+ ""hobbies"": [""reading"", ""swimming"", ""gaming""],
+ ""contact"": {
+  ""email"": ""johndoe@example.com"",
+  ""mobile"": ""+1900000000""
+ }
+}",Operator,3648
+Create a class in Python to represent a 2-D point and implement a method for finding the Euclidean distance between the two points.,"p1 = (3, 4)
+p2 = (7, 8)","class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def distance(self, point):
+        x_diff = self.x - point.x
+        y_diff = self.y - point.y
+        return math.sqrt(x_diff**2 + y_diff**2)",Operator,3676
+Create a method to find the maximum element in a 2-D array in Python.,"Array: 
+[[1, 2, 3], 
+[4, 5, 6],
+[7, 8, 9]]","def maxElement2DArray(arr):
+    maxElement = arr[0][0]
+
+    for row in range(len(arr)):
+        for column in range(len(arr[row])):
+            maxElement = max(maxElement, arr[row][column])
+    return maxElement",Operator,3721
+Transform string of format ‘YYYY-MM-DD’ to date type in Python,"date_str = ""2020-04-30""","import datetime
+
+def date_string_to_datetime(date_str):
+  return datetime.datetime.strptime(date_str, ""%Y-%m-%d"").date()",Operator,3761
+Write a Python program to read in a list of words separated by spaces and reverse them in-place.,"word_list = [""Birds"", ""fly"", ""in"", ""the"", ""sky""]",word_list.reverse(),Operator,3825
+Write a Python program to intersect two given arrays without using any in-built functions.,"a = [1, 7, 11, 58, 80]
+b = [11, 13, 7, 32, 80]","def intersect(a, b):
+  intersection = [] 
+  for i in a:
+    for j in b:
+      if i == j and i not in intersection:
+        intersection.append(i)
+  return intersection
+
+print(intersect([1, 7, 11, 58, 80], [11, 13, 7, 32, 80]))",Operator,3830
+Write a Python program to determine and-or operations,x = False and False,"x = False and False
+
+# Output
+print(x)
+# False",Operator,3835
+Design an efficient data-structure using Python for,storing a list of strings that can be efficiently searched.,"class StringList:
+    def __init__(self): 
+        self.storage = []
+ 
+    def add(self, item): 
+        self.storage.append(item)
+ 
+    def search(self, query): 
+        if query in self.storage:
+            return True 
+        else: 
+            return False",Operator,3840
+Produce a Python code to sort a two dimensional array in row-wise manner.,"arr = [[12, 17, 11], [17, 11, 13], [14, 18 22]]","def row_wise_sorting(arr):
+    for row in arr:
+        row.sort()
+
+arr = [[12, 17, 11], [17, 11, 13], [14, 18, 22]]
+row_wise_sorting(arr)
+
+print(arr)",Operator,3875
+Re-write the following SQL query in Python.,SELECT * FROM Movies WHERE category = 'horror';,"import sqlite3
+
+conn = sqlite3.connect('movies.db') 
+cursor = conn.cursor()
+
+cursor.execute(""SELECT * FROM Movies WHERE category = 'horror'"")
+
+result = cursor.fetchall()
+for row in result:
+    print(row)
+
+conn.close()",Operator,3892
+Create a web-crawler in Python to extract links from a web page.,Web page URL: http://www.example.com,"import urllib.request 
+from bs4 import BeautifulSoup
+
+#Providing the url as an argument to urlopen() 
+url = ""http://www.example.com""
+html = urllib.request.urlopen(url).read() 
+soup = BeautifulSoup(html, features = 'html.parser') 
+
+# extracting links from the web page 
+links = [] 
+for link in soup.findAll('a'): 
+    links.append(link.get('href')) 
+
+print(links)",Operator,3902
+Create a program to filter a list of numbers using the built-in Python filter() function.,"[25, 35, 8, 2, 10]","def even_number_filter(number):
+  return number % 2 == 0
+
+numbers = [25, 35, 8, 2, 10]
+filtered_list = list(filter(even_number_filter, numbers))
+print(filtered_list)",Operator,3925
+"Create a Python Pandas DataFrame for a real-world dataset of your choice, and display information about it.",A dataset containing the prices of fruits in a market.,"import pandas as pd
+
+# load the dataset
+data = pd.read_csv('data.csv')
+
+# display information about the dataset
+data.info()
+
+# observe the first five rows
+data.head()
+
+# list all columns
+data.columns 
+
+# display summary statistics
+data.describe()",Operator,3935
+Write a Python program to add two numbers in base-10.,"num1 = 6, num2 = 8","def add_base10(num1, num2): 
+    return num1 + num2",Operator,3939
+Create a Python script to partition a list into sub-lists of equal size.,"[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","def partition(lst, n):
+ return [lst[i:i+n] for i in range(0, len(lst), n)]
+ 
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+partitions = partition(list, 3)
+ 
+for p in partitions:
+ print(p)
+
+# Output
+# [1, 2, 3]
+# [4, 5, 6]
+# [7, 8, 9]
+# [10]",Operator,3982
+Create a python code to convert a string of comma-separated numbers into list.,"numbers = '1,2,3,4,5,6'","numbers = '1,2,3,4,5,6'
+
+numbers_list = [int(x) for x in numbers.split(',')]
+
+print(numbers_list) # [1, 2, 3, 4, 5, 6]",Operator,3996
+Create a Python program to remove all white-space from a given string.,"""Hello World   ""","string = ""Hello World   ""
+
+no_space_string = string.replace(' ', '')
+
+print(no_space_string)",Operator,4014
+Write a Python script for creating a type-safe data model based on a given JSON object.,"{""name"": ""Bob"", ""age"": 42, ""likes"": [""Sports"", ""Coding""]}","class DataModel:
+ def __init__(self, name: str, age: int, likes: List[str]):
+  self.name = name
+  self.age = age
+  self.likes = likes
+
+data = DataModel(name=""Bob"", age=42, likes=[""Sports"", ""Coding""])",Operator,4025
+Create a dictionary in Python with key-value pairs,"Key: ""FirstName""
+value: ""John""","my_dict = {
+    ""FirstName"": ""John""
+}",Operator,4030
+Write a Python program that sorts a list of integers in ascending order without using the built-in sort() method.,"[4, 5, 13, 2, 9, 7]","def selection_sort(arr):
+ n = len(arr)
+ for i in range(n):
+ min_idx = i
+ for j in range(i+1, n):
+ if arr[min_idx] > arr[j]:
+ min_idx = j
+ arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+arr = [4, 5, 13, 2, 9, 7]
+selection_sort(arr)
+print(arr)
+# Output: [2, 4, 5, 7, 9, 13]",Operator,4034
+Write a Python program which prints out the Fibonacci series up to the N-th term.,15,"def print_fibonacci_series(n): 
+    a = 0
+    b = 1
+    c = 0
+
+    while c < n:
+        print(a,end="" "")
+        c = c+1
+        temp = a+b
+        a = b 
+        b = temp 
+		
+print_fibonacci_series(15)",Operator,4044
+Generate a function in Python using the input argument side-effect free function to calculate the square root of a number.,25,"def get_sqrt(x):
+    return x**0.5",Operator,4045
+Optimize this Python code to reduce its run-time complexity.,"def foo(l1, l2):
+    result = []
+    for i in l1:
+        for j in l2:
+            result.append(i + j)
+    return result","def foo(l1, l2):
+    result = [i + j for i in l1 for j in l2]
+    return result",Operator,4109
+Generate a function in Python that takes a number as input and prints out the n-th Fibonacci number.,6,"def nthFibonacciNumber(n): 
+    if n==0: 
+        return 0
+    elif n==1: 
+        return 1
+    else: 
+        return nthFibonacciNumber(n-1)+nthFibonacciNumber(n-2)
+
+result = nthFibonacciNumber(6)
+print(result)",Operator,4117
+Write a Python program to calculate the hypotenuse of a right-angled triangle.,"a = 5, b = 12","import math
+
+# calculate the hypotenuse
+def calc_hypotenuse(a, b):
+    hyp = math.sqrt(a**2 + b**2)
+    print(""The length of the hypotenuse is"", hyp)
+
+# input lengths of triangle sides
+a = 5
+b = 12
+
+# call the function
+calc_hypotenuse(a, b)",Operator,4142
+Improve the following function by using Python built-in functions:,"def sum_array(array):
+    '''A function that takes in an array of numbers and returns the sum of all the numbers'''
+    total = 0
+    for num in array:
+        total = total + num
+    return total","def sum_array(array):
+    '''A function that takes in an array of numbers and returns the sum of all the numbers'''
+    return sum(array)",Operator,4170
+Create a dictionary in python from a comma-separated value string.,"s = ""name,age,city,country""","def csv_to_dict(s):
+    data_dict = {}
+    # split the string into list of elements
+    elements = s.split(',')
+    
+    # iterate through the list
+    for i in range(0, len(elements), 2):
+        # add each element as a key to the dictionary
+        data_dict[elements[i]] = elements[i+1]
+    
+    # return the dictionary
+    return data_dict",Operator,4192
+Write a function in Python to compare two given strings character-wise and return the position of the first difference.,"String1: String
+String2: Strings","def compare_strings_charwise(s1, s2):
+    for i in range(min(len(s1), len(s2))):
+        if s1[i] != s2[i]:
+            return i
+    return -1",Operator,4208
+"Given a multi-dimensional array, write a python code snippet to find the sum of its elements.","arr = [[1, 4, 7], [2, 6, 3], [3, 5, 9]]","# Use nested list comprehension to calculate the sum 
+total_sum = sum([sum(row) for row in arr])",Operator,4237
+Write a Python program to generate a two-dimensional array of Boolean values with alternating True and False values.,Size of the 2-D array: 5 x 5,"def generate_alternating_2d_array(n):
+ arr = []
+ prev_value = False
+ for i in range(n):
+  row = []
+  for j in range(n):
+   cur_value = not prev_value
+   row.append(cur_value)
+   prev_value = cur_value 
+  arr.append(row)
+ return arr
+
+arr = generate_alternating_2d_array(5)
+for row in arr:
+ print(row)",Operator,4274
+Create a python function to parse a character-separated string,"Parse a string ""Harry,30,England"" using comma as separator","def parse_str(str, separator):
+    strList = str.split(separator) 
+    return strList",Operator,4387
+Create a Python function for converting a list to a dictionary. The function should take a list of key-value tuples and return a dictionary.,"[('a', 1), ('b', 2), ('c', 3)]","def list_to_dict(input_list):
+ result = {}
+ for key, value in input_list:
+ result[key] = value
+ return result
+
+list_to_dict([('a', 1), ('b', 2), ('c', 3)]) 
+#{'a': 1, 'b': 2, 'c': 3}",Operator,4391
+Write a Python program to decode the given encoded text using ROT-13 algorithm.,Gur pynff vf snpgbevnag,The code is obfuscated,Operator,4481
+"Develop a Python program that takes in a single-dimensional array as a parameter, and returns the number of subsets with size 3 or greater.","arr = [1, 2, 3, 4, 5]","def find_subsets(arr):
+    count = 0
+    for i in range(len(arr)):
+        for j in range(i+1, len(arr)):
+            for k in range(j+1, len(arr)):
+                count += 1
+    return count",Operator,4491
+Write a Python function to create a Fibonacci sequence up to n-th number.,n=10,"def FibonacciGenerator(n): 
+    a = 0
+    b = 1
+    if n < 0: 
+        print(""Incorrect input"") 
+    elif n == 0: 
+        return a 
+    elif n == 1: 
+        return b 
+    else: 
+        for i in range(2,n): 
+            c = a + b 
+            a = b 
+            b = c 
+        return b 
+  
+ 
+# Driver Program 
+print(FibonacciGenerator(10))",Operator,4525
+Create a Python program to calculate the square root of a user-defined positive number.,n = 100,"import math
+
+n = 100
+
+#Calculate the square root of a number
+square_root = math.sqrt(n)
+
+print(f'Square root of {n} is {square_root}')",Operator,4531
+Create a Python function to remove all non-alphanumeric characters from a string.,"""Hello, $World!""","def clean_string(string):
+    cleanedString = """"
+    for c in string:
+        if c.isalnum():   
+            cleanedString += c 
+  
+    return cleanedString",Operator,4532
+Create a python program to create a dictionary with key-value pairs using two lists,"keys = [""a"", ""b"", ""c""]
+values = [1, 2, 3]","keys = [""a"", ""b"", ""c""]
+values = [1, 2, 3]
+
+d = dict(zip(keys, values))
+print(d) # output: {'a': 1, 'b': 2, 'c': 3}",Operator,4553
+"Create a Python program that calculates the average of 3 grades and returns a grade level using the following scale:
+
+90-100: A
+80-89: B
+70-79: C
+60-69: D
+Below 60: F","87, 61, 95","def get_grade_level(grades):
+  average = sum(grades) / len(grades)
+  if average >= 90:
+    grade_level = 'A'
+  elif average >= 80:
+    grade_level = 'B'
+  elif average >= 70:
+    grade_level = 'C'
+  elif average >= 60:
+    grade_level = 'D'
+  else:
+    grade_level = 'F'
+
+  return grade_level",Operator,4587
+"Write a Python program to search through a list of dictionaries for a specific key-value pair, and return the corresponding value.","L = [{'id': 1, 'name': 'John'}, {'id': 2, 'name': 'Alice'}, {'id': 3, 'name': 'Bob'}]","def search(lst, key, value):
+ for dict in lst:
+  if dict[key] == value:
+   return dict[value]
+return None
+
+#search for name with id 2
+search(L, 'id', 2)
+#outputs 'Alice'",Operator,4589
+Convert a Python program that uses for-loops to one that uses only while-loops.,"for i in range(0, 3):
+    print(i)","i = 0 
+while i < 3: 
+    print(i) 
+    i += 1",Operator,4592
+"Write a Python function which, when given a string of text and a n number, returns a list of all n-grams within that string.","string = 'this is a simple string'
+n = 3","def n_grams(string, n):
+  tokens = string.split()
+  n_grams = []
+  for i in range(len(tokens)-n+1):
+    n_grams.append(tokens[i:i+n])
+  return n_grams",Operator,4669
+Generate a python script to convert a string to a list of single-character strings in the same order.,'GPT',"def string_to_list(s):
+    l = []
+    for c in s:
+        l.append(c)
+    return l
+
+l = string_to_list('GPT')
+print(l)",Operator,4678
+Design a Python script that converts Miles/hour to Kilometers/hour.,Speed in Miles/hour: 60,"def mph_to_kph(speed):
+ kph = speed * 1.609
+ return kph",Operator,4710
+Edit a given Python program to make it bug-free.,"def foo():
+   i = 0
+   for x in range(10):
+      i = i + x
+      
+   print(i)
+
+foo()","def foo():
+   i = 0
+   for x in range(10):
+      i = i + x
+   return i
+
+print(foo())",Operator,4745
+Compose an algorithm in Python that accepts a phone number and formats it in the (xxx) xxx-xxxx format.,1234567890,"def format_phone_number(phone_num):
+    return f""({phone_num[:3]}) {phone_num[3:6]}-{phone_num[6:]}""
+
+number = ""1234567890""
+formatted_number = format_phone_number(number)
+print(formatted_number)",Operator,4801
+"Write a Python program to generate a random list of length n containing integers within range (0, n-1).",n = 6,"import random 
+  
+def random_list(n): 
+    # Generating a random list of length n
+    random_list = [] 
+    for i in range(n): 
+        random_list.append(random.randint(0,n-1)) 
+      
+    return random_list 
+  
+# Driver Code 
+n = 6
+print(random_list(n))",Operator,4857
+Construct a code in Python to count the number of alphabets in an user-entered string.,"String: ""Hello World""","def countAlpha(str): 
+	count = 0
+	for char in str:
+		if char.isalpha():
+			count += 1
+	return count 
+
+str = ""Hello World""
+result = countAlpha(str)
+print(""Number of alphabets:"", result)",Operator,4880
+Write a Python program which accepts a sequence of comma-separated numbers from console and generates a list.,"1,2,3,4,5","numbers = input(""Please enter a sequence of comma-separated numbers:"")
+
+num_list = numbers.split(',')
+
+num_list = list(map(int, num_list))
+
+print(num_list)",Operator,4952
+Write a Python program to convert a list of numbers into a comma-separated string.,"[7, 8, 9, 10]","def listToString(numbers):
+ return ','.join(str(num) for num in numbers)
+
+list = [7, 8, 9, 10]
+result = listToString(list)
+
+print(result)
+
+# Output: '7,8,9,10'",Operator,4964
+Create a confidence-based voting system in Python.,"The input is a list of 5 different classifiers with numeric predictions: [classifier1: 0.6, classifier2: 0.3, classifier3: 0.2, classifier4: 0.9, classifier5: 0.1]","def confidence_voting(predictions):
+ classifier_sum = 0
+ total_confidence = 0
+ for classifier, prediction in predictions.items(): 
+     classifier_sum += prediction 
+     total_confidence += (classifier_sum * prediction)
+ return total_confidence/classifier_sum",Operator,4977
+Add a try-catch block to the given Python code,"x = 10
+y = 0
+z = x/y","try:
+  x = 10
+  y = 0
+  z = x/y
+except ZeroDivisionError:
+  print(""ZeroDivisionError occurred: Cannot divide a number by 0"")",Operator,4993
+Write a python program to calculate the maximum of 3-d array and return the value.,"arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]]]","def calc_max(arr):
+    max_val = arr[0][0][0]
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            for k in range(len(arr[i][j])):
+                if arr[i][j][k] > max_val:
+                    max_val = arr[i][j][k]
+    return max_val
+
+print(calc_max(arr))",Operator,5014
+Write a function in Python to find the first non-repeating character in a given string.,"""the quick brown fox jumps over the lazy dog""","def non_repeating_char(s):
+    char_freq = {}
+    for c in s:
+        if c in char_freq:
+            char_freq[c] += 1
+        else:
+            char_freq[c] = 1
+    
+    for c in s:
+        if char_freq[c] == 1:
+            return c
+
+if __name__ == '__main__':
+    print(non_repeating_char(""the quick brown fox jumps over the lazy dog""))",Operator,5042
+Generate a Python program to edit a given list of strings and remove the duplicates in-place.,"[""AB"", ""AC"", ""AB"", ""CD"", ""AC""]","list = [""AB"", ""AC"", ""AB"", ""CD"", ""AC""]
+
+seen = set()
+res = []
+
+for item in list:
+    if item in seen:
+        continue
+    seen.add(item)
+    res.append(item)
+
+list[:] = res
+
+print(list)",Operator,5059
+Create a Python script for cleaning up text and removing non-alphabetic characters.,"This text contains some non-alphabetic characters, like ""%.","import re
+
+text = ""This text contains some non-alphabetic characters, like “%.”""
+
+clean_text = re.sub(r'[^a-zA-Z ]', '', text)
+
+print(clean_text)
+
+# Output: This text contains some alphabetic characters",Operator,5084
+Find the smallest number in the given list without using any built-in Python functions or sorting.,"arr = [8, 3, 9, 5, 1]","def find_smallest(arr):
+    smallest = None
+    for n in arr:
+        if smallest is None or n < smallest:
+            smallest = n
+    return smallest
+    
+arr = [8, 3, 9, 5, 1]
+smallest = find_smallest(arr)
+print(smallest)",Operator,5090
+"Write a Python program to assign every character in a given string a unique number (e.g. a=1, b=2, c=3 and so on).","string = ""Hello, World!""","char_dictionary = {}
+
+counter = 1
+
+for char in string:
+ if char in char_dictionary.keys():
+ continue
+ else:
+ char_dictionary[char] = counter
+ counter += 1
+
+print(char_dictionary)
+# Output: {'H': 1, 'e': 2, 'l': 3, 'o': 4, ', ': 5, 'W': 6, 'r': 7, 'd': 8, '!': 9}",Operator,5114
+Write an Algorithm in Python that takes in a comma-separated string of numbers and returns the sum of the numbers.,"'1,2,3'","def sumString(s):
+ nums = s.split(',')
+ total = 0
+ for num in nums:
+ total += int(num)
+ return total",Operator,5119
+Implement the popular depth-first search (DFS) algorithm with Python.,"graph = {
+    'A' : ['B','C'],
+    'B' : ['D', 'E'],
+    'C' : ['F'],
+    'D' : [],
+    'E' : ['F'],
+    'F' : []
+}","def dfs(graph, start):
+    visited, stack = set(), [start]
+    while stack:
+        vertex = stack.pop()
+        if vertex not in visited:
+            visited.add(vertex)
+            stack.extend(graph[vertex] - visited)
+    return visited",Operator,5125
+Design a Python 3 program that takes as input from the user two comma-separated lists of integers and then finds the union of the two lists.,"list1 = [1,2,3,4], list2 = [6,5,4,3]","list1 = [1,2,3,4]
+list2 = [6,5,4,3]
+
+def findUnion(list1, list2):
+ unionList = list1
+ for item in list2:
+  if item not in unionList:
+   unionList.append(item)
+ return unionList
+
+union = findUnion(list1, list2)
+print(union) # prints [1, 2, 3, 4, 6, 5]",Operator,5145
+Develop a Python program that uses a series of if-elif-else statements to act on the input data,Input a string and the program should convert it to uppercase letters.,"def convert_to_uppercase(data):
+    if type(data)==str:
+        return data.upper()
+    else:
+        print(""Input must be a string"")",Operator,5151
+Improve the performance of the following code using Python's in-built functions.,"s = 'Google'
+count = 0
+for i in range(len(s)):
+    if s[i] == 'o':
+        count+=1","s = 'Google'
+# improved code
+# use of built-in functions to count the number of occurrences of 'o' in a string
+count = s.count('o')
+
+print('Number of occurrences of ""o"": {}'.format(count))",Operator,5156
+Create a web-scraping program in Python to scrape movie reviews from IMDb.,https://www.imdb.com/title/tt0816692/reviews?ref_=tt_urv,"import requests
+import bs4
+ 
+url = ""https://www.imdb.com/title/tt0816692/reviews?ref_=tt_urv""
+page = requests.get(url).text
+soup = bs4.BeautifulSoup(page, 'html.parser')
+
+reviews = soup.find_all(class_=""text show-more__control"")
+for review in reviews:
+    print(review.get_text())",Operator,5157
+Write an algorithm in Python to generate a random non-repeating integer array of size N,10,"import random 
+
+def random_array(N): 
+ 
+    result = [] 
+  
+    for i in range(N): 
+  
+        # Stores the number in result after checking for its presence. 
+        data = random.randint(1, 100) 
+  
+        if data not in result: 
+            result.append(data) 
+          
+    return result 
+
+# Driver Code 
+N = 10
+res = random_array(N) 
+print(res)",Operator,5166
+Create a function in Python that takes an array of strings and returns an array with the strings sorted in reverse-alphabetical order.,"[‘tomato’, ‘apple’, ‘mango’]","def reverse_sort(arr): 
+    return sorted(arr, reverse=True) 
+  
+# driver code 
+arr = [""tomato"", ""apple"", ""mango""] 
+sorted_arr = reverse_sort(arr) 
+  
+print(sorted_arr)",Operator,5167
+Create a method in Python to format a date from the format dd-mm-yyyy to yyyy-mm-dd.,"date = ""10-05-2020""","def format_date(date):
+    splitted_date = date.split(""-"")
+    reformatted_date = splitted_date[::-1]
+    return ""-"".join(reformatted_date)
+
+format_date(""10-05-2020"")",Operator,5180
+Write a Python program to classify the given dataset using k-means clustering.,"x_points = {2, 4, 5, 10, 12, 13, 15, 16,18, 20}
+y_points = {3, 8, 10, 13, 15, 16, 18, 22, 25, 30}","from sklearn.cluster import KMeans
+
+def cluster_data(x_points, y_points):
+ X = list(zip(x_points, y_points))
+ clustering_model = KMeans(n_clusters=3)
+ clustering_model.fit(X)
+ labels = clustering_model.labels_
+ return labels",Operator,5252
+Compute the dot product of two 1-d vectors using Python.,"x = [1, 4, 5]
+y = [2, 4, 6]","def dot_product(x, y):
+    result = 0
+    for i in range(len(x)):
+        result += x[i] * y[i]
+    return result",Operator,5257
+Write a Python program to convert a given list to a dictionary with each item as a key-value pair.,"list = [(""a"", 1), (""b"", 2), (""c"", 3), (""d"", 4)]","list = [(""a"", 1), (""b"", 2), (""c"", 3), (""d"", 4)]
+
+d = dict(list)
+
+print(d)
+# Output: {'a': 1, 'b': 2, 'c': 3, 'd': 4}",Operator,5265
+Create a web-scraping script with Python to extract information from a website with 20 thousand pages.,Example website: https://example.com,"import requests
+import bs4
+
+url = 'https://example.com'
+
+while True:
+ response = requests.get(url)
+ soup = bs4.BeautifulSoup(response.text, 'html.parser')
+
+ # Extract information here
+
+ next_page_url = soup.find('a', {'class': 'next-page'})
+ if next_page_url:
+ url = next_page_url['href']
+ else:
+ break",Operator,5311
+Create a code snippet in Python to find the missing number in an array of length n-1 when all numbers from 1 to n are present.,"[7, 5, 6, 4, 2]","def missing_number(nums): 
+     
+    full_list = list(range(1,len(nums)+1))
+    return (set(full_list) - set(nums)).pop()
+
+nums = [7, 5, 6, 4, 2]
+result = missing_number(nums) 
+print('Missing number is', result)",Operator,5319
+"Edit the following Python code to implement case-insensitivity and replace ""word"" with a user-defined variable.","word = 'SUPER'
+
+if word == 'super' or word == 'SUPER':
+ print('Object found')","word = input('Enter word: ')
+
+if word.lower() == 'super':
+ print('Object found')",Operator,5420
+Set up conditions for a for-loop for iterating over a dictionary in Python.,"dict = {""Apple"": 10, ""Orange"": 20, ""Banana"": 30}","keys = dict.keys()
+for i in keys:
+    value = dict[i]
+    print(i, "":"", value)",Operator,5429
+Write a Python program to sort a given list in ascending order without using built-in functions.,"[3, 7, 4, 1, 9]","def sort_list(lst):
+    for i in range(0, len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] > lst[j]:
+                lst[i], lst[j] = lst[j], lst[i]
+    
+    return lst
+
+print(sort_list([3, 7, 4, 1, 9])) # prints [1, 3, 4, 7, 9]",Operator,5471
+Generate a Python function that takes two matrices (2-dimensional lists) as inputs and returns the result of matrix multiplication.,"A = [[1, 2], [3, 4]] 
+B = [[5, 6], [7, 8]]","def multiply_matrix(A,B):
+result = [[0,0], [0,0]]
+for i in range(len(A)):
+ for j in range(len(B[0])):
+ for k in range(len(B)):
+ result[i][j] += A[i][k] * B[k][j]
+return result
+
+# example
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+print(multiply_matrix(A, B)) 
+# [[19, 22], [43, 50]]",Operator,5593
+Construct a correct python program to evaluate the expression y = (1/x) + x^2.,x = 5,"x = 5
+
+def evaluate_expression(x):
+    y = (1 / x) + (x ** 2)
+    return y",Operator,5632
+Write a Python program to generate a random string of length n from a set of characters consisting of lowercase (a-z) and uppercase (A-Z).,n = 7,"import string
+import random
+
+length = 7
+chars = string.ascii_letters
+
+random_string = ''.join(random.choice(chars) for x in range(length))
+
+print(random_string)",Operator,5637
+"Write a Python program that web-scrapes data from a website and stores it in a structured format (e.g. JSON, CSV).",Example Website: https://example.com,"import requests
+import json
+
+# Make a get request to get the data
+response = requests.get('https://example.com')
+
+# Store the data in a structured format
+data = json.loads(response.text)
+
+# Save the data to a json file
+with open('example.json', 'w') as f:
+ json.dump(data, f)",Operator,5640
+Write a Python program which takes a string and returns the first non-repeated character.,"String: ""hello""","def first_non_repeated_char(input): 
+    counts = {} 
+    chars = [] 
+    for char in input: 
+        if char in counts: 
+            counts[char] += 1
+        else: 
+            counts[char] = 1
+            chars.append(char) 
+  
+    for char in chars: 
+        if counts[char] == 1: 
+            return char 
+  
+    return None",Operator,5642
+Create a Python program to generate an ISO8601-compliant string from a given date,Date: 2020-07-15,"from datetime import datetime
+
+date_str = '2020-07-15'
+date = datetime.strptime(date_str, '%Y-%m-%d')
+iso8601_str = date.isoformat()
+
+print(iso8601_str)
+# Output: 2020-07-15T00:00:00",Operator,5643
+Generate a program using Python that takes a user-defined dictionary with string values and returns the reversed key-value mappings.,"The dictionary is: {""one"": ""apple"",""two"": ""banana"",""three"": ""pear"" }","myDict = {""one"": ""apple"",""two"": ""banana"",""three"": ""pear"" }
+
+reverseMyDict = {}
+
+for key, value in myDict.items():
+ reverseMyDict[value] = key
+
+print(reverseMyDict) # Output: {'apple': 'one', 'banana': 'two', 'pear': 'three'}",Operator,5698
+Convert a string of comma-separated values into a list in Python.,"""apple, banana, orange""","str = ""apple, banana, orange""
+
+# split the string
+string_list = str.split(', ')
+
+# print result
+print(string_list)  # ['apple', 'banana', 'orange']",Operator,5701
+"Write a Python program to generate a dictionary that contains a number (between 1 and n) in the form (x, x*x).",n = 8,"def generate_dict(n):
+    my_dict = {}
+    for num in range(1, n+1):
+        my_dict[num] = num * num
+    return my_dict
+
+print(generate_dict(8)) # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}",Operator,5740
+Write a Python program to remove the nth index character from a non-empty string.,"String: ""Hello world!"", index: 5","def remove_character(string, index):
+    return string[:index] + string[index+1:]
+
+input_string =  'Hello World!'
+index = 5
+
+print(remove_character(input_string, index))",Operator,5753
+Create a Python program to generate the n-th item in the Fibonacci sequence.,5,"def Fibonacci(n): 
+    if n<0: 
+        print(""Incorrect input"") 
+    # First Fibonacci number is 0 
+    elif n==1: 
+        return 0
+    # Second Fibonacci number is 1 
+    elif n==2: 
+        return 1
+    else: 
+        return Fibonacci(n-1)+Fibonacci(n-2) 
+
+# Driver Code 
+n = 5
+print(Fibonacci(n))",Operator,5766
+Modify the following Python code to add a try/except block to catch any errors.,"def add_numbers(a, b):
+ return a + b","def add_numbers(a, b):
+ try:
+  sum = a + b
+ except:
+  print(""Error: Could not compute the sum of the numbers"")
+  return None
+ else:
+  return sum",Operator,5767
+Generate a python code to evaluate a given polynomial at a given x-value.,"polynomial = [2, 4, 5]
+x = 3","def evaluate_polynomial(polynomial, x):
+    result = 0
+ 
+    for i in range(len(polynomial)):
+        result += polynomial[i] * x**i
+ 
+    return result
+ 
+print(evaluate_polynomial(polynomial, x))",Operator,5771
+Develop a Python program to flatten a 2-D list.,"list_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]","def flatten_2d_list(list_2d):
+ # Initialize an empty list 
+ flat_list = []
+ 
+ # Loop through the list 
+ for row in list_2d:
+	 for item in row: 
+		 # Add the item to the flat list 
+		 flat_list.append(item) 
+
+# Return the flattened list 
+return flat_list",Operator,5857
+Create a Python function to find the maximum number from a list of non-negative integers.,"list = [1, 3, 12, 5, 8, 10]","def find_max(list): 
+  max_num = 0
+  for i in list: 
+    if i > max_num: 
+      max_num = i
+  
+  return max_num
+
+list = [1, 3, 12, 5, 8, 10]
+max_num = find_max(list)
+print(""Maximum number is:"", max_num)",Operator,5960
+"Write a Python function that takes two integers, n and base, as parameters and returns a string representation of the base-n number.","n: 3, base: 4","def base_n(n, base):
+    result = """"
+    while n != 0:
+        result += str(n % base)
+        n //= base
+    return result[::-1]  # Reverse the string",Operator,5998
+Create a base-2 binary addition calculator in Python.,"A: 010
+B: 101","def binary_addition(a, b):
+    a_bin = bin(int(a,2))[2:]
+    b_bin = bin(int(b,2))[2:]
+    c_bin = bin(int(a_bin, 2) + int(b_bin, 2))[2:]
+    c = c_bin.zfill(max(len(a), len(b)))
+    return c
+
+result = binary_addition('010', '101')
+print(result)",Operator,6015
+Re-write the following Java program in Python.,"public class HelloWorld {
+public static void main(String[] args) {
+ System.out.println(""Hello World"");
+ }
+}","def main():
+ print(""Hello World"")
+ 
+if __name__ == ""__main__"":
+ main()",Operator,6031
+Write a Python program to parse a JSON string and extract a specific key-value pair.,"{
+ ""key"": ""value1"",
+ ""anotherKey"": ""value2"",
+ ""somekey"": ""somevalue""
+}","import json
+ 
+myJSON = '{""key"": ""value1"", 
+           ""anotherKey"": ""value2"", 
+           ""somekey"": ""somevalue""}'
+ 
+# parse json
+parsedJSON = json.loads(myJSON)
+ 
+# access data
+key = parsedJSON['key']
+value = parsedJSON['value']
+ 
+# print key and value
+print(""key: "" + key)
+print(""value: "" + value)",Operator,6035
+Create an if-else statement to check if a number is a multiple of 3 in Python.,num=12,"if num % 3 == 0: 
+    print(""Number is multiple of 3"")
+else: 
+    print(""Number is not a multiple of 3"")",Operator,6065
+Re-write a given Python code snippet using list comprehensions.,"squares = []
+for n in range(10):
+    squares.append(n**2)",squares = [n**2 for n in range(10)],Operator,6078
+"Write a Python program that takes a number n and generates a dictionary that contains (i, i*i) such that n is greater than or equal to i >= 1 and",n = 8,"def generate_dict(n):
+    d = {}
+    for i in range(1, n+1):
+       d[i] = i*i
+    return d",Operator,6081
+Write a Python code that takes in data points in time-series and returns the average of the data points for the given period.,"[1, 3, 4, 5, 3, 9, 6]","def average_of_period(arr):
+    return sum(arr) / len(arr)
+
+result = average_of_period([1, 3, 4, 5, 3, 9, 6])
+print(result)",Operator,6115
+"Create a simple Python script that takes a single command-line parameter and prints out ""Hello <parameter>"" to the console.",John,"import sys
+
+name = sys.argv[1]
+print(""Hello {}"".format(name)) # Output: Hello John",Operator,6176
+Develop a program using Python to replace all the non-alphanumeric characters in a given string with an asterisk ('*')?,"""Hello* World_$!"",","import re
+
+def replaceNonAlphanum(s):
+    pattern = r""[^a-zA-Z0-9]""
+    return re.sub(pattern, ""*"", s)
+
+s = ""Hello* World_$!""
+print(replaceNonAlphanum(s))
+// Output: Hello** World**$*",Operator,6202
+Program a function in Python 3 that takes a list of integers and returns a list with only the non-duplicate values.,"[1, 2, 4, 1, 5, 7, 8, 2]","def uniqueVals(arr):
+  uniqueValsArr = []
+  for x in arr:
+    if x not in uniqueValsArr:
+      uniqueValsArr.append(x)
+  return uniqueValsArr
+
+mylist = [1, 2, 4, 1, 5, 7, 8, 2]
+print(uniqueVals(mylist))
+
+# Output: [1,2,4,5,7,8]",Operator,6245
+Re-write the following SQL query into Python code.,"SELECT *
+FROM table
+WHERE column1 = 'value1' AND column2 = 'value2'.","# define the parameters for the query
+column1 = 'value1'
+column2 = 'value2'
+
+# execute the query
+result = table.objects.filter(column1=column1, column2=column2)",Operator,6247
+Develop a Python program for randomly generating a 3-D object of n cubes,n = 8,"from random import random
+
+def generate_cubed_object(n):
+    objects = []
+    for i in range(n):
+        x = random()
+        y = random()
+        z = random()
+        objects.append([x, y, z])
+    return objects
+
+print(generate_cubed_object(8)) # [[0.4, 0.2, 0.3], [0.5, 0.6, 0.7], ....]",Operator,6301
+Write a Python program to add numbers from different columns of a multi-dimensional array.,"[[1, 2, 3], 
+[4, 5, 6], 
+[7, 8, 9]]","arr = [[1, 2, 3], 
+[4, 5, 6], 
+[7, 8, 9]] 
+
+# Initialize result 
+result = 0
+
+# Iterate every element in the array 
+for row in arr: 
+  for col in row:
+    # Adding elements of each row 
+    result = result + col  
+
+# Displaying sum 
+print(result)
+
+# Output: 45",Operator,6320
+Re-write the following Python code using list comprehensions.,"lst = []
+for each in range(5):
+  x = each*each
+  lst.append(x)",lst=[each*each for each in range(5)],Operator,6375
+Write a Python program to classify a given set of inputs into clusters using k-means algorithm,"data_points = [[2, 2], [5, 5], [2, 4], [5, 4], [6, 2], [7, 3]]","from sklearn.cluster import KMeans 
+import numpy as np 
+
+data_points = np.array(data_points) 
+
+kmeans = KMeans(n_clusters=2,random_state=0).fit(data_points) 
+clusters = kmeans.labels_ 
+  
+print(clusters)",Operator,6377
+Rewrite the following if/else statement in one line of Python code,"if condition:
+    do_this()
+else:
+    do_that()",do_this() if condition else do_that(),Operator,6430
+Write a Python program to find the maximum and minimum numbers from a non-empty list.,"[5, 6, 10, -9, 3, 21]","# Initializing the list
+list1 = [5, 6, 10, -9, 3, 21]
+
+# Maximum and Minimum in a List
+
+max = list1[0]
+min = list1[0]
+
+# Print all the list elements
+for i in range(0, len(list1)):
+    if list1[i]>max:
+        max = list1[i]
+    if list1[i]<min:
+        min = list1[i]
+
+print(""The max value is:"", max)
+print(""The min value is:"", min)",Operator,6431
+Perform a linear-time search on a given list of numbers in Python.,"lst=[5,3,7,2,1]
+x = 3","def linear_search(lst, x):
+    for i in range(len(lst)):
+        if lst[i] == x:
+            return i
+    return -1
+
+print(linear_search([5,3,7,2,1], 3))",Operator,6453
+Write a Python program to identify numbers from a comma-separated string.,"mystring = ""1,2,3,4,5,6,7,8,9""","mystring = ""1,2,3,4,5,6,7,8,9""
+
+numbers = mystring.split("","")
+for num in numbers:
+    print(int(num))",Operator,6461
+Create a string manipulation program in Python that takes a user input string and outputs a version of the string with all characters in upper-case.,Hello World,"userString = input(""Enter a string: "")
+uppercasedString = userString.upper()
+print(uppercasedString)",Operator,6475
+Write a Python code that takes a string as input and removes all punctuation and non-alphabetic characters.,"string = ""This!, &is. %string# 1""","def remove_non_alphabetic(string):
+    new_string = """"
+    for char in string:
+        if char.isalpha():
+            new_string += char
+    return new_string
+
+print(remove_non_alphabetic(string)) # prints Thisisstring",Operator,6484
+Reverse a Python list without using any in-built functions,"list_ = [1, 2, 3, 4]","def reverse_list_without_function(list_):
+    result = []
+    for i in range(len(list_)-1,-1,-1):
+        result.append(list_[i])
+    return result
+
+list_ = [1,2,3,4]
+print(reverse_list_without_function(list_)) # => [4, 3, 2, 1]",Operator,6496
+Create a Python program to group a list of numbers into two lists according to their parity (even/odd) in the most efficient way.,"[1, 4, 5, 3, 2, 6, 7]","even_list = []
+odd_list = []
+
+for num in input_list:
+ if num % 2 == 0:
+ even_list.append(num)
+ else:
+ odd_list.append(num)
+
+print('Even list:', even_list)
+print('Odd list:', odd_list)",Operator,6539
+Edit the given Python code to add a try-except block.,"x = 5
+y = 0
+z = x/y
+
+print(z)","try:
+  x = 5
+  y = 0
+  z = x/y
+  print(z)
+except ZeroDivisionError as e:
+  print('Cannot divide by zero!')",Operator,6543
+Edit the following Python code to include a try/except block to catch any ValueError errors that occur.,"def check_input(val):
+ if type(val) != str:
+ return False
+ else:
+ return True","def check_input(val):
+ try:
+ if type(val) != str:
+ return False
+ else:
+ return True
+ except ValueError:
+ print('Input is not a string!')",Operator,6569
+"Write a correct python program to find the minimum value in an array of integers, without using in-built functions.","arr = [3, 5, 8, 2, 9, 0]","def find_min(arr):
+    # Initialize the minimum value
+    min_val = arr[0]
+
+    # Iterate through the array
+    for i in range(1, len(arr)):
+        if arr[i] < min_val:
+            min_val = arr[i]
+
+    return min_val",Operator,6577
+Create a Python function to convert Pascal Case string to hyphen-separated string.,Pascal Case String: HelloWorld,"def convert_pascal_to_hyphen(string):
+    output_string = """"
+    for char in string:
+        if char.isupper():
+            output_string += ""-""+char.lower()
+        else:
+            output_string += char
+    return output_string[1:]
+    
+convert_pascal_to_hyphen(""HelloWorld"")",Operator,6590
+Create a program for counting the number of elements present in a user-provided array using Python.,"user_array = [1, 5, 15, 20]","def count_elements(array):
+    count = 0
+    for item in array:
+        count += 1
+    return count
+
+user_array = [1, 5, 15, 20]
+result = count_elements(user_array)
+print(result) # 4",Operator,6598
+Create a Python program to sort a given list of integers in descending order without using a library/built-in function.,"ex_list = [5, 2, 8, 9, 4, 1]","def sort_list(lst):
+    for i in range(len(lst) - 1):
+        for j in range(i+1, len(lst)):
+            if lst[i] < lst[j]:
+                lst[i], lst[j] = lst[j], lst[i]
+    return lst",Operator,6602
+Replace the for-loop in the following Python function with an equivalent while loop.,"def count_down(value):
+    ret = 1
+    for i in range(value, 0, -1):
+        ret *= i
+    return ret","def count_down(value):
+    ret = 1
+    while value > 0:
+        ret *= value
+        value -= 1
+    return ret",Operator,6648
+Create a Python program to generate a new dictionary from an existing dictionary given a set of key-pair values.,"dct = {
+ ""name"": ""John"",
+ ""age"": 20,
+ ""species"": ""Human""
+}
+desired_pairs = {""name"": ""Alex"", ""species"": ""AI""}","dct = {
+ ""name"": ""John"",
+ ""age"": 20,
+ ""species"": ""Human""
+}
+desired_pairs = {""name"": ""Alex"", ""species"": ""AI""}
+
+# Generate the new dictionary
+new_dct = {**dct, **desired_pairs}
+
+print(new_dct)
+
+# Output: {'name': 'Alex', 'age': 20, 'species': 'AI'}",Operator,6685
+Rewrite the following Python code avoiding nested if-statements.,"def check_integer(x):
+  if x > 0:
+    if x*x > 10:
+      return True
+    else:
+      return False
+  else:
+    return False","def check_integer(x):
+  if x <= 0:
+    return False
+  if x*x > 10:
+    return True
+  return False",Operator,6704
+Create a Python program to calculate the sum of series 1 + ½ + ⅓ + ... + 1/n.,n = 5,"def seriesSum(n):
+    # set the initial sum to 0
+    total = 0
+
+    # loop over the range
+    for i in range(1, n+1):
+        total += 1 / i
+
+    return total
+
+print(seriesSum(5))",Operator,6758
+Improve the following code by simplifying it using Python's built-in functions.,"def add_two_nums(a, b):
+ result =0 
+ for i in range(a):
+  result = result + b
+ return result","def add_two_nums(a, b):
+ return a * b",Operator,6760
+Write a function in Python that takes in a size n and returns the n-th prime number.,n = 5,"def nth_prime_number(n):
+    prime_numbers = [2]
+    i = 3
+    while len(prime_numbers) < n:
+        for number in prime_numbers:
+            if i % number == 0:
+                break
+        else:
+            prime_numbers.append(i)
+        i+= 2
+    return prime_numbers[-1]
+
+
+# test 
+prime_number = nth_prime_number(5)
+print(prime_number) # Output: 11",Operator,6761
+Create a dictionary in Python containing the following key-value pairs:,"{""name"":""John"", ""age"":30, ""occupation"":""teacher""}","my_dict = {""name"":""John"", ""age"":30, ""occupation"":""teacher""}",Operator,6813
+Create a Python program that takes a 3-word string and prints individual words in the same order on separate lines.,Hooray! Great!,"sentence = ""Hooray! Great!""
+words = sentence.split(' ')
+for word in words:
+ print(word)",Operator,6841
+Create a method in Python to flatten a 2-Dimentional array.,"array = [[1, 2], [3, 4], [5, 6]]","def flatten(arr):
+  flat_list = []
+  for sublist in arr:
+    for item in sublist:
+      flat_list.append(item)
+  return flat_list
+
+flatten(array)",Operator,6848
+Edit the python code to add try-except blocks for any potential error.,"def function(num1, num2):
+ result = num1/num2;
+ return result;","def function(num1, num2):
+ try:
+ result = num1/num2;
+ return result;
+ except ZeroDivisionError:
+  print(""Division by 0 not allowed"")",Operator,6898
+Create a Python dictionary which contains a list of key-value pairs of word counts.,"words = [""cat"", ""apple"", ""dog"", ""banana""]","word_count = {
+  'cat': 1, 
+  'apple': 1,
+  'dog': 1,  
+  'banana': 1
+}",Operator,6899
+Write a function in Python that calculates the maximum value in a 2-dimensional array.,"[
+    [1, 4, 8],
+    [7, 9, 6]
+]","def find_max_val(arr):
+    max_val = 0
+
+    for lst in arr:
+        for num in lst:
+            if num > max_val:
+                max_val = num
+    return max_val
+
+print(find_max_val([[1, 4, 8], [7, 9, 6]])) # Output: 9",Operator,6915
+Write a for-loop in Python to find the average of 5 numbers.,"5 numbers:  10, 15, 20, 25, 30","total = 0
+for num in [10, 15, 20, 25, 30]:
+    total += num
+
+average = total / 5
+print(average)",Operator,6934
+Create a python program to find the power of a number without using the built-in functions.,"2, 5","def power_of(x, n):
+    result = 1
+    for i in range(n):
+        result = result * x
+    return result
+
+power = power_of(2, 5)
+print(power)",Operator,6971
+Develop a Python program to find the distance between two points on the x-axis.,"Point 1: -3
+Point 2: 4","# Calculate distance between two points
+def findDistance(x1, x2):
+ return abs(x2 - x1)
+
+x1 = -3
+x2 = 4
+distance = findDistance(x1, x2)
+
+print(""Distance:"", distance)",Operator,6974
+Create a Python program that takes a list as input and sorts it using bubble-sort algorithm.,"[3,2,5,6,1,4]","def bubble_sort(lst): 
+    for i in range(len(lst)): 
+        for j in range(0, len(lst)-i-1): 
+            if lst[j] > lst[j+1] : 
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+ 
+list = [3,2,5,6,1,4]
+bubble_sort(list)
+print('Sorted list is: ', list)",Operator,6997
+Create a function in Python using list-comprehension to turn all the strings in the list to lowercase.,"words = [""Hello"", ""My"", ""Name"", ""IS"", ""John""]","def to_lowercase(words):
+    return [word.lower() for word in words]",Operator,7096
+Create a python program to find the fibonacci series up to n-th number.,8,"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    
+    fib = [0, 1]
+    for i in range(2, n + 1):
+        fib.append(fib[i - 1] + fib[i - 2])
+    return fib[-1]
+
+result = fibonacci(8)
+print(result) # 13",Operator,7124
+"Write an algorithm in Python that finds the maximum sum of an array of non-negative integers, given an upper limit value.","limit = 10
+array = [1, 3, 5, 4, 2, 6]","def findMaxSum(limit, array):
+    maxSum = 0
+    for i in range(len(array)):
+        currentSum = 0
+        for j in range(i, len(array)):
+            currentSum += array[j]
+            if currentSum <= limit and currentSum > maxSum:
+                maxSum = currentSum
+    return maxSum",Operator,7156
+Upgrade a Python program to use async/await instead of time.sleep().,"import time
+
+def do_something():
+	print('starting something')
+	time.sleep(2)
+	print('done with something')
+
+do_something()","import asyncio
+
+async def do_something():
+	print('starting something')
+	await asyncio.sleep(2)
+	print('done with something')
+
+asyncio.run(do_something())",Operator,7165
+Generate a Python program that will convert an array of strings with comma-separated values to a comma-separated string.,"['John','Joseph','Shirley']","def to_csv(input_list):
+  return ','.join(input_list)
+
+if __name__ == '__main__':
+  input_list = ['John','Joseph','Shirley']
+  output_str = to_csv(input_list)
+  print(f'Result: {output_str}')",Operator,7179
+"Write a Python script to generate a dictionary that contains (i, i*i) such that i is an integer from 1 to n (both included).",3,"n = 3
+my_dict = {} 
+for i in range(1, n+1): 
+    my_dict[i] = i * i
+
+print(my_dict)",Operator,7211
+Design an algorithm in Python to traverse a 2D array top-down and left-right and output its contents as a single array.,"[[1,2,3], [4,5,6], [7,8,9]]","def traverse2DArray(arr):
+    output = []
+    for i in range(len(arr)):
+        for j in range(len(arr[0])):
+            output.append(arr[i][j])
+    return output
+
+print(traverse2DArray([[1,2,3], [4,5,6], [7,8,9]])) # [1,2,3,4,5,6,7,8,9]",Operator,7225
+Design a Python program to switch the indices of two values in a given 2-dimensional array.,"arr = [[1, 2], [3, 4]]","def switchIndexes(arr): 
+    result = [[0 for i in range(len(arr[0]))] for j in range(len(arr))] 
+    for i in range(0, len(arr)): 
+        for j in range(0, len(arr[0])): 
+            result[j][i] = arr[i][j] 
+    return result 
+
+switchIndexes(arr)",Operator,7264
+Convert the given Python program from procedural to object-oriented.,"def multiply(a, b):
+    c = a * b
+    print(""Result is: "", c)","class Multiplier:
+    def __init__(self):
+        pass
+ 
+    def multiply(self, a, b):
+        c = a * b
+        print(""Result is: "", c)
+
+mult = Multiplier()
+mult.multiply(a, b)",Operator,7265
+Generate a Python script to sort a given list of numbers without using the built-in function ``sort()``,"list = [3,2,7,5,4,1,8]","def sort_list(list):
+    '''This function will sort a given list of numbers without using the built-in function sort()'''
+    for i in range(len(list)):
+        for j in range(i+1, len(list)):
+            if list[i] > list[j]:
+                list[i], list[j] = list[j], list[i]
+    return list",Operator,7337
+Write a Python program to find the first non-repeated letter in a string.,"""apple""","def first_non_repeating_letter(str):
+    for char in str:
+        if str.lower().count(char.lower()) == 1:
+            return char
+
+    return ''
+
+# main
+str = ""apple""
+print(""First non-repeating letter:"", first_non_repeating_letter(str))",Operator,7361
+Generate a Python Program that sorts a list of numbers in non-increasing order,"[3, 8, 1, 5]","def descending_sort(list): 
+    list.sort(reverse=True) 
+    return list
+
+list = [3, 8, 1, 5]
+result = descending_sort(list)
+print(result)",Operator,7410
+Create a Python program to average the elements of a 2-dimensional array.,"a = [[3,2,6],
+     [8,5,9],
+     [4,7,1]]","def averageMatrix(matrix):
+ sum = 0
+ for row in matrix:
+  for e in row:
+   sum += e
+
+ return sum / (len(matrix) * len(matrix[0]))
+
+a = [[3,2,6],
+     [8,5,9],
+     [4,7,1]]
+
+print(averageMatrix(a)) # 4.77",Operator,7521
+Write a web scraper in Python that extracts the price of Apple's iPhone from an e-commerce website.,"Link to an e-commerce website that sells Apple's iPhone:  
+https://store.apple.com/us/buy-iphone/iphone-11","import requests
+from bs4 import BeautifulSoup
+
+link = 'https://store.apple.com/us/buy-iphone/iphone-11'
+
+page = requests.get(link)
+soup = BeautifulSoup(page.content, 'html.parser')
+
+price = soup.find('span', id='pricing-product-price-value').text
+print(price)",Operator,7537
+"Develop a Python program to remove all characters from an input string that are not a-z, A-Z, 0-9, or white space.","""Hello,@ $World.""","import re
+
+def remove_non_alphanum(s):
+  return re.sub('[^a-zA-Z0-9 \n\.]', '', s)
+
+string = ""Hello,@ $World.""
+res = remove_non_alphanum(string) 
+
+print(res)",Operator,7541
+Edit the following Python code to re-rank the numbers in descending order.,"numbers = [4, 7, 2, 3]","numbers = [4, 7, 2, 3]
+numbers.sort(reverse=True)
+print(numbers)",Operator,7544

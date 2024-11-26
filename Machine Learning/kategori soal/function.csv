@@ -1,0 +1,4523 @@
+Instruction,Input,Output,materi,question_id
+Generate a function in Python to convert a given integer to its binary representation.,17,"def convertToBinary(n): 
+  
+    if n > 1: 
+        convertToBinary(n//2) 
+  
+    print(n % 2,end = '') 
+  
+
+# driver code 
+num = 17
+convertToBinary(num)",Function,14
+Create a function in Python to compute a Fibonacci sequence. The function should take as input a positive integer n and return the nth Fibonacci number,10,"def fibonacci(n): 
+ if n < 0: 
+  print(""Incorrect input"") 
+ elif n == 0: 
+  return 0
+ elif n == 1: 
+  return 1
+ else: 
+  return fibonacci(n-1) + fibonacci(n-2) 
+
+print(fibonacci(10))",Function,18
+Construct a function that will find the value of a given key in a Python dictionary.,"dictionary = {'key1':1, 'key2':2, 'key3':3}
+key = 'key2'","def find_value(dictionary, key):
+    value = dictionary.get(key)
+    return value
+
+dictionary = {'key1':1, 'key2':2, 'key3':3}
+key = 'key2'
+value = find_value(dictionary, key)
+print(value) # Output is 2",Function,21
+Design a Python function that converts strings in any given sentence to a capitalized format.,This is an example sentence,"def convertToCapitalize(sentence)
+    words = sentence.split()
+    capitalize = [word.capitalize() for word in words]
+    return "" "".join(capitalize)",Function,25
+"Create an AWS Lambda function in Python that accepts a JSON object as input, processes it, and returns the result.","{
+ ""x"": 10,
+ ""y"": 20
+}","import json
+
+def handler(event, context):
+ x = event[""x""]
+ y = event[""y""]
+ res = x + y
+ return {
+ ""statusCode"": 200,
+ ""body"": json.dumps({""result"": res})
+ }",Function,52
+Create a function in Python that implements binary search.,"[2, 5, 7, 9, 12, 15], 12","def binary_search(arr, value): 
+    low = 0
+    high = len(arr) - 1
+  
+    while low <= high: 
+        mid = (low + high) // 2
+        if arr[mid] < value: 
+            low = mid + 1
+        elif arr[mid] > value: 
+            high = mid - 1
+        else: 
+            return mid 
+  
+    return -1
+
+# Test
+arr = [2, 5, 7, 9, 12, 15]
+value = 12
+print(binary_search(arr, value)) # 4",Function,59
+Create a function in Python that converts a Fahrenheit temperature to Celsius.,100 degrees,"def convertFahrenheitToCelsius(fahrenheit):
+    celsius = (fahrenheit - 32) * 5/9
+    print(""{}°F is {}°C"".format(fahrenheit,celsius))
+
+convertFahrenheitToCelsius(100)",Function,61
+Write a function in Python to get the number of occurrences of a particular character in a given sentence.,"sentence = ""Hello world!""
+character = 'l'","def count_occurrences(sentence, character): 
+    return sentence.count(character)",Function,88
+Implement a function to remove all occurrences of the word 'python' from a given sentence.,"sentence = ""I love learning Python but sometimes it is hard to understand""","def remove_word(sentence, word):
+    words = sentence.split()
+    new_words = [w for w in words if w != word]
+    return ' '.join(new_words)
+
+new_sentence = remove_word(sentence, 'Python')",Function,90
+Create a recursive function in Python to calculate the factorial of the following number:,7,"def factorial(x):
+    if x == 0:
+        return 1
+    else:
+        return x * factorial(x-1)
+
+x = 7
+
+factorial_of_x = factorial(x)
+print(""The factorial of {} is {}"".format(x, factorial_of_x))",Function,114
+Construct a function in Python to calculate the area of a triangle with three sides,"side1: 3
+side2: 4
+side3: 5","def triangleArea(side1, side2, side3):
+  s = (side1 + side2 + side3) / 2
+  area = (s * (s - side1) * (s - side2) * (s - side3)) ** 0.5
+  return area",Function,144
+Develop a Python function to determine the greatest common divisor of two integers.,"a = 28 
+b = 15","def gcd(a, b): 
+ if(b == 0): 
+  return a 
+ return gcd(b, a%b) 
+
+def main():
+ a = 28 
+ b = 15 
+ print(gcd(a,b)) 
+
+if __name__ == ""__main__"": 
+ main() 
+
+# Output
+3",Function,146
+Write a function in Python that takes two arrays of the same size and performs elementwise addition.,"arr1 = [1, 2, 3]
+arr2 = [3, 4, 5]","def add_arrays(arr1, arr2):
+ if len(arr1) != len(arr2):
+  raise Exception(""Arrays are not of the same size!"")
+ return [x + y for x, y in zip(arr1, arr2)]
+
+add_arrays(arr1, arr2)  # [4, 6, 8]",Function,163
+Create a function in Python to find the total cost of a purchase given the price of each item and the quantity.,"price = 10.00
+quantity = 3","def get_total_cost(price, quantity):
+  return price * quantity
+
+total_cost = get_total_cost(price, quantity)
+print(total_cost) #prints 30.00",Function,225
+Classify text elements in a Python program into function names and variable names.,"def hello_world():
+    print(""Hello World!"")","Function Name: hello_world
+
+Variable Name: None",Function,232
+Generate a Python program that will compare two strings and return 'True' or 'False'.,"('Apple', 'Orange')","def compare_strings(first, second):
+    return first == second
+
+result = compare_strings('Apple', 'Orange')
+print (result)",Function,253
+Create a function in Python that will return the most frequent value in a dataset.,"[0, 1, 6, 4, 4, 5, 0, 2, 8, 5, 6, 8, 0, 8]","def most_frequent(data):
+    counts = dict()
+    for i in data:
+        if i in counts:
+            counts[i] += 1
+        else:
+            counts[i] = 1
+    max_value = max(counts.values())
+    return [k for k, v in counts.items() if v == max_value]",Function,265
+Convert the following Python function to Java.,"def add_two_numbers(a, b):
+    return a + b","public static int addTwoNumbers(int a, int b) {
+    return a + b;
+}",Function,277
+"Given a sentence, write a python program to return all the possible permutations of the words in the sentence.","sentence = ""the cat sat on the mat""","import itertools
+
+def get_permutations(sentence):
+    sentence_list = sentence.split("" "")
+    return list(itertools.permutations(sentence_list))
+
+if __name__ == '__main__':
+    print(get_permutations(""the cat sat on the mat""))",Function,278
+Optimize a function written in Python that calculates the mean of a given sequence of numbers,"import numpy as np
+sequence = np.array([1, 4, 6, 5, 9], dtype=np.float64)
+def calculate_mean(sequence):
+    sum = 0
+    for number in sequence:
+        sum += number
+    return sum / len(sequence)","import numpy as np
+sequence = np.array([1, 4, 6, 5, 9], dtype=np.float64)
+def calculate_mean(sequence):
+    return np.mean(sequence)",Function,286
+Create a function in Python that takes two numbers as input and returns a dictionary with all the prime numbers between them.,8 and 20,"def prime_numbers(x, y):
+ 
+ prime_nums = {}
+ 
+ for i in range(x, y+1):
+ if(i > 1):
+ for j in range(2, i):
+ if(i % j == 0):
+ break
+ else:
+ prime_nums[i] = i
+ 
+ return prime_nums
+ 
+print(prime_numbers(8, 20))
+# { 8: 8, 11: 11, 13: 13, 17: 17, 19: 19 }",Function,326
+Convert the following function from Python to Java.,"def generate_list(size):
+    """"""Generate a list of integers from 0 to size - 1.""""""
+    return [x for x in range(size)]","public List<Integer> generateList(int size) {
+    /* Generate a list of integers from 0 to size - 1. */
+    List<Integer> list = new ArrayList<>();
+    for (int i = 0; i < size; i++) {
+        list.add(i);
+    }
+    return list;
+}",Function,334
+Write a function in Python to compute the nth Fibonacci number.,8,"def fibonacciNum(n): 
+    if n <= 1: 
+        return n 
+    else: 
+        return (fibonacciNum(n-1) + fibonacciNum(n-2)) 
+
+n = 8
+result = fibonacciNum(n) 
+print(result)",Function,337
+Optimize and refactor an existing Python function.,"Example function:
+def factorial_recursive(n):
+ if n == 0:
+ return 1
+ return n * factorial_recursive(n-1)","def factorial(n):
+ if n == 0:
+ return 1
+ 
+ result = 1 
+ while n > 0:
+ result = result * n
+ n = n - 1
+ 
+ return result",Function,343
+Write a python program that implements the following function:,"Given two sorted lists, return a merged sorted list.","def merge_sorted_lists(list1, list2):
+    merged_list = []
+
+    while list1 and list2:
+        if list1[0] < list2[0]:
+            merged_list.append(list1.pop(0))
+        else:
+            merged_list.append(list2.pop(0))
+
+    merged_list += list1 + list2
+
+    return merged_list",Function,352
+Write an IPv4 address verification function in Python.,192.168.0.1,"def check_valid_ip(ip_addr): 
+    ip = ip_addr.split(""."") 
+    if(len(ip) == 4 and 
+        int(ip[0]) <= 255 and 
+        int(ip[1]) <= 255 and 
+        int(ip[2]) <= 255 and 
+        int(ip[3]) <= 255): 
+        return True
+    else: 
+        return False",Function,368
+Create a function in Python which takes a user input and sorts it in ascending order.,"9,5,4,7","def my_function(values):
+    sorted_values = sorted(values)
+    return sorted_values
+
+if __name__ == ""__main__"":
+    values = [int(value) for value in input().split(',')]
+    print(my_function(values))",Function,398
+Create a Python program to compare two lists and return the common elements between them.,"[1, 2, 3, 4], [2, 3, 4, 5]","def compare_lists(list1, list2):
+ common_elements = []
+ for element in list1:
+ if element in list2:
+ common_elements.append(element)
+ return common_elements
+
+list1 = [1, 2, 3, 4]
+list2 = [2, 3, 4, 5]
+print(compare_lists(list1, list2))",Function,427
+"Create a Python function that takes two numbers, n and m, and prints out the first n odd numbers between 0 and m (both inclusive).","n = 3, m = 10","def printOddNumbers(n, m):
+    nums = []
+    for i in range(m):
+        if i%2 != 0 and len(nums) < n:
+            nums.append(i)
+    return nums
+
+print(printOddNumbers(3, 10))",Function,438
+Create a function in Python to mask out any personal information from sensitive data.,"John Smith,123-456-7890","def mask_information(data):
+  masked_data = """"
+  for char in data:
+    if char.isdigit():
+      masked_data += 'x'
+    else:
+      masked_data += char
+  return masked_data
+
+masked_data = mask_information('John Smith,123-456-7890')
+print(masked_data) // John Smith,xxx-xxx-xxxx",Function,441
+Write a Python function to calculate the harmonic mean of two numbers.,"7, 9","def harmonic_mean(x, y):
+    return 2.0 * (x * y) / (x + y)
+
+harmonic_mean_value = harmonic_mean(7, 9)
+
+print(harmonic_mean_value)",Function,450
+Generate a python function to find the maximum of two numbers,"4, 5","def get_max(a,b):
+    if a > b:
+        return a
+    else:
+        return b
+
+# main program
+a = 4
+b = 5
+result = get_max(a,b)
+print(result)",Function,469
+Develop a Python function to count number of digits in a number.,8594,"def count_digits(number):
+    count = 0
+    while (number > 0):
+        number = number // 10
+        count = count + 1
+    return count
+
+num = 8594
+print(""Number of digits : "", count_digits(num))",Function,482
+Can you create a function in Python to find the area of a triangle given the three sides?,"3, 4, 5","def area_triangle(a, b, c):
+	s = (a + b + c)/2
+
+	area = math.sqrt(s*(s-a)*(s-b)*(s-c))
+	return area
+
+area = area_triangle(3, 4, 5)
+print(""The area of the triangle is: {}"".format(area))",Function,485
+Create a function in Python to solve the following constraint problem.,"Given two arrays of integers, find the number of elements in the intersection of the two sets.","def intersection(arr1,arr2): 
+    result = 0
+    resultSet = set(arr1) & set(arr2)
+    result = len(resultSet)
+    return result",Function,512
+Write a function in Python to calculate the Gini coefficient of a dataset.,"Dataset: [1, 1, 1, 2, 3, 4, 4, 5, 6]","def gini(data):
+ data_sorted = sorted(data) 
+ size = len(data_sorted) 
+ cummulative_sum = 0
+ max_sum=sum(data_sorted)
+ gini_coefficient=0.0
+ for i in range(size): 
+  cummulative_sum += data_sorted[i]
+  gini_coefficient+=(2*cummulative_sum-max_sum-data_sorted[i])/max_sum
+ return gini_coefficient/(size - 1)
+
+data = [1,1,1,2,3,4,4,5,6]
+print(gini(data))
+
+# Output: 0.3",Function,513
+Write a function in Python that will take in two numbers and return their sum.,"num1 = 5;
+num2 = 10;","def sum(num1, num2):
+ return num1 + num2
+
+sum(5, 10); // returns 15",Function,527
+Design a function in Python to find the minimum of three numbers.,"2, -6, 4","def find_min(a, b, c):
+    if a<b and a<c:
+        return a
+    elif b<a and b<c:
+        return b
+    else:
+        return c
+
+min = find_min(2, -6, 4)
+print(min)",Function,529
+Convert the following code into equivalent Python 3 function.,"function doubleString(str) {
+    return str + str;
+}","def doubleString(str):
+    return str + str",Function,538
+Write a function in Python that finds the most frequent item in a given sequence.,"sequence = [1, 2, 3, 4, 5, 1, 1, 2]","def most_frequent(sequence): 
+    return max(set(sequence), key = sequence.count) 
+
+print(most_frequent(sequence))",Function,561
+Write a Python function to calculate the distance between two points given their coordinates.,"coord1 = (3, 2) 
+ coord2 = (8, 10)","def Euclidean_distance(coord1, coord2):
+    x1, y1 = coord1
+    x2, y2 = coord2
+
+    return ((x2-x1)**2 + (y2-y1)**2)**0.5",Function,580
+Create a Python function to calculate the particle diameter of a given radius.,radius = 0.75,"def particle_diameter(radius):
+    return 2 * radius
+
+diameter = particle_diameter(0.75)
+print(diameter) # Output: 1.5",Function,610
+Implement a function in Python that takes as input an integer and prints out the Fibonacci sequence up to the entered value.,10,"def fibonacci(n):
+    arr = [0, 1]
+    for i in range(2, n+1):
+        arr.append(arr[i-2] + arr[i-1])
+    return arr[:n+1]
+
+print(fibonacci(10))",Function,619
+"Write a function in Python to generate a random integer between two numbers, a and b.","a = 4
+b = 15","import random
+
+def random_int_generator(a, b):
+    return random.randint(a, b)",Function,635
+Create a Python function to evaluate a given polynomial equation,P(x) = x^2 - 4x + 6,"def poly_evaluation(x):
+  return x**2 - 4*x + 6
+
+x = 2
+result = poly_evaluation(x)
+print(result) # prints 0",Function,646
+Convert the following function written in Python to Java.,"def add_two_numbers(a, b):
+    return a + b","public int add_two_numbers(int a, int b){
+    return a + b;
+}",Function,660
+Write a python function to count the number of words in a sentence that are longer than the given length.,"sentence = ""This is a sample sentence""
+length = 4","def count_long_words(sentence, length):
+    words = sentence.split()
+    count = 0
+    
+    for word in words:
+        if len(word) > length:
+            count += 1
+    return count",Function,662
+Generate a function in Python to optimize a function based on the mean squared error metric.,"def f(weights):
+ cost = 0
+ for i in range(len(weights)):
+ cost += weights[i]**2
+ return cost","import gradientDescent as GD
+
+def optimize(weights):
+ cost, gradient = GD.cost_function(f, weights)
+ optimizer = GD.Optimizer(learning_rate=0.01, momentum=0.9, decay=0.001)
+ optimizer.run(cost, gradient)
+ return optimizer.weights",Function,667
+"Create a Python function that takes two parameters, a number (n) and a word (w), and prints out the word n number of times.","3, ""Hello""","def repeat(n, w):
+    for i in range(n):
+        print(w)
+
+repeat(3, ""Hello"")  # Output: Hello Hello Hello",Function,688
+Design a function in Python to find the area of a circle from the given radius.,5,"def areaCircle(radius):
+    pi = 3.14
+    area = pi * (radius**2)
+    return area
+
+print(areaCircle(5)) # 78.5",Function,689
+Write a Python function to transpose a given matrix of size (m x n).,"[[1, 2], 
+ [3, 4], 
+ [5, 6]]","def transposeMatrix(matrix): 
+ m = len(matrix) 
+ n = len(matrix[0]) 
+  
+ # Create a new matrix 
+ transpose = [[0 for x in range(m)] for y in range(n)] 
+  
+ # Iterate through the original matrix 
+ for i in range(m): 
+ for j in range(n): 
+ transpose[j][i] = matrix[i][j] 
+ return transpose",Function,701
+Optimize a given Python function to increase its performance.,"def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)","def factorial(n):
+    """"""Calculates the factorial of `n` using an optimized approach. """"""
+    result = 1
+    for i in range(2,n+1):
+        result *= i
+    return result
+
+if __name__ == '__main__':
+    print(factorial(4)) # 24",Function,730
+Write a python program to calculate the sum of the given numbers and return the result.,"[1, 2, 3, 4, 5]","def sum_numbers(arr):
+    result = 0
+    for num in arr:
+        result += num
+    return result",Function,738
+Write a Python program to return the greatest common divisor between two numbers.,"num1 = 15
+num2 = 25","def gcd(num1, num2):
+while num2 != 0:
+   temp = num1
+   num1 = num2
+   num2 = temp % num2
+return num1
+
+print(gcd(num1,num2))",Function,758
+Debug this Python function to find and correct any errors.,"def sumN(num): 
+  response = 0
+  for i in range(1, num + 1):
+    response *= i
+  return response","def sumN(num): 
+  response = 0
+  for i in range(1, num + 1):
+    response += i
+  return response",Function,761
+Design a function  in Python to count the total number of prime numbers between the two given numbers (inclusive).,"Start = 10, End = 20","def count_primes(start, end):
+    count = 0
+    for i in range(start, end+1):
+        if is_prime(i):
+            count += 1
+    return count
+
+def is_prime(num):
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True",Function,790
+Optimize a function in Python.,"def sum_of_list(lst): 
+    sum = 0
+    for n in lst: 
+        sum += n 
+    return sum","def sum_of_list(lst): 
+    return sum(lst)",Function,830
+Create a Python function that takes a single argument and prints the Fibonacci sequence from 0 to the argument value.,Argument value: 9,"def print_fibonacci_sequence(num):
+ a = 0
+ b = 1
+ 
+ print(a, end="" "")
+ print(b, end="" "") 
+ 
+ for i in range(2,num):
+  c = a + b
+  a = b
+  b = c
+  print(c, end="" "")
+
+print_fibonacci_sequence(9) # prints 0 1 1 2 3 5 8 13 21",Function,832
+Find the maximum of three numbers using a Python function.,"a = 10, b = 5, c = 20","def maximumOfThreeNumbers(a, b, c):
+   if (a >= b) and (a >= c):
+     return a
+   elif (b >= a) and (b >= c):
+     return b
+   else:
+     return c
+
+maximum = maximumOfThreeNumbers(10, 5, 20)
+print(""The maximum number is:"", maximum)",Function,868
+Generate a function to add two matrices of the same size in Python.,"A = [[1,2],[3,4]] 
+B = [[5,6],[7,8]]","def add_matrix(A, B):
+    """"""Add two matrices of the same size.""""""
+    n = len(A)
+    m = len(A[0])
+    result = [[0 for _ in range(m)] for _ in range(n)] 
+    for i in range(n):
+        for j in range(m):
+            result[i][j] = A[i][j] + B[i][j]
+            
+    return result
+
+# Output
+print(add_matrix(A,B))",Function,874
+Create a Python function that takes in one integer argument and returns an integer with the absolute value.,number = -3,"def getAbsoluteValue(number):
+    if (number < 0):
+        return number * -1
+    else:
+        return number
+
+print(getAbsoluteValue(-3)) # Outputs 3",Function,875
+Build a function in Python to compute the Fibonacci numbers up to a given maximum.,maximum = 15,"def fibonacciGenerator(maximum):
+    i1, i2 = 0, 1
+    while i1 < maximum:
+        yield i1
+        i1, i2 = i2, i1 + i2
+
+fibonacci = list(fibonacciGenerator(15))
+print(fibonacci)",Function,880
+Convert an existing function from Python 3 to Python 2.,"def check_anagram(string1, string2):
+    if(sorted(string1) == sorted(string2)):
+        return True
+    else:
+        return False","def check_anagram(string1, string2):
+    if(sorted(list(string1)) == sorted(list(string2))):
+        return True
+    else:
+        return False",Function,905
+Create a function in Python to compute the average of two numbers.,"8, 10","def average(a, b): 
+    return (a + b)/2 
+  
+a = 8
+b = 10
+print(""Average of"", a, ""and"", b, ""is"", average(a, b))",Function,925
+"Write a Python function that takes two lists as arguments, and calculates their dot product.","list1 = [1,2,3]
+list2 = [4,5,6]","def dot_product(list1, list2):
+  if len(list1) != len(list2):
+    raise ValueError('List lengths must be the same.')
+  dot_product = 0
+  for i, val in enumerate(list1):
+    dot_product += val * list2[i]
+  return dot_product
+
+list1 = [1,2,3]
+list2 = [4,5,6]
+
+dot_product_result = dot_product(list1, list2)
+print(dot_product_result) # 32",Function,936
+Create a function that takes a key and value as 1 pair to add to a Python dictionary.,"key: age, value: 23","def add_key_value_pair(dict, key, value): 
+    dict[key] = value
+    return dict
+
+my_dict = {}
+my_dict = add_key_value_pair(my_dict, 'age', 23)
+print(my_dict)",Function,956
+Create a Python function that takes a number as input and returns the Fibonacci number at the same position in the sequence.,3,"def fibonacciNum(n): 
+  a = 0
+  b = 1
+  if n < 0: 
+    print(""Incorrect input"") 
+  elif n == 0: 
+    return a 
+  elif n == 1: 
+    return b 
+  else: 
+    for i in range(2,n+1): 
+        c = a + b 
+        a = b 
+        b = c 
+    return b 
+
+fibonacciNum(3)",Function,962
+Create a function in Python to construct the following pattern,The maximum number of lines is 10,"def construct_pattern(n):
+    for i in range(1,n+1):
+        for j in range(i):
+            print(""*"",end="""")
+        print("""")
+    for i in range(n-1,0,-1):
+        for j in range(i):
+            print(""*"",end="""")
+        print("""")",Function,966
+"Create a Python function to count the number of strings that contain the substring ""cat"".","[""cat keeper"", ""cat lover"", ""lizard wrangler"", ""cat wrangler""]","def count_substring_cat(string_list):
+    count = 0
+    for string in string_list:
+        if ""cat"" in string:
+            count += 1
+    return count
+
+string_list = [""cat keeper"", ""cat lover"", ""lizard wrangler"", ""cat wrangler""]
+result = count_substring_cat(string_list)
+
+print(result)",Function,970
+Develop a function in Python to convert a given word into its Pig Latin form.,"""Hello""","def pig_latin(word):
+    first_letter = word[0]
+
+    # check if the word starts with a vowel 
+    if first_letter in ""aeiou"":
+        latin_word = word + ""ay""
+    else:
+        latin_word = word[1:] + first_letter + ""ay""
+
+    return latin_word",Function,983
+Modify a given Python function to accept additional arguments.,"def divide(a, b):
+    return a / b","def divide(a, b, c=1, d=1):
+    return (a / b) / (c / d)",Function,990
+Create a python function to normalize a given matrix.,"[[1, 2, 3],
+[4, 5, 6],
+[7, 8, 9]]","def norm(mat):
+  result = [[0 for row in range(len(mat[0]))] for col in range(len(mat))] 
+  for i in range(0, len(mat)):
+    for j in range(0, len(mat[0])):
+        result[i][j] = mat[i][j] / sum(mat[i])
+  return result
+
+print(norm([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))",Function,995
+Create a function in Python using Pandas to recode a column in the following dataframe.,"name,age,city
+John,30,New York
+Mary,25,London
+Mike,38,Paris
+
+Recode age such that every age greater than 30 is ""Above 30"" and every age below 30 is ""Below 30"".","import pandas as pd
+ 
+def recode_age(data):
+    data['age_recoded'] = data['age'].apply(
+        lambda x: 'Above 30' if x > 30 else 'Below 30'
+    )
+ 
+df = pd.read_csv('data.csv')
+recode_age(df)
+print(df)",Function,1029
+Create a function in Python to calculate the sum of squares of all numbers up to a given value n.,n = 10,"def sumOfSquares(n):
+  sum = 0
+  for i in range(n + 1):
+    sum += (i ** 2)
+  return sum
+
+print(sumOfSquares(10))",Function,1032
+Write a function in Python to parse a JSON object.,"{""movie"": ""Star Wars"", ""genre"": ""Action""}","import json
+
+def parse_json(json_string):
+ obj = json.loads(json_string)
+ return obj
+
+parsed_json = parse_json('{""movie"": ""Star Wars"",""genre"": ""Action""}')
+print(parsed_json)
+# Outputs {'movie': 'Star Wars', 'genre': 'Action'}",Function,1034
+Design a Python function to automatically generate the next BST level based on the given level.,"Given level = [1,2,3]","def generateNextLevel(level):
+  next_level = []
+  for node in level:
+    if node.left != None:
+      next_level.append(node.left)
+    if node.right != None:
+      next_level.append(node.right)
+  
+  return next_level",Function,1039
+"Can you create a function in Python that takes two strings as input, and returns the number of common characters between them?","""computer"", ""science""","def countCommonChars(string1, string2):
+    count = 0
+    for i in string1: 
+    	if i in string2: 
+    		count += 1
+    return count
+
+input1 = ""computer""
+input2 = ""science""
+print(countCommonChars(input1, input2))",Function,1054
+Provide an example of how to use a decorator to debug a function in Python,Noinput,"import time
+
+def time_it(func): 
+    def wrapper(*args, **kwargs): 
+        start = time.time() 
+        result = func(*args, **kwargs) 
+        end = time.time() 
+        print(""Execution time: {}"".format(end - start)) 
+        return result 
+  
+    return wrapper 
+
+@time_it
+def my_function(arg1, arg2):
+        # Some logic code..
+        return 10
+
+my_function(10, 20)",Function,1075
+Create a function in Python 3 which takes two arguments and prints their sum.,"a = 5
+b = 6","def add(a, b):
+    print('Sum =', a + b)
+    
+add(5, 6)",Function,1082
+Create a Python function that calculates the area of a circle.,radius=3,"import math
+
+def area_circle(radius):
+    return math.pi * (radius ** 2)
+    
+print(area_circle(3))",Function,1097
+Transform the following algorithm description into a working python function.,"Given a list of numbers, find the sum of the elements in the list.","def sum_list(nums_list):
+    total = 0
+    for num in nums_list:
+        total += num
+    return total",Function,1117
+Rewrite a Python function given a few specific requirements.,"def is_prime(n):
+ if n < 2:
+ return False
+ for i in range(2, n):
+ if n % i == 0:
+ return False
+ return True","def is_prime(n):
+ if n < 2:
+ return False
+ elif n == 2:
+ return True
+ elif n > 2 and n % 2 == 0:
+ return False
+ for i in range(3, int(n**0.5)+1, 2):
+ if n % i == 0:
+ return False
+ return True",Function,1138
+Write a Python function to find the sum of a series of numbers.,"[1, 2, 3, 4, 5]","def sumSeries(arr):
+  total = 0
+  for num in arr:
+    total += num
+  return total
+
+result = sumSeries([1, 2, 3, 4, 5])
+print(result)",Function,1145
+Write a python function to reverse the words in a given sentence.,"sentence = ""hello world how are you""","def reverseWords(sentence): 
+    words = sentence.split(' ') 
+    words = words[::-1] 
+    return ' '.join(words) 
+      
+print(reverseWords(sentence))",Function,1177
+Write a function in Python that takes two integers as arguments and returns the number of common divisors between the two.,"350, 400","def countCommonDivisors(a,b): 
+   
+    divisors = [] 
+   
+    for i in range(1, min(a,b)+1): 
+        if (a % i == 0 and b % i == 0): 
+            divisors.append(i) 
+              
+    return len(divisors) 
+
+num1 = 350
+num2 = 400
+
+print (countCommonDivisors(num1, num2)) 
+# Output: 5",Function,1194
+Write a python function that takes in two positive integer numbers and generate a random number between them.,"min_range = 3
+max_range = 7","import random
+
+def generate_random_number(min_range, max_range):
+    return random.randint(min_range, max_range)
+
+min_range = 3
+max_range = 7
+random_number = generate_random_number(min_range, max_range)
+print(random_number)",Function,1202
+Write a Python function to sort this dictionary by its keys in descending order.,"{
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five'
+}","def sort_dictionary_keys(d):
+  return {k: d[k] for k in sorted(d, reverse=True)}",Function,1207
+"Write a function in Python to generate an N by N matrix, filled with random integers between 0 and 9",N = 5,"import random
+
+def generate_matrix(N):
+    matrix = []
+    for i in range(N):
+        row = []
+        for j in range(N):
+            row.append(random.randint(0, 9))
+        matrix.append(row)
+    return matrix",Function,1222
+"In Python, write a function to create a dictionary using the given two lists.","keys = [""name"", ""age"", ""number""]
+values = [""John"", 32, 258]","def create_dict(keys, values):
+    return {key: val for key, val in zip(keys, values)}",Function,1232
+Create a function in Python to calculate the distance between two points.,"point1 (x1, y1): (2, 7)
+point2 (x2, y2): (4, 9)","import math
+
+def distance_between_points(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+    
+# Call the function
+distance = distance_between_points(2, 7, 4, 9)
+print(""The distance between the two points is"", distance)",Function,1233
+Write a Python function that joins two lists of different sizes in an alternating fashion.,"list1 = [1, 3, 5, 7, 9]
+list2 = [2, 4, 6, 8]","def joinLists(list1, list2):
+ mergedList = []
+ 
+ for i in range(max(len(list1), len(list2))):
+  if i < len(list1):
+   mergedList.append(list1[i])
+  if i < len(list2):
+   mergedList.append(list2[i])
+ 
+ return mergedList",Function,1263
+Code a function in Python to find the Fibonacci number at a given index.,index = 5,"def fibonacci_at_index(index): 
+    if index < 0: 
+        return -1
+    if index == 0 or index == 1: 
+        return index 
+    return fibonacci_at_index(index - 1) + fibonacci_at_index(index - 2) 
+
+print(fibonacci_at_index(index)) # 5",Function,1272
+Write a function in Python to evaluate an algebraic expression,"exp= ""((x+y)^2)*(x+1)""
+x=2
+y=3","def evaluate_expr(expr,x,y):
+    x = float(x)
+    y = float(y)
+
+    def eval_expr(expr):
+        return eval(expr)
+
+    evaluation = eval_expr(expr.replace(""x"", str(x)).replace(""y"", str(y)))
+    return evaluation
+ 
+exp = ""((x+y)^2)*(x+1)""
+x = 2
+y = 3
+print(evaluate_expr(exp,x,y))",Function,1286
+Generate a Python function to generate a sequence of numbers based on a given interval.,"Start: 2, End: 5","def generate_sequence(start, end):
+    return list(range(start, end + 1))",Function,1299
+Edit this python code to reverse the function’s argument order.,"def multiply(x,y):
+  return x*y","def multiply(y, x):
+  return x*y",Function,1305
+Create a Python function that takes an integer as an input and returns all positive integers less than the input number.,Integer: 10,"def get_pos_int(num):
+    pos_ints = []
+    for i in range(num):
+        if i > 0:
+            pos_ints.append(i)
+    return pos_ints
+
+pos_ints = get_pos_int(10)
+print(pos_ints)",Function,1335
+Optimize a Python function to get the smallest execution time possible.,"def func(a, b, c): 
+    return a + b + c","def func(a, b, c):
+    return a*b + a*c + b*c    # Use an optimized expression for lowest execution time",Function,1337
+Create a function that implements a linear search algorithm in Python.,"x = 20
+arr = [10, 8, 6, 4 2, 20]","def linearSearch(arr, x): 
+    for i in range(len(arr)): 
+        if arr[i] == x: 
+            return i 
+    return -1",Function,1373
+Create a Python function to calculate the Fibonacci sequence with a given number as the input.,6,"def fibonacci_sequence(num): 
+ 
+    a = 0
+    b = 1
+ 
+    if num < 0: 
+        print(""Incorrect input"") 
+    elif num == 0: 
+        return a 
+    elif num == 1: 
+        return b 
+    else: 
+        for i in range(2,num): 
+            c = a + b 
+            a = b 
+            b = c 
+        return b 
+ 
+print(fibonacci_sequence(num))",Function,1374
+Create a function in Python that takes two parameters and prints out the larger of them.,"parameter_1 = 7
+parameter_2 = 9","def printMax(parameter_1, parameter_2):
+    if parameter_1 > parameter_2:
+        print(parameter_1)
+    else:
+      print(parameter_2)",Function,1410
+Develop a function in Python to concatenate two lists,"list1 = [1,2,3]
+list2 = [4,5,6]","def concatenateLists(list1, list2): 
+    list3 = list1 + list2 
+    return list3",Function,1434
+Create a Python function to calculate the area of a triangle given the lengths of its three sides.,"5, 6, 7","import math
+
+def get_area(a, b, c):
+    s = (a + b + c) / 2
+    area = math.sqrt(s*(s-a)*(s-b)*(s-c))
+    return area
+
+input_data = 5, 6, 7
+area = get_area(*input_data)
+print(area)  # Output: 14.696938456699069",Function,1456
+"Create a function in Python that takes a name and age and prints a greeting like ""Hi, my name is <name> and I'm <age> years old.""","""John"", 28","def greeting(name, age):
+    print(""Hi, my name is "", name, ""and I'm"", age, ""years old."")
+
+greeting(""John"", 28)",Function,1479
+Write a function in Python to get the intersection of two sorted lists.,"list1 = [5, 7, 9, 11, 13]
+list2 = [7, 8, 10, 11, 12]","def intersection(list1, list2):
+ result = []
+ i = 0
+ j = 0
+ while i < len(list1) and j < len(list2):
+ if list1[i] == list2[j]:
+ result.append(list1[i])
+ i += 1
+ j += 1
+ elif list1[i] < list2[j]:
+ i += 1
+ else:
+ j += 1
+ return result
+
+print(intersection(list1, list2))
+# Output: [7, 11]",Function,1524
+"Using Python, implement a Pig Latin translator. The translator should accept a word as input and return its Pig Latin equivalent.","word = ""Python""","def pig_latin(word):
+ vowels = ""aeiou""
+ if word[0] in vowels: 
+ return word + 'way'
+ else:
+ return word[1:] + word[0] + 'ay'
+
+pig_latin_word = pig_latin(word)
+print(pig_latin_word) # Output: ythonPay",Function,1532
+"Given a Python dictionary, write a function to invert the keys and values of the dictionary.","my_dict = {'A':1, 'B':2, 'C':3}","def invert_dict(dictionary):
+    inverted_dict = {}
+    for key, value in dictionary.items():
+        inverted_dict[value] = key
+    return inverted_dict
+
+inverted_dict = invert_dict(my_dict)
+print(inverted_dict)",Function,1533
+Implement a function in Python that generates a random password with a minimum length of 10 characters.,No input,"import random
+import string
+
+def generate_random_password(n=10):
+    chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+    return ''.join(random.choice(chars) for _ in range(n))",Function,1549
+Develop a function in Python that takes an individual name as an input and output its acronym.,"""Oscar Thomas""","def make_acronym(name):
+    acronym = """".join([word[0] for word in name.split()]).upper()
+    return acronym
+
+result = make_acronym(""Oscar Thomas"")
+print(result)",Function,1572
+Enhance an existing python program to include a function,"def hello():
+    print(""Hello world!"")","def hello():
+    print(""Hello world!"")
+
+def goodbye():
+    print(""Goodbye!"")
+
+def greetings():
+    hello()
+    goodbye()
+
+greetings()",Function,1607
+Create a python function that takes in two strings and output their combined length.,"string_1 = ""Hello""
+string_2 = ""World""","def get_string_length(string_1, string_2):
+    return len(string_1 + string_2)",Function,1610
+Write a Python function to compute the factorial of an integer.,4,"def factorial(n):
+    if n < 0:
+        print('Factorial does not exist for a negative number.')
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+print(factorial(4))",Function,1620
+Write a Python function to calculate the sum of two numbers using recursion.,"x = 5
+y = 7","def recursive_sum(x, y):
+    if x == 0:
+        return y 
+    else: 
+        return recursive_sum(x - 1, y + 1) 
+
+print(recursive_sum(x, y)) # 12",Function,1639
+Create a Python class that implements an iterator. The iterator should return the square of whole numbers starting at 0.,.,"class SqrIterator:
+    def __init__(self):
+        self.n = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        result = self.n ** 2
+        self.n += 1
+        return result",Function,1641
+Design a function in Python that takes in two numbers and outputs their sum.,"2, 3","def sumTwo(a, b):
+  return a + b
+
+print(sumTwo(2, 3))",Function,1664
+Write a function in Python that takes two lists as arguments and return all their common elements.,"[1, 3, 5, 7], [3, 4, 5, 8]","def common_elements(list1, list2):
+    common = []
+    for num in list1:
+        if num in list2:
+            common.append(num)
+    return common
+
+print(common_elements([1, 3, 5, 7], [3, 4, 5, 8]))",Function,1684
+Convert this function from Python 2 to Python 3.,"def fib(n):
+    """"""Print a Fibonacci series up to n""""""
+    result = []
+    a, b = 0, 1
+    while b < n:
+        result.append(b)
+        a, b = b, a+b
+    return result","def fib(n):
+    """"""Print a Fibonacci series up to n""""""
+    result = []
+    a = 0
+    b = 1
+    while b < n:
+        result.append(b)
+        tmp_a = a
+        a = b
+        b = tmp_a + b
+    return result",Function,1693
+Optimize the following function by rewriting it in Python,"def double(number):
+    return number * 2","def double(number: int) -> int:
+    return number << 1",Function,1715
+Classify the following Python code snippet according to the function it implements.,"def square_sum(num_list):
+    result = 0
+    for num in num_list:
+        result += num * num
+    return result",The code implements a function for summing the squares of a list of numbers.,Function,1734
+Create an AWS Lambda function in Python to make an HTTP request using the requests library.,Example URL: https://api.example.com/data,"import json
+import requests
+
+# Handler function
+def handler(event, context):
+ # Make request
+ response = requests.get('https://api.example.com/data')
+ 
+ # Parse response
+ data = response.json()
+ 
+ return {
+ 'statusCode': 200,
+ 'body': json.dumps(data)
+ }",Function,1795
+Write a Python code fragment to optimize the given function.,"def search(data, x):
+    for element in data:
+        if element == x:
+            return True
+    return False","def search(data, x):
+    if x in data:
+        return True
+    return False",Function,1801
+Create a function in Python to count the occurrence of each word in a sentence.,"sentence = ""This is a sample sentence.""","def word_count(sentence):
+    words = sentence.split() 
+    word_freq = {}
+    for word in words:
+        if word in word_freq:
+            word_freq[word] += 1
+        else:
+            word_freq[word] = 1
+    return word_freq
+
+word_counts = word_count(sentence)
+print(word_counts)",Function,1804
+Write a function in Python to extract domain name from given URLs.,"""http://www.google.com""","import re
+def extract_domain_name(url):
+    regex = r""://([^/]+)/?""
+    match = re.search(regex, url)
+ 
+    if match:
+        return match.group(1)
+
+url = ""http://www.google.com""
+domain_name = extract_domain_name(url)
+print(domain_name)
+ 
+# Output: 
+# google.com",Function,1842
+Write a Python function to concatenate two lists.,"list1 = [1, 2, 3]
+list2 = [4, 5, 6]","def concat_lists(list1, list2):
+    return [x for t in zip(list1, list2) for x in t]
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+print(concat_lists(list1, list2)) # [1, 4, 2, 5, 3, 6]",Function,1851
+Develop a Python function to fetch data from a web service.,url = 'https://jsonplaceholder.typicode.com/users',"import requests
+
+def fetch_data_from_web_service(url):
+    response = requests.get(url)
+    return response.json()",Function,1856
+Develop a Python function that takes two arrays of equal size as input and returns the sum of the two arrays.,"[1,2,3], [4,5,6]","def sum_arrays(arr1, arr2):
+    result = []
+    for i in range(len(arr1)):
+        result.append(arr1[i] + arr2[i])
+    return result
+
+summed = sum_arrays([1,2,3], [4,5,6])
+print(summed)",Function,1900
+Implement a function in Python that takes a number N and returns the sum of all the positive numbers up to N (inclusive).,10,"""""""
+Implement a function in Python that takes a number N and returns the sum of all the positive numbers up to N (inclusive). 
+""""""
+
+def sum_numbers(n):
+    total = 0
+    for num in range(n+1):
+        if num > 0:
+            total += num
+    return total
+
+if __name__ == '__main__':
+    n = 10
+    print(sum_numbers(n)) # 55",Function,1903
+Create a Python function to clean and normalize text strings.,"The text string to be normalized is ""Thi$$$s i$ a te$Xt!!!!!""","import re
+
+def clean_text(text):
+ # Lowercase text
+ text = text.lower()
+ 
+ # Remove special characters
+ text = re.sub(r'[^\w\s]','', text)
+ 
+ # Remove extra whitespaces
+ text = re.sub(r'\s+',' ', text)
+ 
+ return text
+ 
+# Sample Usage
+text = 'Thi$$$s i$ a te$Xt!!!!!'
+clean_text(text)
+# Output: 'this is a text '",Function,1905
+Generate a python function,To calculate the greatest common divisor of two integers.,"def gcd(a, b): 
+    if a == 0 : 
+        return b 
+    return gcd(b % a, a)",Function,1931
+Write a function in Python that takes an integer as an argument and returns the first 5 numbers in the Fibonacci sequence starting from the given integer.,An integer - 15,"def fibonacci(n):
+  a = 0
+  b = 1
+
+  fib = [a]
+
+  for i in range(1, n):
+    c = a + b
+    a = b
+    b = c
+    fib.append(a)
+
+  return fib[:5]  # Return the first 5 numbers in the sequence
+
+print(fibonacci(15)) # [0,1,1,2,3]",Function,1945
+Write a function in Python to generate an email address with a given name and domain.,"name = 'John Smith'
+domain = 'example.com'","def generate_email(name, domain):
+    '''Generates an email address using the given name and domain.'''
+    name_parts = name.lower().split(' ')
+    email_name = '.'.join(name_parts)
+    return email_name + '@' + domain",Function,1956
+"Write a Python function to calculate the compound interest given the principal amount, rate, and number of years.","principal = 1000, rate = 0.03, time = 5","def compound_interest(principal, rate, time):
+    return principal * (1 + rate)**time
+
+result = compound_interest(1000, 0.03, 5)
+print(result)",Function,1957
+Develop a function in Python which takes two inputs and returns the greatest common divisor of those two numbers.,"12, 24","def greatest_common_divisor(a, b):
+    if a < b:
+        a, b = b, a
+
+    while b > 0:
+        a, b = b, a % b
+
+    return a
+
+result = greatest_common_divisor(12, 24)
+print(result)",Function,1971
+Write a function in Python to compute the accuracy of a classification by comparing the true labels and the predicted labels.,"true_labels = [0, 0, 1, 1] 
+predicted_labels = [1, 0, 0, 1]","def compute_accuracy(true, pred):
+    correct = 0
+    total = len(true)
+    for i in range(total):
+        if true[i] == pred[i]:
+            correct += 1
+    return correct/total",Function,1974
+Write a Python function to find all prime numbers between a given lower and upper bound.,"Lower bound = 20, Upper bound = 50","def prime_numbers(lower_bound, upper_bound):
+    primes = []
+    for num in range(lower_bound, upper_bound + 1):
+        if all(num % i != 0 for i in range(2, num)):
+            primes.append(num)
+ 
+    return primes
+ 
+prime_numbers(20, 50) # returns [23, 29, 31, 37, 41, 43, 47]",Function,1999
+Build a web scraping function in Python Scrapy that retrieves data from a given web page.,URL of a web page,"import scrapy
+
+class DataSpider(scrapy.Spider):
+ name = 'DataSpider'
+ start_urls = [url]
+
+def parse(self, response):
+ data = response.css('body').getall()
+ yield { 'data': data }",Function,2005
+Create a function in Python that returns the surface area of a sphere when given the sphere’s radius as input.,radius = 6,"import math
+
+def sphere_surface_area(radius):
+ surface_area = 4 * math.pi * radius * radius
+ return surface_area 
+
+# Test
+radius = 6
+print(sphere_surface_area(radius)) # 452.38934211",Function,2013
+Generate a python function to convert a student's grade from a 0 to 100 scale to the corresponding letter grade according to the following grade scale.,90,"def grade_converter(score):
+    if score >= 90:
+        return 'A'
+    elif score >= 80:
+        return 'B'
+    elif score >= 70:
+        return 'C'
+    elif score >= 60:
+        return 'D'
+    else:
+        return 'F'",Function,2037
+Generate a Python function that takes an matrix as input and raises each element of it to the power of 3.,"[[1,2,3], [4,5,6], [7,8,9]]","def power_of_3(matrix):
+    for i in range(len(matrix)):
+       for j in range(len(matrix[0])): 
+            matrix[i][j] = matrix[i][j] ** 3
+    return matrix",Function,2043
+Edit the following Python code to return the same output with fewer code lines.,"def my_func(list):
+ for i in list:
+ if i % 2 == 0:
+ output = True
+ else:
+ output = False
+ return output","def my_func(list):
+ return any(i % 2 == 0 for i in list)",Function,2080
+Create a function in Python that takes two strings as inputs and prints out the longer of the two strings.,"Hello
+World","def longestString(str1, str2):
+  if len(str1) > len(str2):
+    return str1
+  else:
+    return str2
+
+print(longestString(""Hello"", ""World""))",Function,2082
+Write a Python function to convert a given number into its corresponding Roman numeral.,99,"def convert_to_roman(num):
+    int_nums = [1000, 500, 100, 50, 10, 5, 1]
+    roman_nums = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
+    roman_value = ''
+
+    i = 0
+    while num > 0:
+        for _ in range(num // int_nums[i]):
+             roman_value += roman_nums[i]
+             num -= int_nums[i]
+        i += 1
+
+    return roman_value
+
+print(convert_to_roman(99))
+# Output: 'XCIX'",Function,2084
+Create a Python function to combine two strings.,"String 1: Hello
+String 2: World","def combine(str1, str2):
+  return str1 + str2",Function,2097
+"Write a Python function to classify data points as low, medium and high according to the given threshold values.","threshold = [4, 6]","def classify(value, threshold):
+    if value < threshold[0]:
+        return 'low'
+    elif threshold[0] <= value < threshold[1]:
+        return 'medium'
+    else:
+        return 'high'",Function,2140
+Create a function in Python to give the multiple of 6 of any given number.,Number = 5,"def multiple_of_6(number):
+    return number * 6",Function,2154
+Write a Python function to convert a given floating point number to binary.,19.66,"def decimal_to_binary(f_num):
+  b_str = """"
+  int_num = int(f_num)
+  f_num = f_num - int_num
+
+  while int_num > 0:
+    b_str = str(int_num % 2) + b_str
+    int_num //= 2
+
+  b_str = ""1."" + b_str
+
+  while f_num > 0: 
+    f_num *= 2
+    int_num = int(f_num)
+    if int_num == 1:
+      b_str += ""1""
+    else:
+      b_str += ""0""
+    f_num = f_num - int_num
+
+  return b_str",Function,2160
+Create a function to calculate the Fibonacci sequence in Python,n = 10,"def Fibonacci(n): 
+    if n<0: 
+        print(""Incorrect input"") 
+    # First Fibonacci number is 0 
+    elif n==1: 
+        return 0
+    # Second Fibonacci number is 1 
+    elif n==2: 
+        return 1
+    else: 
+        return Fibonacci(n-1)+Fibonacci(n-2) 
+  
+# Driver Program 
+print(Fibonacci(n))",Function,2166
+Design a program that takes a complicated function and simplifies it in Python.,"def func (x):
+    return 3*(x**2) + 5*x - 4","def simplified_func (x):
+    return 3*x**2 + 5*x - 4",Function,2175
+Generate a function in Python that takes a number as input and prints its corresponding binary representation.,5,"def binary_representation(num):
+    binary_representation = bin(num)[2:] 
+    print(""Binary representation of "" + str(num) + "" is: "" + binary_representation)
+
+# Driver code
+binary_representation(5) # Binary representation of 5 is: 101",Function,2207
+Write a function in Python that prints all the prime numbers between two given numbers inclusive.,"Start: 15
+End: 25","def printPrimeNumbers(start, end):
+ for num in range(start, end+1):
+ # base case
+ if num > 1: 
+ for i in range(2, num): 
+ if (num % i) == 0: 
+ break
+ else: 
+ print(num) 
+
+# Driver Code 
+start = 15
+end = 25
+
+printPrimeNumbers(start, end) 
+
+# Output:
+# 17 
+# 19 
+# 23 
+# 25",Function,2209
+Create a Python program to compare two strings and return the percentage of characters that match.,"""stackoverflow"", ""stackerflow""","def compare_strings( string1, string2 ):
+    s1, s2 = set(string1), set(string2)
+    intersection = s1.intersection(s2)
+
+    return (len(intersection) * 100) / len(s1)",Function,2248
+Debug a Python function that swaps the values of two variables.,"def swap(x, y):
+ temp = x
+ x = y
+ y = temp
+
+a = 10
+b = 20
+
+swap(a, b)","def swap(x, y):
+ temp = x
+ x = y
+ y = temp
+
+a = 10
+b = 20
+
+swap(a, b)
+
+#Verify the result
+if a == 20 and b == 10:
+ print(""Swap successful"")
+else:
+ print(""Swap unsuccessful"") # Output: Swap successful",Function,2260
+Write a function in Python that takes in two strings of the same length and returns the number of different characters in the two strings.,"str1 = ""data""
+str2 = ""muta""","def diff_char(str1, str2):
+ count = 0
+ for i in range(len(str1)):
+ if str1[i] != str2[i]:
+ count += 1
+ return count",Function,2262
+Suggest a way to make this Python function more efficient:,"def divide(nums):
+    result = []
+    for num in nums:
+        if num % 2 == 0:
+            result.append(num)
+    return result","def divide(nums):
+    return [num for num in nums if num % 2 == 0]",Function,2268
+Create a function in Python which takes in two strings and concatenates them into one.,"""Hello,"" and ""World!""","def concat_string(str1, str2):
+    return str1 + str2",Function,2269
+Create an optimization problem in Python to optimize the function.,"The given function is f(x, y) = x + y^2, where x and y are real numbers.","import numpy as np
+from scipy.optimize import minimize
+def f(x):
+    x, y = x
+    return x + y**2
+
+x0 = np.array([0,0])
+res = minimize(f, x0, method='nelder-mead')
+print(res.x)",Function,2290
+Edit this Python function to return the result with two decimal points.,"def area_of_circle(radius):
+    return 3.14 * radius * radius","def area_of_circle(radius):
+    return round(3.14 * radius * radius, 2)",Function,2291
+Refactor a given code snippet into a Python Lambda function.,"def some_method(x, y):
+    result = x + y
+    return result","some_method = lambda x, y: x + y",Function,2318
+Write a Python function to calculate the Hamming distance between two strings of same length.,"""abc"",
+""acd""","def hamming_distance(s1, s2):
+    distance = 0
+
+    for char1, char2 in zip(s1, s2):
+        if char1 != char2:
+            distance += 1
+    
+    return distance
+
+result = hamming_distance(""abc"", ""acd"")
+print(result)",Function,2319
+Develop a function in Python that sorts a dictionary by value in descending order.,"dictionary = {'a': 10, 'b': 20, 'c': 5}","def sort_dict_by_value(dict): 
+    sorted_dict = dict(sorted(dict.items(), key = lambda kv: kv[1], reverse = True)) 
+    return sorted_dict
+
+sorted_dict = sort_dict_by_value(dictionary)
+print(sorted_dict)",Function,2320
+Create a python function to calculate the probability of a given event.,An example event is rolling a dice that has 6 sides and the event is rolling a number 6.,"def calculate_probability(event):
+    num_outcomes = 6
+    num_favorable = 1
+    
+    probability = num_favorable/num_outcomes
+    
+    return probability
+    
+# calculate probability of rolling a 6
+probability = calculate_probability(""rolling a 6"")
+print(probability)",Function,2371
+"Given the following Python function, use optimization techniques to reduce the running time of the function.","def functionA(n):
+ s = 0
+ for i in range(n):
+ for j in range(i+1):
+ s += j
+ return s","def functionA_opt(n):
+ s = 0
+ s = n*(n+1)*(n+2) // 6
+ return s",Function,2386
+"Using Python, create a function that takes two numbers as input, and generates a random number between them.",2 and 5,"def random_number_generator(min, max):
+    return random.randint(min, max)",Function,2412
+Construct a function in Python to add two numbers passed as arguments.,"3,7","def addNumbers(a, b):
+    return a + b
+
+x = 3
+y = 7
+result = addNumbers(x, y)
+print(result)",Function,2442
+Optimize the following Python function to calculate the largest prime factor of a given number.,24,"def largest_prime_factor(n):
+    largest_factor = 1
+    i = 2
+    while i <= n / i:
+        if n % i == 0:
+            largest_factor = i
+            n /= i
+        else:
+            i+=1
+    if n > largest_factor:
+        largest_factor = n
+    return int(largest_factor)
+
+print(largest_prime_factor(24)) # Output: 3",Function,2446
+Create a Python function to classify whether a given sentence is spam or not.,"Sentence: ""Claim your free gift by clicking the link below!""","def is_spam(sentence):
+  spam_words = [""free"", ""gift"", ""click"", ""link""]
+  words = sentence.split(' ')
+  
+  for word in words:
+    word = word.lower()
+    if word in spam_words:
+      return True
+
+  return False",Function,2462
+Implement a function in Python to round a number up to 0 decimal places.,19.876,"def roundUp(x):
+    return int(round(x))
+
+print(roundUp(19.876))",Function,2473
+Write a function to return the first n prime numbers in Python.,Number of Prime Numbers needed: 5,"def firstPrimeNumbers(number): 
+    primeNumbers = [] 
+  
+    for num in range(1, number + 1): 
+ 
+        if (num > 1): 
+            for i in range(2, num): 
+                if (num % i == 0): 
+                    break
+            else: 
+                primeNumbers.append(num)
+    return primeNumbers
+  
+# Test code 
+prime = firstPrimeNumbers(5) 
+print(prime)",Function,2485
+Create a Python program to find the square root of the sum of two numbers without using the sqrt() function.,"Num1 = 4
+Num2 = 9","# Python program
+import math 
+
+def square_root(a, b): 
+    return math.sqrt(a*a + b*b)
+  
+Num1 = 4
+Num2 = 9
+
+print(""Square root of the sum of two numbers:"", square_root(Num1, Num2))",Function,2508
+Write a function using Python to scramble a word.,word: hello,"import random
+
+def scramble_word(word):
+    # Convert the word to a list
+    word_list = list(word)
+    #Scramble the Letters
+    random.shuffle(word_list)
+    #Convert back to a string
+    scrambled_word = ''.join(word_list)
+    return scrambled_word
+
+if __name__ == '__main__':
+    print(scramble_word('hello'))",Function,2533
+Create a Python function that takes an integer argument and prints the prime factors of that number.,num = 30,"def find_prime_factors(num): 
+    factors = []
+    
+    i = 2
+    while i * i <= num: 
+        if num % i: 
+            i += 1
+        else:
+            num //= i
+            factors.append(i)
+
+    if num > 1:
+        factors.append(num)
+
+    print(factors)
+
+find_prime_factors(num)",Function,2538
+Write a Python program to compare two lists of numbers and return any combination of numbers that occur in both lists.,"list1=[1,2,3,4,5,6]
+list2=[3,4,5,7,8,9]","combinedList = [] 
+
+for num1 in list1:
+ for num2 in list2:
+ if num1 == num2:
+ combinedList.append(num1)
+
+print(combinedList) # [3,4,5]",Function,2572
+Create a function in Python to return the media according to the following criteria:,"Given a list of numbers [1, 4, 7, 8, 10, 15, 21],","def get_median(num_list):
+    sorted_list = sorted(num_list)
+    length = len(sorted_list)
+    if (length % 2 == 0):
+        median = (sorted_list[length//2] + sorted_list[length//2 -1])/2.0
+    else:
+        median = sorted_list[length//2]
+    return median",Function,2585
+Write a function in Python to sort the data in lexicographical order.,"[""red"", ""blue"", ""green"", ""purple"", ""pink"", ""black"", ""white""]","def sortLexicographical(data):
+    return sorted(data, key=lambda x:x[0])
+
+sorted_data = sortLexicographical([""red"", ""blue"", ""green"", ""purple"", ""pink"", ""black"", ""white""])
+print(sorted_data)",Function,2587
+Design a recursive Python function that prints the Fibonacci series from 0 to n.,7,"def fibonacci(n):
+  if n == 0:
+    return 0
+  elif n == 1:
+    return 1
+  else:
+    return fibonacci(n - 1) + fibonacci(n - 2)
+    
+for i in range(0, n + 1):
+    print(fibonacci(i))",Function,2588
+Convert the following Python function to C++,"def sum_list(numbers):
+    result = 0
+    for n in numbers:
+        result += n
+    return result","int sum_list(vector<int>& numbers) {
+  int result = 0;
+  for (auto& n : numbers) {
+    result += n;
+  }
+  return result;
+}",Function,2592
+Create a Python function to calculate the volume of a cube by taking its side length as input.,side_length = 5,"def cube_volume(side_length):
+    return side_length ** 3
+
+volume = cube_volume(side_length)
+print(f""Volume of cube is {volume}"")",Function,2601
+Create a Python function that prints the next prime number after a given number.,19,"def is_prime(n):
+ 
+ if n <= 1:
+ return False
+ 
+ for i in range(2, int(n**0.5)+1):
+ if n % i == 0:
+ return False
+ 
+ return True
+ 
+ 
+def next_prime(num):
+ 
+ if is_prime(num):
+ num += 1
+ 
+ while (True):
+ if is_prime(num):
+ return num
+ 
+ num += 1
+ 
+ 
+num = 19
+print(next_prime(num))
+# Output: 23",Function,2610
+Implement a function in Python that prints the average of the two numbers passed as arguments.,"x=15
+y=20","def compute_average(x, y):
+	return (x + y) / 2
+
+print(compute_average(x,y))",Function,2623
+Edit this Python function such that it takes an optional parameter x.,"def add_two_numbers(a, b):
+    return a + b","def add_two_numbers(a, b, x=0):
+    return a + b + x",Function,2638
+Classify the following Python code as a function or a class.,"import math
+
+class Circle:
+   def __init__(self, radius):
+      self.radius = radius
+
+   def area(self):
+      return math.pi * self.radius**2",Class,Function,2662
+"Create an optimization function to maximize a given function over a range of values in Python. The range should be given by [-5, 5], and the function is sin(x)","[-5, 5]","import numpy as np
+from scipy import optimize
+
+def optimization_function(x):
+ return np.sin(x)
+
+res = optimize.minimize_scalar(optimization_function, bounds=[-5, 5])
+
+print(res.x)
+# Result: -0.90898",Function,2677
+Create a function to calculate the sum of two values in Python.,< noinput >,"def add_two_numbers(x, y):
+    sum = x + y
+    return sum",Function,2684
+Create a Python function to compute the nth Fibonacci number of a provided number n.,n = 5,"def fibonacci(n): 
+	if n<0: 
+		print(""Incorrect input"") 
+		
+	# First Fibonacci number is 0 
+	elif n==1: 
+		return 0
+	# Second Fibonacci number is 1 
+	elif n==2: 
+		return 1
+	else: 
+		return fibonacci(n-1)+fibonacci(n-2) 
+
+print(fibonacci(5)) # Outputs 3",Function,2698
+Create a function in Python that will take a sentence as an argument and return a boolean depending on whether or not it is a palindrome.,"sentence = ""Able was I ere I saw Elba""","def is_palindrome(sentence): 
+    rev=(sentence.lower()).replace("" "","""")
+    return rev == rev[::-1]",Function,2701
+Write a Python function that takes two strings of equal length and returns the number of characters that are different between them.,"firstString = 'abcd'
+secondString = 'abec'","def diff_characters(firstString, secondString):
+ if len(firstString) != len(secondString):
+ return -1
+
+ diff_characters = 0
+ for i in range(len(firstString)):
+ if firstString[i] != secondString[i]:
+ diff_characters +=1
+ 
+ return diff_characters",Function,2722
+Write a function in Python that prints the multiplication table of a given number.,number=7,"def print_multiplication_table(number): 
+    for i in range(1, 11): 
+        print(number,""X"",i,""="",number*i)",Function,2725
+Convert the following Python function into C++,"def test_func(A, B):
+ return A + B","#include <iostream>
+
+int test_func(int A, int B)
+{
+ return A + B;
+}
+
+int main()
+{
+ int A = 10;
+ int B = 20;
+ 
+ std::cout << ""The value of A + B = "" << test_func(A, B) << std::endl;
+ 
+ return 0;
+}",Function,2740
+Create a function in Python that takes a number N and returns the sum of the first N odd numbers.,N = 5,"def sum_of_odds(N):
+    return sum([i for i in range(1, 2*N + 1, 2)])
+
+N = 5
+print(sum_of_odds(N))",Function,2749
+Create a function in Python to calculate the difference between two dates.,"(2020, 4, 1), (2021, 4, 16)","from datetime import date
+
+def diff_dates(date1, date2): 
+    return abs(date2 - date1).days 
+
+date1 = date(2020, 4, 1) 
+date2 = date(2021, 4, 16) 
+difference = diff_dates(date1, date2) 
+
+print(difference, ""days"")",Function,2750
+Design a Python script to return the output of a description tag given an HTML page.,"<html>
+  <body>
+    <p>This is a sample text</p>
+    <description>This is a description tag </description>
+  </body>
+</html>","from bs4 import BeautifulSoup
+def get_description(html_str):
+  soup = BeautifulSoup(html_str, ""lxml"")
+  description = soup.find(""description"")
+  return description.get_text()",Function,2753
+Write a Python function to filter out strings that contain numbers.,"[""apple"",""hello123"",""hi12345"", ""good15""]","def filter_numbers(strings): 
+    return [s for s in strings if not any(c.isdigit() for c in s)]
+
+if __name__ == '__main__':
+    strings = [""apple"",""hello123"",""hi12345"", ""good15""]
+    print (filter_numbers(strings))",Function,2759
+Write a code in Python to optimize this objective function.,Objective function: x + y^2 + z^3,"import scipy.optimize
+
+def objective(variables):
+    x,y,z = variables
+    return x + y*y + z*z*z
+
+x0 = [0,0,0] # Initial guess of variables
+
+# Perform the optimization
+res = scipy.optimize.minimize(
+    objective, 
+    x0,
+    method='nelder-mead',
+    options={'xtol': 1e-8, 'disp': True}
+)
+
+# Print resultant variables
+print(res.x)
+
+# Print minimal value
+print(res.fun)",Function,2763
+"Write a Python function to generate a random number between 1 and 5, given two numbers X and Y.","4, 8","import random
+
+def generate_random_number(x, y):
+    start = min(x, y)
+    end = max(x, y)
+    return random.randint(start, end)
+
+result = generate_random_number(4, 8)
+print(result)",Function,2823
+Determine the maximum of two values in Python without using the max function.,"x = 7
+y = 3","# Determine the maximum of two values in Python
+# without using the max function
+
+x = 7
+y = 3
+
+# if x is greater than y, 
+# then x is the max
+if x > y:
+    max_value = x
+# if y is greater than x, 
+# then y is the max
+else:
+    max_value = y
+
+print(max_value)",Function,2826
+Generate a python script to return the longest word in a given sentence.,This is a sentence with multiple words.,"def longestWord(sentence):
+    words = sentence.split(' ')
+    longest = ''
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+    return longest",Function,2854
+"Create a function in Python to optimize the following function with respect to its two variables x, and y.","f(x,y) = 2x^3 + 3y^2 + y + 5","import numpy as np 
+import scipy.optimize as opt 
+
+def func(x): 
+	return 2*np.power(x[0], 3) + 3*np.power(x[1],2) + x[1] + 5
+
+opt.minimize(func, ([0, 0]), method='nelder-mead', 
+options={'xtol': 1e-8, 'disp': True})",Function,2856
+Rewrite the following function in Python to use recursion instead of a loop,"def factorial_iterative(n):
+    factorial = 1
+    while n > 1:
+        factorial = factorial * n
+        n -= 1
+    return factorial","def factorial_recursive(n):
+    # Base case: 
+    # n is 1, return 1
+    if n == 1:
+        return 1
+    # Recursive case: 
+    # return n * (n-1)
+    return n * factorial_recursive(n - 1)
+
+# Test
+print(factorial_recursive(5))",Function,2869
+Edit a Python module to include a function that adds two given numbers.,"The Python module contains the following code:
+
+def subtract(x, y):
+ return x - y","def subtract(x, y):
+    return x - y
+
+def add(x, y):
+    return x + y",Function,2877
+Create a function in Python that converts a sentence to upper case.,"""This is an example sentence.""","def sentence_to_upper(sentence):
+    return sentence.upper()
+
+print(sentence_to_upper(""This is an example sentence.""))",Function,2896
+"In Python, create a function to identify whether a given number is even or odd.",Number: 21,"def is_odd(n):
+  if(n % 2 == 0):
+    return ""Even""
+  else:
+    return ""Odd""
+ 
+print(is_odd(21)) # Outputs: ""Odd""",Function,2898
+Create a python function to take two integers input and calculate the sum of both integers.,"int1 = 7
+int2 = 3","def add(int1,int2):
+    sum = int1 + int2
+    return sum",Function,2938
+Create a Python function to sort the words in a sentence.,"Sentence = ""I love coding""","def sort_words(sentence): 
+  words = sentence.split("" "")
+  words.sort()
+  return ' '.join(words)
+
+sentence = ""I love coding""
+sortedSentence = sort_words(sentence)
+print(sortedSentence) 
+// Outputs 'I coding love'",Function,2939
+Construct a Python function which takes two strings as input arguments and returns their concatenation.,"""Hello "", ""World!""","def concat_strings(str1, str2):
+  return str1 + str2
+
+result = concat_strings(""Hello "", ""World!"")
+print(result)",Function,2940
+Compose a function in Python to take two numbers as input and return the greatest number.,5 and 8,"def getGreatestNumber(a, b):
+    if a > b:
+        return a
+    return b
+
+greatest_num = getGreatestNumber(5, 8)
+print(""Greatest number is"", greatest_num)",Function,2983
+Develop a Python function to compare two given dictionaries.,"d1 = {'a':1, 'b':2}
+d2 = {'a':2, 'b':1}","def compare_dictionaries(d1, d2):
+  for key in d1:
+    if key not in d2 or d1[key] != d2[key]: 
+      return False
+  return True",Function,2992
+Write a Python function to calculate the difference between two dates in days.,"(11/22/2016, 12/30/2016)","def days_difference(date1, date2): 
+    from datetime import datetime 
+    difference = datetime.strptime(date1, '%m/%d/%Y') - datetime.strptime(date2, '%m/%d/%Y') 
+    return abs(difference.days)",Function,3002
+Build a function in Python to fetch records from a MongoDB database.,"host = ""hostname""
+port = ""27017""
+database_name = ""dbname""
+collection_name = ""users""","import pymongo
+
+def fetchRecords(host, port, database_name, collection_name):
+    client = pymongo.MongoClient(host, int(port))
+    db = client[database_name]
+    collection = db[ collection_name ]
+    records = collection.find({})
+    return records",Function,3004
+Create a Python function to filter a dictionary that contains strings only.,"{'name': 'John', 'age': 20, 'likes': ['apple', 'banana']}","def filterStringDict(input):
+    result = {}
+    for key, value in input.items():
+        # Check if value is a string
+        if isinstance(value, str):
+            # Add to result
+            result[key] = value
+    return result",Function,3005
+Modify an existing Python function to eliminate any redundancies,"def just_me(name):
+    print(""Hi, my name is ""+name+""."")
+    print(""I am special and nothing else matters."")
+    print(""What about you?"")","def just_me(name):
+    print(""Hi, my name is ""+name+"". I am special and nothing else matters."")
+    print(""What about you?"")",Function,3017
+Create a Python program to find the square root of a number without using the square root function.,25,"# A function to calculate the Square Root of a number using 
+# the babylonian method 
+def sqrt(n): 
+	
+	# We are using n itself as initial approximation 
+	# This can definitely be improved 
+	x = n 
+	y = 1
+	
+	# e decides the accuracy level 
+	e = 0.000001
+	
+	while(x - y > e): 
+		x = (x + y)/2
+		y = n/x 
+
+	return x 
+
+# Driver Program 
+num = 25
+print(sqrt(num))",Function,3024
+Write a Python function to sort a dictionary by value.,"dictionary = {
+ 'a': 10,
+ 'b': 3,
+ 'c': 5
+}","def sortDictByValue(dictionary):
+ sorted_dictionary = sorted(dictionary.items(), key=lambda x: x[1])
+ return dict(sorted_dictionary)
+     
+dictionary = {
+ 'a': 10,
+ 'b': 3,
+ 'c': 5
+}
+
+print(sortDictByValue(dictionary)) 
+// Output: {'b': 3, 'c': 5, 'a': 10}",Function,3025
+Create a function in Python that takes two numbers as inputs and prints out their sum.,"x = 5, y = 8","def sum_numbers(x, y):
+    return x + y
+  
+print(sum_numbers(5, 8))",Function,3030
+Optimize the following function in Python so that it runs faster:,"def three_times_sum(a,b,c):
+    total = a + b
+    total += c
+    return total","def three_times_sum(a, b, c):
+    return a + b + c",Function,3048
+Create a function in Python that takes an integer input and prints all combinations of the numbers.,4,"def permutations(n):
+ for i in range(n+1):
+  for j in range(n+1):
+   for k in range(n+1):
+    for l in range(n+1):
+     print(i,j,k,l)
+
+# Calling the function
+permutations(4)",Function,3080
+Develop a Python function to calculate the tax of each item,"price = 100
+tax_rate = 0.15","# Function to calculate tax
+def calculate_tax(price, tax_rate):
+    # Calculate the tax
+    tax = price * tax_rate
+    # Return the tax
+    return tax
+
+# Demonstration
+price = 100
+tax_rate = 0.15
+tax = calculate_tax(price, tax_rate)
+print(""Tax of the item:"", tax)",Function,3086
+"Write a function in Python to sort a dictionary according to its values, in descending order.","dictionary = {'apple': 2, 'banana': 3, 'mango': 1}","def sortDictionary(dictionary):
+  sorted_list = sorted(dictionary.items(), key=lambda x: x[1], reverse=True)
+  sorted_dictionary = dict(sorted_list)
+  return sorted_dictionary
+
+sorted_dictionary = sortDictionary({'apple': 2, 'banana': 3, 'mango': 1})
+print(sorted_dictionary)",Function,3103
+Create a function in python to calculate the distance between two points in 3D space.,"(x1,y1,z1) = (8, -4, 1)
+(x2,y2,z2) = (5, 8, -2)","def calculateDistance(x1,y1,z1,x2,y2,z2): 
+	dist = math.sqrt((x2 - x1)**2 + (y2 - y1)**2 + (z2 - z1)**2) 
+	return dist 
+
+print(calculateDistance(8,-4,1,5,8,-2))",Function,3104
+Design a function in Python that computes the area of a triangle given its base length and height.,base_length = 8,"def triangle_area(base_length, height):
+    area = 0.5 * base_length * height
+    return area",Function,3129
+"Write a function in Python that takes two parameters ""n"" and ""k"" and returns the number of ways to jump ""k"" steps, starting from 0, taking 1 or 2 steps at a time, and not going beyond n.","n = 4, k = 4","def steps(n, k):
+ if k == 0 or n == k:
+  return 1
+ if n > k:
+  return steps(n-1, k-1) + steps(n-2, k-1)
+ else:
+  return 0",Function,3147
+Create a function in Python to optimize a cost function using gradient descent.,A cost function of the form f(x) = x^2 + 10.,"def optimize(x, alpha):
+ grad = 2 * x
+ x = x - alpha * grad
+ return x
+
+for i in range(1000):
+ x = optimize(x, 0.1) 
+
+print(x) # Output: 0.0",Function,3160
+Write a function in Python which takes a number as a parameter and returns the factorial.,5,"def factorial(num):
+  if num == 0 or num == 1:
+    return 1
+  else:
+    return num * factorial(num - 1)
+  
+print(factorial(5))",Function,3167
+Write a Python function to compare two lists and return the elements that are not common in both lists.,"list1=[1, 2, 3, 4, 5]
+list2=[4, 5, 6, 7, 8]","def get_unique_elements(list1, list2):
+ return list(set(list1) - set(list2))",Function,3199
+Generate a function in Python to delete a key from a dictionary.,"dictionary = {'a':1,'b':2,'c':3}
+key = 'b'","def delete_key(dictionary, key): 
+    if key in dictionary: 
+        del dictionary[key] 
+    else: 
+        print('Error! Key not found') 
+
+delete_key(dictionary, key) 
+print(dictionary)",Function,3201
+Create a Python function that takes two numbers and returns the biggest of them.,"x = 3, y = 6","def max_of_two(x, y):
+    if x > y:
+        return x
+    else:
+        return y
+ 
+x = 3
+y = 6
+maximum = max_of_two(x, y)
+print('The maximum of', x, 'and', y, 'is', maximum)",Function,3232
+Design a function in Python to classify an input into positive or negative.,number = -3,"def classify_number(number):
+    if number > 0:
+        return 'positive'
+    else:
+        return 'negative' 
+
+result = classify_number(number)
+print(result)",Function,3266
+Create a Python function that returns all the prime numbers between 1 and a given number.,Number: 25,"def get_primes(n):
+ primes = []
+ for num in range(2, n + 1):
+ is_prime = True
+ for divisor in range(2, num):
+ if num % divisor == 0:
+ is_prime = False
+ break
+ 
+ if is_prime:
+ primes.append(num)
+ 
+ return primes
+ 
+primes = get_primes(25)
+print(primes) # prints [2, 3, 5, 7, 11, 13, 17, 19, 23]",Function,3276
+"Create a function which takes two strings as arguments, concatenates the two strings, and capitalizes the result.","str1 = 'python'
+str2 = 'programming'","def concat_and_capitalize(str1, str2):
+    result = str1 + str2
+    return result.capitalize()
+
+str1 = 'python'
+str2 = 'programming'
+print(concat_and_capitalize(str1, str2))",Function,3294
+How can you write a function in Python to pivot a data frame with 2 columns?,"Data frame:
+  A  B
+1 a  b
+2 c  d","import pandas as pd 
+  
+def pivot_dataframe(df): 
+    df_pivot = df.pivot(index = 'A', columns ='B') 
+    return df_pivot
+
+df = pd.DataFrame({'A':{1:'a',2:'c'}, 
+                   'B':{1:'b',2:'d'} 
+                  }) 
+
+print(pivot_dataframe(df)) 
+# Output 
+   B  
+A     b  d
+  a  c",Function,3316
+Create a slugify function in Python that converts a sentence into a valid URL slug.,This Is a Test,"def slugify(string):
+    slug = string.lower().strip().replace(' ', '-')
+    return slug
+
+slug = slugify(""This Is a Test"")
+print(slug)",Function,3336
+Optimize a given Python function to run faster.,"def long_function(lst):
+    counter = 0
+    for i in lst:
+        inner_counter = 0
+        while inner_counter < i:
+            counter += 1
+            inner_counter += 1
+    return counter","def long_function(lst):
+    counter = 0
+    for i in lst:
+        counter += i
+    return counter",Function,3339
+Create a function in Python to calculate the total cost after applying a discount. The function should accept the original cost and the discount percentage as arguments.,"original cost = 100
+discount percentage = 25","def calculate_discounted_cost(cost, discount_percentage):
+ discounted_cost = cost - (cost * (discount_percentage/100))
+ return discounted_cost
+
+discounted_cost = calculate_discounted_cost(100, 25)
+print ('The discounted cost is: ', discounted_cost)",Function,3372
+Produce a program using Python that visualizes the given function.,"f(x, y) = x + y","import matplotlib.pyplot as plt 
+import numpy as np 
+
+x = np.arange(-4.0, 4.0, 0.1) 
+y = np.arange(-4.0, 4.0, 0.1) 
+X, Y = np.meshgrid(x, y) 
+
+def f(x, y): 
+    return x + y 
+
+Z = f(X, Y)
+
+fig = plt.figure()
+plt.contourf(X, Y, Z) 
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('f(x,y) = x + y') 
+plt.show()",Function,3384
+Create a function in Python which takes a parameter and finds the maximum value in the parameter.,"parameter = [100, 10, 75, 23, 96]","def max_value(parameter):
+    max_val = parameter[0]
+    for num in parameter:
+        if num > max_val:
+            max_val = num
+    return max_val
+
+max_num = max_value(parameter)
+print(max_num)",Function,3389
+Write a Python function to remove all consecutive duplicates of a given number.,"[1,1,2,3,3,3,4,4,4,4]","def remove_duplicates(lst):
+  result = []
+  curr = lst[0]
+
+  for num in lst:
+    if num != curr:
+      result.append(num)
+      curr = num
+  return result",Function,3407
+Rewrite the following Python function to minimize the number of lines and improve readability.,"def add_numbers(num1, num2):
+    sum = num1 + num2 
+    print(""The sum of two numbers is :"",sum)","def add_numbers(num1, num2):
+    print(f""The sum of two numbers is : {num1 + num2}"")",Function,3465
+Convert the following JavaScript function to Python.,"function double(x) {
+  return 2 * x;
+}","def double(x):
+  return 2 * x",Function,3479
+Create a Python method which will make an HTTP GET request to the given URL and return the response.,url='http://www.example.com/',"import requests
+
+def getRequest(url):
+ response = requests.get(url)
+ return response
+
+res = getRequest('http://www.example.com/')
+print(res.text)",Function,3485
+Design a Python function to return the sum of three numbers.,"[5, 10, 8]","def sum_three_numbers(nums):
+    return sum(nums)
+
+result = sum_three_numbers([5, 10, 8])
+print(result)",Function,3520
+Create a function in Python to remove punctuation from a text.,"text = “Welcome! My name is Mike, and I’m here to help you.”","import string
+
+def remove_punctuation(text):
+    punct_chars = string.punctuation
+    no_punct = """"
+    for char in text:
+        if char not in punct_chars:
+            no_punct += char
+    return no_punct
+
+print(remove_punctuation(""Welcome! My name is Mike, and I’m here to help you.”""))
+# Output: Welcome My name is Mike and Im here to help you",Function,3581
+Modify the following Python function to ensure that the two strings are converted to lowercase before comparison.,"def compare_strings(str1, str2):
+    return str1 == str2","def compare_strings(str1, str2):
+    str1 = str1.lower()
+    str2 = str2.lower()
+    
+    return str1 == str2",Function,3596
+Classify this Python function according to behavior.,"def is_even(n):
+    '''
+    This function takes a number n and 
+    returns True if n is even and False if n is odd
+    '''
+    return n % 2 == 0",Classifying this Python function as a Predictive Function.,Function,3602
+Edit the following Python function to handle keyboard interrupts.,"def main():
+ try:
+ counter = 0
+ while True:
+ print(counter)
+ counter += 1
+ time.sleep(1)
+ 
+except KeyboardInterrupt:
+ print('Goodbye!')","def main():
+ try:
+ counter = 0
+ while True:
+ print(counter)
+ counter += 1
+ time.sleep(1)
+ 
+ except KeyboardInterrupt:
+ print('Goodbye!') 
+ sys.exit()",Function,3603
+Create a function in Python to calculate the sum of the cubes of the first n positive integers.,n = 4,"def sum_cubes(n): 
+    sum = 0
+    for i in range(1,n+1): 
+        sum += i**3 
+    return sum",Function,3625
+Create a Python program that wraps a function with a given input sequence and prints out the output of the function.,"def my_function(x):
+ return x * x
+
+sequence = [1, 2, 3, 4, 5]","def wrapped(f, seq):
+    for x in seq:
+        print(f(x))
+
+def my_function(x):
+    return x * x
+
+sequence = [1, 2, 3, 4, 5]
+
+wrapped(my_function, sequence)
+
+# Output: 
+1
+4
+9
+16
+25",Function,3666
+Write Python code to maximize this objective function.,"def obj_func(x):
+    return x**2 - 4*x + 3","def maximize_obj_func(x):
+    return 2*x - 4
+
+x_opt = maximize_obj_func(x)
+opt_val = obj_func(x_opt)
+print(""Optimum value of objective function: "", opt_val)",Function,3695
+Convert the following algorithm into a recursive Python function,"def sum_digits(n):
+    total = 0
+    while n > 0:
+        digit = n % 10
+        total += digit
+        n //= 10
+    return total","def sum_digits(n):
+    """"""
+    Calculates the sum of all digits of a number
+
+    Args:
+        n (int): The number
+
+    Returns:
+        int: The sum of the digits
+    """"""
+    if n == 0:
+        return 0
+    return n % 10 + sum_digits(n // 10)",Function,3712
+"Create a Python function that takes a dictionary as an argument, and returns the value with maximum frequency in that dictionary.","dic = {1: 'a', 2: 'b', 3: 'b', 4: 'c'}","def max_freq_val(dic): 
+    max_freq = 0
+    max_val = None
+    for val in dic.values():
+        if dic.values().count(val) > max_freq:
+            max_freq = dic.values().count(val)
+            max_val = val
+    
+    return max_val
+
+max_val = max_freq_val(dic)
+print(max_val)",Function,3715
+Create a function in Python that will take two strings and merge them together without spaces.,"string1 = ""Hello""
+string2 = ""World""","def joinStrings(s1, s2):
+    return s1 + s2
+
+print(joinStrings('Hello', 'World'))",Function,3751
+"Using Python, create a function to convert HTML to plain text.","Input HTML:
+```
+<p>Hello world!</p>
+<div>
+    <p>This is a test.</p>
+</div>
+```","import lxml.html as lh
+
+def html_to_text(html):
+    tree = lh.fromstring(html)
+    return tree.text_content()
+
+html = ""<p>Hello world!</p><div><p>This is a test.</p></div>""
+
+print(html_to_text(html))",Function,3759
+Create a Python function which returns the greatest common divisor of two integers.,"18, 48","def greatest_common_divisor(a, b):
+    # Ensure that a is greater than b
+    if a < b:
+        a, b = b, a
+
+    # Calculate the GCD of a and b
+    while b != 0:
+        # Get the remainder
+        rem = a % b
+        # Set a to b
+        a = b
+        # Set b to the remainder
+        b = rem
+
+    # Return the greatest common divisor
+    return a
+
+print(greatest_common_divisor(18, 48))",Function,3765
+Optimize the following Python function. The function calculates the sum of squares of two given numbers.,"def SumOfSquares(x,y):
+    result = x**2 + y**2
+    return result","def SumOfSquares(x, y):
+ return x * (x + y) + y * y",Function,3793
+"Refactor a Python program by identifying code unnecessarily repeated, converting it into a function, and using the function wherever necessary.","def my_function():
+  for i in range(0, 5):
+    print('loop 1:', i)
+
+  for i in range(0, 5):
+    print('loop 2:', i)","def my_function():
+  print_loop(0, 5, 'loop 1')
+  print_loop(0, 5, 'loop 2')
+
+def print_loop(start, end, tag):
+  for i in range(start, end):
+    print(tag + ':', i)",Function,3799
+Create a Python function that takes two strings as input. The function should return a boolean value that indicates whether the two strings are anagrams of each other.,"eat, tea","def is_anagram(s1, s2):
+ s1 = s1.replace(' ', '').lower()
+ s2 = s2.replace(' ', '').lower()
+
+ if len(s1) == len(s2):
+ return sorted(s1) == sorted(s2)
+ else:
+ return False",Function,3803
+Compute the sum of the fibonacci sequence up to n using a recursive Python function.,5,"def fib_sum(n):
+  if n <= 1:
+    return n
+  else:
+    return fib_sum(n-1) + fib_sum(n-2) + n
+
+print(fib_sum(5))",Function,3807
+Generate a python function that takes a dataframe as its input and returns the sum of all values in the dataframe.,"import pandas as pd
+
+df = pd.DataFrame([[3, 4, 5], [1, 2, 3], [4, 5, 6]], 
+                   columns = ['A', 'B', 'C'])","def sum_dataframe(df):
+ total = 0
+ for col in df.columns:
+ total += df[col].sum()
+
+ return total
+ 
+# Example usage
+print(sum_dataframe(df)) # prints 18",Function,3808
+Create a python function that prints out the numbers from 1 to n,n = 5,"def printNumbers(n): 
+  for i in range(1,n+1): 
+    print(i, end ="" "") 
+
+printNumbers(5)",Function,3810
+Write a function in Python which takes a number and multiplies it by 3.,number = 4,"def multiplyByThree(number):
+  return number*3
+
+multiplied_value = multiplyByThree(4)
+print(multiplied_value)",Function,3826
+Implement a function in Python to generate a password of size n,6,"import string
+import random
+
+def generate_password(n):
+    password = ''
+    for i in range(n):
+        password += random.choice(string.ascii_letters + 
+        string.digits + string.punctuation)
+    return password",Function,3838
+Write a function in Python to perform standard normalization of a given data.,"Data:
+[35,45,55,65,75]","def normalize(data):
+    """"""Performs standard normalization of a given data""""""
+    mean = sum(data)/len(data)
+    std_dev = (sum([(x-mean)**2 for x in data])/len(data)) ** 0.5
+    return [(x-mean)/std_dev for x in data]
+
+data = [35,45,55,65,75]
+
+print(normalize(data)) # output: [-1.0, -0.5, 0.0, 0.5, 1.0]",Function,3874
+Write a Python function to calculate the probability of an event occurring.,p = 0.8,"def probability(p): 
+    return p 
+  
+print(f""The probability of the event occurring is {probability(p)}"")",Function,3884
+Create a function in Python to find the prime numbers up to a given integer n.,8,"def primes_up_to(n):
+ primes = []
+ for i in range(2, n + 1):
+ for j in range(2, i):
+ if i % j == 0:
+ break
+ else:
+ primes.append(i)
+ break
+ return primes
+
+print(primes_up_to(8)) # [2, 3, 5, 7]",Function,3903
+Write a Python function to find the maximum from 3 numbers.,"10, 7, 4","def find_max(a, b, c):
+    max = a
+    if b > max:
+        max = b
+    if c > max:
+        max = c
+    return max
+
+max_number = find_max(10, 7, 4)
+print('Maximum number is', max_number)",Function,3920
+Modify the below Python function to make it efficient.,"def min_product(a, b):
+ return a * b * (a - b)","def min_product(a, b):
+    if a > b:
+        return a * b
+    else:
+        return a * b * (a - b)",Function,3958
+Edit the given Python function to include an exception handling code block.,"def convert_to_integer(x):
+    return int(x)","def convert_to_integer(x):
+    try:
+        return int(x)
+    except Exception:
+        print('Unable to convert to integer.')
+        return x",Function,4002
+Design a function in Python to generate Fibonacci numbers from 1 to a given range.,10,"def fibonacci(x):
+ fib_numbers = [1,1]
+ for i in range(2,x):
+  fib_numbers.append(fib_numbers[i-1] + fib_numbers[i-2])
+ return fib_numbers",Function,4006
+Write a Python function to get the GCD (Greatest Common Divisor) of two positive integers.,"46, 24","def gcd(a,b): 
+      
+    if b == 0: 
+        
+        return a 
+      
+    return gcd(b, a % b)",Function,4012
+Design a recursive function in Python that calculates the Fibonacci sequence to the nth number.,n = 10,"def fib(n):
+ if n == 0:
+  return 0
+ elif n == 1:
+  return 1
+ else:
+  return fib(n-1) + fib(n-2)
+
+num = 10
+print(""The Fibonacci sequence to the "" + str(num) +""th number is:"")
+for i in range(num):
+ print(fib(i))",Function,4020
+Optimize the following Python function to merge two lists.,"a = [1,3,5]
+b = [2,4,6]","def merge_lists(a, b):
+  merged_list = []
+  a_pos = 0
+  b_pos = 0
+  
+  while a_pos < len(a) and b_pos < len(b):
+    if a[a_pos] < b[b_pos]:
+      merged_list.append(a[a_pos])
+      a_pos += 1
+    else:
+      merged_list.append(b[b_pos])
+      b_pos += 1
+
+  return merged_list + a[a_pos:] + b[b_pos:]
+
+a = [1,3,5]
+b = [2,4,6]
+print(merge_lists(a,b))",Function,4037
+Combine two Python dictionaries and return a new dictionary,"dict1: {'a':1, 'b':2}
+dict2: {'b':3, 'c':4}","def combine_dict(dict1, dict2):
+    combined_dict = {}
+    for key, value in dict1.items():
+        combined_dict[key] = value
+    for key, value in dict2.items():
+        combined_dict[key] = value
+    return combined_dict
+
+dict1 = {'a':1, 'b':2}
+dict2 = {'b':3, 'c':4}
+combined_dict = combine_dict(dict1, dict2)
+print(combined_dict)",Function,4049
+Create a Python function that takes inputs in the form of two words and returns the start index of the second word in the first word.,"Word1 = ""Mountain"" ,Word2 = ""tain""","def index_of_word(w1, w2):
+    pos = 0
+    for i in w1:
+        if w1.find(w2,pos) > -1:
+            return w1.find(w2,pos)
+        pos +=1
+    return -1",Function,4064
+Convert a Javascript function to Python.,"function add(a, b) {
+  return a + b;
+}","def add(a, b):
+    return a + b",Function,4090
+Create a Python function that takes two numbers and returns the Greatest Common Divisor (GCD) of the two numbers.,"14, 18","def gcd(x, y):
+    while y != 0:
+        x, y = y, x % y
+    return x",Function,4113
+Generate a python function to calculate the total cost of a purchase given prices and quantities.,"prices = [10, 20, 10]
+quantities = [1, 2, 3]","def calculate_total_cost(prices, quantities):
+ total = 0
+ for price, quantity in zip(prices, quantities):
+ total += price * quantity
+ return total",Function,4131
+Create a function in Python to sort strings in alphabetical order.,"['abc', 'bac', 'bca', 'axy', 'axz']","def sort_strings(strings):
+    strings.sort()
+    return strings
+
+strings = ['abc', 'bac', 'bca', 'axy', 'axz']
+
+print(sort_strings(strings))",Function,4197
+Generate a function in Python to zip two lists.,"list1 = [""a"", ""b"", ""c""]
+list2 = [1, 2, 3]","def zip_two_lists(list1, list2):
+    return zip(list1, list2)",Function,4201
+Implement an algorithm in Python to optimize the following cost function,cost(x) = 3x^2 + 4x +2,"def optimization_algorithm(x): 
+    cost = 3 * x ** 2 + 4*x + 2
+    while cost > 0: 
+        cost = cost - (6*x + 4)
+        x = x - 0.01
+    return x",Function,4207
+Create a function to generate random numbers within a given range in Python.,"start=1, end=10","import random
+
+def generate_random_numbers(start, end):
+    return random.randint(start, end)
+
+result = generate_random_numbers(1,10)
+print(result)",Function,4222
+Generate a main.py python script that will return the maximum of two numbers.,"a = 3;
+b = 4","def max(a, b): 
+    if a > b: 
+        return a 
+    else:  
+        return b 
+  
+#Driver Code 
+a = 3
+b = 4
+print(max(a, b))",Function,4224
+Create a Python function to generate a random password of length n,3,"import string
+import random
+
+def gen_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = """"
+    for i in range(length):
+        password += random.choice(characters)
+    return password
+
+result = gen_password(3)
+print(result)",Function,4235
+Design a function in Python that takes two lists as input and returns the elements in common.,"list1 = [2, 3, 4, 5]
+list2 = [1, 2, 4, 5]","list1 = [2, 3, 4, 5]
+list2 = [1, 2, 4, 5]
+
+def common_elements(list1, list2):
+    result = []
+    for item in list1:
+        if item in list2:
+            result.append(item)
+    return result
+
+print(common_elements(list1, list2))",Function,4255
+"In Python, create a method that can take two integers and return their sum.","3, 8","def sum_ints(int1, int2):
+    return int1 + int2",Function,4268
+Create a function in Classical Python to extract the hostname from a given URL,"url = ""http://www.example.com/index.html""","def get_hostname(url):
+    hostname = url.split(""/"")[2]
+    return hostname
+
+hostname  = get_hostname(url)
+print(hostname)",Function,4275
+Create a function in Python that takes two strings as an input and returns their concatenation.,"str1 = ""Hello""
+str2 = ""World""","def concat_string(str1, str2):
+    return str1 + str2
+
+result = concat_string(str1, str2)
+print(result)",Function,4278
+Create a function in Python to generate a Fibonacci series up to a given number.,50,"def fibonacci(num):
+    a = 0
+    b = 1
+    if num == 1:
+        print(a)
+    elif num == 2:
+        print(a,b)
+    else:
+        print(a,b, end="" "")
+        for i in range(2,num):
+            c = a + b
+            a = b
+            b = c
+            print(b, end="" "")
+
+fibonacci(50) # output: 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181",Function,4297
+Write a Python function to find the intersection of two given sets.,"set1 = [1, 2, 3, 4], set2 = [2, 3, 4, 5]","def intersection(set1, set2): 
+    return [i for i in set1 if i in set2]",Function,4299
+Write a Python function to generate the concatenation of two inputs strings.,"string1 = ""Hello ""
+string2 = ""World!""","def concatenate_string(string1, string2):
+    return string1 + string2
+
+string1 = ""Hello ""
+string2 = ""World!""
+
+concatenated_string = concatenate_string(string1, string2)
+print(concatenated_string)",Function,4305
+Write a function in Python to calculate the maximum value of two given numbers.,12 and 15,"def max_val(num1, num2):
+    # function to find the maximum value of two numbers
+    if(num1 > num2):
+        return num1
+    else:
+        return num2
+
+# get the input values from the user
+a = int(input(""Enter first number: ""))
+b = int(input(""Enter second number: ""))
+
+# call the max_val() function
+max_val = max_val(a,b)
+
+print(""The maximum value is:"", max_val)",Function,4347
+Create a function that returns multiple values in Python.,No input needed.,"def multiple_values():
+    x = 2
+    y = 7
+    z = ""Hello""
+    return x, y, z
+
+x, y, z = multiple_values()
+
+print(x, y, z) # 2 7 Hello",Function,4368
+Create a function to calculate the sum of a sequence of integers.,"[1, 2, 3, 4, 5]","# Python code
+def sum_sequence(sequence):
+  sum = 0
+  for num in sequence:
+    sum += num
+  return sum",Function,4421
+Write a function in Python that takes 2 numbers and returns their GCD.,"48, 18","def findGCD(a,b): 
+    if (a == 0) 
+        return b 
+    if (b == 0) 
+        return a 
+    
+    if (a == b): 
+        return a 
+          
+    # If a is greater 
+    if (a > b): 
+        return findGCD(a-b, b) 
+    return findGCD(a, b-a) 
+
+if __name__ == '__main__': 
+      a = 48 
+      b = 18 
+      print(""GCD of"", a , b, ""is:"", findGCD(a, b))",Function,4422
+Create a function to filter out strings that are longer than 10 characters.,"[""Hello"", ""World"", ""Python"", ""Programming""]","def filter_long_strings(arr):
+  result = []
+  for word in arr:
+    if len(word) <= 10:
+      result.append(word)
+  return result
+
+myArr = [""Hello"", ""World"", ""Python"", ""Programming""]
+print(filter_long_strings(myArr))
+
+# Output: [""Hello"", ""World"", ""Python""]",Function,4432
+Create a mathematical expression solver function in Python.,"""2 + 2""","def expression_solver(expression):
+    '''This function solves a given mathematical expression'''
+
+    return eval(expression)
+
+expression = ""2 + 2""
+
+result = expression_solver(expression)
+
+print(result) # 4",Function,4438
+Generate a function in Python that takes a natural number as argument and returns the product of all numbers up to it.,n = 4,"def getProduct(n):
+  result = 1
+  for i in range(n):
+    result *= i+1
+    
+  return result",Function,4465
+Write a generator function in Python to generate unique integer numbers in a given range.,"min value = 10, max value = 20","def unique_integers_generator(start, end):
+    i = start
+    used = set()
+    while i <= end:
+        if i not in used:
+            used.add(i)
+            yield i
+        i += 1
+
+for i in unique_integers_generator(10, 20):
+    print(i)",Function,4488
+Fix the errors in the following python program to return the correct output.,"def foo(a, b):
+return a + b
+
+x = foo(2, 3)
+print(x)","def foo(a, b):
+    return a + b
+
+x = foo(2, 3)
+print(x)  # output is 5",Function,4490
+Write a Python function that takes three numbers as arguments and returns the maximum value.,"2, 5, 3","def max_val(a, b, c):
+    if (a > b and a > c): 
+        return a
+    elif (b > a and b > c):
+        return b
+    else: 
+        return c
+
+result = max_val(2, 5, 3)
+print(result)",Function,4505
+Create a function in Python to calculate the number of hours a worker worked in a week given the number of hours worked in a day.,Number of hours worked per day: 7,"def hours_worked_week(hours_per_day):
+    hours_worked_week = hours_per_day * 7
+    return hours_worked_week",Function,4512
+Create a function in Python to extract all words from a sentence that are greater than 3 chars in length.,This is a sample sentence,"def extract_long_words(s):
+ words = s.split()
+ filtered = [w for w in words if len(w) > 3]
+ return filtered",Function,4521
+Write a function in Python to return the square root of a number.,A number: 49,"import math
+
+def square_root(num):
+    return math.sqrt(num)
+
+num = 49
+print(""Square root of "", num, "" is: "", square_root(num))",Function,4538
+Modify the following Python code such that a thread is started from within the function.,"def doSomething():
+    # Do something","import threading
+
+def doSomething():
+	#Do something
+    t = threading.Thread(target=functionName)
+    t.start()",Function,4557
+Create a Python function to extract the largest prime factor from a given number.,number = 35,"def largest_prime_factor(number):
+ largest_factor = 1
+ for i in range(2, number+1):
+ while number % i == 0:
+ largest_factor = i
+ number //= i
+ return largest_factor
+
+largest_prime_factor(35) # Output: 5",Function,4568
+Generate a Python function that takes in a number as a parameter and finds its Fibonacci number.,5,"def fibonacci(n):
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a + b
+    
+    return a
+
+fibonacci_number = fibonacci(5)
+print(fibonacci_number)",Function,4577
+Design a Python function that outputs the sum of all multiples of 4 and 7 between 1 and a given number n.,100,"def sum_multiples_4_7(n): 
+      
+    sum = 0
+    # iterate from 1 to n 
+    for i in range(1, n+1): 
+          
+        # Sum only if it's a
+        # multiple of 4 or 7 
+        if(i % 4 == 0 or i % 7 == 0): 
+            sum += i 
+    return sum
+
+result = sum_multiples_4_7(100)
+print(result)",Function,4606
+Gadgetize the following Python function to accept any number of inputs,"def sum_two(input1, input2):
+ return input1 + input2","def sum(*args):
+   total = 0
+   for arg in args:
+       total += arg
+   return total",Function,4619
+Write a function in Python to extract the domain name from an email address.,test@example.com,"def get_domain_name_from_email(email):
+    return email.split('@')[-1]",Function,4626
+Create a Python function that takes two strings as arguments and returns their concatenation with a single dash in between.,"first_str = ""Hello""
+second_str = ""World""","def concatenate_strings(first_str, second_str):
+    return first_str + '-' + second_str
+
+first_str = ""Hello""
+second_str = ""World""
+result = concatenate_strings(first_str, second_str)
+print(result)",Function,4631
+Rewrite this Python code block to use the reduce function.,"lst = [4, 1, 3, 2, 6, 5]
+result = []
+for i in range(len(lst)):
+    result.append(lst[i] * 2)","from functools import reduce
+
+lst = [4, 1, 3, 2, 6, 5]
+
+result = reduce(lambda a, b: a + [b * 2], lst, [])",Function,4656
+Create a function in python that takes two integers as inputs and outputs the greatest common divisor.,"105, 45","def gcd(x, y): 
+  
+   while(y): 
+       x, y = y, x % y 
+  
+   return x 
+  
+ # driver code  
+x = 105
+y = 45 
+print(""The gcd of"", x,  
+                        ""and"", y, ""is"", gcd(x, y))",Function,4674
+Write a function in Python to implement a search algorithm.,"List = [0, 1, 4, 3, 2, 5]","def search(list, query): 
+    found_indices = [] 
+    for i in range(len(list)): 
+        if list[i] == query: 
+            found_indices.append(i) 
+    return found_indices",Function,4679
+Design a function in Python that takes in a number n and prints the first n rows of the Pascal's Triangle.,10,"def print_pascal_triangle(n):
+  prev_line = [1]
+  print(prev_line)
+
+  for i in range(1, n):
+    line = [1]
+    for j in range(1, i):
+      line.append(prev_line[j-1] + prev_line[j])
+    line.append(1)
+    prev_line = line
+    print(line)
+
+print_pascal_triangle(10)",Function,4684
+Write a function in Python to query the database and return the row value.,"Table Name: People
+Columns: Name, Age, Gender","def query_database(table_name, columns):
+    conn = sqlite3.connect('test.db') 
+    cur = conn.cursor() 
+
+    cur.execute(f""SELECT {columns} FROM {table_name}"") 
+
+    rows = cur.fetchall()
+
+    conn.close()
+    return rows",Function,4689
+Implement a function to merge and sort two given sorted lists in Python.,"list_1 = [1, 3, 5, 6, 7]
+list_2 = [4, 8, 9, 10]","def merge_sort(list_1, list_2):
+    merged_list = list_1 + list_2
+    merged_list.sort()
+    return merged_list
+
+if __name__ == '__main__':
+    list_1 = [1, 3, 5, 6, 7]
+    list_2 = [4, 8, 9, 10]
+    print(merge_sort(list_1, list_2))",Function,4706
+Write a function in Python to convert a Celsius temperature to Fahrenheit degree.,Temperature in Celsius: 20,"def celsius_to_fahrenheit(cel):
+  return cel * 1.8 + 32
+
+temp_in_fahrenheit = celsius_to_fahrenheit(20)
+print(""Temperature in Fahrenheit:"", temp_in_fahrenheit)",Function,4736
+Edit the given Python program to return the absolute value of a given number,"def absolute_value(x):
+    if x < 0:
+        return -x","def absolute_value(x):
+    if x < 0:
+        return -x
+    else:
+        return x",Function,4749
+Write a Python function to extract the last digits of a given integer.,n = 12345,"def extract_last_digits(n):
+  return int(str(n)[-2:])
+
+result = extract_last_digits(12345)
+print(result)",Function,4765
+Create a function in Python that takes an integer route x as input and returns all possible subsequences of length x.,x = 2,"def subsequences(x):
+ subs = []
+ for i in range(1<<x):
+ sub = []
+ for j in range(x):
+ if (i & (1 << j)) > 0:
+ sub.append(j)
+ subs.append(sub)
+ return subs",Function,4772
+Create a function in Python to group data by a column and apply aggregate functions on each group.,"df = pd.DataFrame({""A"": [""foo"", ""foo"", ""foo"", ""foo"", ""foo"",""bar"", ""bar"", ""bar"", ""bar""],
+                   ""B"": [""one"", ""one"", ""one"", ""two"", ""two"",""one"", ""one"", ""two"", ""two""],
+                   ""C"": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                   ""D"": [2, 3, 4, 5, 6, 7, 6, 8, 9]})","group_by_column = df.groupby(""B"").agg({'C': 'sum', 'D': 'mean'})",Function,4803
+Create a Python function to return the maximum number of valid parentheses in a given expression.,"expression = ""((()))()""","def max_valid_parenthesis(expression):
+    max_value = 0
+    # Keep a count of left parentheses
+    count = 0
+    for char in expression:
+        if char == '(':
+            count += 1
+            max_value = max(max_value, count)
+        else:
+            count -= 1
+
+    return max_value",Function,4805
+Convert the following statement into a function in Python.,"If a given number is divisible by 4 and greater than 1000, print ""TRUE""","def count_divisible_by_four(num):
+    """"""Prints ""True"" if the given number is divisible by 4 and greater than 1000""""""
+    if num >= 1000 and num % 4 == 0:
+        print(""TRUE"")",Function,4809
+Optimize the following function in Python to make it run faster,"def gcd(x, y): 
+    while(y): 
+        x, y = y, x % y 
+    return x","def gcd(x, y): 
+    if x == 0: 
+        return y 
+    if y == 0: 
+        return x 
+    if x == y: 
+        return x 
+    if x > y: 
+        small = y 
+    else: 
+        small = x 
+    for i in range(1, small+1): 
+        if((x % i == 0) and (y % i == 0)): 
+            gcd = i 
+    return gcd",Function,4810
+Create a function in Python to improve the readability of a text by converting it into title case.,"""This is My Sample Text for Testing""","def to_title_case(text):
+    words = text.split()
+    title_case_words = [word.capitalize() for word in words]
+
+    return "" "".join(title_case_words)",Function,4819
+Create a Python function to label the data correctly,"dataset = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]","def label_data(dataset):
+    labeled_data = []
+    for data in dataset:
+        label = ''
+        for value in data:
+            if value % 2 == 0:
+                label += 'E'
+            else:
+                label += 'O'
+        labeled_data.append(label)
+    return labeled_data",Function,4831
+Create a Python function to calculate the cost of a pizza. The function should take in the size of the pizza in inches and return the total cost.,Size (in inches): 14,"def pizzaCost(size):
+ cost = 0
+ 
+ if size == 14:
+ cost = 10.00
+ elif size == 16:
+ cost = 12.50
+ elif size == 18:
+ cost = 15.00
+ else:
+ cost = ""Unknown size""
+ 
+ return cost
+
+print(pizzaCost(14))
+
+// Output: 10.00",Function,4839
+Create a function in Python to create a wordcount of a given text.,"""The lines of text that you're about to write will be filled with wonder and excitement""","def wordcount(text):
+    counts = dict()
+    words = text.split()
+
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+
+    return counts
+
+print(wordcount(text))",Function,4873
+"Create a function in Python that takes in a number, n, and prints out the nth term of the Fibonacci sequence.",n = 10,"def fibonacci(n):
+  a = 0
+  b = 1
+  if n < 0:
+    print(""Incorrect input"")
+  elif n == 0:
+    return a
+  elif n == 1:
+    return b
+  else:
+    for i in range(2,n):
+      c = a + b
+      a = b
+      b = c
+    return b
+  
+print(fibonacci(10))",Function,4874
+Create a Python function to encrypt data using the Caesar cipher algorithm.,"message = ""hello world""
+key  = 2","def encrypt_caesar_cipher(message, key):
+    encrypted_message = """"
+    for text in message:
+        if text.isupper():
+            encrypted_message += chr((ord(text) + key - 65) % 26 + 65) 
+        elif text.islower():
+            encrypted_message += chr((ord(text) + key - 97) % 26 + 97) 
+    return encrypted_message",Function,4878
+Execute the following SQL query in a Python environment and return the result.,"SELECT * FROM Orders
+WHERE OrderDate > '2018-12-31'","import sqlite3 
+conn = sqlite3.connect('Order.db')
+c = conn.cursor()
+c.execute(""SELECT * FROM Orders WHERE OrderDate > '2018-12-31'"")
+result = c.fetchall()
+print(result)",Function,4882
+Write a Python function to return the greatest common divisor among two numbers.,"num1 = 30, num2 = 45","def gcd(num1, num2): 
+    if(num2 == 0): 
+        return num1 
+    return gcd(num2, num1%num2)",Function,4892
+Provide a Python function that takes a phrase as input and converts all words in the phrase to title case.,"""a sample phrase""","def title_case(phrase):
+    words = phrase.split()
+    result = []
+    for word in words:
+        result.append(word[0].upper() + word[1:].lower())
+    
+    return ' '.join(result)",Function,4908
+Create a Python program to compare two lists and return their intersection,"list1 = [1,2,3,4,5]
+list2 = [4,5,6,7,8]","def intersection(list1, list2):
+    intersection = [value for value in list1 if value in list2]
+    return intersection
+
+list1 = [1,2,3,4,5]
+list2 = [4,5,6,7,8]
+result = intersection(list1, list2)
+print(result) # prints [4,5]",Function,4919
+Create a python function to classify a given dataset based on the numeric value of a given feature.,"Income<=50, Risk Level=Low","def classify_data(feature, value, outcome):
+    if feature == ""Income"" and float(value) <= 50:
+        return outcome
+    else:
+        return ""No Classification""",Function,4931
+Create a Python program to calculate the square root of a number without using the square root function.,36,"def my_sqrt(x): 
+    guess = x
+    i = 0
+    while guess * guess != x and i < 20:
+        guess = (guess + x/guess) / 2.0
+        i += 1
+    return guess 
+
+result = my_sqrt(36) 
+print(""Square root of 36 is = "", result)",Function,4942
+Write a Python program to filter strings linked by commas and return only strings longer than three characters in length.,"""Code,Generation,Task,Instructions""","def filter_strings(string):
+    strings = string.split(',')
+    filtered = []
+    for s in strings:
+        if len(s) > 3:
+            filtered.append(s)
+    return filtered
+
+filtered_strings = filter_strings(""Code,Generation,Task,Instructions"")
+print(filtered_strings)",Function,4979
+Create a custom function in python to compute the total cost of an item.,"price=200
+quantity=4
+shipping=20
+tax=8","def compute_total_cost(price, quantity, shipping, tax):
+    return price * quantity + shipping + tax",Function,4981
+Write a function to generate a 3x3 matrix in Python filled with random integers,No input,"import random 
+  
+def generate_matrix():
+    matrix = [[random.randint(1, 9) 
+                for x in range(3)] 
+                    for y in range(3)] 
+  
+    return matrix
+
+result = generate_matrix()
+print(result)",Function,4982
+Write a Python function to pass a number as a parameter and generate a table of the given size.,Number: 3,"def generate_table(n):
+    # Generates a table with n columns and rows 
+    for i in range(1, n+1):
+        for j in range(1, n+1):
+            print(i * j, end=""\t"")
+        print()
+ 
+generate_table(3)",Function,4983
+Create a function in Python to generate a multiplication table with numbers in a range given start and end parameters.,"start = 5
+end = 10","def multiplication_table(start, end):
+	for x in range(start, end + 1):
+		for y in range(start, end + 1):
+			print(x * y, end = ""  "")
+		print(""\n"")
+		
+multiplication_table(start, end)",Function,5012
+Implement an optimization algorithm in Python to find the local minima of a given function f(x).,f(x) = x^2 + 6x - 4,"def objective_function(x):
+ return x**2 + 6*x - 4
+
+def find_local_minima(func):
+ x = 0
+ delta = 0.01
+
+while True:
+ x_new = x + delta
+ if objective_function(x_new) < objective_function(x):
+ x = x_new
+ else:
+ return x
+
+print('The local minima is', find_local_minima(objective_function))",Function,5049
+Generate a function in Python to count the number of words in a given sentence.,Hello there,"def count_words(sentence):
+    words = sentence.split(' ')
+    return len(words)
+
+print(count_words(""Hello there"")) # Output: 2",Function,5076
+Improve the performance of this Python function by adding caching or other techniques.,"def add_two_numbers(n1, n2):
+ return n1 + n2","import functools
+
+@functools.lru_cache(maxsize=None)
+def add_two_numbers(n1, n2):
+ return n1 + n2",Function,5077
+Create a function in Python that takes two integers and returns the larger with the smaller one as its divisor.,"Input integers: 10, 20","def get_larger_number_divisible_by_smaller(num1, num2):
+  max_num = max(num1, num2)
+  min_num = min(num1, num2)
+
+  return max_num if max_num % min_num == 0 else None
+
+result = get_larger_number_divisible_by_smaller(10, 20)
+print(result) # 20",Function,5107
+Edit the following Python code pasted and return the output.,"def print_message(name):
+    print(""Hello ""+name)
+
+print(""Matthew"")","def print_message(name):
+    print(""Hello ""+name)
+
+name = ""Matthew""
+print_message(name)",Function,5126
+"Create a program in Python to optimize a function f(x) with x = 0, 1, 2, ..., n.",f(x) = x^2 - 3x + 5,"def f(x): 
+ return x**2 - 3 * x + 5
+
+def optimize(f, n):
+ best_x = 0
+ best_y = f(0)
+ for x in range(n+1): 
+ y = f(x) 
+ if y > best_y: 
+ best_x = x
+ best_y = y
+ return best_x
+
+print(optimize(f, 5))",Function,5133
+Write a Python function that converts a given number from one numeric base to another.,"number = 42
+from_base = 10
+to_base = 16","def convert_number(number, from_base, to_base): 
+    # convert number to base 10 
+    result = int(str(number), from_base) 
+  
+    # convert base 10 to new base 
+    res = """"
+    while result > 0:
+        res += str(result % to_base)
+        result //= to_base
+    res = res[::-1] 
+  
+    return res",Function,5136
+Write a function in Python that takes a sentence as an argument and returns the same sentence but with all the words reversed.,"sentence = ""This is a test sentence""","def reverse_sentence(sentence):
+ reversed_sentence = "" "".join(sentence.split()[::-1])
+ return reversed_sentence
+
+print(reverse_sentence(sentence))
+# Output: sentence test a is This",Function,5177
+Create a Python function that takes two strings as input and returns the total of the lengths of the two strings.,"string1 = ""example""
+string2 = ""string""","def string_length_sum(string1, string2):
+    return len(string1) + len(string2)
+
+result = string_length_sum(string1, string2)",Function,5181
+Create a Python program to compare two given lists and return the common elements.,"listOne = [1, 3, 10, 15, 20] 
+listTwo = [2, 3, 11, 15, 20]","def commonElements(listOne, listTwo):
+ commonList = []
+ for element in listOne:
+  if element in listTwo:
+   commonList.append(element)
+ return commonList
+
+print(commonElements(listOne, listTwo))",Function,5190
+"Create a Python function that computes the distance between two points (x1, y1) and (x2, y2).","x1= 5, y1= 4, x2= 9, y2= 2","def compute_distance(x1, y1, x2, y2):
+    return ((x2-x1)**2 + (y2-y1)**2)**0.5
+
+distance = compute_distance(5, 4, 9, 2)
+print(""The distance between two points is:"", distance)",Function,5195
+Write a function in Python to sum all the positive integers of n numbers.,"[1,2,3,4,5]","def sum_numbers(arr):
+    total = 0
+    for num in arr:
+        if num > 0:
+            total += num
+    return total
+
+print(sum_numbers([1,2,3,4,5])) # 15",Function,5206
+Convert the following function call from Python to JavaScript.,"def my_function(a, b):
+  return a + b
+
+my_function(3, 4)","function myFunction(a, b) {
+ return a + b;
+}
+
+myFunction(3, 4);",Function,5214
+Write a Python program to query a provided API and return the result in JSON format.,The API URL: https://example.com/api,"import requests
+
+url = 'https://example.com/api'
+
+response = requests.get(url)
+
+if response.status_code == 200:
+ data = response.json()
+ print(data)
+else:
+ print('Error:', response.status_code)",Function,5215
+Create a Python function to check whether a number is divisible by another number or not.,"number1 = 15 
+number2 = 3","def is_divisible(number1, number2):
+   return number1 % number2 == 0",Function,5218
+Convert the following imperative statement into a Python function.,Return the sum of two numbers.,"def add_numbers(a, b):
+    '''This function will return the sum of two numbers'''
+    return a + b",Function,5264
+Convert a given Python function to a JavaScript function.,"def showMessage(message):
+    print(message)","function showMessage(message) {
+ console.log(message);
+}",Function,5266
+Develop a function to make an HTTP request using python and store the response into a variable.,"""https://www.example.com""","import requests
+
+def http_request(url):
+    response = requests.get(url)
+    return response",Function,5270
+Write a Python function to detect geographical coordinates of a given address.,"Address: 1 Rockefeller Plaza, New York City, NY","(40.7588972, -73.9787129)",Function,5271
+Write a Python function that computes the area of a square using the side length as a parameter.,Side length: 5,"def calArea(side):
+	return side * side
+
+if __name__ == '__main__':
+	side = 5
+	area = calArea(side)
+	print('Area of Square = ', area)",Function,5278
+Classify the following code as either a python function or code section.,"x = ""hello"" 
+z = x + "" world""",Code section.,Function,5306
+Create a python function to extract the intersection of two lists.,"listOne = [5,4,3]
+listTwo = [3,2,1]","def intersection(listOne, listTwo):
+    return list(set(listOne).intersection(set(listTwo)))",Function,5328
+Convert a given Python function to a JavaScript function.,"def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)","function factorial(n) {
+    if (n == 1) {
+        return 1;
+    }
+    else {
+        return n * factorial(n-1);
+    }
+}",Function,5348
+Design a program in Python to take two numbers as input and return their product.,"num1 = 5
+num2 = 7","def multiply(num1, num2):
+    product = num1 * num2
+    return product
+
+num1 = 5
+num2 = 7
+
+product = multiply(num1, num2)
+print('Product of', num1, 'and', num2, 'is', product) # prints 'Product of 5 and 7 is 35'",Function,5350
+Build a Python function that takes in two integers and returns the greatest common divisor.,4 and 8,"def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+print(gcd(4, 8)) # Output: 4",Function,5360
+Create a function to create a NxN matrix in Python with all elements equal to a given number.,"N=5, num=7","def mat_gen(N, num):
+    matrix = [[num for col in range(N)] for row in range(N)]
+    return matrix
+
+mat_gen(5, 7)",Function,5366
+Create a function in Python that finds the common elements two arrays.,"arr1 = [1, 2, 3, 4, 5]
+arr2 = [2, 3, 6, 7, 8]","def find_common_elements(arr1, arr2):
+  common = []
+  for element in arr1:
+    if element in arr2:
+      common.append(element)
+  return common
+
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [2, 3, 6, 7, 8]
+
+print(find_common_elements(arr1, arr2))",Function,5386
+Write a Python function to check whether a number is in a given range.,"num = 10
+lower = 10
+upper = 20","def check_range(num, lower, upper):
+        return (num >= lower and num <= upper)
+ 
+print(check_range(10, 10, 20)) # prints True",Function,5390
+How can you improve the following python function to make it run more quickly?,"def find_target(numbers, target):
+    for number in numbers:
+        if number == target:
+            return True
+    return False","def find_target(numbers, target):
+    """"""This function returns True if the target is present in the given list of numbers.""""""
+    # Use set to improve the lookup performance
+    num_set = set(numbers)
+    if target in num_set:
+        return True
+    return False",Function,5413
+Write a function in Python to find the number of prime numbers up to a given number.,100,"def countPrimes(num): 
+    if num <= 1:  
+        return 0
+ 
+    primes = [2] 
+    x = 3
+    
+    while x <= num: 
+        for y in primes: 
+            if x % y == 0: 
+                x += 2
+                continue
+        primes.append(x) 
+        x += 2
+    
+    return len(primes) 
+
+num_primes = countPrimes(100)
+print(""Number of primes between 1 and 100:"", num_primes)",Function,5433
+Rewrite this function in Python.,"// original function
+int multiply(int x, int y)
+{
+    int product = 0;
+    while(x > 0)
+    {
+        if (x % 2 != 0)
+            product += y;
+        x >>= 1;
+        y <<= 1;
+    }
+    return product;
+}","def multiply(x, y): 
+    product = 0
+    while (x > 0): 
+        if x % 2 != 0: 
+            product += y 
+        x >>= 1
+        y <<= 1
+    return product 
+
+print(multiply(10, 5)) # Output: 50",Function,5469
+Rewrite a given JavaScript function as a Python function. Make sure the output is the same.,"function powerOfTwo(num) {
+ return 2 ** num;
+}","def powerOfTwo(num):
+ return 2 ** num",Function,5485
+Create a python function to compute the area of a triangle with given sides.,"a = 3
+b = 5
+c = 4","def calculateTriangleArea(a, b, c): 
+    s = (a + b + c) / 2
+    area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+    return area
+  
+area = calculateTriangleArea(a, b, c) 
+print(""Area of triangle is %.2f"" % area)",Function,5489
+Optimize a given Python function to make it more efficient.,"def my_function(n):
+  sum = 1
+  for i in range(n):
+    for j in range(n):
+        sum *= j
+  return sum","def my_function(n):
+  sum = 1
+  for j in range(1, n+1):
+    sum *= j
+  return sum",Function,5492
+Design a function that returns the least common multiple (LCM) of two numbers,two integers a and b,"# Python3 program to find LCM of two numbers 
+
+# method to return gcd of a and b 
+def gcd(a, b): 
+    if a == 0 : 
+        return b 
+          
+    return gcd(b % a, a) 
+      
+# method to return LCM of two numbers 
+def lcm(a, b): 
+    return (a*b) // gcd(a, b)",Function,5522
+"Using the ""range"" function, write a Python program to find the sum of all numbers in a given range.","range(3,7)","def sum_in_range(n1, n2):
+    return sum(range(n1, n2+1))
+
+print(sum_in_range(3, 7))
+
+# Outputs:
+# 25",Function,5547
+Rewrite the following program to use Python's filter function,"""""""
+program 
+
+numbers = [12, 15, 20, 9, 5]
+
+filtered = []
+for number in numbers:
+    if number > 10:
+        filtered.append(number)
+
+print(filtered)
+""""""","numbers = [12, 15, 20, 9, 5]
+
+filtered = list(filter(lambda x: x > 10, numbers))
+print(filtered)",Function,5582
+Create an AWS Lambda function in Python that calculates the summation of two given numbers.,"Input-1 = 2
+Input-2 = 3","import json
+
+def lambda_handler(event, context):
+ # Get the input numbers
+ num1 = event['Input-1']
+ num2 = event['Input-2']
+
+ # Calculate the sum
+ result = num1 + num2
+
+ # Return the output
+ return {
+ 'Result': result
+ }",Function,5607
+Write a Python function to get the nth number in the Fibonacci sequence.,n = 5,"def Fibonacci(n): 
+ a = 0
+ b = 1
+ if n < 0: 
+  print(""Incorrect input"") 
+ elif n == 0: 
+  return a 
+ elif n == 1:
+   return b 
+else: 
+  for i in range(2,n): 
+   c = a + b 
+   a = b 
+   b = c 
+ return b",Function,5624
+Optimize a function in Python that calculates the sum of numbers from 0 to n.,"def slow_sum(n):
+    s = 0
+    for number in range(n+1):
+        s += number
+    return s","def fast_sum(n):
+    return ((n+1)*n)/2",Function,5627
+"Given two integers, write a Python function to compare them.","Integer1: 6
+Integer2: 4","def compare_ints(num1, num2):
+  if num1 > num2:
+    return ""Integer1 is greater than Integer2""
+  elif num1 < num2:
+    return ""Integer1 is lesser than Integer2""
+  else:
+    return ""The integers are equal""
+
+result = compare_ints(6, 4)
+print(result)",Function,5667
+Create a function in Python to calculate the area of a triangle using its three sides.,"Side One: 3
+Side Two: 4
+Side Three: 5","def triangleArea(a, b, c):
+ # Calculate the semi-perimeter of the triangle
+ s = (a + b + c) / 2
+ 
+ # Calculate the area using Heron's formula
+ area = (s*(s - a)*(s - b)*(s - c))**0.5
+ 
+ return area
+
+triangleArea(3,4,5) # 6.0",Function,5671
+Create a function to invert the keys and values of a dictionary in Python.,"{
+    ""apple"": 3,
+    ""banana"": 4,
+    ""carrot"": 2
+}","def invert_dictionary(input_dict):
+    output_dict = {}
+    for key, value in input_dict.items():
+        output_dict[value] = key
+    return output_dict
+
+inverted_dict = invert_dictionary({
+    ""apple"": 3,
+    ""banana"": 4,
+    ""carrot"": 2
+})
+
+print(inverted_dict) # {3: 'apple', 4: 'banana', 2: 'carrot'}",Function,5673
+Create a function to convert JSON objects to Python dictionaries.,"{""key1"": ""value1"", ""key2"": ""value2"" }","import json
+
+def convert_json_to_dict(input_json):
+    """"""
+    Convert JSON object to Python dictionary 
+    Args: 
+        input_json (json): JSON object to be converted 
+    Returns: 
+        output_dict (dict): Python dictionary with keys and values from input_json
+    """"""
+
+    output_dict = json.loads(input_json)
+    return output_dict",Function,5684
+Generate a function to create a Python dictionary from two lists.,"list_a = [1,2,3]
+list_b = ['apple','banana','mango']","def create_dict(a, b):
+    dictionary = {}
+    for i in range(len(a)):
+        dictionary[a[i]] = b[i]
+    return dictionary",Function,5694
+Create a function in Python to calculate the cost of an online shopping order given the cost of the items and the shipping charges.,"item1 = 10 
+item2 = 20 
+shipping_charges = 15","def calculate_cost(item1, item2, shipping_charges):
+    total_cost = item1 + item2 + shipping_charges
+    return total_cost
+
+calculate_cost(item1, item2, shipping_charges) 
+# returns 45",Function,5712
+Create a function in Python that accepts 3 numbers and finds the largest of the 3.,"num1 = 2
+num2 = 5
+num3 = -1","def get_max(num1, num2, num3):
+    """"""
+    Finds the largest number among three provided numbers
+    """"""
+    max_num = num1
+    if num2 > max_num:
+        max_num = num2
+    if num3 > max_num:
+        max_num = num3
+    return max_num
+
+num1 = 2
+num2 = 5
+num3 = -1
+
+maximum = get_max(num1, num2, num3)
+print(maximum) # 5",Function,5714
+Write a Python function to add two given numbers stored in two dictionaries with the same keys.,"nums1 = {'a': 2, 'b': 4}
+nums2 = {'a': 5, 'b': 8}","def add_dict_nums(nums1, nums2):
+    result = dict()
+    for key in nums1.keys():
+        result[key] = nums1[key] + nums2[key]
+    return result
+
+print(add_dict_nums(nums1, nums2))",Function,5730
+Optimize this Python function to improve its running time.,"def find_duplicates(a):
+    result = []
+    for i in range(len(a)):
+        for j in range(i + 1, len(a)):
+            if a[i] == a[j]:
+              result.append(a[i])
+    return result","def find_duplicates(a):
+    seen = set()
+    result = []
+    for num in a:
+        if num in seen:
+            result.append(num)
+        else:
+            seen.add(num)
+    return result",Function,5736
+Create a Python function that takes a Python dictionary and returns the unique values contained in the dictionary.,"example_dict = {
+ 'apple': 1,
+ 'banana': 2,
+ 'mango': 1
+}","def unique_values(example_dict):
+return list(set(example_dict.values()))",Function,5747
+Generate a function in Python to capitalize the first letter of every word in a given sentence.,newton theory of gravitation,"def capitalize(sentence):
+    words = sentence.split() 
+    new_sentence = [] 
+    for word in words:
+        new_sentence.append(word.capitalize()) 
+    return "" "".join(new_sentence)
+
+sentence = ""newton theory of gravitation""
+print(capitalize(sentence))",Function,5760
+Design a python function to filter out the fields from a JSON data.,"{
+  ""name"": ""John"",
+  ""age"": 25,
+  ""position"": ""Developer""
+}","def filter_json_data(input, fields):
+    output = {}
+    for field in fields:
+        if field in input:
+            output[field] = input[field]
+    return output",Function,5763
+Develop a Python function that takes in two lists and compares their elements,"List1 = [1, 5, 6, 4]
+List2 = [3, 7, 4, 2]","def compare_lists(list1, list2):
+    
+    if len(list1) != len(list2):
+        return False
+    for i in range(len(list1)):
+        if list1[i] != list2[i]:
+            return False
+
+    return True",Function,5770
+Rewrite the following Python function without using loop.,"def multiply_list(l): 
+	result = 1
+	# Iterate through the list 
+	for i in l: 
+		result = result * i 
+	return result","def multiply_list(l): 
+	from functools import reduce
+	return reduce((lambda x, y: x * y), l)",Function,5790
+Estimate the time it takes to execute a given Python function.,"def foo():
+    a = 0
+    for i in range(10000):
+        a += 1","# TODO: Estimate time
+import time
+
+def estimate_time(func):
+    start_time = time.time()
+    func()
+    end_time = time.time()
+    return end_time - start_time
+
+time_taken = estimate_time(foo)
+print(f'Time taken to execute the function is {time_taken} seconds')",Function,5791
+Optimize the given Python function to reduce its run time and memory usage.,"def func1(n): 
+    if n==0: 
+        return 0 
+    if n==1: 
+        return 1 
+    else: 
+        return func1(n-1)+func1(n-2)","def func1(n, lookup): 
+    if n == 0 or n == 1 : 
+        lookup[n] = n 
+    if lookup[n] is None:  
+        lookup[n] = func1(n-1, lookup) + func1(n-2, lookup)  
+    return lookup[n] 
+  
+def optimizedFibo(n): 
+    lookup = [None]*(n+1)  
+    return func1(n, lookup)",Function,5809
+Optimize the following Python function to calculate the sum of natural numbers up to a given number.,n = 10,"def sum_natural_numbers(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i
+    
+    return total
+
+def sum_natural_numbers(n):
+    return n * (n + 1) // 2
+
+print(sum_natural_numbers(10))",Function,5826
+Write a function in Python to merge two sorted arrays.,"arr1 = [1, 4, 7, 8]
+arr2 = [3, 5, 9]","def merge_arrays(arr1, arr2):
+    merged_array = arr1 + arr2
+    return sorted(merged_array)
+
+merged_array = merge_arrays(arr1, arr2)
+print(merged_array)",Function,5827
+Write a function in Python to convert following input into a dictionary,"[(""a"", 1), (""b"", 2), (""c"", 3)]","def list_to_dict(input_list):
+  output_dict = {}
+  for key, value in input_list:
+    output_dict[key] = value 
+  return output_dict",Function,5864
+Examine a Python function and refactor it to make it more efficient and optimized.,"def foo(n):
+    result = 0
+    while n > 0:
+        result += n
+        n -= 1
+    return result","def foo(n):
+    return n * (n + 1) // 2",Function,5865
+Maximize a given function subject to the given constraints.,"f(x) = x1^2 + x2^2
+subject to: x1 + x2 <= 2","We can maximize the given function by solving the given constraints as a linear programming problem. We can use an optimization library in Python to solve this problem. We can also use the Simplex algorithm to solve this problem. The optimal solution is (1,1), which gives a maximum value of 2.",Function,5869
+Create a serverless function in Python that converts a filename to a corresponding filetype.,filename: “example.jpg”,"import os
+
+def get_filetype(filename):
+ _, file_extension = os.path.splitext(filename)
+ return(file_extension.lower()[1:])
+
+filetype = get_filetype(""example.jpg"")
+print(filetype)
+
+# Output: jpg",Function,5880
+Rewrite a provided Python function to a more Pythonic version.,"def add_numbers(x, y):
+total = 0
+for i in range(x, y):
+ total = total + i
+return total","def add_numbers(x, y):
+ return sum(range(x, y))",Function,5887
+"Write a function in Python to create a dictionary from two lists, one of keys and the other one of values.","keys = [1,2,3]
+values = ['a','b','c']","def createDict(keys, values):
+  dict = {}
+  for i in range(len(keys)):
+    dict[keys[i]] = values[i]
+  return dict",Function,5890
+Create a function in Python to read two strings and return the concatenation of them.,"""Hello"", ""world!""","def concatenate_strings(str1, str2):
+    return str1 + str2
+
+print(concatenate_strings(""Hello"", ""world!""))",Function,5898
+Create a program in Python to compare the elements of two given arrays and return the number of matches.,"arr1 = [1, 2, 3]
+arr2 = [3, 4, 5]","def count_matches(arr1, arr2):
+    count = 0
+    for i in arr1:
+        if i in arr2:
+            count += 1
+    return count
+
+print(count_matches(arr1, arr2))",Function,5933
+Generate a Python function which takes two strings as arguments and returns the number of letters they have in common.,"String 1: apple
+String 2: orange","def number_of_common_letters(s1, s2):
+    common_letters = 0
+    for c in s1:
+        if c in s2:
+            common_letters += 1
+    return common_letters",Function,5980
+"Using the given data, write a Python function to calculate the median of the numbers.","data = [2, 5, 8, 11, 14, 17, 20]","def calculate_median(data):
+    data.sort()
+    if len(data) % 2 == 0:
+        first_num = data[int(len(data) / 2) - 1]
+        second_num = data[int(len(data) / 2)]
+        median = (first_num + second_num) / 2
+    else:
+        median = data[int((len(data) - 1) / 2)]
+    return median
+
+result = calculate_median(data)
+print(result)",Function,5982
+Generate an algorithm in Python to return the common elements in two unsorted arrays.,"A = [2, 3, 5, 7, 8]
+B = [3, 5, 7, 9, 10]","def commonElements(A, B):
+    commonElements = []
+    for i in A: 
+        if i in B and i not in commonElements:
+            commonElements.append(i) 
+    return commonElements
+
+A = [2, 3, 5, 7, 8]
+B = [3, 5, 7, 9, 10]
+print(commonElements(A, B))
+# Output: [3, 5, 7]",Function,5983
+Implement a Python function that will take a dictionary as the argument and return a new dictionary with the key and its value reversed.,"{""a"":1, ""b"":2, ""c"":3}","def reverse_dict(d):
+ new_dict = {}
+ for key, value in d.items():
+ new_dict[value] = key
+ return new_dict
+
+d = {'a':1, 'b':2, 'c':3}
+print(reverse_dict(d))
+# {1:'a', 2:'b', 3:'c'}",Function,5992
+Write a function in Python to find the top k words in a given document.,"""This is a document it contains some words and a lot of phrases.""
+
+k = 2","from collections import Counter    
+
+def topKWords(doc, k):
+    words = doc.split()
+    counts = Counter(words).most_common(k)
+    return [word for word,_ in counts]
+
+doc = ""This is a document it contains some words and a lot of phrases.""
+k = 2
+print(topKWords(doc, k))",Function,6014
+Edit the following python function so that it prints its parameters in reversed order.,"def print_params(a, b):
+  print(a + ' ' + b)","def print_params(a, b):
+  print(b + ' ' + a)",Function,6030
+Can you create a program in Python that will return the nth Fibonacci number?,n = 8,"def fib(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+n = 8
+print(fib(n))",Function,6043
+Rewrite a given function in Python to return the sum of the two parameters instead of multiplying them.,"def multiply(a, b):
+  return a * b","def multiply(a, b):
+  return a + b",Function,6055
+Write a Python function to access a given key from a given dictionary.,"d = {'x': 3, 'y': 4, 'z': 5}","def access_key(key, dictionary): 
+    if key not in dictionary: 
+        return -1
+    return dictionary[key]",Function,6064
+Design a function in Python to convert a Celsius temperature to a Fahrenheit temperature.,32,"def convert_celsius_to_fahrenheit(celsius):
+    fahrenheit = celsius * 9/5 + 32
+    return fahrenheit
+
+celsius = 32
+fahrenheit = convert_celsius_to_fahrenheit(celsius)
+print('{} degree Celsius is {} degree Fahrenheit.'.format(celsius, fahrenheit))",Function,6076
+"In Python, define a function that takes two arguments and returns the maximum of the two.","6, 8","def max_value(a, b):
+    # Return the maximum of two numbers
+    if a > b:
+        return a
+    else:
+        return b
+
+# Example usage
+a = 6
+b = 8
+print(max_value(a, b)) # 8",Function,6089
+Create a Python function that calculates the factorial of a given number,x = 4,"def factorial(x):
+    result = 1
+    for num in range(1,x+1):
+        result *= num
+    return result",Function,6101
+Rewrite the following C++ function to Python.,"int multiply(int a, int b)
+{
+    int result = a * b;
+    return result;
+}","def multiply(a, b):
+    result = a * b
+    return result",Function,6102
+Write a Python function to replace all occurrences of a given substring with another substring.,"Hello World, Hello","def replace_substring(string, old_substring, new_substring):
+ return string.replace(old_substring, new_substring)
+
+result = replace_substring(""Hello World, Hello"", ""Hello"", ""Hi"")
+print(result)",Function,6122
+Create a Python function to parse an XML document and extract all the <tag> elements.,An XML file,"import xml.etree.ElementTree as ET
+
+def extract_tags(xml):
+    root = ET.fromstring(xml)
+    tags = root.findall('tag')
+
+    # Create list to store tag elements
+    tag_list = []
+    for tag in tags:
+        tag_list.append(tag.text)
+
+    # Return list of tags
+    return tag_list",Function,6123
+Write a function in Python to reverse the order of words in a sentence.,"sentence = ""hello world how are you""","def reverse_words(sentence):
+    words = sentence.split(' ')
+    reversed_words = words[::-1]
+    return ' '.join(reversed_words)
+
+sentence = ""hello world how are you""
+print(reverse_words(sentence)) # output - you are how world hello",Function,6124
+Create a function that capitalizes the first letter of any given word,"""python""","def capitalize_first_letter(word):
+    return word[0].upper() + word[1:]
+
+# main
+word = ""python""
+capitalized = capitalize_first_letter(word)
+print(capitalized)",Function,6147
+Create a function in Python that takes a number n and returns the sum of its digits.,378,"def sum_of_digits(n):
+    sum = 0
+    while n:
+        sum += n % 10
+        n //= 10
+    return sum
+
+print(sum_of_digits(378))",Function,6161
+Create a Python function that takes two arrays of numbers and calculates their dot product.,"[2, 4, 6], [3, 4, 5]","def dot_product(list1, list2):
+ result = 0
+ for i in range(len(list1)):
+  result += list1[i] * list2[i] 
+ return result
+
+list1 = [2,4,6]
+list2 = [3,4,5]
+dot = dot_product(list1, list2)
+print('Dot product of two lists =', dot) # Dot product of two lists = 46",Function,6177
+Write a Python function that computes the average of 3 numbers.,"1, 2, 3","def average(a, b, c):
+    return (a + b + c) / 3.0
+
+print(average(1,2,3)) # Output: 2.0",Function,6182
+Generate a Python function to parse a JSON data structure.,"data = {
+ ""name"": ""John"",
+ ""age"": 18,
+ ""occupation"": ""Software Engineer""
+}","import json
+
+def parse_json(data):
+ data = json.loads(data)
+ return data['name'], data['age'], data['occupation']
+
+name, age, occupation = parse_json(data)
+print(name, age, occupation)
+# Output: John 18 Software Engineer",Function,6188
+Create a Python lambda expression to return all strings that longer than 5 characters long.,"[""hello"", ""world"", ""foobar""]","words = [""hello"", ""world"", ""foobar""] 
+filtered_words = list(filter(lambda x: len(x) > 5, words)) 
+print(filtered_words) # ['world', 'foobar']",Function,6209
+Write a Python function to return the GCD (Greatest Common Denominator) of two integers.,"num_1 = 12
+num_2 = 24","def gcd(num_1, num_2):
+  if num_2 == 0:
+    return num_1
+  return gcd(num_2, num_1 % num_2)",Function,6229
+Write a function in Python that takes two strings s1 and s2 and returns s2 repeated s1 times.,s1 = '3'; s2 = 'hello',"def repeat(s1, s2):
+ n = int(s1)
+ return s2 * n
+
+print(repeat('3','hello'))
+# Output: hellohellohello",Function,6250
+Create a web API in Python Flask to compare two numerical values and return the greater one.,"value1 = 10
+value2 = 20","from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+@app.route('/compare', methods=['POST'])
+def compare():
+    data = request.get_json()
+    value1 = data['value1']
+    value2 = data['value2']
+
+    greater_value = max(value1, value2)
+
+    return jsonify({'greater_value': greater_value})
+
+if __name__ == '__main__':
+    app.run(debug=True)",Function,6264
+Convert this Python function to JavaScript.,"def string_to_num_list(string):
+    numbers = []
+    for letter in string:
+        numbers.append(ord(letter))
+    return numbers","function stringToNumList(string) {
+    let numbers = [];
+    for (let letter of string) {
+        numbers.push(letter.charCodeAt(0));
+    }
+    return numbers;
+}",Function,6278
+Change the following Python program such that you can pass any number of strings in the function.,"def print_strings(s1, s2):
+    print(s1)
+    print(s2)","def print_strings(*strings):
+    for s in strings:
+        print(s)
+
+print_strings(""Hello"", ""World"")",Function,6291
+Create a function in Python to validate the syntax of the given code.,"code:
+def myFunc(param1, param2):
+    statement1
+    statement2","def validate_syntax(code):
+    try: 
+        compile(code, '<string>', 'exec')
+        return True
+    except SyntaxError: 
+        return False",Function,6299
+Generate a Python function to generate an equation with given coefficients and variables.,"coefficients: [2, 3, 1], variables: [""x"", ""y"", ""z""]","def generate_equation(coefficients, variables):
+ equation = """"
+ for i, coeff in enumerate(coefficients):
+  equation += str(coeff) + variables[i] + "" + ""
+ equation = equation[:-3]
+ return equation",Function,6308
+Create a function in Python that takes two numbers as arguments and returns their average.,"2, 3","def average(a, b): 
+    return (a + b) / 2
+
+print(average(2, 3))",Function,6321
+"Edit the following Python code such that the function produces output in the format ""<Name> said: '<Message>'.","def generate_message(name, message):
+    print(name + ' said: ' + message)","def generate_message(name, message):
+    print(name + ' said: ' + ""'"" + message + ""'"")",Function,6340
+"Given two integers, write a Python function to find their greatest common divisor (GCD).","num1 = 24
+num2 = 18","def find_gcd(num1, num2):
+    gcd = 1
+    while num2 != 0:
+        temp = num2
+        num2 = num1 % num2
+        num1 = temp
+        gcd = num1
+    return gcd",Function,6346
+Generate a random password using the Python function provided in the input.,"def randomString(stringLength=8):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(stringLength))",print(randomString()),Function,6357
+"Construct a Python function that takes two integers ""a"" and ""b"" and returns the sum of their squares.",2 and 3,"def sum_sqr(a, b):
+    return a*a + b*b
+
+print(sum_sqr(2, 3))",Function,6384
+"Write a function in Python to convert a given time in hours, minutes and seconds, to a total number of seconds.","hours: 2
+minutes: 3
+seconds: 4","def time_to_seconds(hours, minutes, seconds): 
+     return (hours * 3600) + (minutes * 60) + seconds
+ 
+result = time_to_seconds(2, 3, 4) 
+print(result)",Function,6407
+Rewrite this python function to make it more concise.,"def calculate_average(scores):
+    total = 0 
+    for score in scores:
+        total += score
+    return total/len(scores)","def calculate_average(scores):
+    return sum(scores)/len(scores)",Function,6418
+Create a Python function to calculate the sum of all numbers from 0 to the input number.,5,"def sum_to(num):
+    sum = 0
+    for i in range(num+1):
+        sum += i
+    return sum
+ 
+num = 5
+print(sum_to(num))   # 15",Function,6438
+Optimize a given Python function to run faster.,"def lower_string(string):
+    return string.lower()","def lower_string(string):
+    return string.strip().lower()",Function,6460
+Create a function in Python that prints the first n Fibonacci numbers.,6,"def fibonacci(n):
+  fib_list = [0, 1]
+  for i in range(2, n):
+    fib_list.append(fib_list[i-2] + fib_list[i-1])
+  return fib_list[:n]
+
+fibonacci_list = fibonacci(6)
+print(fibonacci_list)",Function,6464
+Create an API endpoint in Python Flask to add two numbers. This API should accept two numbers as Formula Parameters and should return the addition of those two numbers.,"num1 = 4
+num2 = 5","from flask import Flask, request
+app = Flask(__name__)
+
+@app.route('/add', methods=['GET'])
+def add():
+ num1 = float(request.args.get('num1'))
+ num2 = float(request.args.get('num2'))
+
+ sum = num1 + num2
+
+ return str(sum)
+
+if __name__ == '__main__':
+ app.run(debug=True)",Function,6500
+Create a function to optimize a given python code using the Numba library.,"def calculate_pi():
+    c = 0.0
+    for k in range(1000):
+        for j in range(1000):
+            c += k ** -2 + j ** -3
+    return c","import numba
+
+@numba.jit
+def calculate_pi():
+    c = 0.0
+    for k in range(1000):
+        for j in range(1000):
+            c += k ** -2 + j ** -3
+    return c",Function,6514
+Create a recursive function in Python that prints the values from 0 to n.,5,"def print_values(n):
+    if n == 0:
+        return
+    else:
+        print(n)
+        print_values(n-1)
+
+print_values(5)",Function,6561
+Create a Python function to format a given ip address to IPv4 format.,192.168.1,"def ipv4_format(ip):
+ octets = ip.split('.')
+ octets.extend(['0', '0', '0', '0'])
+ octets = octets[:4]
+ return '.'.join(octets)
+
+if __name__ == '__main__':
+ ip = '192.168.1'
+ print(ipv4_format(ip))",Function,6600
+Create a Python function to calculate the sum of two numbers given as inputs.,"5, 6","def calculateSum(a, b):
+    return a + b
+
+sum = calculateSum(5, 6)
+print(sum)",Function,6613
+Write a function in Python to remove all punctuation and special characters.,"'Hello, World!!!'","import string
+
+def removePunctuation(input_string):
+    punctuations = string.punctuation
+    output_string = """"
+    for char in input_string:
+        if char not in punctuations:
+            output_string += char
+    return output_string
+
+print(removePunctuation(""Hello, World!!!""))  # Output: Hello World",Function,6644
+Create a Python function to detect a specific sequence,"Given a list of integers, list_a = [1, 6, 3, 7, 4], find the index of the sequence [3, 7]","def find_sequence(list_a, pattern):
+    result = []
+    for i in range(len(list_a)-len(pattern)+1):
+        if list_a[i:i+len(pattern)] == pattern:
+            result.append(i)
+    return result",Function,6647
+Develop a Python function that can detect the spoken language of a user’s input.,Bonjour,"def detect_language(text):
+ """"""Detect the language of a given text.
+
+ Args:
+  text (str): The text to detect the language of.
+
+ Returns:
+  str: The detected language of the text.
+ """"""
+
+ language = detect(text)
+ return language",Function,6663
+Rewrite the current function using Python 3.x code instead of Python 2.7.,"def sum(a, b):
+     return a + b","def sum(a, b):
+    return a + b",Function,6670
+Create a Python function to return the elements of two lists as a dictionary.,"list_one = [1, 2, 3]
+list_two = ['a', 'b', 'c']","list_one = [1, 2, 3]
+list_two = ['a', 'b', 'c']
+
+def list_to_dict(list_one, list_two):
+  if len(list_one) != len(list_two):
+    return None
+  d = {}
+  for i in range(len(list_one)):
+    d[list_one[i]] = list_two[i]
+  return d
+  
+dictionary = list_to_dict(list_one, list_two)
+print(dictionary)",Function,6691
+"Create a function in Python that takes a given number, removes all its digits and returns an integer.",x = 356,"def removeDigits(x):
+    str_x = str(x)
+    without_digits = int("""".join([i for i in str_x if not i.isdigit()]))
+    return without_digits
+
+x = 356
+print(removeDigits(x))",Function,6746
+"Create a Python function clamp that takes a number, a lower bound and an upper bound and clamps the value between the two bounds.","number=12, lower=3, upper=15","def clamp(number, lower, upper):
+    if number < lower:
+        return lower
+    elif number > upper:
+        return upper
+    else:
+        return number",Function,6786
+Create a function in Python that takes in two dates and returns the number of days between them.,"today = ""2020/05/20""
+tomorrow = ""2020/05/21""","def compute_days_between_dates(date1, date2):
+    today_datetime = datetime.datetime.strptime(date1, '%Y/%m/%d')
+    tomorrow_datetime = datetime.datetime.strptime(date2, '%Y/%m/%d')
+    return (tomorrow_datetime-today_datetime).days
+
+print(compute_days_between_dates(""2020/05/20"", ""2020/05/21""))",Function,6801
+Create a function in Python that takes an integer and prints all its factors.,60,"def find_factors(num):
+  factors = []
+  for i in range(2, num):
+    if (num % i == 0):
+      factors.append(i)
+  print(f""Factors of {num}: {factors}"")
+
+find_factors(60)",Function,6811
+Create a function in Python to normalize a vector.,"vector = [1, 5, 2, 8, 9, 4]","def normalize(vector):
+    norm = np.linalg.norm(vector)
+    normalized = []
+    for i in vector:
+        normalized.append(i/norm)
+    return normalized
+
+vector = [1, 5, 2, 8, 9, 4]
+
+normalized_vector = normalize(vector)
+print(normalized_vector) # [0.10938925979875006, 0.5469462984987499, 0.21877851959750005, 0.8750559279949998, 1.0000000000000002, 0.43693269989949995]",Function,6814
+"Edit the existing Python code to forward declare a function called ""compute"" that takes two arguments, ""a"" and ""b"", and returns the result of ""a + b"".","def func1():
+    result = compute(2,3)
+    print(result)","def compute(a,b):
+    return a + b
+
+def func1():
+    result = compute(2,3)
+    print(result)",Function,6836
+"Write a Python function to classify a given animal as a mammal, bird, reptile, or fish.",lion,"def classify_animal(animal): 
+ if animal == ""lion"": 
+  return ""mammal"" 
+ elif animal == ""eagle"": 
+  return ""bird"" 
+ elif animal == ""crocodile"": 
+  return ""reptile"" 
+ elif animal == ""salmon"": 
+  return ""fish"" 
+ else: 
+  return ""unknown""",Function,6838
+Create a function in Python to find the greatest common divisor of two given numbers.,7 8,"def get_gcd(num1, num2):
+    for i in range(max(num1, num2), 0, -1):
+        if num1 % i == 0 and num2 % i == 0:
+            return i
+
+result = get_gcd(7, 8)
+print(result)
+# Output: 1",Function,6876
+Create a function in Python to compute the sum of all the natural numbers in a given range.,"start = 1
+end = 10","def sum_natural_numbers(start, end):
+    """"""
+    Computes the sum of all natural numbers in a given range.
+    
+    Parameters:
+    start (int): start of the range
+    end (int): end of the range
+    
+    Returns:
+    int: the sum of the natural numbers in the range
+    """"""
+    total = 0
+    for i in range(start, end+1):
+        total += i
+    return total",Function,6896
+Convert the following loop code into a recursive function in Python.,"n = 10
+s = 0
+for i in range(n):
+    s += i","def sum_of_n_natural_numbers_recursive(n, s=0):
+    if n == 0:
+        return s
+    
+    s += n
+    return sum_of_n_natural_numbers_recursive(n-1, s)
+
+result = sum_of_n_natural_numbers_recursive(10)
+print(result)",Function,6908
+Rewrite this Python function to be as efficient as possible.,"def get_values(dictionary):
+    values = []
+    for key, value in dictionary.items():
+        if value > 0:
+            values.append(value)
+    return values","def get_values(dictionary):
+    return [value for key, value in dictionary.items() if value > 0]",Function,6929
+Develop a function that returns the sum of three numbers,"three integers a, b, c","# Python3 program to return the sum of three numbers
+
+def sum_three(a,b,c): 
+    return a + b + c",Function,6952
+Write a Python function to check whether a number is in the given range.,"number: 4, range: [2, 4]","def is_in_range(num, a, b):
+    if num >= a and num <= b:
+        return True
+    else:
+        return False
+
+result = is_in_range(4, 2, 4)
+print(result)",Function,6973
+Write a function in Python to identify all the keywords present in a given sentence.,Sentence: I like to eat apples,"def find_keywords(sentence):
+ keywords = set()
+ words = sentence.split(' ')
+ for word in words:
+  if word.iskeyword():
+   keywords.add(word)
+ return list(keywords)",Function,7016
+Create a function in Python to calculate the square root of a number.,num = 16,"def cal_sqrt(num):
+    return num ** 0.5
+
+num1 = 16
+sqrt_of_num1 = cal_sqrt(num1)
+print(sqrt_of_num1) # 4.0",Function,7026
+Write a Python function to find the maximum of three numbers.,"3, 4, 5","def max_of_three(a, b, c):
+    if a > b and a > c:
+        return a
+    elif b > a and b > c:
+        return b
+    else:
+        return c
+
+result = max_of_three(3, 4, 5)
+print(result)",Function,7035
+Analyze the following Python function to detect any potential errors.,"def expand_list(list):
+    for item in list:
+        list *= 2","The function is attempting to modify the list while iterating over it. This can lead to unexpected behavior and should be avoided. To fix the code, the list should be copied before the iteration takes place: 
+
+def expand_list(list):
+    list_copy = list[:]   # make a copy of the list
+    for item in list_copy:
+        list *= 2",Function,7040
+Generate a function in Python which takes two values and returns the largest one.,"38, 64","def max_of_two_values(val1, val2):
+    if val1 > val2:
+        return val1
+    else:
+        return val2
+
+# Function call with two arguments
+largest_one = max_of_two_values(38, 64)
+
+# Print the largest number
+print('The largest one is:', largest_one)",Function,7048
+Implement a class in Python called “Multiplier” with a constructor function that takes an argument “factor”. The class should have a method called “multiply” which takes a number as an argument and returns this multiplied by “factor”.,factor = 5,"class Multiplier:
+    def __init__(self, factor):
+        self.factor = factor
+ 
+    def multiply(self, num):
+        return num * self.factor",Function,7067
+Fix the syntax error in the provided Python function.,"def add_numbers(x, y)
+    return x + y","def add_numbers(x, y):
+    return x + y",Function,7082
+Develop a function in Python that will find the sum of all prime numbers in a given range.,"upper = 10
+lower = 1","def primeSum(lower, upper): 
+    sum = 0
+    for num in range(lower, upper + 1): 
+        if num > 1: 
+            for i in range(2, num): 
+                if (num % i) == 0: 
+                    break 
+            else: 
+                sum += num 
+  
+    return sum",Function,7110
+Code an optimization problem using Python that finds the maximum of a function with two optimization variables and a given constraint.,"f(x, y) = 3x + 2y
+ Constraint: x + y ≤ 10","from scipy.optimize import minimize
+
+def f(x):
+ return 3*x[0] + 2*x[1]
+
+def con(x):
+ return x[0] + x[1] - 10
+
+cons = ({'type': 'ineq', 'fun': con})
+
+result = minimize(f, [0, 0], method='SLSQP', constraints=cons)
+x = result.x
+
+print('Solution:', x)
+print('Maximum value:', result.value)",Function,7116
+Write a Python function to multiple two matrices.,"Matrix 1: 
+[[1, 2], 
+ [3, 4]]
+Matrix 2: 
+[[5, 6], 
+ [7, 8]]","def multiply_matrices(m1, m2):
+    # create a 3x3 matrix to hold the result
+    result = [[0, 0], [0, 0]]
+
+    for i in range(len(m1)): 
+        for j in range(len(m2[0])): 
+            for k in range(len(m2)): 
+                result[i][j] += m1[i][k] * m2[k][j] 
+
+    return result
+
+result = multiply_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+print(result)",Function,7133
+Develop a Python script that can query a SQL database and return the total number of entries in all the tables,SQL database,"import sqlite3
+
+conn = sqlite3.connect(""example.db"")
+cur = conn.cursor()
+
+sql = ""SELECT name FROM sqlite_master WHERE type='table';""
+cur.execute(sql)
+tables = cur.fetchall()
+
+count = 0
+for table in tables:
+    sql = f""SELECT COUNT(*) FROM {table[0]};""
+    cur.execute(sql)
+    count += cur.fetchone()[0]
+
+print(f""Number of entries: {count}"")",Function,7142
+Generate a function in Python that takes a web page URL and returns the page's HTML source code.,"url = ""https://www.example.com""","import requests
+
+def get_html_source(url):
+    """"""
+    This function takes a web page URL and returns the page's HTML source code.
+    :param url: url
+    :return: html source
+    """"""
+    response = requests.get(url)
+    return response.text",Function,7183
+Create a function to fetch data from a web page using Python.,http://www.example.com,"import requests
+
+def fetch_data(url):
+    response = requests.get(url)
+    return response.text
+
+fetched_data = fetch_data('http://www.example.com')",Function,7187
+Write a function in Python that takes a sentence as an input and prints out the words in reverse order.,"Input sentence: ""This is a test sentence""","def reverse_words(sentence):
+ words = sentence.split()
+ reversed_words = words[::-1]
+ return ' '.join(reversed_words)
+
+print(reverse_words(""This is a test sentence""))
+
+# Output: ""sentence test a is This""",Function,7205
+"Using Python, create a function that calculates the objective function of a linear equation.","ax + by = c
+
+a = 3, b = 5, c = 7","def linear_eq(a, b, c):
+    return a*x + b*y - c
+
+# For example:
+result = linear_eq(3, 5, 7)
+print(result)",Function,7240
+Write a Python function to get the common items from two given lists.,"list_1 = [1, 2, 3, 4, 5]
+list_2 = [2, 4, 6, 8]","def get_common_items(list_1, list_2):
+    common_items = []
+  
+    for i in list_1:
+        for j in list_2:
+            if i == j:
+                common_items.append(i)
+    return common_items
+
+list_1 = [1, 2, 3, 4, 5]
+list_2 = [2, 4, 6, 8]
+
+print(get_common_items(list_1, list_2))",Function,7248
+Write a Python program to optimize the given cost function.,"C(x, y) = 2x + 9y","def optimize_cost(x, y):
+    return 2*x + 9*y",Function,7256
+Create a Python function that takes two strings and count the total number of characters made from the two strings combined.,"firstStr = ""Hello""
+secondStr = ""World""","def countChars(firstStr, secondStr):
+    combinedStr = firstStr + secondStr
+    return len(combinedStr)",Function,7259
+Create a recursive function in Python that calculates the factorial of a given number.,n = 5,"def factorial(n): 
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+result = factorial(5)
+print(result) # prints 120",Function,7262
+Create a Python function that takes an object and prints all of its contents in a table.,"{
+  name: 'John', 
+  age: 32, 
+  gender: 'Male',
+  city: 'New York'
+}","def print_object_table(obj): 
+    print(""Name\t Age\t Gender\t City"")
+    print(""----\t----\t-------\t-------"")
+    print(obj['name'], ""\t"", obj['age'], ""\t"", obj['gender'], ""\t"", obj['city'])
+
+print_object_table({
+  'name': 'John', 
+  'age': 32, 
+  'gender': 'Male',
+  'city': 'New York'
+})",Function,7270
+Model a function in Python that swaps the values of two variables without using a third one.,"x = 10
+y = 20","def swap(x, y):
+    x, y = y, x 
+    return x, y
+
+x, y = swap(x, y)
+print('x =', x) 
+print('y =', y)",Function,7282
+Write a function in Python to calculate the nth value of the Fibonacci sequence.,7,"def fibonacci(n):
+  if n == 0 or n == 1:
+    return n
+  else:
+    return fibonacci(n - 1) + fibonacci(n - 2)
+  
+result = fibonacci(7)
+print(result)",Function,7290
+Write a Python function to calculate the maximum value of two numbers given by the user.,"x = 24
+y = 63","def maximum_numbers(x, y):
+ if x > y:
+ return x
+ else:
+ return y
+
+print(maximum_numbers(x, y))",Function,7312
+Create a function in Python to calculate the sum of 1 to n numbers.,n = 10,"def sum_nums(n):
+    result = 0
+    for i in range(1, n+1):
+        result += i
+    return result
+
+print(sum_nums(10))",Function,7318
+Write a function in Python that takes two lists of integers as arguments and returns the elements that are present in both lists.,"list1 = [2, 3, 4, 5]
+list2 = [3, 5, 6, 7]","def intersection(list1, list2):
+ result = []
+ 
+ for element in list1:
+ if element in list2:
+ result.append(element)
+ 
+ return result
+
+intersection(list1, list2) // Output: [3, 5]",Function,7341
+Create a Python function to calculate the length of the hypotenuse of a right triangle.,Length of sides: 3 and 4,"def hypotenuse(a, b):
+  return (a**2 + b**2) ** 0.5
+
+print(hypotenuse(3, 4)) # 5.0",Function,7356
+Create a function in Python that takes 2 lists and returns their intersection.,"list1 = [1, 4 , 6, 10]
+list2 = [2, 10, 8, 6]","def intersection(list1, list2): 
+    intersection_elements = set(list1) & set(list2) 
+    return list(intersection_elements)
+
+intersection_list = intersection(list1, list2)
+print(intersection_list)",Function,7362
+Write a Python function to calculate the greatest common factor (GCF) of two numbers.,"Number 1: 15 
+Number 2: 25","def gcf(m, n):
+    while m != 0:
+        m, n = n % m, m 
+    return n
+
+print(gcf(15, 25))",Function,7365
+Devise a Python function to calculate Fibonacci series up to n numbers.,10,"def Fibonacci(n): 
+    if n<0: 
+        print(""Incorrect input"") 
+    # First Fibonacci number is 0 
+    elif n==1: 
+        return 0
+    # Second Fibonacci number is 1 
+    elif n==2: 
+        return 1
+    else: 
+        return Fibonacci(n-1)+Fibonacci(n-2) 
+  
+# Driver Program 
+  
+print(Fibonacci(10))",Function,7378
+Write a Python function to sort a dictionary (key: value) by its values in descending order.,"my_dict = {1: 4, 2: 3, 3: 2, 4: 1}","def desc_sort_dict(my_dict):
+  return {k: v for k, v in sorted(my_dict.items(), key=lambda item: item[1], reverse=True)}",Function,7379
+Write a python function that takes two lists of numbers and returns the intersection between them.,"list1 = [1, 2, 3, 4, 5]
+list2 = [3, 4, 5, 6, 7]","def intersection(list1, list2):
+ result = []
+ set1 = set(list1)
+ set2 = set(list2)
+
+ for item in set1 & set2:
+ result.append(item)
+
+ return result
+
+list1 = [1,2,3,4,5]
+list2 = [3,4,5,6,7]
+result = intersection(list1, list2)
+print(result) # prints [3, 4, 5]",Function,7383
+Create a Python function that prints the largest of three numbers.,"num1 = 10
+num2 = 20
+num3 = 5","def max_number(num1,num2,num3):
+  max_num=max(num1,num2,num3)
+  print(f""The largest number is {max_num}"")",Function,7384
+Reconstruct the following Python function such that the output is reduced to one line.,"def calculate_sum(numbers):
+    result = 0
+    for i in range(len(numbers)):
+        result += numbers[i]
+    return result","def calculate_sum(numbers):
+    return sum(numbers)",Function,7392
+Create a Python program to reverse a dictionary. The program should take a dictionary as input and return a new dictionary with the keys and values swapped.,"dictionary = { 'a': 1, 'b':  2, 'c': 3 }","def reverse_dictionary(dictionary): 
+ result = dict() 
+  
+ for key, value in dictionary.items(): 
+  result[value] = key 
+  
+ return result 
+
+dictionary = { 'a': 1, 'b':  2, 'c': 3 }
+res = reverse_dictionary(dictionary) 
+print(res) # Output: {1: 'a', 2: 'b', 3: 'c'}",Function,7412
+Create a function in Python to sum up all odd digits in a given number.,2243,"def sum_odd_digits(num):
+    sum = 0
+    for x in str(num):
+        if int(x) % 2 != 0:
+            sum += int(x)
+ 
+    return sum
+
+print(sum_odd_digits(2243))",Function,7416
+Generate a graphical representation of a function using Python.,f(x) = 2x + 3,"import matplotlib.pyplot as plt
+
+x = range(-10, 11)
+y = [2 * x_coord + 3 for x_coord in x]
+plt.plot(x, y)
+plt.title('Graph of the function: f(x) = 2x + 3')
+plt.xlabel('x')
+plt.ylabel('2x + 3')
+
+plt.show()",Function,7419
+Create a Python function to find the area of a circle with the given radius.,radius: 3.5,"def area_circle (radius):
+    return 3.14159 * (radius ** 2)
+
+# Test
+print(area_circle(3.5)) # prints 38.48685",Function,7423
+Write a Python function that takes three numbers as argument and prints the largest one.,"3, 5, 9","def largest_number(a, b, c):
+    max = a
+    if b > max:
+        max = b
+    if c > max:
+        max = c
+    print(max) 
+
+largest_number(3, 5, 9)",Function,7440
+"Write a python program to make an API call, return the response status code, and store return json data in a dictionary.",The API endpoint is https://api.example.com/users,"import requests
+
+url = 'https://api.example.com/users'
+response = requests.get(url)
+response_status_code = response.status_code
+data = response.json()
+data_dict = dict(data)
+
+print(response_status_code)
+print(data_dict)",Function,7443
+Create a function in Python to count the number of vowels in a sentence.,"""This is a sample sentence""","def countVowels(sentence):
+    vowels = [""a"", ""e"", ""i"", ""o"", ""u""]
+    vowel_count = 0
+    
+    for char in sentence.lower():
+        if char in vowels:
+            vowel_count += 1
+    
+    return vowel_count
+
+sentence = ""This is a sample sentence""
+vowel_count = countVowels(sentence)
+print(f""Number of vowels in the sentence = {vowel_count}"")",Function,7448
+"Create a function in Python to compute the sum of two numbers, x and y.",sample input: x = 2 and y = 3,"def sum(x, y):
+ return x + y
+
+# testing
+print(sum(2, 3)) # Output: 5",Function,7450
+Create a python function that returns the year from a given date,02-03-19,"def get_year(date):
+    return date.split('/')[2]
+
+year = get_year('02/03/2019')
+print(year)",Function,7453
+Convert a Python program that uses multiple functions to a single function using only a single recursive call.,"def main():
+ x = 1
+ def inner(x):
+  x += 1
+  print(x)
+ inner(x)
+ 
+main()","def main(x):
+ if x == 1:
+  print(2)
+ else:
+  main(x + 1)
+ 
+main(1)",Function,7454
+Write a Python function to calculate the total cost of an item given its base price and additional cost.,"Base price: 30
+Additional cost: 10","def calculate_total_cost(base_price, additional_cost):
+ return base_price + additional_cost",Function,7465
+Create a function in Python that will determine whether a given number is composite or prime.,Number: 21,"def isPrime(x): 
+	if x > 1: 
+		for i in range(2,x): 
+			if (x % i) == 0: 
+				return False
+		else: 
+			return True
+	else: 
+		return False
+
+num = 21
+if(isPrime(num)) : 
+	print(num, ""is a prime number"") 
+else : 
+	print(num, ""is a composite number"")",Function,7490
+Create a Python function that takes in two strings and concatenates them with a space in between.,"""Programming"", ""is Fun""","def concatStringsWithSpace(str1, str2):
+  return str1 + "" "" + str2
+
+result = concatStringsWithSpace(""Programming"", ""is Fun"")
+print(result)",Function,7505
+Write a Python program to count words in a sentence. The program should take in a sentence as input and return a dictionary with the words as the keys and the frequencies as the values.,Sentence: “The quick brown fox jumps over the lazy dog”,"sentence = ""The quick brown fox jumps over the lazy dog""
+word_freq = {}
+
+for word in sentence.split():
+  if word in word_freq:
+    word_freq[word] += 1
+  else:
+    word_freq[word] = 1
+
+print(word_freq)",Function,7557
