@@ -5,25 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.codey.R
 import com.google.firebase.database.*
 
 class ProfileFragment : Fragment() {
 
     private lateinit var databaseReference: DatabaseReference
-    private lateinit var usernameTextView: TextView
-    private lateinit var emailTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
-        usernameTextView = view.findViewById(R.id.tv_username)
-        emailTextView = view.findViewById(R.id.tv_email)
-        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,8 +33,6 @@ class ProfileFragment : Fragment() {
                             val username = childSnapshot.child("username").getValue(String::class.java)
                             val email = childSnapshot.child("email").getValue(String::class.java)
 
-                            usernameTextView.text = username ?: "Unknown"
-                            emailTextView.text = email ?: "Unknown"
                         }
                     }
 
