@@ -6,15 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.codey.databinding.FragmentProfileBinding
 import com.google.firebase.database.*
 
 class ProfileFragment : Fragment() {
 
     private lateinit var databaseReference: DatabaseReference
+    private var _binding: FragmentProfileBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,6 +39,8 @@ class ProfileFragment : Fragment() {
                             val username = childSnapshot.child("username").getValue(String::class.java)
                             val email = childSnapshot.child("email").getValue(String::class.java)
 
+                            binding.tvUsername.text = username ?: "Unknown"
+                            binding.tvEmail.text = email ?: "Unknown"
                         }
                     }
 
@@ -40,5 +48,10 @@ class ProfileFragment : Fragment() {
                     }
                 })
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
