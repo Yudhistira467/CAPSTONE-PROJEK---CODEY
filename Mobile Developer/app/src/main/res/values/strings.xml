@@ -14,11 +14,13 @@
     <string name="judul_latihan">Judul Latihan</string>
 
     <!--PROFILE-->
-    <string name="nama_user">Nama User</string>
+    <string name="nama_user">Name User</string>
     <string name="email_user">Email</string>
+    <string name="activity">Youre Activity Learning</string>
+
 
     <!-- EDIT PROFILE-->
-    <string name="edit_nama">Nama</string>
+    <string name="edit_nama">Name</string>
     <string name="edit_password">Password</string>
     <string name="edit_button">Change Profile</string>
 
