@@ -1,0 +1,388 @@
+{
+    "quiz": [
+        {
+            "question_id": 34,
+            "material": "OOP",
+            "instruction": "Design a class in Python that models a customer with the following properties",
+            "question": "class ___:\n    def __init__(self,name, email, phone_number, address):\n        self.name = name\n        self.email = email\n        self.phone_number = phone_number\n        self.address = address",
+            "correct_answer": "Customer",
+            "duration": 20
+        },
+        {
+            "question_id": 595,
+            "material": "OOP",
+            "instruction": "Create a class in Python that represents a given animal object.",
+            "question": "class ___:\n    def __init__(self):\n        self.name = \"\"\n        self.colour = \"\"\n        self.age = 0\n        self.breed = \"\"\n\n    def meow(self):\n        print(self.name, \"says meow!\")",
+            "correct_answer": "Cat",
+            "duration": 20
+        },
+        {
+            "question_id": 836,
+            "material": "OOP",
+            "instruction": "Extend a Python class to create another class with similar behavior.",
+            "question": "class ___(Vehicle):\n    def __init__(self):\n        super().__init__()\n        self.num_wheels = 2\n        self.type = 'motorcycle'\n\n    def accelerate(self):\n        self.speed += 10\n\n    def brake(self):\n        self.speed = max(self.speed - 7, 0)",
+            "correct_answer": "Motorcycle",
+            "duration": 20
+        },
+        {
+            "question_id": 1386,
+            "material": "OOP",
+            "instruction": "Edit the following Python class such that it can accept a variable number of parameters.",
+            "question": "class ___:\n    def __init__(self, *args):\n        self.name = args[0]\n        self.age = args[1]\n        self.weight = args[2]",
+            "correct_answer": "Person",
+            "duration": 20
+        },
+        {
+            "question_id": 1520,
+            "material": "OOP",
+            "instruction": "Write Python code to implement a class like this.",
+            "question": "class ___: \n    def __init__(self, name, age):\n        self.name = name \n        self.age = age \n    \n     def __str__(self): \n        return \"Employee({0}, {1})\".format(self.name,self.age) \n \nemp = Employee(\"John\", 24) \nprint(emp)",
+            "correct_answer": "Employee",
+            "duration": 20
+        },
+        {
+            "question_id": 1781,
+            "material": "OOP",
+            "instruction": "Generate a class in Python using the parameters provided in the following Input section.",
+            "question": "class ___:\n    def __init__(self, Name, Age, Gender):\n        self.Name = Name\n        self.Age = Age\n        self.Gender = Gender",
+            "correct_answer": "Person",
+            "duration": 20
+        },
+        {
+            "question_id": 1797,
+            "material": "OOP",
+            "instruction": "Transform the code snippet into a Python class.",
+            "question": "class ___:\n    def __init__(self):\n        pass\n\n    def multiply(self, x, y):\n        return x * y",
+            "correct_answer": "Calculator",
+            "duration": 20
+        },
+        {
+            "question_id": 1871,
+            "material": "OOP",
+            "instruction": "Generate a new Python class which extends some existing class, but with a modified constructor.",
+            "question": "class ___(A):\n    def __init__(self, param1, param2, param3):\n        super().__init__(param1, param2)\n        self.param3 = param3",
+            "correct_answer": "B",
+            "duration": 20
+        },
+        {
+            "question_id": 2023,
+            "material": "OOP",
+            "instruction": "Complete the Python class below so that it can calculate the sum of two integers.",
+            "question": "class ___:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n        \n    def add(self):\n        return self.x + self.y",
+            "correct_answer": "Sum",
+            "duration": 20
+        },
+        {
+            "question_id": 2112,
+            "material": "OOP",
+            "instruction": "Write a Python class to represent a polynomial of degree n.",
+            "question": "class ___:\n    def __init__(self, coeff):\n        self.coeff = coeff\n\n    def __call__(self, x):\n        result = 0\n        for idx, c in enumerate(self.coeff):\n            result += c * x ** idx\n        return result",
+            "correct_answer": "Polynomial",
+            "duration": 20
+        },
+        {
+            "question_id": 2201,
+            "material": "OOP",
+            "instruction": "What is the purpose of the method in line 4 of the code?",
+            "question": "The purpose of the method ___ line 4 is to generate a random number within the given range of min and max. It uses the Python's random.range() method which returns a random integer from the range of min to max, inclusive.",
+            "correct_answer": "in",
+            "duration": 20
+        },
+        {
+            "question_id": 2208,
+            "material": "OOP",
+            "instruction": "using the following Json as an example, write a Python program that reads this Json into an object.",
+            "question": "import json\n\n# example data\ndata = '{\"id\":1,\"name\":\"Testing\",\"description\":\"This is a test\"}'\n\n# parse data into a Python object ___ = json.loads(data)\n\nprint(obj)",
+            "correct_answer": "obj",
+            "duration": 20
+        },
+        {
+            "question_id": 2282,
+            "material": "OOP",
+            "instruction": "Create a class in Python that takes two arguments a 'name' and 'age' and returns a greeting.",
+            "question": "class ___:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    def get_greeting(self):\n        return f\"Hello, my name is {self.name} and I am {self.age} years old.\"",
+            "correct_answer": "Greeting",
+            "duration": 20
+        },
+        {
+            "question_id": 2456,
+            "material": "OOP",
+            "instruction": "Construct a Python class that takes a given number and calculates the sum of the digits.",
+            "question": "class ___:\n    \n    def __init__(self, num):\n        self.num = num\n    \n    def calculate_sum_of_digits(self):\n        total = 0\n        for ch in str(self.num):\n            total += int(ch)\n        return total\n\ndigit_sum = SumOfDigits(6342)\nresult = digit_sum.calculate_sum_of_digits()\nprint(result)",
+            "correct_answer": "SumOfDigits",
+            "duration": 20
+        },
+        {
+            "question_id": 2520,
+            "material": "OOP",
+            "instruction": "Create a python class that simulates an invoice with information about the item and the cost.",
+            "question": "class ___:\n    def __init__(self, item, price):\n        self.item = item\n        self.price = price\n    \n    def get_item(self):\n        return self.item\n    \n    def get_price(self):\n        return self.price\n\ninvoice = Invoice(\"Pen\", 3)",
+            "correct_answer": "Invoice",
+            "duration": 20
+        },
+        {
+            "question_id": 2577,
+            "material": "OOP",
+            "instruction": "Design a class in Python to store details of a person",
+            "question": "class ___:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nperson = Person('John', 34)",
+            "correct_answer": "Person",
+            "duration": 20
+        },
+        {
+            "question_id": 2782,
+            "material": "OOP",
+            "instruction": "Design a class in Python to represent a circle.",
+            "question": "class ___:\n    \"\"\"Class to represent a circle.\"\"\"\n    def __init__(self, radius):\n        \"\"\"Initialize the circle.\"\"\"\n        self.radius = radius\n\n    def get_area(self):\n        \"\"\"Calculate and return the area of the circle.\"\"\"\n        return 3.14 * self.radius * self.radius",
+            "correct_answer": "Circle",
+            "duration": 20
+        },
+        {
+            "question_id": 3142,
+            "material": "OOP",
+            "instruction": "Construct a Python class with the following atributes and methods.",
+            "question": "class ___:\n    def __init__(self):\n        self.name = \"\"\n        self.ID = 0\n \n    def setName(self, name):\n        self.name = name\n    \n    def setID(self, ID):\n        self.ID = ID\n \n    def getName(self):\n        return self.name\n \n    def getID(self):\n        return self.ID",
+            "correct_answer": "MyClass",
+            "duration": 20
+        },
+        {
+            "question_id": 3380,
+            "material": "OOP",
+            "instruction": "Create a class in python that finds the sum of two numbers.",
+            "question": "class ___:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    \n    def find_sum(self):\n        return self.x + self.y\n        \nif __name__ == '__main__':\n    s = Sum(10, 5)\n    print(s.find_sum())",
+            "correct_answer": "Sum",
+            "duration": 20
+        },
+        {
+            "question_id": 3441,
+            "material": "OOP",
+            "instruction": "Create a class in Python to generate a calendar.",
+            "question": "class ___(object):\n\n    def __init__(self, name):\n        self.name = name\n\n    def generate_calendar(self):\n        calendar = []\n\n        # Code to generate a calendar goes here\n\n        return calendar\n\ncalendar = CalendarGenerator(calendarName)\ncalendar.generate_calendar()",
+            "correct_answer": "CalendarGenerator",
+            "duration": 20
+        },
+        {
+            "question_id": 3483,
+            "material": "OOP",
+            "instruction": "Create a class in Python to handle the following Student object.",
+            "question": "class ___:\n    def __init__(self, name, age, marks):\n        self.name = name\n        self.age = age\n        self.marks = marks\n        \n    def get_name(self):\n        return self.name\n    \n    def get_age(self):\n        return self.age\n    \n    def get_total_marks(self):\n        return sum(self.marks)",
+            "correct_answer": "Student",
+            "duration": 20
+        },
+        {
+            "question_id": 3924,
+            "material": "OOP",
+            "instruction": "Rewrite a given Java class using Python syntax.",
+            "question": "class ___:\n def __init__(self, x, y):\n  self.x = x\n  self.y = y",
+            "correct_answer": "MyClass",
+            "duration": 20
+        },
+        {
+            "question_id": 3963,
+            "material": "OOP",
+            "instruction": "Create a Python class with the given attributes and functions.",
+            "question": "class ___:\n    \n    def __init__(self, name, age, email):\n        self.name = name\n        self.age = age\n        self.email = email\n    \n    def toString(self):\n        return f\"Name: {self.name}, Age: {self.age}, Email: {self.email}\"",
+            "correct_answer": "Person",
+            "duration": 20
+        },
+        {
+            "question_id": 4017,
+            "material": "OOP",
+            "instruction": "Generate a class in Python that can store the following data",
+            "question": "class ___:\n    def __init__(self, month, calories, minutes):\n        self.month = month\n        self.calories = calories\n        self.minutes = minutes",
+            "correct_answer": "HealthData",
+            "duration": 20
+        },
+        {
+            "question_id": 4276,
+            "material": "OOP",
+            "instruction": "Develop an object orientated program in Python to generate random numbers.",
+            "question": "import random\n\nclass ___:\n    def __init__(self, low, high):\n        self.low = low\n        self.high = high\n    \n    def generate_rand_num(self):\n        return random.randint(self.low, self.high)\n\nif __name__ == '__main__':\n    gen = RandNumGenerator(10, 50)\n    print(gen.generate_rand_num())",
+            "correct_answer": "RandNumGenerator",
+            "duration": 20
+        },
+        {
+            "question_id": 4291,
+            "material": "OOP",
+            "instruction": "Create a class in Python that can represent a 3D point with the given fields.",
+            "question": "class ___:\n  def __init__(self, x, y, z):\n    self.x = x\n    self.y = y\n    self.z = z\n\n  def __str__(self):\n    return 'Point3D is at {x}, {y}, {z}'.format(x = self.x, y = self.y, z = self.z)",
+            "correct_answer": "Point3D",
+            "duration": 20
+        },
+        {
+            "question_id": 4321,
+            "material": "OOP",
+            "instruction": "Create a class in Python which takes an employee name and salary as parameters and prints them.",
+            "question": "class ___:\n    def __init__(self, name, salary):\n        self.name = name\n        self.salary = salary\n    \n    def print_employee_details(self):\n        print('Employee Name: {}, Salary: {}'.format(self.name, self.salary))\n\nemployee = Employee('John Smith', 5000)\nemployee.print_employee_details()",
+            "correct_answer": "Employee",
+            "duration": 20
+        },
+        {
+            "question_id": 4340,
+            "material": "OOP",
+            "instruction": "Format a numerical table of data into a JSON object in Python.",
+            "question": "Assuming the numerical table of data is stored in a 2D list data, a function to format it into a JSON object ___ be written as follows:\n\nimport json\ndef formatData2JSON(data):\n    json_formatted_data = json.dumps(data)\n    return json_formatted_data",
+            "correct_answer": "can",
+            "duration": 20
+        },
+        {
+            "question_id": 4380,
+            "material": "OOP",
+            "instruction": "Design a class in Python that implements a stack",
+            "question": "class ___:\n    def __init__(self):\n        self.items = []\n    \n    def isEmpty(self):\n        return self.items == []\n    \n    def push(self, item):\n        self.items.append(item)\n    \n    def pop(self):\n        return self.items.pop()\n    \n    def peek(self):\n        return self.items[len(self.items)-1]\n    \n    def size(self):\n        return len(self.items)",
+            "correct_answer": "Stack",
+            "duration": 20
+        },
+        {
+            "question_id": 4742,
+            "material": "OOP",
+            "instruction": "Design a python class to store fruit and its quantity in a grocery store.",
+            "question": "class ___:\n    def __init__(self):\n        self.items = {\n            'Banana': 200,\n            'Orange': 300,\n            'Grapes': 500\n        }\n\n    def get_item_quantity(self, item):\n        return self.items.get(item)",
+            "correct_answer": "FruitGrocery",
+            "duration": 20
+        },
+        {
+            "question_id": 5493,
+            "material": "OOP",
+            "instruction": "Write a Python class that takes 2 strings as arguments and prints them out in a concatenated form.",
+            "question": "class ___:\n    def __init__(self, string1, string2):\n        self.string1 = string1\n        self.string2 = string2\n\n    def print_concat(self):\n        print(self.string1 + self.string2)",
+            "correct_answer": "ConcatStrings",
+            "duration": 20
+        },
+        {
+            "question_id": 5552,
+            "material": "OOP",
+            "instruction": "Use the given data structure to create a python class.",
+            "question": "class ___:\n    def __init__(self, data):\n        self.name = data['name']\n        self.age = data['age']\n        self.city = data['city']",
+            "correct_answer": "Person",
+            "duration": 20
+        },
+        {
+            "question_id": 5822,
+            "material": "OOP",
+            "instruction": "Create a Python class that has the following functionality.",
+            "question": "class ___:\n    def containsVowels(self, s):\n        vowels = set('aeiouAEIOU')\n        for letter in s:\n            if letter in vowels:\n                return True\n        return False",
+            "correct_answer": "StringChecker",
+            "duration": 20
+        },
+        {
+            "question_id": 5908,
+            "material": "OOP",
+            "instruction": "Create a class in Python to represent a circle containing methods to calculate the area and circumference.",
+            "question": "class ___:\n    def __init__(self, radius):\n        self.radius = radius\n\n    def area(self):\n        return 3.14 * self.radius * self.radius\n\n    def circumference(self):\n        return 2 * 3.14 * self.radius",
+            "correct_answer": "Circle",
+            "duration": 20
+        },
+        {
+            "question_id": 5925,
+            "material": "OOP",
+            "instruction": "Develop a Python class to represent an employee with name, position and salary.",
+            "question": "class ___:\n    def __init__(self, name, position, salary):\n        self.name = name\n        self.position = position\n        self.salary = salary\n\njohn = Employee('John', 'Software Engineer', 6000)",
+            "correct_answer": "Employee",
+            "duration": 20
+        },
+        {
+            "question_id": 6033,
+            "material": "OOP",
+            "instruction": "Write a Python program to generate a Python Class using the given description.",
+            "question": "class ___:\n def __init__(self, name, age, height):\n self.name = name\n self.age = age\n self.height = height\n \n def get_name(self):\n return self.name\n \n def get_age(self):\n return self.age\n \n def get_height(self):\nreturn self.height",
+            "correct_answer": "Person",
+            "duration": 20
+        },
+        {
+            "question_id": 6218,
+            "material": "OOP",
+            "instruction": "Create a class in Python that inherits from the given base class, and implements the given interface.",
+            "question": "class ___:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def eat(self, food):\n        print(\"{} is eating {}!\".format(self.name, food))",
+            "correct_answer": "Animal",
+            "duration": 20
+        },
+        {
+            "question_id": 6277,
+            "material": "OOP",
+            "instruction": "Develop a class in Python to keep track of stock prices",
+            "question": "class ___:\n  def __init__(self, symbol):\n    self.symbol = symbol\n    self.prices = []\n \n  def add_price(self, price):\n    self.prices.append(price)\n \n  def get_prices(self):\n    return self.prices\n      \nAAPL = Stock('AAPL')\nAAPL.add_price(191.43)\nAAPL.add_price(193.57)\nAAPL.add_price(190.08)\nAAPL.get_prices()",
+            "correct_answer": "Stock",
+            "duration": 20
+        },
+        {
+            "question_id": 6549,
+            "material": "OOP",
+            "instruction": "Generate a class in Python with the given properties and methods.",
+            "question": "class ___:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def getInfo(self):\n        return \"Name: {}, Age: {}\".format(self.name, self.age)",
+            "correct_answer": "Student",
+            "duration": 20
+        },
+        {
+            "question_id": 6614,
+            "material": "OOP",
+            "instruction": "Write a class definition in python that will initialize an object of the class with given parameters",
+            "question": "class ___:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age",
+            "correct_answer": "Person",
+            "duration": 20
+        },
+        {
+            "question_id": 6690,
+            "material": "OOP",
+            "instruction": "Generate a Python code to create a class which creates an empty dictionary with the given keys.",
+            "question": "class ___:\n    def __init__(self, keys):\n        self.keys = [k.strip() for k in keys.split(\",\")]\n        self.dictionary = {k: None for k in self.keys}\n            \n    def get_dictionary(self):\n        return self.dictionary",
+            "correct_answer": "EmptyDictionary",
+            "duration": 20
+        },
+        {
+            "question_id": 6757,
+            "material": "OOP",
+            "instruction": "Write a class that implements the singleton pattern in Python.",
+            "question": "class ___:\n    instance = None\n\n    @staticmethod\n    def get_instance():\n        if Singleton.instance is None:\n            Singleton.instance = Singleton()\n        return Singleton.instance",
+            "correct_answer": "Singleton",
+            "duration": 20
+        },
+        {
+            "question_id": 6800,
+            "material": "OOP",
+            "instruction": "Provide a valid Python class definition that uses the below given values.",
+            "question": "class ___:\n    def __init__(self, speed, color):\n        self.speed = speed\n        self.color = color\n\n    def set_speed(self, speed):\n        self.speed = speed\n    \n    def set_color(self, color):\n        self.color = color",
+            "correct_answer": "Automobile",
+            "duration": 20
+        },
+        {
+            "question_id": 6889,
+            "material": "OOP",
+            "instruction": "Develop a class in Python to optimize the existing code.",
+            "question": "class ___():\n  def __init__(self, message):\n    self.message = message\n    \n  def display_message(self):\n    print(self.message)\n    \nmessage = input('Enter a message: ')\ndisplay_obj = Display(message)\ndisplay_obj.display_message()",
+            "correct_answer": "Display",
+            "duration": 20
+        },
+        {
+            "question_id": 7182,
+            "material": "OOP",
+            "instruction": "Create a class in Python to store user information with the given attributes.",
+            "question": "class ___:\n    def __init__(self, username, email, profile_picture):\n        self.username = username\n        self.email = email\n        self.profile_picture = profile_picture",
+            "correct_answer": "UserInformation",
+            "duration": 20
+        },
+        {
+            "question_id": 7206,
+            "material": "OOP",
+            "instruction": "Use a given class to deserialize a JSON response into a Python dictionary.",
+            "question": "class ___(Deserializer):\n    def deserialize(self, response):\n        return json.loads(response)\n\ndeserializer = MyDeserializer()\ndeserialized_data = deserializer.deserialize(response)\n\nprint(deserialized_data)",
+            "correct_answer": "MyDeserializer",
+            "duration": 20
+        },
+        {
+            "question_id": 7267,
+            "material": "OOP",
+            "instruction": "Generate a Python class with the following variables.",
+            "question": "class ___:\n  def __init__(self, name, job, age):\n    self.name = name\n    self.job = job\n    self.age = age",
+            "correct_answer": "Person",
+            "duration": 20
+        },
+        {
+            "question_id": 7364,
+            "material": "OOP",
+            "instruction": "Generate a valid python class that captures person information",
+            "question": "class ___:\n    def __init__(self, name, age, gender, nationality):\n        self.name = name\n        self.age = age\n        self.gender = gender\n        self.nationality = nationality\n \n    def __str__(self):\n        return 'Name: {}\\nAge: {}\\nGender: {}\\nNationality: {}'.format(\n            self.name, self.age, self.gender, self.nationality)",
+            "correct_answer": "Person",
+            "duration": 20
+        }
+    ]
+}

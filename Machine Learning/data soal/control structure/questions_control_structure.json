@@ -4,8 +4,8 @@
             "question_id": 32,
             "material": "Control Structure",
             "instruction": "Write a python program to check if two sequences are identical.",
-            "question": "def check_seq(seq1, seq2):\n    if ___ (seq1) != len (seq2): \n        return False\n    else: \n        for ___ in range(len (seq1)):\n            if ___[i] != seq2[i]:\n                return False\n    return True",
-            "correct_answer": "len, i, seq1",
+            "question": "def check_seq(seq1, seq2):\n    if ___ (seq1) != len (seq2): \n        return False\n    else: \n        for i in range(len (seq1)):\n            if seq1[i] != seq2[i]:\n                return False\n    return True",
+            "correct_answer": "len",
             "duration": 20
         },
         {
@@ -36,16 +36,16 @@
             "question_id": 94,
             "material": "Control Structure",
             "instruction": "Design a function in Python to determine if a given number is prime.",
-            "question": "def is_prime(n):\n    if ___ <= 1: \n        return False\n    if ___ == 2: \n        return True\n    if ___ > 2 and n % 2 == 0: \n        return False\n\n    sqrt_n = int(n**0.5)\n    for ___ in range(3, sqrt_n+1, 2):\n        if ___ % i == 0:\n            return False\n    return True\n\nif ___(37):\n    print('37 is a prime number!')",
-            "correct_answer": "n, n, n, i, n, is_prime",
+            "question": "def is_prime(n):\n    if ___ <= 1: \n        return False\n    if n == 2: \n        return True\n    if n > 2 and n % 2 == 0: \n        return False\n\n    sqrt_n = int(n**0.5)\n    for i in range(3, sqrt_n+1, 2):\n        if n % i == 0:\n            return False\n    return True\n\nif is_prime(37):\n    print('37 is a prime number!')",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 134,
             "material": "Control Structure",
             "instruction": "Construct a python program to check if two given strings are anagrams.",
-            "question": "def isAnagram(str1, str2):  \n    n1 = len(str1)\n    n2 = len(str2) \n    if ___ != n2: \n        return False\n    str1 = ''.join(sorted(str1)) \n    str2 = ''.join(sorted(str2))  \n    for ___ in range(n1):  \n        if ___[i] != str2[i]:  \n            return False\n    return True",
-            "correct_answer": "n1, i, str1",
+            "question": "def isAnagram(str1, str2):  \n    n1 = len(str1)\n    n2 = len(str2) \n    if ___ != n2: \n        return False\n    str1 = ''.join(sorted(str1)) \n    str2 = ''.join(sorted(str2))  \n    for i in range(n1):  \n        if str1[i] != str2[i]:  \n            return False\n    return True",
+            "correct_answer": "n1",
             "duration": 20
         },
         {
@@ -68,8 +68,8 @@
             "question_id": 164,
             "material": "Control Structure",
             "instruction": "Design a Python program for verifying the two strings are rotations of each other?",
-            "question": "def check_rotation(str1, str2): \n\tif ___(str1) != len(str2): \n\t\treturn False\n\ttemp = str1 + str1\n\treturn (str2 in temp) \n\ns1 = \"Hello World\"\ns2 = \"World Hello\"\nif ___(s1, s2): \n\tprint('These strings are rotations of each other'); \nelse: \n\tprint('These strings are not rotations of each other')",
-            "correct_answer": "len, check_rotation",
+            "question": "def check_rotation(str1, str2): \n\tif ___(str1) != len(str2): \n\t\treturn False\n\ttemp = str1 + str1\n\treturn (str2 in temp) \n\ns1 = \"Hello World\"\ns2 = \"World Hello\"\nif check_rotation(s1, s2): \n\tprint('These strings are rotations of each other'); \nelse: \n\tprint('These strings are not rotations of each other')",
+            "correct_answer": "len",
             "duration": 20
         },
         {
@@ -84,8 +84,8 @@
             "question_id": 186,
             "material": "Control Structure",
             "instruction": "Create a program in Python to check for duplicate words in a given sentence.",
-            "question": "sentence = \"I am going to the store to buy food\"\n\nwords = sentence.split(' ')\n\n#Table to keep track of duplicates\ntable = []\n\nfor ___ in words:\n if ___ in table:\n print(\"Duplicate word found: \"+word)\n else:\n table.append(word)",
-            "correct_answer": "word, word",
+            "question": "sentence = \"I am going to the store to buy food\"\n\nwords = sentence.split(' ')\n\n#Table to keep track of duplicates\ntable = []\n\nfor ___ in words:\n if word in table:\n print(\"Duplicate word found: \"+word)\n else:\n table.append(word)",
+            "correct_answer": "word",
             "duration": 20
         },
         {
@@ -124,8 +124,8 @@
             "question_id": 366,
             "material": "Control Structure",
             "instruction": "Create a Python program to grade a multiple choice test with 4 options for each question, and each correct answer is worth 3 points.",
-            "question": "def grade_test(questions):\n    score = 0\n    for ___ in questions:\n        if ___['answer'] == question['correct_answer']:\n            score += 3\n    return score",
-            "correct_answer": "question, question",
+            "question": "def grade_test(questions):\n    score = 0\n    for ___ in questions:\n        if question['answer'] == question['correct_answer']:\n            score += 3\n    return score",
+            "correct_answer": "question",
             "duration": 20
         },
         {
@@ -148,16 +148,16 @@
             "question_id": 443,
             "material": "Control Structure",
             "instruction": "Modify the following code in Python to only repeat a segment of the code while a certain user input is given.",
-            "question": "# Get user input\ninput = input('Enter \"repeat\" to repeat the code: ')\n\n# Execute the code while ___ input is \"repeat\" \nwhile ___ == 'repeat':\n\tprint(\"Hello World\")\n\tinput = input('Enter \"repeat\" to repeat the code: ')",
-            "correct_answer": "user, input",
+            "question": "# Get user input\ninput = input('Enter \"repeat\" to repeat the code: ')\n\n# Execute the code while ___ input is \"repeat\" \nwhile input == 'repeat':\n\tprint(\"Hello World\")\n\tinput = input('Enter \"repeat\" to repeat the code: ')",
+            "correct_answer": "user",
             "duration": 20
         },
         {
             "question_id": 451,
             "material": "Control Structure",
             "instruction": "Write a Python script to search a given dictionary for a given word.",
-            "question": "def search_word(word, dictionary):\n    if ___ in dictionary.keys():\n        return dictionary[word]\n    else:\n        return None\n\ndictionary = {'hello': 'string', 'goodbye': 'bye'}\n\nword = 'hello'\n\nresult = search_word(word, dictionary)\n\nif ___:\n    print('Word found in dictionary: ' + result)\n\nelse:\n    print('Word not found in dictionary.')",
-            "correct_answer": "word, result",
+            "question": "def search_word(word, dictionary):\n    if ___ in dictionary.keys():\n        return dictionary[word]\n    else:\n        return None\n\ndictionary = {'hello': 'string', 'goodbye': 'bye'}\n\nword = 'hello'\n\nresult = search_word(word, dictionary)\n\nif result:\n    print('Word found in dictionary: ' + result)\n\nelse:\n    print('Word not found in dictionary.')",
+            "correct_answer": "word",
             "duration": 20
         },
         {
@@ -188,32 +188,32 @@
             "question_id": 591,
             "material": "Control Structure",
             "instruction": "Develop Python code to check if a given number is plaindrome.",
-            "question": "def is_plaindrome(num):\n    original_num = num\n    reversed_num = 0\n    while ___ > 0:\n        remainder = num % 10\n        reversed_num = (reversed_num * 10) + remainder\n        num //= 10\n    return reversed_num == original_num\n\nnum = 1454\nif ___(num):\n    print(num, \"is a plaindrome\")\nelse:\n    print(num, \"is not a plaindrome\")",
-            "correct_answer": "num, is_plaindrome",
+            "question": "def is_plaindrome(num):\n    original_num = num\n    reversed_num = 0\n    while ___ > 0:\n        remainder = num % 10\n        reversed_num = (reversed_num * 10) + remainder\n        num //= 10\n    return reversed_num == original_num\n\nnum = 1454\nif is_plaindrome(num):\n    print(num, \"is a plaindrome\")\nelse:\n    print(num, \"is not a plaindrome\")",
+            "correct_answer": "num",
             "duration": 20
         },
         {
             "question_id": 596,
             "material": "Control Structure",
             "instruction": "Test if a given number is a Prime or not using Python.",
-            "question": "if ___<=1: \n  print(\"Number is not a prime number.\") \nfor ___ in range(2,int(number**0.5)+1):\n  if(number % i == 0):\n    print(\"Number is not a prime number.\")\n    break\nelse: \n  print(\"Number is a prime number.\")",
-            "correct_answer": "number, i, else",
+            "question": "if ___<=1: \n  print(\"Number is not a prime number.\") \nfor i in range(2,int(number**0.5)+1):\n  if(number % i == 0):\n    print(\"Number is not a prime number.\")\n    break\nelse: \n  print(\"Number is a prime number.\")",
+            "correct_answer": "number",
             "duration": 20
         },
         {
             "question_id": 604,
             "material": "Control Structure",
             "instruction": "Create a function in Python to compare two strings and return true if the strings only differ by one character.",
-            "question": "def compare_strings(s1, s2):\n    mismatch_count = 0\n\n    for ___ in range(len(s1)):\n        if ___[i] != s2[i]:\n            if ___ > 0:\n                return False\n\n            mismatch_count += 1\n\n    return mismatch_count == 1\n\ncompare_strings('apple', 'acple')",
-            "correct_answer": "i, s1, mismatch_count",
+            "question": "def compare_strings(s1, s2):\n    mismatch_count = 0\n\n    for ___ in range(len(s1)):\n        if s1[i] != s2[i]:\n            if mismatch_count > 0:\n                return False\n\n            mismatch_count += 1\n\n    return mismatch_count == 1\n\ncompare_strings('apple', 'acple')",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 623,
             "material": "Control Structure",
             "instruction": "Write a Python program to calculate the average monthly temperature of a given city for the last 10 years.",
-            "question": "import csv\n\ndef avg_month_temp(city):\n result = 0\n counter = 0\n temperatures = csv.reader(open('weatherdata.csv'))\n for ___ in temperatures:\n if ___[1] == city:\n result += float(row[2])\n counter += 1\n return result/counter",
-            "correct_answer": "row, row",
+            "question": "import csv\n\ndef avg_month_temp(city):\n result = 0\n counter = 0\n temperatures = csv.reader(open('weatherdata.csv'))\n for ___ in temperatures:\n if row[1] == city:\n result += float(row[2])\n counter += 1\n return result/counter",
+            "correct_answer": "row",
             "duration": 20
         },
         {
@@ -228,8 +228,8 @@
             "question_id": 644,
             "material": "Control Structure",
             "instruction": "Create a for loop in Python that prints the output of a multiplication table for numbers from 1 to 10.",
-            "question": "for ___ in range(1, 11):\n  for ___ in range(1, 11):\n    print(i * j, end='\\t')\n  print()",
-            "correct_answer": "i, j",
+            "question": "for ___ in range(1, 11):\n  for j in range(1, 11):\n    print(i * j, end='\\t')\n  print()",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -244,24 +244,24 @@
             "question_id": 760,
             "material": "Control Structure",
             "instruction": "Design an algorithm to check if a given number is prime in Python.",
-            "question": "def is_prime(n):\n    \"\"\"Check if ___ given number is prime.\"\"\"\n    # Corner case\n    if ___ <= 1:\n        return False\n\n    # Check for ___\n    for ___ in range(2, n):\n        if ___ % i == 0:\n            return False\n    # Return true if ___ is not divisible by any number\n    return True\n\n# Output\nprint(is_prime(n))",
-            "correct_answer": "a, n, divisibility, i, n, it",
+            "question": "def is_prime(n):\n    \"\"\"Check if ___ given number is prime.\"\"\"\n    # Corner case\n    if n <= 1:\n        return False\n\n    # Check for divisibility\n    for i in range(2, n):\n        if n % i == 0:\n            return False\n    # Return true if it is not divisible by any number\n    return True\n\n# Output\nprint(is_prime(n))",
+            "correct_answer": "a",
             "duration": 20
         },
         {
             "question_id": 778,
             "material": "Control Structure",
             "instruction": "Design a function to tell if a number is even or odd using Python.",
-            "question": "def isEven(x):\n    if ___ % 2 == 0:\n        return True\n    else:\n        return False\n\nx = 5\n\nif ___(x):\n    print(\"It is even\")\nelse:\n    print(\"It is odd\")",
-            "correct_answer": "x, isEven",
+            "question": "def isEven(x):\n    if ___ % 2 == 0:\n        return True\n    else:\n        return False\n\nx = 5\n\nif isEven(x):\n    print(\"It is even\")\nelse:\n    print(\"It is odd\")",
+            "correct_answer": "x",
             "duration": 20
         },
         {
             "question_id": 804,
             "material": "Control Structure",
             "instruction": "Suggest a completion for the following Python code to check if a given number is an Armstrong number.",
-            "question": "def is_armstrong_number(num):\n  order = len(str(num))\n  sum = 0\n  temp = num\n  while ___ > 0:\n    digit = temp % 10\n    sum += digit ** order\n    temp //= 10\n  if ___ == sum:\n    return True  \n  else:\n    return False",
-            "correct_answer": "temp, num",
+            "question": "def is_armstrong_number(num):\n  order = len(str(num))\n  sum = 0\n  temp = num\n  while ___ > 0:\n    digit = temp % 10\n    sum += digit ** order\n    temp //= 10\n  if num == sum:\n    return True  \n  else:\n    return False",
+            "correct_answer": "temp",
             "duration": 20
         },
         {
@@ -284,8 +284,8 @@
             "question_id": 844,
             "material": "Control Structure",
             "instruction": "Construct a Python program that will search for a given word in a web page and return the number of occurrences.",
-            "question": "import requests\n\nurl = \"www.example.com\"\nword = \"Python\"\n\nhtml_content = requests.get(url).text\n\nwords = html_content.split()\n\noccurrences = 0\n\nfor ___ in words:\n    if ___ == word:\n        occurrences += 1\n\nprint(\"Found %d occurrences of '%s'\" % (occurrences, word))",
-            "correct_answer": "w, w",
+            "question": "import requests\n\nurl = \"www.example.com\"\nword = \"Python\"\n\nhtml_content = requests.get(url).text\n\nwords = html_content.split()\n\noccurrences = 0\n\nfor ___ in words:\n    if w == word:\n        occurrences += 1\n\nprint(\"Found %d occurrences of '%s'\" % (occurrences, word))",
+            "correct_answer": "w",
             "duration": 20
         },
         {
@@ -316,8 +316,8 @@
             "question_id": 948,
             "material": "Control Structure",
             "instruction": "Write a function in Python to predict a label for a given input.",
-            "question": "def predict(x):\n    if ___[0] > 0:\n        return 'positive'\n    if ___[1] < 0:\n        return 'negative'\n    if ___[2] > 0:\n        return 'positive'\n    return 'neutral'",
-            "correct_answer": "x, x, x",
+            "question": "def predict(x):\n    if ___[0] > 0:\n        return 'positive'\n    if x[1] < 0:\n        return 'negative'\n    if x[2] > 0:\n        return 'positive'\n    return 'neutral'",
+            "correct_answer": "x",
             "duration": 20
         },
         {
@@ -348,8 +348,8 @@
             "question_id": 1140,
             "material": "Control Structure",
             "instruction": "Write a code for sorting the words within a sentence, alphabetically.",
-            "question": "\"\"\"\nWrite a code for ___ the words within a sentence, alphabetically.\n\"\"\"\n\ndef sort_words_alphabetically(sentence):\n    words = sentence.split()\n    words.sort()\n    return ' '.join(words)\n\nif ___ == '__main__':\n    sentence = 'Python is a great language'\n    print(sort_words_alphabetically(sentence))",
-            "correct_answer": "sorting, __name__",
+            "question": "\"\"\"\nWrite a code for ___ the words within a sentence, alphabetically.\n\"\"\"\n\ndef sort_words_alphabetically(sentence):\n    words = sentence.split()\n    words.sort()\n    return ' '.join(words)\n\nif __name__ == '__main__':\n    sentence = 'Python is a great language'\n    print(sort_words_alphabetically(sentence))",
+            "correct_answer": "sorting",
             "duration": 20
         },
         {
@@ -364,16 +364,16 @@
             "question_id": 1172,
             "material": "Control Structure",
             "instruction": "Author a Python program to check if a number is a palindrome.",
-            "question": "def isPalindrome(num):\n  numStr = str(num)\n  for ___ in range(0, len(numStr)//2):\n    if ___[i] != numStr[len(numStr)-i-1]:\n      return False\n  return True\n\nprint(isPalindrome(1991)) # Output: True",
-            "correct_answer": "i, numStr",
+            "question": "def isPalindrome(num):\n  numStr = str(num)\n  for ___ in range(0, len(numStr)//2):\n    if numStr[i] != numStr[len(numStr)-i-1]:\n      return False\n  return True\n\nprint(isPalindrome(1991)) # Output: True",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 1190,
             "material": "Control Structure",
             "instruction": "Write a Python script to extract all the values for a given key from a dictionary.",
-            "question": "def get_key_values(dictionary, key):\n    return [value for ___, value in dictionary.items() if ___ == key]",
-            "correct_answer": "key, key",
+            "question": "def get_key_values(dictionary, key):\n    return [value for ___, value in dictionary.items() if key == key]",
+            "correct_answer": "key",
             "duration": 20
         },
         {
@@ -396,16 +396,16 @@
             "question_id": 1309,
             "material": "Control Structure",
             "instruction": "Write a Python program to compare two unordered lists to see if they are equal.",
-            "question": "def compare_lists(list1, list2):\n    if ___(list1) != len(list2):\n        return False\n    if ___(list1) == sorted(list2):\n        return True\n    return False",
-            "correct_answer": "len, sorted",
+            "question": "def compare_lists(list1, list2):\n    if ___(list1) != len(list2):\n        return False\n    if sorted(list1) == sorted(list2):\n        return True\n    return False",
+            "correct_answer": "len",
             "duration": 20
         },
         {
             "question_id": 1322,
             "material": "Control Structure",
             "instruction": "Write a python program for binary search",
-            "question": "def binarySearch(arr, target):\n    left = 0\n    right = len(arr) - 1\n\n    while ___ <= right:\n        mid = (left + right) // 2\n\n        if ___[mid] == target:\n            return mid\n        elif arr[mid] > target:\n            right = mid - 1\n        else:\n            left = mid + 1\n    return -1",
-            "correct_answer": "left, arr",
+            "question": "def binarySearch(arr, target):\n    left = 0\n    right = len(arr) - 1\n\n    while ___ <= right:\n        mid = (left + right) // 2\n\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] > target:\n            right = mid - 1\n        else:\n            left = mid + 1\n    return -1",
+            "correct_answer": "left",
             "duration": 20
         },
         {
@@ -420,8 +420,8 @@
             "question_id": 1341,
             "material": "Control Structure",
             "instruction": "Create a Python program to check if a triangle is valid or not with the given values for its three sides.",
-            "question": "def is_valid_triangle(a, b, c): \n  \n    # triangle should have 3 sides \n    if ___ + b <= c or a + c <= b or b + c <= a: \n        return False\n  \n    # sum of any two side should always be greater than third side \n    if ___ + b > c and a + c > b and b + c > a: \n        return True\n    return False\n\nis_valid_triangle(2, 2, 3)",
-            "correct_answer": "a, a",
+            "question": "def is_valid_triangle(a, b, c): \n  \n    # triangle should have 3 sides \n    if ___ + b <= c or a + c <= b or b + c <= a: \n        return False\n  \n    # sum of any two side should always be greater than third side \n    if a + b > c and a + c > b and b + c > a: \n        return True\n    return False\n\nis_valid_triangle(2, 2, 3)",
+            "correct_answer": "a",
             "duration": 20
         },
         {
@@ -444,8 +444,8 @@
             "question_id": 1401,
             "material": "Control Structure",
             "instruction": "Compose a python program that can search a text document for a given word.",
-            "question": "def search_for_word(text_file, query_word):\n    words = []\n\n    with open(text_file, \"r\") as file:\n        for ___ in file:\n            words.extend(line.split())\n\n    if ___ in words:\n        return True\n    else:\n        return False",
-            "correct_answer": "line, query_word",
+            "question": "def search_for_word(text_file, query_word):\n    words = []\n\n    with open(text_file, \"r\") as file:\n        for ___ in file:\n            words.extend(line.split())\n\n    if query_word in words:\n        return True\n    else:\n        return False",
+            "correct_answer": "line",
             "duration": 20
         },
         {
@@ -468,16 +468,16 @@
             "question_id": 1548,
             "material": "Control Structure",
             "instruction": "Can you generate a greedy algorithm in Python for solving the coin change problem?",
-            "question": "def get_coins(coins, change):\n\tmin_coins = change\n\tif ___ in coins:\n\t\treturn [change]\n\n\tfor ___ in [c for ___ in coins if ___ <= change]:\n\t\tnum_coins = 1 + get_coins(coins, change-i)\n\t\tif ___(num_coins) < min_coins:\n\t\t\tmin_coins = num_coins\n\treturn min_coins\n\n# Test \ncoins = [1, 6, 10]\nchange = 8\nprint(get_coins(coins, change)) # [1, 6, 1]",
-            "correct_answer": "change, i, c, c, len",
+            "question": "def get_coins(coins, change):\n\tmin_coins = change\n\tif ___ in coins:\n\t\treturn [change]\n\n\tfor i in [c for c in coins if c <= change]:\n\t\tnum_coins = 1 + get_coins(coins, change-i)\n\t\tif len(num_coins) < min_coins:\n\t\t\tmin_coins = num_coins\n\treturn min_coins\n\n# Test \ncoins = [1, 6, 10]\nchange = 8\nprint(get_coins(coins, change)) # [1, 6, 1]",
+            "correct_answer": "change",
             "duration": 20
         },
         {
             "question_id": 1552,
             "material": "Control Structure",
             "instruction": "Create a script in Python for classifying the sentiment of a text. The script should be able to handle input of various lengths and should return a sentiment score (on a scale from -1 to +1) for the text.",
-            "question": "import nltk\n\ndef sentiment_analysis(text):\n tokens = nltk.word_tokenize(text)\n score = 0\n for ___ in tokens:\n tag = nltk.pos_tag(token)[0]\n if ___[1] == 'positive':\n score += 1\n else:\n score -= 1\n return score / len(tokens)",
-            "correct_answer": "token, tag",
+            "question": "import nltk\n\ndef sentiment_analysis(text):\n tokens = nltk.word_tokenize(text)\n score = 0\n for ___ in tokens:\n tag = nltk.pos_tag(token)[0]\n if tag[1] == 'positive':\n score += 1\n else:\n score -= 1\n return score / len(tokens)",
+            "correct_answer": "token",
             "duration": 20
         },
         {
@@ -500,24 +500,24 @@
             "question_id": 1638,
             "material": "Control Structure",
             "instruction": "Build a Python class to identify if a provided number is prime or composite.",
-            "question": "class PrimeNumber:\n    def __init__(self, num):\n        self.num = num\n\n    def is_prime(self):\n        for ___ in range(2, self.num):\n            if(self.num % i == 0):\n                return False\n        return True\n\nnum = 10\nobj = PrimeNumber(num)\n\nif ___.is_prime():\n    print(\"Number is Prime\")\nelse:\n    print(\"Number is Composite\")",
-            "correct_answer": "i, obj",
+            "question": "class PrimeNumber:\n    def __init__(self, num):\n        self.num = num\n\n    def is_prime(self):\n        for ___ in range(2, self.num):\n            if(self.num % i == 0):\n                return False\n        return True\n\nnum = 10\nobj = PrimeNumber(num)\n\nif obj.is_prime():\n    print(\"Number is Prime\")\nelse:\n    print(\"Number is Composite\")",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 1654,
             "material": "Control Structure",
             "instruction": "Write a Python program to create a data visualization for a given dataset.",
-            "question": "import matplotlib.pyplot as plt\n\ndef create_visualizations(data):\n x = [x[0] for ___ in data]\n y = [x[1] for ___ in data]\n plt.plot(x, y, 'bo')\n plt.xlabel('Courses')\n plt.ylabel('Students')\n plt.title('Number of Students Enrolled in Courses')\n plt.show()",
-            "correct_answer": "x, x",
+            "question": "import matplotlib.pyplot as plt\n\ndef create_visualizations(data):\n x = [x[0] for ___ in data]\n y = [x[1] for x in data]\n plt.plot(x, y, 'bo')\n plt.xlabel('Courses')\n plt.ylabel('Students')\n plt.title('Number of Students Enrolled in Courses')\n plt.show()",
+            "correct_answer": "x",
             "duration": 20
         },
         {
             "question_id": 1683,
             "material": "Control Structure",
             "instruction": "Create a Python program to check if two lists have overlapping elements",
-            "question": "def has_overlapping(arr1, arr2):\n    for ___ in arr1:\n        if ___ in arr2:\n            return True\n    return False\n\nA = [1,3,5,7]\nB = [2,4,5,7]\n\nresult = has_overlapping(A, B)\nprint(result)",
-            "correct_answer": "element, element",
+            "question": "def has_overlapping(arr1, arr2):\n    for ___ in arr1:\n        if element in arr2:\n            return True\n    return False\n\nA = [1,3,5,7]\nB = [2,4,5,7]\n\nresult = has_overlapping(A, B)\nprint(result)",
+            "correct_answer": "element",
             "duration": 20
         },
         {
@@ -532,8 +532,8 @@
             "question_id": 1698,
             "material": "Control Structure",
             "instruction": "Write a python program to check if a given number is prime or not.",
-            "question": "def is_prime(num):\n    for ___ in range(2, num):\n        if (num % i) == 0:\n            return False\n    return True\n\nnumber = 27\n\nif ___(number):\n    print(str(number) + ' is a prime number.')\nelse:\n    print(str(number) + ' is not a prime number.')",
-            "correct_answer": "i, is_prime",
+            "question": "def is_prime(num):\n    for ___ in range(2, num):\n        if (num % i) == 0:\n            return False\n    return True\n\nnumber = 27\n\nif is_prime(number):\n    print(str(number) + ' is a prime number.')\nelse:\n    print(str(number) + ' is not a prime number.')",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -580,24 +580,24 @@
             "question_id": 1791,
             "material": "Control Structure",
             "instruction": "Create a function in Python that determines if a given number is an Armstrong number or not.",
-            "question": "def isArmstrongNumber(number):\n  num_str = str(number)\n  result = 0\n  power = len(num_str)\n\n  for ___ in num_str:\n    result += int(c) ** power\n\n  if ___ == number:\n    return True\n  else:\n    return False\n\nif ___(371):\n  print('It is an Armstrong number.')\nelse:\n  print('It is not an Armstrong number.')",
-            "correct_answer": "c, result, isArmstrongNumber",
+            "question": "def isArmstrongNumber(number):\n  num_str = str(number)\n  result = 0\n  power = len(num_str)\n\n  for ___ in num_str:\n    result += int(c) ** power\n\n  if result == number:\n    return True\n  else:\n    return False\n\nif isArmstrongNumber(371):\n  print('It is an Armstrong number.')\nelse:\n  print('It is not an Armstrong number.')",
+            "correct_answer": "c",
             "duration": 20
         },
         {
             "question_id": 1826,
             "material": "Control Structure",
             "instruction": "Write an expression in python to check if a given number is prime",
-            "question": "def is_prime(number):\n    if ___>1:\n        for ___ in range(2,number):\n            if ___%i==0:\n                return False\n    else:\n        return False\n    return True\nprint(is_prime(number))",
-            "correct_answer": "number, i, number",
+            "question": "def is_prime(number):\n    if ___>1:\n        for i in range(2,number):\n            if number%i==0:\n                return False\n    else:\n        return False\n    return True\nprint(is_prime(number))",
+            "correct_answer": "number",
             "duration": 20
         },
         {
             "question_id": 1852,
             "material": "Control Structure",
             "instruction": "Given two number arrays A and B, write a Python function to check if each element in A also exists in B",
-            "question": "def check_equality(arr1, arr2):\n    for ___ in arr1:\n        if ___ not in arr2:\n            return False\n    return True\n\nA = [1, 2, 3]\nB = [2, 3, 4]\n\nresult = check_equality(A, B)\nprint(result)",
-            "correct_answer": "num, num",
+            "question": "def check_equality(arr1, arr2):\n    for ___ in arr1:\n        if num not in arr2:\n            return False\n    return True\n\nA = [1, 2, 3]\nB = [2, 3, 4]\n\nresult = check_equality(A, B)\nprint(result)",
+            "correct_answer": "num",
             "duration": 20
         },
         {
@@ -612,8 +612,8 @@
             "question_id": 1892,
             "material": "Control Structure",
             "instruction": "Design a positive feedback loop for the following python program.",
-            "question": "for ___ in range(10):\n    print(\"hello\")\n    i += 1\n    if ___ == 10:\n        print(\"You've got it!\")",
-            "correct_answer": "i, i",
+            "question": "for ___ in range(10):\n    print(\"hello\")\n    i += 1\n    if i == 10:\n        print(\"You've got it!\")",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -628,24 +628,24 @@
             "question_id": 1914,
             "material": "Control Structure",
             "instruction": "Write a Python program to search for a given element in multiple lists",
-            "question": "def search_elem(my_list1, my_list2, elem):\n    for ___ in [my_list1, my_list2]:\n        found = False\n        for ___ in list:\n            if ___ == elem:\n                found = True\n                break\n        if ___:\n            return True\n    return False\n\nfound = search_elem(my_list1, my_list2, elem)\nprint(found)",
-            "correct_answer": "list, val, val, if",
+            "question": "def search_elem(my_list1, my_list2, elem):\n    for ___ in [my_list1, my_list2]:\n        found = False\n        for val in list:\n            if val == elem:\n                found = True\n                break\n        if found:\n            return True\n    return False\n\nfound = search_elem(my_list1, my_list2, elem)\nprint(found)",
+            "correct_answer": "list",
             "duration": 20
         },
         {
             "question_id": 1922,
             "material": "Control Structure",
             "instruction": "Create a python program for identifying if a given number is prime or not.",
-            "question": "def is_prime(num): \n    if ___ < 2: \n        return False\n  \n    for ___ in range(2, num): \n        if ___ % i == 0: \n            return False\n  \n    return True\n  \n# Example \nnumber = 10\n  \nif ___(number): \n    print(number, \"is a prime number\") \nelse: \n    print(number, \"is not a prime number\")",
-            "correct_answer": "num, i, num, is_prime",
+            "question": "def is_prime(num): \n    if ___ < 2: \n        return False\n  \n    for i in range(2, num): \n        if num % i == 0: \n            return False\n  \n    return True\n  \n# Example \nnumber = 10\n  \nif is_prime(number): \n    print(number, \"is a prime number\") \nelse: \n    print(number, \"is not a prime number\")",
+            "correct_answer": "num",
             "duration": 20
         },
         {
             "question_id": 1934,
             "material": "Control Structure",
             "instruction": "Create a Python function that takes two lists, compare them, and return True if both lists are identical and False if they differ.",
-            "question": "def compare_lists(list1, list2):\n    if ___(list1) != len(list2):\n        return False\n\n    for ___ in range(len(list1)):\n        if ___[i] != list2[i]:\n            return False\n\n    return True",
-            "correct_answer": "len, i, list1",
+            "question": "def compare_lists(list1, list2):\n    if ___(list1) != len(list2):\n        return False\n\n    for i in range(len(list1)):\n        if list1[i] != list2[i]:\n            return False\n\n    return True",
+            "correct_answer": "len",
             "duration": 20
         },
         {
@@ -676,24 +676,24 @@
             "question_id": 2165,
             "material": "Control Structure",
             "instruction": "Develop a python program for",
-            "question": "def filter_vowel_strings(string_list):\n    vowels = ('a', 'e', 'i', 'o', 'u')\n    filtered_list = []\n    for ___ in string_list:\n        if ___.startswith(vowels):\n            filtered_list.append(string)\n    return filtered_list",
-            "correct_answer": "string, string",
+            "question": "def filter_vowel_strings(string_list):\n    vowels = ('a', 'e', 'i', 'o', 'u')\n    filtered_list = []\n    for ___ in string_list:\n        if string.startswith(vowels):\n            filtered_list.append(string)\n    return filtered_list",
+            "correct_answer": "string",
             "duration": 20
         },
         {
             "question_id": 2197,
             "material": "Control Structure",
             "instruction": "Write a Python program to check if the given matris is a symmetric matrix.",
-            "question": "def is_symmetric(a):\n    n = len(a)\n    for ___ in range(n):\n        for ___ in range(n):\n            if ___[i][j] != a[j][i]:\n                return False\n    return True\n\nA = [[1,2,3],\n    [-2,0,4],\n    [3,-4,5]]\nprint(is_symmetric(A))",
-            "correct_answer": "i, j, a",
+            "question": "def is_symmetric(a):\n    n = len(a)\n    for ___ in range(n):\n        for j in range(n):\n            if a[i][j] != a[j][i]:\n                return False\n    return True\n\nA = [[1,2,3],\n    [-2,0,4],\n    [3,-4,5]]\nprint(is_symmetric(A))",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 2307,
             "material": "Control Structure",
             "instruction": "Develop an algorithm in Python to find the minimum number of coins needed to make change for a given amount",
-            "question": "def minCoinChange(n):\n    coins = [1, 2, 5]\n    mins = [0]+ [float('inf')]*n\n    for ___ in coins:\n        for ___ in range(c, n+1):\n            mins[i] = min(mins[i], mins[i-c]+1)\n    return mins[n]\n    \nprint(minCoinChange(n))",
-            "correct_answer": "c, i",
+            "question": "def minCoinChange(n):\n    coins = [1, 2, 5]\n    mins = [0]+ [float('inf')]*n\n    for ___ in coins:\n        for i in range(c, n+1):\n            mins[i] = min(mins[i], mins[i-c]+1)\n    return mins[n]\n    \nprint(minCoinChange(n))",
+            "correct_answer": "c",
             "duration": 20
         },
         {
@@ -708,8 +708,8 @@
             "question_id": 2330,
             "material": "Control Structure",
             "instruction": "Generate a Python algorithm to check if a given word is a palindrome.",
-            "question": "def isPalindrome(word): \n    left, right = 0, len(word) - 1\n    while ___ >= left: \n        if ___ word[left] == word[right]: \n            return False\n        left += 1\n        right -= 1\n    return True",
-            "correct_answer": "right, not",
+            "question": "def isPalindrome(word): \n    left, right = 0, len(word) - 1\n    while ___ >= left: \n        if not word[left] == word[right]: \n            return False\n        left += 1\n        right -= 1\n    return True",
+            "correct_answer": "right",
             "duration": 20
         },
         {
@@ -732,24 +732,24 @@
             "question_id": 2363,
             "material": "Control Structure",
             "instruction": "Implement a Python function called \u201ccheck_prime\u201d which takes an integer as an argument and returns True if the number is prime, and False otherwise.",
-            "question": "def check_prime(n):\n if ___ == 1:\n return False\n\n for ___ in range(2, int(n ** 0.5) + 1):\n if ___ % i == 0:\n return False\n\n return True",
-            "correct_answer": "n, i, n",
+            "question": "def check_prime(n):\n if ___ == 1:\n return False\n\n for i in range(2, int(n ** 0.5) + 1):\n if n % i == 0:\n return False\n\n return True",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 2383,
             "material": "Control Structure",
             "instruction": "Write a Python program to do a brute force search for a pair of elements which sum to a given target value.",
-            "question": "# brute force search algorithm\ndef brute_force_search(arr, target):\n\tfor ___ in range(len(arr)):\n\t\tfor ___ in range(len(arr)):\n\t\t\tif ___[i] + arr[j] == target:\n\t\t\t\treturn arr[i], arr[j]\n\treturn None\n\n# test the algorithm\ntarget = 8\nlst = [1, 3, 4, 5, 6, 7]\nprint(brute_force_search(lst, target))\n\nOutput:\npair = (3, 5)",
-            "correct_answer": "i, j, arr",
+            "question": "# brute force search algorithm\ndef brute_force_search(arr, target):\n\tfor ___ in range(len(arr)):\n\t\tfor j in range(len(arr)):\n\t\t\tif arr[i] + arr[j] == target:\n\t\t\t\treturn arr[i], arr[j]\n\treturn None\n\n# test the algorithm\ntarget = 8\nlst = [1, 3, 4, 5, 6, 7]\nprint(brute_force_search(lst, target))\n\nOutput:\npair = (3, 5)",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 2390,
             "material": "Control Structure",
             "instruction": "Create a Python code to check if a single integer is a prime number",
-            "question": "def is_prime(number):\n    if ___ <= 1:\n        return False\n\n    for ___ in range(2, number):\n        if ___ % i == 0:\n            return False\n    return True",
-            "correct_answer": "number, i, number",
+            "question": "def is_prime(number):\n    if ___ <= 1:\n        return False\n\n    for i in range(2, number):\n        if number % i == 0:\n            return False\n    return True",
+            "correct_answer": "number",
             "duration": 20
         },
         {
@@ -772,24 +772,24 @@
             "question_id": 2431,
             "material": "Control Structure",
             "instruction": "Create a method to verify if the following number is prime in Python:",
-            "question": "def is_prime(n):\n    if (n <= 1):\n        return False\n    for ___ in range(2, n):\n        if (n % i == 0):\n            return False\n    return True\n\nn = 7\n\nif ___(n):\n    print(\"The number {} is prime.\".format(n))\nelse:\n    print(\"The number {} is not prime.\".format(n))",
-            "correct_answer": "i, is_prime",
+            "question": "def is_prime(n):\n    if (n <= 1):\n        return False\n    for ___ in range(2, n):\n        if (n % i == 0):\n            return False\n    return True\n\nn = 7\n\nif is_prime(n):\n    print(\"The number {} is prime.\".format(n))\nelse:\n    print(\"The number {} is not prime.\".format(n))",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 2444,
             "material": "Control Structure",
             "instruction": "Optimize the following Python code for best runtime.",
-            "question": "def is_prime(n):\n    if ___ == 1:\n        return False\n    if ___ in (2, 3):\n        return True\n    if ___ (n & 1) and n > 2:\n        return False\n    for ___ in range(3, int(n**0.5)+1, 2):\n        if ___ % i == 0:\n            return False\n    return True",
-            "correct_answer": "n, n, not, i, n",
+            "question": "def is_prime(n):\n    if ___ == 1:\n        return False\n    if n in (2, 3):\n        return True\n    if not (n & 1) and n > 2:\n        return False\n    for i in range(3, int(n**0.5)+1, 2):\n        if n % i == 0:\n            return False\n    return True",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 2463,
             "material": "Control Structure",
             "instruction": "Generate an algorithm in Python to check if a given number of years is a leap year.",
-            "question": "def is_leap_year(year):\n    if ___ % 400 == 0:\n        return True\n    if ___ % 100 == 0:\n        return False\n    if ___ % 4 == 0:\n        return True\n    return False\n\nyear = 1999\nif ___(year):\n    print(\"This is a leap year.\")\nelse:\n    print(\"This is not a leap year.\")",
-            "correct_answer": "year, year, year, is_leap_year",
+            "question": "def is_leap_year(year):\n    if ___ % 400 == 0:\n        return True\n    if year % 100 == 0:\n        return False\n    if year % 4 == 0:\n        return True\n    return False\n\nyear = 1999\nif is_leap_year(year):\n    print(\"This is a leap year.\")\nelse:\n    print(\"This is not a leap year.\")",
+            "correct_answer": "year",
             "duration": 20
         },
         {
@@ -804,16 +804,16 @@
             "question_id": 2514,
             "material": "Control Structure",
             "instruction": "Optimize a Python program to check for prime numbers",
-            "question": "def isPrime(n):\n if ___ <= 1:\n return False\n for ___ in range(2, int(n ** 0.5) + 1):\n if ___ % i == 0:\n return False\n return True\n\nnum = 23\nif ___(num):\n print(\"Number is prime\")\nelse:\n print(\"Number is not prime\")",
-            "correct_answer": "n, i, n, isPrime",
+            "question": "def isPrime(n):\n if ___ <= 1:\n return False\n for i in range(2, int(n ** 0.5) + 1):\n if n % i == 0:\n return False\n return True\n\nnum = 23\nif isPrime(num):\n print(\"Number is prime\")\nelse:\n print(\"Number is not prime\")",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 2522,
             "material": "Control Structure",
             "instruction": "Create a Python program for implementing a linear search algorithm.",
-            "question": "def linearSearch(arr, key): \n for ___, num in enumerate(arr):\n if ___ == key:\n return idx\n \n return -1",
-            "correct_answer": "idx, num",
+            "question": "def linearSearch(arr, key): \n for ___, num in enumerate(arr):\n if num == key:\n return idx\n \n return -1",
+            "correct_answer": "idx",
             "duration": 20
         },
         {
@@ -836,8 +836,8 @@
             "question_id": 2579,
             "material": "Control Structure",
             "instruction": "Generate a function in Python to return the highest value in a dictionary for the given key.",
-            "question": "def highestValue(dictionary, key): \n    highest = 0 \n    for ___,value in dictionary.items(): \n        if ___ > highest: \n            highest = value \n    return highest \n\nhighestValue(dictionary, key)",
-            "correct_answer": "key, value",
+            "question": "def highestValue(dictionary, key): \n    highest = 0 \n    for ___,value in dictionary.items(): \n        if value > highest: \n            highest = value \n    return highest \n\nhighestValue(dictionary, key)",
+            "correct_answer": "key",
             "duration": 20
         },
         {
@@ -860,16 +860,16 @@
             "question_id": 2630,
             "material": "Control Structure",
             "instruction": "Create a search algorithm in Python that takes two inputs 'word' and 'text' and returns true if the word is present in the text.",
-            "question": "def search(word, text):\n    words = text.split()\n    for ___ in words:\n        if ___ == word:\n            return True\n    return False",
-            "correct_answer": "w, w",
+            "question": "def search(word, text):\n    words = text.split()\n    for ___ in words:\n        if w == word:\n            return True\n    return False",
+            "correct_answer": "w",
             "duration": 20
         },
         {
             "question_id": 2664,
             "material": "Control Structure",
             "instruction": "Create an algorithm in Python to search for a given item in a dictionary.",
-            "question": "def search(dict, item): \n    for ___, value in dict.items(): \n        if ___ == value: \n            return True \n    return False\n\ndict = {'name': 'john', 'age': 22, 'city': 'New York'}\nitem = 'John'\nprint(search(dict, item))",
-            "correct_answer": "key, item",
+            "question": "def search(dict, item): \n    for ___, value in dict.items(): \n        if item == value: \n            return True \n    return False\n\ndict = {'name': 'john', 'age': 22, 'city': 'New York'}\nitem = 'John'\nprint(search(dict, item))",
+            "correct_answer": "key",
             "duration": 20
         },
         {
@@ -892,8 +892,8 @@
             "question_id": 2796,
             "material": "Control Structure",
             "instruction": "Create a function in Python that checks if a given number is a prime.",
-            "question": "def isPrime(n):\n    if ___ < 2:\n        return False\n    for ___ in range(2, int(sqrt(n))+1):\n        if ___ % i == 0:\n            return False\n    return True",
-            "correct_answer": "n, i, n",
+            "question": "def isPrime(n):\n    if ___ < 2:\n        return False\n    for i in range(2, int(sqrt(n))+1):\n        if n % i == 0:\n            return False\n    return True",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -940,24 +940,24 @@
             "question_id": 2920,
             "material": "Control Structure",
             "instruction": "Compare two arrays of Python objects and return True if all objects in arrayA are also in arrayB.",
-            "question": "def compare_arrays(arrA, arrB):\n    for ___ in arrA:\n        if ___ not in arrB:\n            return False\n    return True",
-            "correct_answer": "i, i",
+            "question": "def compare_arrays(arrA, arrB):\n    for ___ in arrA:\n        if i not in arrB:\n            return False\n    return True",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 2962,
             "material": "Control Structure",
             "instruction": "Write a Python function to generate a multiplication table for a given number.",
-            "question": "def generate_table(num):\n    # print the table heading\n    print(\"MULTIPLICATION TABLE FOR {}\".format(num))\n    # generate the table\n    for ___ in range(1, 11):\n        print(\"{} x {} = {}\".format(num, i, num*i))\n\n# generate table for ___\ngenerate_table(9)",
-            "correct_answer": "i, 9",
+            "question": "def generate_table(num):\n    # print the table heading\n    print(\"MULTIPLICATION TABLE FOR {}\".format(num))\n    # generate the table\n    for ___ in range(1, 11):\n        print(\"{} x {} = {}\".format(num, i, num*i))\n\n# generate table for 9\ngenerate_table(9)",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 2994,
             "material": "Control Structure",
             "instruction": "Develop a program in Python for printing an asterisk triangle consisting of n rows.",
-            "question": "def asterisk_triangle(n):\n    for ___ in range(n):\n        for ___ in range(i+1):\n            print('*', end=\" \")\n        print()\n\nn = 5\nasterisk_triangle(n)",
-            "correct_answer": "i, j",
+            "question": "def asterisk_triangle(n):\n    for ___ in range(n):\n        for j in range(i+1):\n            print('*', end=\" \")\n        print()\n\nn = 5\nasterisk_triangle(n)",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -1004,32 +1004,32 @@
             "question_id": 3228,
             "material": "Control Structure",
             "instruction": "Write an algorithm in Python to determine if a number is an Armstrong number or not.",
-            "question": "def armstrong_number(num):\n  digits = [int(x) for ___ in str(num)]\n  n_digits = len(digits)\n  sum_of_cubes = 0\n  for ___ in digits:\n    sum_of_cubes += digit ** n_digits\n  if ___ == num:\n    return True\n  else:\n    return False\n\narmstrong_number(370)",
-            "correct_answer": "x, digit, sum_of_cubes",
+            "question": "def armstrong_number(num):\n  digits = [int(x) for ___ in str(num)]\n  n_digits = len(digits)\n  sum_of_cubes = 0\n  for digit in digits:\n    sum_of_cubes += digit ** n_digits\n  if sum_of_cubes == num:\n    return True\n  else:\n    return False\n\narmstrong_number(370)",
+            "correct_answer": "x",
             "duration": 20
         },
         {
             "question_id": 3248,
             "material": "Control Structure",
             "instruction": "Develop a Python script for creating a dictionary with all the occurrences of the words in a sentence.",
-            "question": "sentence = \"John and Mary went to the school\"\nwords = sentence.split()\nword_dict = {}\n\nfor ___ in words:\n    if ___ in word_dict:\n        word_dict[word] += 1\n    else:\n        word_dict[word] = 1\n\nprint(word_dict)",
-            "correct_answer": "word, word",
+            "question": "sentence = \"John and Mary went to the school\"\nwords = sentence.split()\nword_dict = {}\n\nfor ___ in words:\n    if word in word_dict:\n        word_dict[word] += 1\n    else:\n        word_dict[word] = 1\n\nprint(word_dict)",
+            "correct_answer": "word",
             "duration": 20
         },
         {
             "question_id": 3313,
             "material": "Control Structure",
             "instruction": "Create a python program to find if a number is a prime number",
-            "question": "def is_prime(num):\n    for ___ in range(2, num):\n        if ___ num % i:\n            return False\n    return True\n\nnum = 15 \nif ___(num):\n    print(\"The number is prime\")\nelse:\n    print(\"The number is not prime\")",
-            "correct_answer": "i, not, is_prime",
+            "question": "def is_prime(num):\n    for ___ in range(2, num):\n        if not num % i:\n            return False\n    return True\n\nnum = 15 \nif is_prime(num):\n    print(\"The number is prime\")\nelse:\n    print(\"The number is not prime\")",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 3340,
             "material": "Control Structure",
             "instruction": "Generate a python script to calculate the total public holiday hours for a given state.",
-            "question": "state = \"Illinois\"\n\ndef calculate_public_holiday_hours(state):\n    # code to calculate public holiday hours for ___ given state\n    if ___ == \"Illinois\":\n        return 8\n    # code for ___ states\n\nhours = calculate_public_holiday_hours(state)\nprint(\"Public holiday hours:\", hours)",
-            "correct_answer": "a, state, other",
+            "question": "state = \"Illinois\"\n\ndef calculate_public_holiday_hours(state):\n    # code to calculate public holiday hours for ___ given state\n    if state == \"Illinois\":\n        return 8\n    # code for other states\n\nhours = calculate_public_holiday_hours(state)\nprint(\"Public holiday hours:\", hours)",
+            "correct_answer": "a",
             "duration": 20
         },
         {
@@ -1044,16 +1044,16 @@
             "question_id": 3437,
             "material": "Control Structure",
             "instruction": "Create a Python script to calculate the Fibonacci sequence for a given integer n.",
-            "question": "# Fibonacci sequence\ndef Fibonacci(n):\n a = 0\n b = 1\n if ___ < 0:\n print(\"Incorrect input\")\n elif n == 0:\n return a\n elif n == 1:\n return b\n else:\n for ___ in range(2,n):\n c = a + b\n a = b\n b = c\n return b\n\n# Driver Program\nprint(Fibonacci(7)) \n# Output: 13",
-            "correct_answer": "n, i",
+            "question": "# Fibonacci sequence\ndef Fibonacci(n):\n a = 0\n b = 1\n if ___ < 0:\n print(\"Incorrect input\")\n elif n == 0:\n return a\n elif n == 1:\n return b\n else:\n for i in range(2,n):\n c = a + b\n a = b\n b = c\n return b\n\n# Driver Program\nprint(Fibonacci(7)) \n# Output: 13",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 3450,
             "material": "Control Structure",
             "instruction": "Identify errors and write fix for the following python code",
-            "question": "def uppercase_letter_count(string):\n    count = 0\n    for ___ in string: # Added missing colon\n        if ___.isupper():\n            count += 1\n    return count # Removed an unnecessary '-'",
-            "correct_answer": "c, c",
+            "question": "def uppercase_letter_count(string):\n    count = 0\n    for ___ in string: # Added missing colon\n        if c.isupper():\n            count += 1\n    return count # Removed an unnecessary '-'",
+            "correct_answer": "c",
             "duration": 20
         },
         {
@@ -1068,8 +1068,8 @@
             "question_id": 3471,
             "material": "Control Structure",
             "instruction": "Optimize a code snippet in Python for maximum performance.",
-            "question": "import time\n\ndef sleep_for_the_night():\n while ___:\n  start_time = time.time()\n  time.sleep(5)\n  end_time = time.time()\n  elapsed_time = end_time - start_time\n  if ___ < 5:\n   time.sleep(5-elapsed_time)\n\nwhile ___:\n sleep_for_the_night()",
-            "correct_answer": "True, elapsed_time, True",
+            "question": "import time\n\ndef sleep_for_the_night():\n while ___:\n  start_time = time.time()\n  time.sleep(5)\n  end_time = time.time()\n  elapsed_time = end_time - start_time\n  if elapsed_time < 5:\n   time.sleep(5-elapsed_time)\n\nwhile True:\n sleep_for_the_night()",
+            "correct_answer": "True",
             "duration": 20
         },
         {
@@ -1092,8 +1092,8 @@
             "question_id": 3595,
             "material": "Control Structure",
             "instruction": "Write a Python program that checks if a given number is prime.",
-            "question": "def is_prime(n):\n    if ___ == 2 or n == 3:\n        return True\n    if ___ < 2 or n%2 == 0:\n        return False\n    if ___ < 9:\n        return True\n    if ___%3 == 0:\n        return False\n\n    r = int(n**0.5)\n    f = 5\n    while ___ <= r:\n        if ___%f == 0:\n            return False\n        if ___ % (f+2) == 0:\n            return False\n        f += 6\n    return True\n\nnum = 7\nprint(\"Is\", num, \"prime?: \", is_prime(num))",
-            "correct_answer": "n, n, n, n, f, n, n",
+            "question": "def is_prime(n):\n    if ___ == 2 or n == 3:\n        return True\n    if n < 2 or n%2 == 0:\n        return False\n    if n < 9:\n        return True\n    if n%3 == 0:\n        return False\n\n    r = int(n**0.5)\n    f = 5\n    while f <= r:\n        if n%f == 0:\n            return False\n        if n % (f+2) == 0:\n            return False\n        f += 6\n    return True\n\nnum = 7\nprint(\"Is\", num, \"prime?: \", is_prime(num))",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -1116,80 +1116,80 @@
             "question_id": 3665,
             "material": "Control Structure",
             "instruction": "Develop a program in Python for finding the factorial of a given number.",
-            "question": "def factorial(n):\n    if ___ < 0:\n        return None\n    elif n == 0:\n        return 1\n    else:\n        result = 1\n        for ___ in range(1, n + 1):\n            result *= i\n        return result\n\nnum = 7\nprint('factorial of {} is {}'.format(num, factorial(num)))",
-            "correct_answer": "n, i",
+            "question": "def factorial(n):\n    if ___ < 0:\n        return None\n    elif n == 0:\n        return 1\n    else:\n        result = 1\n        for i in range(1, n + 1):\n            result *= i\n        return result\n\nnum = 7\nprint('factorial of {} is {}'.format(num, factorial(num)))",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 3678,
             "material": "Control Structure",
             "instruction": "Create a python program for the following purpose:",
-            "question": "def count_even_pairs(N, A):\n    n = 0\n    for ___ in range(N):\n        for ___ in range(i+1,N):\n            if (A[i] + A[j]) % 2 == 0:\n                n += 1\n    return n",
-            "correct_answer": "i, j",
+            "question": "def count_even_pairs(N, A):\n    n = 0\n    for ___ in range(N):\n        for j in range(i+1,N):\n            if (A[i] + A[j]) % 2 == 0:\n                n += 1\n    return n",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 3683,
             "material": "Control Structure",
             "instruction": "Optimize a code snippet in Python. The code snippet is a function for computing the factorial of a number.",
-            "question": "def factorial(n):\n    if ___ == 0:\n        return 1\n    else:\n        result = 1\n        for ___ in range(1, n+1):\n            result *= i\n        return result",
-            "correct_answer": "n, i",
+            "question": "def factorial(n):\n    if ___ == 0:\n        return 1\n    else:\n        result = 1\n        for i in range(1, n+1):\n            result *= i\n        return result",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 3725,
             "material": "Control Structure",
             "instruction": "Write a function in Python that receives two positive integers and prints out all the numbers in the range of the two integers (inclusive), except for numbers divisible by three.",
-            "question": "def print_numbers(lower_bound, upper_bound):\n for ___ in range(lower_bound, upper_bound+1):\n if ___ % 3 != 0:\n print(num)\n  \nprint_numbers(5, 15)",
-            "correct_answer": "num, num",
+            "question": "def print_numbers(lower_bound, upper_bound):\n for ___ in range(lower_bound, upper_bound+1):\n if num % 3 != 0:\n print(num)\n  \nprint_numbers(5, 15)",
+            "correct_answer": "num",
             "duration": 20
         },
         {
             "question_id": 3745,
             "material": "Control Structure",
             "instruction": "Create a Python program to detect if a number is a prime number.",
-            "question": "def is_prime(x):\n    if ___ < 2:\n        return False\n    \n    for ___ in range(2, x):\n        if ___ % i == 0:\n            return False\n    return True",
-            "correct_answer": "x, i, x",
+            "question": "def is_prime(x):\n    if ___ < 2:\n        return False\n    \n    for i in range(2, x):\n        if x % i == 0:\n            return False\n    return True",
+            "correct_answer": "x",
             "duration": 20
         },
         {
             "question_id": 3752,
             "material": "Control Structure",
             "instruction": "Create a program in Python that takes two lists and checks for common elements between them.",
-            "question": "list1 = [1,2,3,4]\nlist2 = [3,4,5,6] \n\ndef check_common(list1, list2): \n    result = False\n    for ___ in list1: \n        for ___ in list2: \n            if ___ == y: \n                result = True\n                return result  \n    return result \n  \nprint(check_common(list1, list2))",
-            "correct_answer": "x, y, x",
+            "question": "list1 = [1,2,3,4]\nlist2 = [3,4,5,6] \n\ndef check_common(list1, list2): \n    result = False\n    for ___ in list1: \n        for y in list2: \n            if x == y: \n                result = True\n                return result  \n    return result \n  \nprint(check_common(list1, list2))",
+            "correct_answer": "x",
             "duration": 20
         },
         {
             "question_id": 3753,
             "material": "Control Structure",
             "instruction": "Develop a python program that checks if a given word is consonant or not.",
-            "question": "def is_consonant(word): \n    # List containing all consonants \n    consonants = [\"b\",\"c\",\"d\",\"f\",\"g\",\"h\",\"j\",\"k\",\"l\",\"m\",\"n\",\"p\",\"q\",\"r\",\"s\",\"t\",\"v\",\"x\",\"z\"] \n    for ___ in word: \n        if ___ in consonants: \n            return True\n    return False\n\n# Example\nprint (is_consonant(\"hello\")) # False",
-            "correct_answer": "char, char",
+            "question": "def is_consonant(word): \n    # List containing all consonants \n    consonants = [\"b\",\"c\",\"d\",\"f\",\"g\",\"h\",\"j\",\"k\",\"l\",\"m\",\"n\",\"p\",\"q\",\"r\",\"s\",\"t\",\"v\",\"x\",\"z\"] \n    for ___ in word: \n        if char in consonants: \n            return True\n    return False\n\n# Example\nprint (is_consonant(\"hello\")) # False",
+            "correct_answer": "char",
             "duration": 20
         },
         {
             "question_id": 3763,
             "material": "Control Structure",
             "instruction": "Create a Python algorithm to check if a given word exists in a dictionary.",
-            "question": "# Function to test if ___ word exists in a dictionary \ndef wordExists(dictionary, word):\n    for ___, value in dictionary.items():\n        if ___ == word:\n            return True\n    \n    return False\n\n# Main function\ndictionary = {\"hello\": \"greeting\", \"car\": \"vehicle\"}\nword = \"hello\"\nprint(wordExists(dictionary, word))",
-            "correct_answer": "a, key, key",
+            "question": "# Function to test if ___ word exists in a dictionary \ndef wordExists(dictionary, word):\n    for key, value in dictionary.items():\n        if key == word:\n            return True\n    \n    return False\n\n# Main function\ndictionary = {\"hello\": \"greeting\", \"car\": \"vehicle\"}\nword = \"hello\"\nprint(wordExists(dictionary, word))",
+            "correct_answer": "a",
             "duration": 20
         },
         {
             "question_id": 3771,
             "material": "Control Structure",
             "instruction": "Generate a correct python program for solving the following problem",
-            "question": "def find_pairs_with_sum(values, target):\n    indices_list = []\n    for ___ in range(len(values)):\n        x = target - values[i]\n        if ___ in values[i+1:]:\n            indices_list.extend([i, values.index(x)])\n    return indices_list",
-            "correct_answer": "i, x",
+            "question": "def find_pairs_with_sum(values, target):\n    indices_list = []\n    for ___ in range(len(values)):\n        x = target - values[i]\n        if x in values[i+1:]:\n            indices_list.extend([i, values.index(x)])\n    return indices_list",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 3795,
             "material": "Control Structure",
             "instruction": "Tackle the task of optimizing a given Python program for faster execution.",
-            "question": "# Program to find the sum of two numbers\ndef add_numbers(a, b):\n    # Use bitwise operators instead of normal arithmetic operations\n    # as they are much faster and more efficient \n    return a ^ b if ___ <= b else b ^ a if ___ <= a else a ^ b",
-            "correct_answer": "a, b",
+            "question": "# Program to find the sum of two numbers\ndef add_numbers(a, b):\n    # Use bitwise operators instead of normal arithmetic operations\n    # as they are much faster and more efficient \n    return a ^ b if ___ <= b else b ^ a if b <= a else a ^ b",
+            "correct_answer": "a",
             "duration": 20
         },
         {
@@ -1220,8 +1220,8 @@
             "question_id": 3853,
             "material": "Control Structure",
             "instruction": "Build a function in Python for computing the Hamming Distance between two strings of equal length.",
-            "question": "def hammingDistance(s1, s2): \n\n    # initialize with 0\n    distance = 0\n  \n    # Calculate the length of the string \n    length_str1 = len(s1) \n    # Compare adjacent characters and increment the count \n    # if ___ are not same \n    for ___ in range(length_str1): \n        if ___[i] != s2[i]: \n            distance += 1\n  \n    return distance",
-            "correct_answer": "characters, i, s1",
+            "question": "def hammingDistance(s1, s2): \n\n    # initialize with 0\n    distance = 0\n  \n    # Calculate the length of the string \n    length_str1 = len(s1) \n    # Compare adjacent characters and increment the count \n    # if ___ are not same \n    for i in range(length_str1): \n        if s1[i] != s2[i]: \n            distance += 1\n  \n    return distance",
+            "correct_answer": "characters",
             "duration": 20
         },
         {
@@ -1252,8 +1252,8 @@
             "question_id": 4041,
             "material": "Control Structure",
             "instruction": "Write a Python program that takes an integer as input and check if the number is prime or not.",
-            "question": "def is_prime(n):\n    if ___ < 2: \n        return False\n\n    for ___ in range(2, int(n**0.5) + 1):  \n        if ___ % i == 0: \n            return False\n\n    return True",
-            "correct_answer": "n, i, n",
+            "question": "def is_prime(n):\n    if ___ < 2: \n        return False\n\n    for i in range(2, int(n**0.5) + 1):  \n        if n % i == 0: \n            return False\n\n    return True",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -1284,8 +1284,8 @@
             "question_id": 4120,
             "material": "Control Structure",
             "instruction": "Analyze a given Python code and write a function that checks if a given number is prime.",
-            "question": "def primeCheck(num):\n if ___ > 1:\n for ___ in range(2, num):\n  if (num % i) == 0:\n   return False\n else:\n  return False\n return True",
-            "correct_answer": "num, i",
+            "question": "def primeCheck(num):\n if ___ > 1:\n for i in range(2, num):\n  if (num % i) == 0:\n   return False\n else:\n  return False\n return True",
+            "correct_answer": "num",
             "duration": 20
         },
         {
@@ -1316,16 +1316,16 @@
             "question_id": 4183,
             "material": "Control Structure",
             "instruction": "Write a Python code to check if the given number is prime.",
-            "question": "def is_prime(n):\n    if ___ <= 1:\n        return False\n    for ___ in range(2, n//2 + 1):\n        if ___ % i == 0:\n            return False\n    return True\n\nif ___(23):\n    print('The given number is prime')\nelse:\n    print('The given number is not prime')",
-            "correct_answer": "n, i, n, is_prime",
+            "question": "def is_prime(n):\n    if ___ <= 1:\n        return False\n    for i in range(2, n//2 + 1):\n        if n % i == 0:\n            return False\n    return True\n\nif is_prime(23):\n    print('The given number is prime')\nelse:\n    print('The given number is not prime')",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 4198,
             "material": "Control Structure",
             "instruction": "Can you write a Python function to determine if a supplied number is prime?",
-            "question": "def is_prime(num):\n    \"\"\"Check if ___ given number is prime.\n\n    Args:\n        num (int): A number to check\n\n    Returns:\n        bool: True if ___ is prime, False otherwise.\n    \"\"\"\n\n    if ___ < 2: \n        return False\n\n    for ___ in range(2, num):\n        if (num % i) == 0:\n            return False\n    return True\n\nnum = 20\nresult = is_prime(num)\nprint(f\"Is {num} prime? {result}\")",
-            "correct_answer": "the, num, num, i",
+            "question": "def is_prime(num):\n    \"\"\"Check if ___ given number is prime.\n\n    Args:\n        num (int): A number to check\n\n    Returns:\n        bool: True if num is prime, False otherwise.\n    \"\"\"\n\n    if num < 2: \n        return False\n\n    for i in range(2, num):\n        if (num % i) == 0:\n            return False\n    return True\n\nnum = 20\nresult = is_prime(num)\nprint(f\"Is {num} prime? {result}\")",
+            "correct_answer": "the",
             "duration": 20
         },
         {
@@ -1356,16 +1356,16 @@
             "question_id": 4285,
             "material": "Control Structure",
             "instruction": "Write a Python program to modify a given dataset for a specific task.",
-            "question": "def modify_data(dataset, task):\nmodified_data = []\n if ___ == \"filter age >18\":\n for ___ in dataset:\n if ___['age'] > 18:\n modified_data.append(d)\n return modified_data",
-            "correct_answer": "task, d, d",
+            "question": "def modify_data(dataset, task):\nmodified_data = []\n if ___ == \"filter age >18\":\n for d in dataset:\n if d['age'] > 18:\n modified_data.append(d)\n return modified_data",
+            "correct_answer": "task",
             "duration": 20
         },
         {
             "question_id": 4310,
             "material": "Control Structure",
             "instruction": "Create a function that takes two strings as its inputs and returns true if one of the two strings is a substring of the other.",
-            "question": "def is_substring(string1, string2):\n    for ___ in range(len(string1)):\n        for ___ in range(len(string2)):\n            if ___[i] == string2[j]:\n                return True\n    return False\n\nresult = is_substring(\"python\", \"java\")\nprint(result)",
-            "correct_answer": "i, j, string1",
+            "question": "def is_substring(string1, string2):\n    for ___ in range(len(string1)):\n        for j in range(len(string2)):\n            if string1[i] == string2[j]:\n                return True\n    return False\n\nresult = is_substring(\"python\", \"java\")\nprint(result)",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -1380,8 +1380,8 @@
             "question_id": 4351,
             "material": "Control Structure",
             "instruction": "Design a function in Python to test if the given number is a prime or not.",
-            "question": "def is_prime(n):\n if ___ <= 1:\n return False\n\n for ___ in range(2, n):\n if ___ % i == 0:\n return False\n\n return True\n\nis_prime(13) # True",
-            "correct_answer": "n, i, n",
+            "question": "def is_prime(n):\n if ___ <= 1:\n return False\n\n for i in range(2, n):\n if n % i == 0:\n return False\n\n return True\n\nis_prime(13) # True",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -1412,32 +1412,32 @@
             "question_id": 4435,
             "material": "Control Structure",
             "instruction": "Create a Python program for finding all combinations of numbers that equal a given target number.",
-            "question": "def find_combos(target):\n combos = []\n \n for ___ in range(int(target/2)+1):\n # increments of two to avoid duplicate results\n for ___ in range(i, int(target/2)+1, 2):\n if ___+j == target:\n combos.append((i,j))\n \n return combos\n\ncombos = find_combos(10)\nprint(combos)",
-            "correct_answer": "i, j, i",
+            "question": "def find_combos(target):\n combos = []\n \n for ___ in range(int(target/2)+1):\n # increments of two to avoid duplicate results\n for j in range(i, int(target/2)+1, 2):\n if i+j == target:\n combos.append((i,j))\n \n return combos\n\ncombos = find_combos(10)\nprint(combos)",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 4482,
             "material": "Control Structure",
             "instruction": "How would you design a Python program that checks if a number is divisible by three?",
-            "question": "def is_divisible(n):\n    if ___ % 3 == 0:\n        return True\n    else:\n        return False\n\nnum = 45\ncheck_divisible = is_divisible(num)\n\nif ___:\n    print(\"Number is divisible by three.\")\nelse:\n    print(\"Number is not divisible by three.\")",
-            "correct_answer": "n, check_divisible",
+            "question": "def is_divisible(n):\n    if ___ % 3 == 0:\n        return True\n    else:\n        return False\n\nnum = 45\ncheck_divisible = is_divisible(num)\n\nif check_divisible:\n    print(\"Number is divisible by three.\")\nelse:\n    print(\"Number is not divisible by three.\")",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 4511,
             "material": "Control Structure",
             "instruction": "Optimize the following python code to speed up execution time:\n\narr = [2, 5, 3, 1]\nfor i in range(len(arr)):\n  for j in range(i + 1, len(arr)):\n    if arr[i] > arr[j]:\n       arr[i], arr[j] = arr[j], arr[i]",
-            "question": "arr = [2, 5, 3, 1]\n\n# using Python's built in `sorted` function\narr = sorted(arr)\n\n# using the Bubble Sort algorithm\nfor ___ in range(len(arr) - 1):\n for ___ in range(len(arr) - 1 - i):\n  if ___[j] > arr[j + 1]:\n   arr[j], arr[j + 1] = arr[j + 1], arr[j]",
-            "correct_answer": "i, j, arr",
+            "question": "arr = [2, 5, 3, 1]\n\n# using Python's built in `sorted` function\narr = sorted(arr)\n\n# using the Bubble Sort algorithm\nfor ___ in range(len(arr) - 1):\n for j in range(len(arr) - 1 - i):\n  if arr[j] > arr[j + 1]:\n   arr[j], arr[j + 1] = arr[j + 1], arr[j]",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 4522,
             "material": "Control Structure",
             "instruction": "Optimize a Python function for computing Fibonacci numbers.",
-            "question": "def fibonacci(n): \n    if ___ <= 1: \n        return n \n    else:\n        fibonacci_num=[0,1] #creating a fibonacci list\n        i=2\n        while ___<=n:\n            fibonacci_num.append(fibonacci_num[i-1]+fibonacci_num[i-2])\n            i+=1\n        return fibonacci_num[n]",
-            "correct_answer": "n, i",
+            "question": "def fibonacci(n): \n    if ___ <= 1: \n        return n \n    else:\n        fibonacci_num=[0,1] #creating a fibonacci list\n        i=2\n        while i<=n:\n            fibonacci_num.append(fibonacci_num[i-1]+fibonacci_num[i-2])\n            i+=1\n        return fibonacci_num[n]",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -1452,8 +1452,8 @@
             "question_id": 4565,
             "material": "Control Structure",
             "instruction": "Write an algorithm for linear search in Python.",
-            "question": "def linear_search(list, n):\n  i = 0\n  while ___ < len(list):\n    if ___[i] == n:\n      return i\n    i = i+1\n  return -1\n\nlist = [1, 3, 8, 10, 15, 20, 25]\nn = 15\nindex = linear_search(list, n)\nprint(\"Number found at index:\", index)",
-            "correct_answer": "i, list",
+            "question": "def linear_search(list, n):\n  i = 0\n  while ___ < len(list):\n    if list[i] == n:\n      return i\n    i = i+1\n  return -1\n\nlist = [1, 3, 8, 10, 15, 20, 25]\nn = 15\nindex = linear_search(list, n)\nprint(\"Number found at index:\", index)",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -1484,24 +1484,24 @@
             "question_id": 4848,
             "material": "Control Structure",
             "instruction": "Generate a python code for an algorithmic solution for the following problem:",
-            "question": "def is_sum_possible(A, X): \n    n = len(A) \n    # create an empty hash set\n    s = set() \n  \n    for ___ in range(n): \n        temp = X - A[i]  \n        if ___ >= 0 and temp in s: \n            return True \n        s.add(A[i])  \n  \n    return False",
-            "correct_answer": "i, temp",
+            "question": "def is_sum_possible(A, X): \n    n = len(A) \n    # create an empty hash set\n    s = set() \n  \n    for ___ in range(n): \n        temp = X - A[i]  \n        if temp >= 0 and temp in s: \n            return True \n        s.add(A[i])  \n  \n    return False",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 4902,
             "material": "Control Structure",
             "instruction": "Build a Python generator that yields the next power of 2 for a given number.",
-            "question": "def nextPowerOf2Generator(n): \n    power = 1\n    while ___: \n        pow_val = power * 2\n        yield pow_val \n        power = pow_val \n  \nn = 4\n\nfor ___ in nextPowerOf2Generator(n):\n    if ___ > n:\n        print(i)\n        break",
-            "correct_answer": "True, i, i",
+            "question": "def nextPowerOf2Generator(n): \n    power = 1\n    while ___: \n        pow_val = power * 2\n        yield pow_val \n        power = pow_val \n  \nn = 4\n\nfor i in nextPowerOf2Generator(n):\n    if i > n:\n        print(i)\n        break",
+            "correct_answer": "True",
             "duration": 20
         },
         {
             "question_id": 4916,
             "material": "Control Structure",
             "instruction": "Generate a Python program that takes an input of a number and checks if it is prime.",
-            "question": "def is_prime(num):\n    if ___ == 2:\n        return True\n    elif num < 2 or not all(num % i for ___ in range(2, num)):\n        return False\n    return True\n\nnum = 7\nresult = is_prime(num)\nprint(result)",
-            "correct_answer": "num, i",
+            "question": "def is_prime(num):\n    if ___ == 2:\n        return True\n    elif num < 2 or not all(num % i for i in range(2, num)):\n        return False\n    return True\n\nnum = 7\nresult = is_prime(num)\nprint(result)",
+            "correct_answer": "num",
             "duration": 20
         },
         {
@@ -1516,32 +1516,32 @@
             "question_id": 5034,
             "material": "Control Structure",
             "instruction": "Write a Python program to automatically generate the HTML for a table from a dictionary of data.",
-            "question": "html_str = '<table><tr>'\n\nfor ___ in d:\n html_str += '<th>{}</th>'.format(key)\nhtml_str += '</tr>'\n\nfor ___ in range(len(d['col1'])):\n html_str += '<tr>'\n for ___ in d:\n html_str += '<td>{}</td>'.format(d[key][i])\n html_str += '</tr>'\n\nhtml_str += '</table>'\n\nprint(html_str)",
-            "correct_answer": "key, i, key",
+            "question": "html_str = '<table><tr>'\n\nfor ___ in d:\n html_str += '<th>{}</th>'.format(key)\nhtml_str += '</tr>'\n\nfor i in range(len(d['col1'])):\n html_str += '<tr>'\n for key in d:\n html_str += '<td>{}</td>'.format(d[key][i])\n html_str += '</tr>'\n\nhtml_str += '</table>'\n\nprint(html_str)",
+            "correct_answer": "key",
             "duration": 20
         },
         {
             "question_id": 5041,
             "material": "Control Structure",
             "instruction": "Create a block of code for a Python program to generate a multiplication table for a given number.",
-            "question": "# Create a multiplication table for ___ given number\nnum = 6\n\n# Loop to generate the table\nfor ___ in range(1, 11):\n  print(f'{num} x {i} = {num * i}')",
-            "correct_answer": "a, i",
+            "question": "# Create a multiplication table for ___ given number\nnum = 6\n\n# Loop to generate the table\nfor i in range(1, 11):\n  print(f'{num} x {i} = {num * i}')",
+            "correct_answer": "a",
             "duration": 20
         },
         {
             "question_id": 5047,
             "material": "Control Structure",
             "instruction": "Create a web application in Python that displays a directory structure tree for a given path.",
-            "question": "import os\n\ndef make_tree(path): \n files = os.listdir(path) \n for ___ in files: \n     full_path = os.path.join(path, f) \n     if ___.path.isdir(full_path): \n         print(f) \n         make_tree(full_path) \n     else: \n         print(\" -\" + f) \n  \npath = '/home/myUser/myFolder' \nmake_tree(path)",
-            "correct_answer": "f, os",
+            "question": "import os\n\ndef make_tree(path): \n files = os.listdir(path) \n for ___ in files: \n     full_path = os.path.join(path, f) \n     if os.path.isdir(full_path): \n         print(f) \n         make_tree(full_path) \n     else: \n         print(\" -\" + f) \n  \npath = '/home/myUser/myFolder' \nmake_tree(path)",
+            "correct_answer": "f",
             "duration": 20
         },
         {
             "question_id": 5070,
             "material": "Control Structure",
             "instruction": "Write a Python code to determine if the user has enough money in the account for a given transaction.",
-            "question": "def enough_balance(balance, amount):\n    if ___ > balance:\n        return False\n    return True\n\nif ___ == '__main__':\n    print(enough_balance(balance, amount))",
-            "correct_answer": "amount, __name__",
+            "question": "def enough_balance(balance, amount):\n    if ___ > balance:\n        return False\n    return True\n\nif __name__ == '__main__':\n    print(enough_balance(balance, amount))",
+            "correct_answer": "amount",
             "duration": 20
         },
         {
@@ -1572,8 +1572,8 @@
             "question_id": 5106,
             "material": "Control Structure",
             "instruction": "Generate a Python program that can verify if a given sentence is correct or misspelled.",
-            "question": "import re\n\ndef spell_check(sentence):\n  words = re.findall(r'\\w+', sentence)\n  for ___ in words:\n    if ___ word.lower() in dict:\n        return False\n  return True\n\nsentence = \"This is my new computer\"\nresult = spell_check(sentence)\nif ___:\n    print('Correct spelling')\nelse:\n    print('Incorrect spelling')",
-            "correct_answer": "word, not, result",
+            "question": "import re\n\ndef spell_check(sentence):\n  words = re.findall(r'\\w+', sentence)\n  for ___ in words:\n    if not word.lower() in dict:\n        return False\n  return True\n\nsentence = \"This is my new computer\"\nresult = spell_check(sentence)\nif result:\n    print('Correct spelling')\nelse:\n    print('Incorrect spelling')",
+            "correct_answer": "word",
             "duration": 20
         },
         {
@@ -1588,8 +1588,8 @@
             "question_id": 5229,
             "material": "Control Structure",
             "instruction": "Code an algorithm in Python to check if two given sets are equal.",
-            "question": "def is_equal(A, B):\n    if ___(A) != len(B):\n        return False\n    for ___ in A:\n        if ___ not in B:\n            return False\n    return True",
-            "correct_answer": "len, el, el",
+            "question": "def is_equal(A, B):\n    if ___(A) != len(B):\n        return False\n    for el in A:\n        if el not in B:\n            return False\n    return True",
+            "correct_answer": "len",
             "duration": 20
         },
         {
@@ -1620,8 +1620,8 @@
             "question_id": 5384,
             "material": "Control Structure",
             "instruction": "Write a Python program to check if a number is prime by eliminating the multiples of all numbers from 2 to the square root of the number.",
-            "question": "import math\n\ndef is_prime(n):\n    for ___ in range(2, int(math.sqrt(n))+1):\n        if ___ % i == 0:\n            return False\n    return True\n\nprint(is_prime(n))",
-            "correct_answer": "i, n",
+            "question": "import math\n\ndef is_prime(n):\n    for ___ in range(2, int(math.sqrt(n))+1):\n        if n % i == 0:\n            return False\n    return True\n\nprint(is_prime(n))",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -1636,8 +1636,8 @@
             "question_id": 5403,
             "material": "Control Structure",
             "instruction": "Modify the following code in Python to check if a number is prime or not.",
-            "question": "def checkPrime(n):\n    if ___ <= 1:\n        return False\n\n    for ___ in range(2,n):\n        if ___ % i == 0:\n            return False\n    \n    return True",
-            "correct_answer": "n, i, n",
+            "question": "def checkPrime(n):\n    if ___ <= 1:\n        return False\n\n    for i in range(2,n):\n        if n % i == 0:\n            return False\n    \n    return True",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -1668,8 +1668,8 @@
             "question_id": 5620,
             "material": "Control Structure",
             "instruction": "Develop an algorithm in Python for parsing a given text and counting the number of occurrences of a given word.",
-            "question": "def parse_text(text, word):\n  word_count = 0\n  words = text.split()\n  for ___ in words:\n    if ___ == word:\n      word_count += 1\n  return word_count\n  \ntext = 'This is an example text.'\nword = 'example'\nword_count = parse_text(text, word)\nprint('The word \"{}\" appears {} times in the text.'.format(word, word_count))",
-            "correct_answer": "w, w",
+            "question": "def parse_text(text, word):\n  word_count = 0\n  words = text.split()\n  for ___ in words:\n    if w == word:\n      word_count += 1\n  return word_count\n  \ntext = 'This is an example text.'\nword = 'example'\nword_count = parse_text(text, word)\nprint('The word \"{}\" appears {} times in the text.'.format(word, word_count))",
+            "correct_answer": "w",
             "duration": 20
         },
         {
@@ -1692,8 +1692,8 @@
             "question_id": 5796,
             "material": "Control Structure",
             "instruction": "You need to optimize a given Python code for improving speed.",
-            "question": "def find_corresponding_nums(nums1, nums2):\n    result = []\n    seen = set(nums2) \n    for ___ in nums1:\n        if ___ in seen:\n            result.append(num1)\n    return result",
-            "correct_answer": "num1, num1",
+            "question": "def find_corresponding_nums(nums1, nums2):\n    result = []\n    seen = set(nums2) \n    for ___ in nums1:\n        if num1 in seen:\n            result.append(num1)\n    return result",
+            "correct_answer": "num1",
             "duration": 20
         },
         {
@@ -1740,8 +1740,8 @@
             "question_id": 5999,
             "material": "Control Structure",
             "instruction": "Write a function in Python that takes in two strings and returns true if both strings have the same letter counts.",
-            "question": "def isPermutation(s1, s2):\n s1_dict = {}\n s2_dict = {}\n for ___ in s1:\n  if ___ in s1_dict:\n   s1_dict[c] += 1\n  else:\n   s1_dict[c] = 1\n for ___ in s2:\n  if ___ in s2_dict:\n   s2_dict[c] += 1\n  else:\n   s2_dict[c] = 1\n \n return s1_dict == s2_dict",
-            "correct_answer": "c, c, c, c",
+            "question": "def isPermutation(s1, s2):\n s1_dict = {}\n s2_dict = {}\n for ___ in s1:\n  if c in s1_dict:\n   s1_dict[c] += 1\n  else:\n   s1_dict[c] = 1\n for c in s2:\n  if c in s2_dict:\n   s2_dict[c] += 1\n  else:\n   s2_dict[c] = 1\n \n return s1_dict == s2_dict",
+            "correct_answer": "c",
             "duration": 20
         },
         {
@@ -1756,16 +1756,16 @@
             "question_id": 6032,
             "material": "Control Structure",
             "instruction": "Implement an algorithm in Python to check for palindromes.",
-            "question": "def isPalindrome(text):\n    n = len(text)\n    for ___ in range(n // 2):\n        if ___[i] != text[n - i - 1]:\n            return False\n    return True\n\nprint(isPalindrome('noon'))",
-            "correct_answer": "i, text",
+            "question": "def isPalindrome(text):\n    n = len(text)\n    for ___ in range(n // 2):\n        if text[i] != text[n - i - 1]:\n            return False\n    return True\n\nprint(isPalindrome('noon'))",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 6037,
             "material": "Control Structure",
             "instruction": "Optimize a given code in Python for higher efficiency.",
-            "question": "def power(base, exponent):\n    answer = 1\n    while ___ > 0:\n        if ___ & 1:\n            answer *= base\n        base *= base\n        exponent >>= 1\n    return answer",
-            "correct_answer": "exponent, exponent",
+            "question": "def power(base, exponent):\n    answer = 1\n    while ___ > 0:\n        if exponent & 1:\n            answer *= base\n        base *= base\n        exponent >>= 1\n    return answer",
+            "correct_answer": "exponent",
             "duration": 20
         },
         {
@@ -1788,16 +1788,16 @@
             "question_id": 6054,
             "material": "Control Structure",
             "instruction": "Optimize the following Python code for calculating the Fibonacci numbers up to n.",
-            "question": "def fibonacci(n):\n # Initialize a memoization dictionary\n memo = {\n 0: 0,\n 1: 1\n }\n \n # If n is in the memoization dictionary, return the value\n if ___ in memo:\n return memo[n]\n \n # Calculate the Fibonacci number\n if ___ > 1:\n memo[n] = fibonacci(n-1) + fibonacci(n-2)\n \n return memo[n]\n\nprint(fibonacci(10))",
-            "correct_answer": "n, n",
+            "question": "def fibonacci(n):\n # Initialize a memoization dictionary\n memo = {\n 0: 0,\n 1: 1\n }\n \n # If n is in the memoization dictionary, return the value\n if ___ in memo:\n return memo[n]\n \n # Calculate the Fibonacci number\n if n > 1:\n memo[n] = fibonacci(n-1) + fibonacci(n-2)\n \n return memo[n]\n\nprint(fibonacci(10))",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 6058,
             "material": "Control Structure",
             "instruction": "A number is said to be abundant if its proper divisors sum to more than the number itself. Create a python program to identify if a given number is abundant or not.",
-            "question": "def is_abundant(num):\n    divisor_sum = 0\n    for ___ in range(1, int(num/2)+1):\n        if ___ % i == 0:\n            divisor_sum += i\n\n    return divisor_sum > num\n\nnum = 21\n\nif ___(num):\n    print(f\"{num} is abundant\")\nelse:\n    print(f\"{num} is not abundant\")",
-            "correct_answer": "i, num, is_abundant",
+            "question": "def is_abundant(num):\n    divisor_sum = 0\n    for ___ in range(1, int(num/2)+1):\n        if num % i == 0:\n            divisor_sum += i\n\n    return divisor_sum > num\n\nnum = 21\n\nif is_abundant(num):\n    print(f\"{num} is abundant\")\nelse:\n    print(f\"{num} is not abundant\")",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -1812,8 +1812,8 @@
             "question_id": 6105,
             "material": "Control Structure",
             "instruction": "Optimize the Python code snippet (below) for performance efficiency.",
-            "question": "def process_data(data):\n    processed_data = []\n    for ___ in data:\n        if (item % 10) == 0:\n            processed_data.append(item)\n    return processed_data\n\ndef process_data_fast(data):\n    return [item for ___ in data if ___ % 10 == 0]",
-            "correct_answer": "item, item, item",
+            "question": "def process_data(data):\n    processed_data = []\n    for ___ in data:\n        if (item % 10) == 0:\n            processed_data.append(item)\n    return processed_data\n\ndef process_data_fast(data):\n    return [item for item in data if item % 10 == 0]",
+            "correct_answer": "item",
             "duration": 20
         },
         {
@@ -1828,8 +1828,8 @@
             "question_id": 6165,
             "material": "Control Structure",
             "instruction": "Write a function in Python to check if an integer is prime or not.",
-            "question": "def is_prime(number):\n  if ___ < 2:\n    return False\n  else:\n    for ___ in range(2, number):\n      if ___ % x == 0:\n        return False\n    return True\n\nn = 37\nprint (is_prime(n)) # Output: True",
-            "correct_answer": "number, x, number",
+            "question": "def is_prime(number):\n  if ___ < 2:\n    return False\n  else:\n    for x in range(2, number):\n      if number % x == 0:\n        return False\n    return True\n\nn = 37\nprint (is_prime(n)) # Output: True",
+            "correct_answer": "number",
             "duration": 20
         },
         {
@@ -1852,24 +1852,24 @@
             "question_id": 6290,
             "material": "Control Structure",
             "instruction": "Develop an algorithm using Python that determines if a number is a prime number or not.",
-            "question": "def is_prime(n):\n    if ___ <= 1: \n        return False\n    for ___ in range(2, n): \n        if ___ % i == 0: \n            return False\n    return True",
-            "correct_answer": "n, i, n",
+            "question": "def is_prime(n):\n    if ___ <= 1: \n        return False\n    for i in range(2, n): \n        if n % i == 0: \n            return False\n    return True",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 6309,
             "material": "Control Structure",
             "instruction": "Optimize the following Python code for runtime and memory performance.",
-            "question": "def factorial(n):\n    if ___ == 0:\n        return 1\n\n    res = 1\n    for ___ in range(2, n+1):\n        res *= i\n    return res",
-            "correct_answer": "n, i",
+            "question": "def factorial(n):\n    if ___ == 0:\n        return 1\n\n    res = 1\n    for i in range(2, n+1):\n        res *= i\n    return res",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 6317,
             "material": "Control Structure",
             "instruction": "Create a Python function to check if a given number is abundant or not. An abundant number is a number which is less than the sum of its proper divisors.",
-            "question": "def is_abundant(number):\n    sum = 0\n    for ___ in range(1, number):\n        if ___ % i == 0:\n            sum += i\n    return sum > number",
-            "correct_answer": "i, number",
+            "question": "def is_abundant(number):\n    sum = 0\n    for ___ in range(1, number):\n        if number % i == 0:\n            sum += i\n    return sum > number",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -1884,24 +1884,24 @@
             "question_id": 6339,
             "material": "Control Structure",
             "instruction": "Write a FOR loop to create a Pascal Triangle of size N in Python.",
-            "question": "def pascal_triangle(n): \n    trow = [1] \n    y = [0] \n    for ___ in range(max(n,0)): \n        print(trow) \n        trow=[l+r for ___,r in zip(trow+y, y+trow)] \n  \n# Driver program to test the above function \nn = 5\npascal_triangle(n)",
-            "correct_answer": "x, l",
+            "question": "def pascal_triangle(n): \n    trow = [1] \n    y = [0] \n    for ___ in range(max(n,0)): \n        print(trow) \n        trow=[l+r for l,r in zip(trow+y, y+trow)] \n  \n# Driver program to test the above function \nn = 5\npascal_triangle(n)",
+            "correct_answer": "x",
             "duration": 20
         },
         {
             "question_id": 6349,
             "material": "Control Structure",
             "instruction": "Design an algorithm in Python for linear search.",
-            "question": "def linear_search(arr, target):    \n    for ___ in range(len(arr)):\n        if ___[i] == target:\n            return i\n    return -1",
-            "correct_answer": "i, arr",
+            "question": "def linear_search(arr, target):    \n    for ___ in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1",
+            "correct_answer": "i",
             "duration": 20
         },
         {
             "question_id": 6379,
             "material": "Control Structure",
             "instruction": "Write a Python program for a program that checks if two strings are palindromes.",
-            "question": "def is_palindrome(str1, str2):\n # Reverse str1\n reverse_str1 = str1[::-1]\n\n # Check if ___ is the same as the reversed version of str2\n if ___ == str2:\n return True\n else:\n return False\n\n# Sample input\nstr1 = 'radar'\nstr2 = 'dad'\n\n# Check if ___ strings are palindromes\nprint(is_palindrome(str1, str2)) # Output: True",
-            "correct_answer": "str1, reverse_str1, the",
+            "question": "def is_palindrome(str1, str2):\n # Reverse str1\n reverse_str1 = str1[::-1]\n\n # Check if ___ is the same as the reversed version of str2\n if reverse_str1 == str2:\n return True\n else:\n return False\n\n# Sample input\nstr1 = 'radar'\nstr2 = 'dad'\n\n# Check if the strings are palindromes\nprint(is_palindrome(str1, str2)) # Output: True",
+            "correct_answer": "str1",
             "duration": 20
         },
         {
@@ -1924,8 +1924,8 @@
             "question_id": 6575,
             "material": "Control Structure",
             "instruction": "Modify the following Python code for calculating the factorial of a number.",
-            "question": "def factorial(n):\n    if ___ == 0:\n        return 1\n    else:\n        fact = 1\n        for ___ in range(1,n+1):\n            fact = fact*i\n        return fact",
-            "correct_answer": "n, i",
+            "question": "def factorial(n):\n    if ___ == 0:\n        return 1\n    else:\n        fact = 1\n        for i in range(1,n+1):\n            fact = fact*i\n        return fact",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -1948,16 +1948,16 @@
             "question_id": 6593,
             "material": "Control Structure",
             "instruction": "Design a python class for a shopping cart.",
-            "question": "class ShoppingCart:\n    def __init__(self):\n        self.items = []\n    \n    def add_item(self, item):\n        self.items.append(item)\n    \n    def remove_item(self, item):\n        if ___ in self.items:\n            self.items.remove(item)\n    \n    def get_total_amount(self):\n        total_amount = 0\n        for ___ in self.items:\n            total_amount += item.price\n        return total_amount",
-            "correct_answer": "item, item",
+            "question": "class ShoppingCart:\n    def __init__(self):\n        self.items = []\n    \n    def add_item(self, item):\n        self.items.append(item)\n    \n    def remove_item(self, item):\n        if ___ in self.items:\n            self.items.remove(item)\n    \n    def get_total_amount(self):\n        total_amount = 0\n        for item in self.items:\n            total_amount += item.price\n        return total_amount",
+            "correct_answer": "item",
             "duration": 20
         },
         {
             "question_id": 6603,
             "material": "Control Structure",
             "instruction": "Construct a function in Python to compare the two given dictionaries and return true if both of them contains the same elements.",
-            "question": "def compare_dicts(dict1, dict2):\n  # Iterate through keys in both dictionaries and compare values\n  for ___, value in dict1.items():\n    if ___ not in dict2 or dict2[key] != value:\n      return False\n \n  # If all elements matched\n  return True",
-            "correct_answer": "key, key",
+            "question": "def compare_dicts(dict1, dict2):\n  # Iterate through keys in both dictionaries and compare values\n  for ___, value in dict1.items():\n    if key not in dict2 or dict2[key] != value:\n      return False\n \n  # If all elements matched\n  return True",
+            "correct_answer": "key",
             "duration": 20
         },
         {
@@ -1988,16 +1988,16 @@
             "question_id": 6707,
             "material": "Control Structure",
             "instruction": "write a python program for its purpose",
-            "question": "\"\"\"\nCompute the factorial of a given number\n\"\"\"\n\ndef factorial(n): \n\tif ___ == 1: \n\t\treturn 1\n\telse: \n\t\treturn n * factorial(n-1) \n\nif ___ == '__main__': \n\tnum = int(input()) \n\tprint(factorial(num))",
-            "correct_answer": "n, __name__",
+            "question": "\"\"\"\nCompute the factorial of a given number\n\"\"\"\n\ndef factorial(n): \n\tif ___ == 1: \n\t\treturn 1\n\telse: \n\t\treturn n * factorial(n-1) \n\nif __name__ == '__main__': \n\tnum = int(input()) \n\tprint(factorial(num))",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 6710,
             "material": "Control Structure",
             "instruction": "Compare two strings to check if they are anagrams or not in Python.",
-            "question": "def is_anagram(w1, w2):\n    # Check if ___ are equal\n    if ___(w1) == len(w2):\n        # Sort the strings\n        s1 = sorted(w1)\n        s2 = sorted(w2)\n        # Check if ___ strings are equal\n        if ___ == s2:\n            return True\n    return False\n\n# Example\nw1 = \"silent\"\nw2 = \"listen\"\n\nprint(is_anagram(w1, w2)) #Output: True",
-            "correct_answer": "lengths, len, sorted, s1",
+            "question": "def is_anagram(w1, w2):\n    # Check if ___ are equal\n    if len(w1) == len(w2):\n        # Sort the strings\n        s1 = sorted(w1)\n        s2 = sorted(w2)\n        # Check if sorted strings are equal\n        if s1 == s2:\n            return True\n    return False\n\n# Example\nw1 = \"silent\"\nw2 = \"listen\"\n\nprint(is_anagram(w1, w2)) #Output: True",
+            "correct_answer": "lengths",
             "duration": 20
         },
         {
@@ -2052,8 +2052,8 @@
             "question_id": 6867,
             "material": "Control Structure",
             "instruction": "Develop a Python Program to determine if two given strings are an anagram or not.",
-            "question": "def is_anagram(string1, string2):\n    # check if ___ have equal length \n    if ___(string1) != len(string2): \n        return False \n    sorted1 = sorted(string1); \n    sorted2 = sorted(string2); \n    # check if ___ strings are the same \n    if ___ == sorted2:\n        return True \n    return False",
-            "correct_answer": "strings, len, sorted, sorted1",
+            "question": "def is_anagram(string1, string2):\n    # check if ___ have equal length \n    if len(string1) != len(string2): \n        return False \n    sorted1 = sorted(string1); \n    sorted2 = sorted(string2); \n    # check if sorted strings are the same \n    if sorted1 == sorted2:\n        return True \n    return False",
+            "correct_answer": "strings",
             "duration": 20
         },
         {
@@ -2068,8 +2068,8 @@
             "question_id": 6922,
             "material": "Control Structure",
             "instruction": "Create functions in Python for validating if a number is prime or not.",
-            "question": "def is_prime(n):\n    if ___ == 1:\n        return False\n    for ___ in range(2,int(n**(1/2))+1):\n        if ___%i == 0:\n            return False\n    return True\n\nif ___(12):\n    print(\"Prime\")\nelse:\n    print(\"Not Prime\")",
-            "correct_answer": "n, i, n, is_prime",
+            "question": "def is_prime(n):\n    if ___ == 1:\n        return False\n    for i in range(2,int(n**(1/2))+1):\n        if n%i == 0:\n            return False\n    return True\n\nif is_prime(12):\n    print(\"Prime\")\nelse:\n    print(\"Not Prime\")",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -2132,48 +2132,48 @@
             "question_id": 7164,
             "material": "Control Structure",
             "instruction": "Write a Python program to determine if a number provided by the user is prime or not.",
-            "question": "# Ask the user for ___ number\nnum = int(input('Enter a number: '))\n\n# Set initial values\nis_prime = True\n\n# Check for ___\nfor ___ in range(2, num):\n if ___ % i == 0:\n is_prime = False\n break\n\n# Output result\nif ___:\n print(f'{num} is a prime number.')\nelse:\n print(f'{num} is not a prime number.')",
-            "correct_answer": "a, prime, i, num, is_prime",
+            "question": "# Ask the user for ___ number\nnum = int(input('Enter a number: '))\n\n# Set initial values\nis_prime = True\n\n# Check for prime\nfor i in range(2, num):\n if num % i == 0:\n is_prime = False\n break\n\n# Output result\nif is_prime:\n print(f'{num} is a prime number.')\nelse:\n print(f'{num} is not a prime number.')",
+            "correct_answer": "a",
             "duration": 20
         },
         {
             "question_id": 7184,
             "material": "Control Structure",
             "instruction": "Write a Python program to check if two strings are isomorphic.",
-            "question": "def is_isomorphic(s1, s2):\n    if ___(s1) != len(s2):\n        return False\n\n    s1_dict = dict()\n    for ___, char in enumerate(s1):\n        if ___ in s1_dict:\n            if ___[char] != s2[i]:\n                return False\n        else:\n            s1_dict[char] = s2[i]\n\n    return True",
-            "correct_answer": "len, i, char, s1_dict",
+            "question": "def is_isomorphic(s1, s2):\n    if ___(s1) != len(s2):\n        return False\n\n    s1_dict = dict()\n    for i, char in enumerate(s1):\n        if char in s1_dict:\n            if s1_dict[char] != s2[i]:\n                return False\n        else:\n            s1_dict[char] = s2[i]\n\n    return True",
+            "correct_answer": "len",
             "duration": 20
         },
         {
             "question_id": 7185,
             "material": "Control Structure",
             "instruction": "Implement a python program to check if a number is powerful. A powerful number is one who has a power of 2 as any of its prime divisors.",
-            "question": "def is_power(number):\n    flag = False\n    if ___ > 2:\n        for ___ in range(2, number // 2 + 1):\n            while ___ % i == 0:\n                if ___ % (i ** 2) == 0:\n                    flag = True\n                number = number / i\n    \n    return flag\n\nprint(is_power(18))",
-            "correct_answer": "number, i, number, number",
+            "question": "def is_power(number):\n    flag = False\n    if ___ > 2:\n        for i in range(2, number // 2 + 1):\n            while number % i == 0:\n                if number % (i ** 2) == 0:\n                    flag = True\n                number = number / i\n    \n    return flag\n\nprint(is_power(18))",
+            "correct_answer": "number",
             "duration": 20
         },
         {
             "question_id": 7188,
             "material": "Control Structure",
             "instruction": "Write a Python code for converting a given sentence into pig latin.",
-            "question": "def convert_string_to_pig_latin(sentence):\n    words = sentence.split()\n    pig_latin_words = []\n    for ___ in words:\n        if ___[0] in 'aeiou':\n            pig_word = word + 'way'\n        else:\n            pig_word = word[1:] + word[0] + 'ay'\n        pig_latin_words.append(pig_word)\n    return ' '.join(pig_latin_words)",
-            "correct_answer": "word, word",
+            "question": "def convert_string_to_pig_latin(sentence):\n    words = sentence.split()\n    pig_latin_words = []\n    for ___ in words:\n        if word[0] in 'aeiou':\n            pig_word = word + 'way'\n        else:\n            pig_word = word[1:] + word[0] + 'ay'\n        pig_latin_words.append(pig_word)\n    return ' '.join(pig_latin_words)",
+            "correct_answer": "word",
             "duration": 20
         },
         {
             "question_id": 7214,
             "material": "Control Structure",
             "instruction": "Build a program in Python for finding the largest prime number in a given range.",
-            "question": "def largest_prime(num):\n    largest_prime = 0\n    for ___ in range (num):\n        if(isPrime(n)):\n            largest_prime = n\n    return largest_prime\n\ndef isPrime(n):\n    if(n == 1):\n        return False\n    elif(n == 2):\n        return True\n    else:\n        for ___ in range(2,n//2+1):\n            if(n % x == 0):\n                return False\n        return True\n\nprint(largest_prime(100))",
-            "correct_answer": "n, x",
+            "question": "def largest_prime(num):\n    largest_prime = 0\n    for ___ in range (num):\n        if(isPrime(n)):\n            largest_prime = n\n    return largest_prime\n\ndef isPrime(n):\n    if(n == 1):\n        return False\n    elif(n == 2):\n        return True\n    else:\n        for x in range(2,n//2+1):\n            if(n % x == 0):\n                return False\n        return True\n\nprint(largest_prime(100))",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 7230,
             "material": "Control Structure",
             "instruction": "Construct a Python program for finding the intersection of two arrays.",
-            "question": "def intersection(arr1, arr2):\n  result = [i for ___ in arr1 if ___ in arr2]\n  return result\n\narr1 = [1, 2, 3, 4]\narr2 = [3, 4, 5, 6]\nresult = intersection(arr1, arr2)\nprint(result)  # [3, 4]",
-            "correct_answer": "i, i",
+            "question": "def intersection(arr1, arr2):\n  result = [i for ___ in arr1 if i in arr2]\n  return result\n\narr1 = [1, 2, 3, 4]\narr2 = [3, 4, 5, 6]\nresult = intersection(arr1, arr2)\nprint(result)  # [3, 4]",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -2188,8 +2188,8 @@
             "question_id": 7237,
             "material": "Control Structure",
             "instruction": "Create a python program to calculate Fibonacci sequence for a given number.",
-            "question": "def fibonacci(n):\n    if ___ == 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\nif ___ == '__main__':\n    n = 8\n    print(fibonacci(n))",
-            "correct_answer": "n, __name__",
+            "question": "def fibonacci(n):\n    if ___ == 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\nif __name__ == '__main__':\n    n = 8\n    print(fibonacci(n))",
+            "correct_answer": "n",
             "duration": 20
         },
         {
@@ -2220,8 +2220,8 @@
             "question_id": 7354,
             "material": "Control Structure",
             "instruction": "Create a Python program to mark a character as asterisk (*) if it's the same as the previous one?",
-            "question": "def mark_asterisk(input):\n    res = \"\"\n    temp = input[0]\n    for ___ in input:\n        if ___ == temp:\n            res += '*'\n        else:\n            res += char\n            temp = char\n    return res",
-            "correct_answer": "char, char",
+            "question": "def mark_asterisk(input):\n    res = \"\"\n    temp = input[0]\n    for ___ in input:\n        if char == temp:\n            res += '*'\n        else:\n            res += char\n            temp = char\n    return res",
+            "correct_answer": "char",
             "duration": 20
         },
         {
@@ -2252,8 +2252,8 @@
             "question_id": 7438,
             "material": "Control Structure",
             "instruction": "Compose a function in Python to check if a given number is a power of two.",
-            "question": "def is_power_two(num):\n    if ___ == 0:\n        return False\n    \n    while ___ != 1:\n        if ___ % 2 != 0:\n            return False\n        num = num // 2\n    return True",
-            "correct_answer": "num, num, num",
+            "question": "def is_power_two(num):\n    if ___ == 0:\n        return False\n    \n    while num != 1:\n        if num % 2 != 0:\n            return False\n        num = num // 2\n    return True",
+            "correct_answer": "num",
             "duration": 20
         },
         {
@@ -2268,16 +2268,16 @@
             "question_id": 7511,
             "material": "Control Structure",
             "instruction": "Create a Python script to detect if a number is prime.",
-            "question": "def is_prime(n):\n    if ___ <= 1:\n        return False\n    for ___ in range(2, n):\n        if ___ % i == 0:\n            return False\n    return True\n\nif ___ == \"__main__\":\n    n = 10\n    if ___(n):\n        print(\"{} is a prime number\".format(n))\n    else:\n        print(\"{} is not a prime number\".format(n))",
-            "correct_answer": "n, i, n, __name__, is_prime",
+            "question": "def is_prime(n):\n    if ___ <= 1:\n        return False\n    for i in range(2, n):\n        if n % i == 0:\n            return False\n    return True\n\nif __name__ == \"__main__\":\n    n = 10\n    if is_prime(n):\n        print(\"{} is a prime number\".format(n))\n    else:\n        print(\"{} is not a prime number\".format(n))",
+            "correct_answer": "n",
             "duration": 20
         },
         {
             "question_id": 7525,
             "material": "Control Structure",
             "instruction": "Construct an algorithm for factoring a large number in Python.",
-            "question": "def get_factor(n):\n    factors = []\n   \n    for ___ in range(2, n + 1):\n        if ___ % i == 0:\n            factors.append(i)\n            n //= i\n    return factors\n\nnumber = 600851475143\nprint(get_factor(number))",
-            "correct_answer": "i, n",
+            "question": "def get_factor(n):\n    factors = []\n   \n    for ___ in range(2, n + 1):\n        if n % i == 0:\n            factors.append(i)\n            n //= i\n    return factors\n\nnumber = 600851475143\nprint(get_factor(number))",
+            "correct_answer": "i",
             "duration": 20
         },
         {
@@ -2300,8 +2300,8 @@
             "question_id": 7556,
             "material": "Control Structure",
             "instruction": "Design an algorithm in Python for finding and printing all prime numbers between 1 and a given number.",
-            "question": "def find_all_primes(n): \n  for ___ in range(2,n + 1):\n    for ___ in range(2,num):\n      if (num % i) == 0:\n        break \n    else:\n      print(num)\n\nfind_all_primes(100)",
-            "correct_answer": "num, i, else",
+            "question": "def find_all_primes(n): \n  for ___ in range(2,n + 1):\n    for i in range(2,num):\n      if (num % i) == 0:\n        break \n    else:\n      print(num)\n\nfind_all_primes(100)",
+            "correct_answer": "num",
             "duration": 20
         }
     ]
