@@ -1,0 +1,411 @@
+Instruction,Input,Output,materi,question_id,Template,correct_answer,category
+Optimize the following Python code to print the numbers in reverse.,"for i in range(1,11):
+    print(i)","for i in reversed(range(1,11)):
+    print(i)",Introduction Python,2935,"for i in reversed(range(1,11)):
+    print(___)",i,Introduction_Python_with_placeholders
+Generate a code that will print out all substrings of a given string.,python,"def substrings(s):
+    sub_str_list = []
+    for i in range(len(s)):
+        for j in range(i + 1, len(s)+1):
+            sub_str = s[i:j]
+            sub_str_list.append(sub_str)
+    return sub_str_list
+
+result = substrings(""python"")
+print(result)",Introduction Python,4965,"def substrings(s):
+    sub_str_list = []
+    for i in range(len(s)):
+        for j in range(i + 1, len(s)+1):
+            sub_str = s[i:j]
+            sub_str_list.append(sub_str)
+    return sub_str_list
+
+result = substrings(""python"")
+print(___)",result,Introduction_Python_with_placeholders
+Update the given Python program to print the result in reverse order.,"numbers = [1, 2, 3, 4, 5, 6]","numbers = [1, 2, 3, 4, 5, 6]
+
+for x in reversed(numbers):
+    print(x)",Introduction Python,4714,"numbers = [1, 2, 3, 4, 5, 6]
+
+for x in reversed(numbers):
+    print(___)",x,Introduction_Python_with_placeholders
+"Optimize the following python code to speed up execution time:
+
+arr = [2, 5, 3, 1]
+for i in range(len(arr)):
+  for j in range(i + 1, len(arr)):
+    if arr[i] > arr[j]:
+       arr[i], arr[j] = arr[j], arr[i]","[2, 5, 3, 1]","arr = [2, 5, 3, 1]
+
+# using Python's built in `sorted` function
+arr = sorted(arr)
+
+# using the Bubble Sort algorithm
+for i in range(len(arr) - 1):
+ for j in range(len(arr) - 1 - i):
+  if arr[j] > arr[j + 1]:
+   arr[j], arr[j + 1] = arr[j + 1], arr[j]",Control Structure,4511,"arr = [2, 5, 3, 1]
+
+# using Python's built in `sorted` function
+arr = sorted(arr)
+
+# using the Bubble Sort algorithm
+for ___ in range(len(arr) - 1):
+ for j in range(len(arr) - 1 - i):
+  if arr[j] > arr[j + 1]:
+   arr[j], arr[j + 1] = arr[j + 1], arr[j]",i,control_structure_with_placeholders
+Debug the following Python code and make it functional (read the instructions for the code).,"def factorial(n):
+ if n == 0:
+    return 1
+ else:
+ return n * factorial(n - 1)
+factorial(5)","def factorial(n):
+ if n == 0:
+    return 1
+ else:
+ return n * factorial(n - 1)
+
+# call the method
+print(factorial(5))",Control Structure,2423,"def factorial(n):
+ if ___ == 0:
+    return 1
+ else:
+ return n * factorial(n - 1)
+
+# call the method
+print(factorial(5))",n,control_structure_with_placeholders
+Create a python program that detects if a number is even or odd.,7,"def is_even_odd(num):
+    if num % 2 == 0:
+        return ""Even""
+    else:
+        return ""Odd""
+
+result = is_even_odd(7)
+print(result)",Control Structure,269,"def is_even_odd(num):
+    if ___ % 2 == 0:
+        return ""Even""
+    else:
+        return ""Odd""
+
+result = is_even_odd(7)
+print(result)",num,control_structure_with_placeholders
+"Create a program in Python that takes a list of strings as input, sorts the strings in alphabetical order, and prints out the list in reverse alphabetical order.","Sample List: [""cat"",""bird"",""dog"",""zebra"",""ant""]","# create a list
+sample_list = [""cat"", ""bird"", ""dog"", ""zebra"", ""ant""]
+ 
+# sort the list
+sample_list.sort()
+ 
+# reverse the list
+sample_list.reverse()
+ 
+# print the reversed list
+print(sample_list)
+# ['zebra', 'dog', 'cat', 'bird', 'ant']",Data Structure,1037,"# create a list ___ = [""cat"", ""bird"", ""dog"", ""zebra"", ""ant""]
+ 
+# sort the list
+sample_list.sort()
+ 
+# reverse the list
+sample_list.reverse()
+ 
+# print the reversed list
+print(sample_list)
+# ['zebra', 'dog', 'cat', 'bird', 'ant']",sample_list,data_structure_with_placeholders
+Develop a function in python to find the index of an element in a list.,"a = [2, 3, 4, 5, 2]
+x = 2","def find_index(a, x):
+    indices = []
+    if x not in a:
+        return -1
+    else:
+        for i in range(len(a)):
+            if a[i] == x:
+                indices.append(i)
+    return indices
+
+indices = find_index(a, x)
+print(""The index of element 2 in the list is"", indices)",Data Structure,4696,"def find_index(a, x):
+    indices = []
+    if x not in a:
+        return -1
+    else:
+        for i in range(len(a)):
+            if a[i] == x:
+                indices.append(i)
+    return indices
+
+indices = find_index(a, x)
+print(""The index of element 2 in the list ___"", indices)",is,data_structure_with_placeholders
+Generate an algorithm in Python that returns the kth smallest number in a given array.,"Input Array: [3, 2, 4, 1, 5]
+Input k: 3","def kthSmallest(arr, k):
+ # sort the array
+ arr.sort()
+ 
+ # return the kth element
+ return arr[k-1]
+ 
+# Driver Code
+arr = [3,2,4,1,5]
+k = 3
+
+print(kthSmallest(arr, k)) # 3",Data Structure,4545,"def kthSmallest(arr, k):
+ # sort the array ___.sort()
+ 
+ # return the kth element
+ return arr[k-1]
+ 
+# Driver Code
+arr = [3,2,4,1,5]
+k = 3
+
+print(kthSmallest(arr, k)) # 3",arr,data_structure_with_placeholders
+Create a Python function that takes in a string and a list of words and returns true if the string contains all the words in the list.,"'This is a test', ['test', 'this', 'is']","def contains_words(input_string, words):
+ for word in words:
+ if word not in input_string:
+ return False
+ return True
+
+print(contains_words('This is a test', ['test', 'this', 'is'])) # True",Data Type,1678,"def contains_words(input_string, words):
+ for word in words:
+ if word not in input_string:
+ return False ___ True
+
+print(contains_words('This is a test', ['test', 'this', 'is'])) # True",return,data_type_with_placeholders
+Build an algorithm in Python to check if a string is a palindrome.,"""abccba""","def is_palindrome(str):
+    # Get the length of the string
+    n = len(str)
+
+    for i in range(n//2):
+        # Compare characters from both ends
+        if str[i] != str[n-i-1]:
+            return False
+    return True
+
+str = ""abccba""
+print(is_palindrome(str))",Data Type,7503,"def is_palindrome(str):
+    # Get the length of the string
+    n = len(str)
+
+    for i in range(n//2):
+        # Compare characters from both ends
+        if str[i] != str[n-i-1]:
+            return False ___ True
+
+str = ""abccba""
+print(is_palindrome(str))",return,data_type_with_placeholders
+Create a Python program to check for anagrams of a string.,"""listen"", ""silent""","def anagramCheck(str1, str2):
+    if (len(str1) != len(str2)):
+        return False
+
+    str1 = sorted(str1)
+    str2 = sorted (str2)
+
+    # Compare each character in str1 with
+    # each character in str2
+    for i in range( len( str1 ) ):
+        if (str1[i] != str2[i]):
+            return False
+ 
+    return True",Data Type,3706,"def anagramCheck(str1, str2):
+    if (len(str1) != len(str2)):
+        return False ___ = sorted(str1)
+    str2 = sorted (str2)
+
+    # Compare each character in str1 with
+    # each character in str2
+    for i in range( len( str1 ) ):
+        if (str1[i] != str2[i]):
+            return False
+ 
+    return True",str1,data_type_with_placeholders
+Rewrite the following Python function without using loop.,"def multiply_list(l): 
+	result = 1
+	# Iterate through the list 
+	for i in l: 
+		result = result * i 
+	return result","def multiply_list(l): 
+	from functools import reduce
+	return reduce((lambda x, y: x * y), l)",Function,5790,"def ___(l): 
+	from functools import reduce
+	return reduce((lambda x, y: x * y), l)",multiply_list,function_with_placeholders
+Edit the following python function so that it prints its parameters in reversed order.,"def print_params(a, b):
+  print(a + ' ' + b)","def print_params(a, b):
+  print(b + ' ' + a)",Function,6030,"def ___(a, b):
+  print(b + ' ' + a)",print_params,function_with_placeholders
+Generate a python function to calculate the total cost of a purchase given prices and quantities.,"prices = [10, 20, 10]
+quantities = [1, 2, 3]","def calculate_total_cost(prices, quantities):
+ total = 0
+ for price, quantity in zip(prices, quantities):
+ total += price * quantity
+ return total",Function,4131,"def ___(prices, quantities):
+ total = 0
+ for price, quantity in zip(prices, quantities):
+ total += price * quantity
+ return total",calculate_total_cost,function_with_placeholders
+Create a class in Python to generate a calendar.,"calendarName = ""My Calendar""","class CalendarGenerator(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    def generate_calendar(self):
+        calendar = []
+
+        # Code to generate a calendar goes here
+
+        return calendar
+
+calendar = CalendarGenerator(calendarName)
+calendar.generate_calendar()",OOP,3441,"class ___(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    def generate_calendar(self):
+        calendar = []
+
+        # Code to generate a calendar goes here
+
+        return calendar
+
+calendar = CalendarGenerator(calendarName)
+calendar.generate_calendar()",CalendarGenerator,oop_with_placeholders
+Create a class in Python that takes two arguments a 'name' and 'age' and returns a greeting.,-,"class Greeting:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def get_greeting(self):
+        return f""Hello, my name is {self.name} and I am {self.age} years old.""",OOP,2282,"class ___:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def get_greeting(self):
+        return f""Hello, my name is {self.name} and I am {self.age} years old.""",Greeting,oop_with_placeholders
+Create a class in Python that can represent a 3D point with the given fields.,x y and z coordinates,"class Point3D:
+  def __init__(self, x, y, z):
+    self.x = x
+    self.y = y
+    self.z = z
+
+  def __str__(self):
+    return 'Point3D is at {x}, {y}, {z}'.format(x = self.x, y = self.y, z = self.z)",OOP,4291,"class ___:
+  def __init__(self, x, y, z):
+    self.x = x
+    self.y = y
+    self.z = z
+
+  def __str__(self):
+    return 'Point3D is at {x}, {y}, {z}'.format(x = self.x, y = self.y, z = self.z)",Point3D,oop_with_placeholders
+"Using a built-in sorting algorithm, write a Python program to sort a given list of integers.","[3, 4, 6, 1, 9, 5, 2]","def sort_list(arr):
+    return sorted(arr)
+
+my_list = [3, 4, 6, 1, 9, 5, 2]
+sorted_list = sort_list(my_list)
+print(sorted_list)",Operator,2891,"def sort_list(arr):
+    return sorted(arr)
+
+my_list = [3, 4, 6, 1, 9, 5, 2]
+sorted_list = ___(my_list)
+print(sorted_list)",sort_list,operator_with_placeholders
+"Create a simple Python script that takes a single command-line parameter and prints out ""Hello <parameter>"" to the console.",John,"import sys
+
+name = sys.argv[1]
+print(""Hello {}"".format(name)) # Output: Hello John",Operator,6176,"import sys
+
+name = ___.argv[1]
+print(""Hello {}"".format(name)) # Output: Hello John",sys,operator_with_placeholders
+Create a Python program to group a list of numbers into two lists according to their parity (even/odd) in the most efficient way.,"[1, 4, 5, 3, 2, 6, 7]","even_list = []
+odd_list = []
+
+for num in input_list:
+ if num % 2 == 0:
+ even_list.append(num)
+ else:
+ odd_list.append(num)
+
+print('Even list:', even_list)
+print('Odd list:', odd_list)",Operator,6539,"even_list = []
+odd_list = []
+
+for num in input_list:
+ if num % ___ == 0:
+ even_list.append(num)
+ else:
+ odd_list.append(num)
+
+print('Even list:', even_list)
+print('Odd list:', odd_list)",2,operator_with_placeholders
+Create a web scraper with Python and Beautiful Soup to scrape data from a single webpage.,URL: http://example.com/page,"import requests
+from bs4 import BeautifulSoup
+
+url = 'http://example.com/page'
+
+response = requests.get(url)
+
+soup = BeautifulSoup(response.text, 'html.parser')
+
+results = soup.find_all('div', {'class': 'result'})
+
+for result in results:
+ title = result.find('h2').text
+ description = result.find('p').text 
+ print(title, description)",Lainnya,4150,"import ___
+from bs4 import BeautifulSoup
+
+url = 'http://example.com/page'
+
+response = requests.get(url)
+
+soup = BeautifulSoup(response.text, 'html.parser')
+
+results = soup.find_all('div', {'class': 'result'})
+
+for result in results:
+ title = result.find('h2').text
+ description = result.find('p').text 
+ print(title, description)",requests,others_with_placeholders
+"Generate a Python program to calculate the amount of time the user has been working on a specific task, given the start time and the current time.","start time=4:30pm, current time= 5:07pm","import datetime
+
+def get_time_difference(start_time, current_time):
+    start_time = datetime.datetime.strptime(start_time, ""%H:%M%p"")
+    current_time = datetime.datetime.strptime(current_time, ""%H:%M%p"")
+    return current_time - start_time",Lainnya,1361,"import ___
+
+def get_time_difference(start_time, current_time):
+    start_time = datetime.datetime.strptime(start_time, ""%H:%M%p"")
+    current_time = datetime.datetime.strptime(current_time, ""%H:%M%p"")
+    return current_time - start_time",datetime,others_with_placeholders
+Create a Python script that processes a sentence and classifies it as positive or negative.,The food was really bad.,"import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+sentence = ""The food was really bad.""
+
+sentiment_analyzer = SentimentIntensityAnalyzer()
+score = sentiment_analyzer.polarity_scores(sentence)
+
+if score['compound'] > 0:
+ sentiment = 'positive'
+elif score['compound'] < 0:
+ sentiment = 'negative'
+
+print(f'The sentence is {sentiment}.')",Lainnya,2530,"import ___
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+sentence = ""The food was really bad.""
+
+sentiment_analyzer = SentimentIntensityAnalyzer()
+score = sentiment_analyzer.polarity_scores(sentence)
+
+if score['compound'] > 0:
+ sentiment = 'positive'
+elif score['compound'] < 0:
+ sentiment = 'negative'
+
+print(f'The sentence is {sentiment}.')",nltk,others_with_placeholders
+Generate 3 random numbers within the specified range using Python.,"[0, 10]","import random
+
+random_numbers = random.sample(range(0, 10), 3) 
+print(random_numbers)",Lainnya,571,"import ___
+
+random_numbers = random.sample(range(0, 10), 3) 
+print(random_numbers)",random,others_with_placeholders
