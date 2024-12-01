@@ -4,12 +4,12 @@ Design a class in Python that models a customer with the following properties,"A
         self.name = name
         self.email = email
         self.phone_number = phone_number
-        self.address = address",OOP,34,"___
-    ___
-        ___ name
-        ___ email
-        ___ phone_number
-        ___ address"
+        self.address = address",OOP,34,"___ Customer:
+    def __init__(___,name, email, phone_number, address):
+        ___.name = name
+        ___.email = email
+        ___.phone_number = phone_number
+        ___.address = address"
 Create a class in Python that represents a given animal object.,Cat,"class Cat:
     def __init__(self):
         self.name = """"
@@ -18,15 +18,15 @@ Create a class in Python that represents a given animal object.,Cat,"class Cat:
         self.breed = """"
 
     def meow(self):
-        print(self.name, ""says meow!"")",OOP,595,"___
-    ___
-        ___ """"
-        ___ """"
-        ___ 0
-        ___ """"
+        print(self.name, ""says meow!"")",OOP,595,"___ Cat:
+    def __init__(___):
+        ___.name = """"
+        ___.colour = """"
+        ___.age = 0
+        ___.breed = """"
 
-    ___
-        print(self.name, ""says meow!"")"
+    def meow(___):
+        print(___.name, ""says meow!"")"
 Extend a Python class to create another class with similar behavior.,"class Vehicle:
 	def __init__(self):
 		self.speed = 0
@@ -41,17 +41,17 @@ Extend a Python class to create another class with similar behavior.,"class Vehi
         self.speed += 10
 
     def brake(self):
-        self.speed = max(self.speed - 7, 0)",OOP,836,"___):
-    ___
+        self.speed = max(self.speed - 7, 0)",OOP,836,"___ Motorcycle(Vehicle):
+    def __init__(___):
         super().__init__()
-        ___ 2
-        ___ 'motorcycle'
+        ___.num_wheels = 2
+        ___.type = 'motorcycle'
 
-    ___
-        self.speed += 10
+    def accelerate(___):
+        ___.speed += 10
 
-    ___
-        ___ max(self.speed - 7, 0)"
+    def brake(___):
+        ___.speed = max(___.speed - 7, 0)"
 Edit the following Python class such that it can accept a variable number of parameters.,"class Person:
     def __init__(self, name, age, weight):
         self.name = name
@@ -60,11 +60,11 @@ Edit the following Python class such that it can accept a variable number of par
     def __init__(self, *args):
         self.name = args[0]
         self.age = args[1]
-        self.weight = args[2]",OOP,1386,"___
-    ___
-        ___ args[0]
-        ___ args[1]
-        ___ args[2]"
+        self.weight = args[2]",OOP,1386,"___ Person:
+    def __init__(___, *args):
+        ___.name = args[0]
+        ___.age = args[1]
+        ___.weight = args[2]"
 Write Python code to implement a class like this.,"class Employee: 
     def __init__(self, name, age): 
         self.name = name 
@@ -77,13 +77,13 @@ Write Python code to implement a class like this.,"class Employee:
         return ""Employee({0}, {1})"".format(self.name,self.age) 
  
 emp = Employee(""John"", 24) 
-print(emp)",OOP,1520,"___ 
-    ___
-        ___ name 
-        ___ age 
+print(emp)",OOP,1520,"___ Employee: 
+    def __init__(___, name, age):
+        ___.name = name 
+        ___.age = age 
     
-     ___ 
-        return ""Employee({0}, {1})"".format(self.name,self.age) 
+     def __str__(___): 
+        return ""Employee({0}, {1})"".format(___.name,___.age) 
  
 emp = Employee(""John"", 24) 
 print(emp)"
@@ -92,22 +92,22 @@ attributes = [""Name"", ""Age"", ""Gender""]","class Person:
     def __init__(self, Name, Age, Gender):
         self.Name = Name
         self.Age = Age
-        self.Gender = Gender",OOP,1781,"___
-    ___
-        ___ Name
-        ___ Age
-        ___ Gender"
+        self.Gender = Gender",OOP,1781,"___ Person:
+    def __init__(___, Name, Age, Gender):
+        ___.Name = Name
+        ___.Age = Age
+        ___.Gender = Gender"
 Transform the code snippet into a Python class.,"def multiply(x, y):
     return x * y","class Calculator:
     def __init__(self):
         pass
 
     def multiply(self, x, y):
-        return x * y",OOP,1797,"___
-    ___
+        return x * y",OOP,1797,"___ Calculator:
+    def __init__(___):
         pass
 
-    ___
+    def multiply(___, x, y):
         return x * y"
 "Generate a new Python class which extends some existing class, but with a modified constructor.","class A:
     def __init__(self, param1, param2):
@@ -115,10 +115,10 @@ Transform the code snippet into a Python class.,"def multiply(x, y):
         self.param2 = param2","class B(A):
     def __init__(self, param1, param2, param3):
         super().__init__(param1, param2)
-        self.param3 = param3",OOP,1871,"___):
-    ___
+        self.param3 = param3",OOP,1871,"___ B(A):
+    def __init__(___, param1, param2, param3):
         super().__init__(param1, param2)
-        ___ param3"
+        ___.param3 = param3"
 Complete the Python class below so that it can calculate the sum of two integers.,"class Sum:
     def __init__(self, x, y):
         self.x = x
@@ -128,13 +128,13 @@ Complete the Python class below so that it can calculate the sum of two integers
         self.y = y
         
     def add(self):
-        return self.x + self.y",OOP,2023,"___
-    ___
-        ___ x
-        ___ y
+        return self.x + self.y",OOP,2023,"___ Sum:
+    def __init__(___, x, y):
+        ___.x = x
+        ___.y = y
         
-    ___
-        return self.x + self.y"
+    def add(___):
+        return ___.x + ___.y"
 Write a Python class to represent a polynomial of degree n.,<no input>,"class Polynomial:
     def __init__(self, coeff):
         self.coeff = coeff
@@ -143,28 +143,53 @@ Write a Python class to represent a polynomial of degree n.,<no input>,"class Po
         result = 0
         for idx, c in enumerate(self.coeff):
             result += c * x ** idx
-        return result",OOP,2112,"___
-    ___
-        ___ coeff
+        return result",OOP,2112,"___ Polynomial:
+    def __init__(___, coeff):
+        ___.coeff = coeff
 
-    ___
+    def __call__(___, x):
         result = 0
-        for idx, c in enumerate(self.coeff):
+        for idx, c in enumerate(___.coeff):
             result += c * x ** idx
         return result"
+What is the purpose of the method in line 4 of the code?,"def random_number_generator(min, max):
+  """"""Return a random number between the given range.""""""
+  rng = random.range(min, max)
+  return rng","The purpose of the method in line 4 is to generate a random number within the given range of min and max. It uses the Python's random.range() method which returns a random integer from the range of min to max, inclusive.",OOP,2201,"The purpose of the ___ in line 4 is to generate a random number within the given range of min and max. It uses the Python's random.range() ___ which returns a random integer from the range of min to max, inclusive."
+"using the following Json as an example, write a Python program that reads this Json into an object.","{
+   ""id"":1,
+   ""name"":""Testing"",
+   ""description"":""This is a test""
+}","import json
+
+# example data
+data = '{""id"":1,""name"":""Testing"",""description"":""This is a test""}'
+
+# parse data into a Python object
+obj = json.loads(data)
+
+print(obj)",OOP,2208,"import json
+
+# example data
+data = '{""id"":1,""name"":""Testing"",""description"":""This is a test""}'
+
+# parse data into a Python ___
+obj = json.loads(data)
+
+print(obj)"
 Create a class in Python that takes two arguments a 'name' and 'age' and returns a greeting.,-,"class Greeting:
     def __init__(self, name, age):
         self.name = name
         self.age = age
     
     def get_greeting(self):
-        return f""Hello, my name is {self.name} and I am {self.age} years old.""",OOP,2282,"___
-    ___
-        ___ name
-        ___ age
+        return f""Hello, my name is {self.name} and I am {self.age} years old.""",OOP,2282,"___ Greeting:
+    def __init__(___, name, age):
+        ___.name = name
+        ___.age = age
     
-    ___
-        return f""Hello, my name is {self.name} and I am {self.age} years old."""
+    def get_greeting(___):
+        return f""Hello, my name is {___.name} and I am {___.age} years old."""
 Construct a Python class that takes a given number and calculates the sum of the digits.,6342,"class SumOfDigits:
     
     def __init__(self, num):
@@ -178,14 +203,14 @@ Construct a Python class that takes a given number and calculates the sum of the
 
 digit_sum = SumOfDigits(6342)
 result = digit_sum.calculate_sum_of_digits()
-print(result)",OOP,2456,"___
+print(result)",OOP,2456,"___ SumOfDigits:
     
-    ___
-        ___ num
+    def __init__(___, num):
+        ___.num = num
     
-    ___
+    def calculate_sum_of_digits(___):
         total = 0
-        for ch in str(self.num):
+        for ch in str(___.num):
             total += int(ch)
         return total
 
@@ -206,16 +231,16 @@ Price: $3","class Invoice:
     def get_price(self):
         return self.price
 
-invoice = Invoice(""Pen"", 3)",OOP,2520,"___
-    ___
-        ___ item
-        ___ price
+invoice = Invoice(""Pen"", 3)",OOP,2520,"___ Invoice:
+    def __init__(___, item, price):
+        ___.item = item
+        ___.price = price
     
-    ___
-        return self.item
+    def get_item(___):
+        return ___.item
     
-    ___
-        return self.price
+    def get_price(___):
+        return ___.price
 
 invoice = Invoice(""Pen"", 3)"
 Design a class in Python to store details of a person,"Name: John
@@ -224,10 +249,10 @@ Age: 34","class Person:
         self.name = name
         self.age = age
 
-person = Person('John', 34)",OOP,2577,"___
-    ___
-        ___ name
-        ___ age
+person = Person('John', 34)",OOP,2577,"___ Person:
+    def __init__(___, name, age):
+        ___.name = name
+        ___.age = age
 
 person = Person('John', 34)"
 Design a class in Python to represent a circle.,< noinput >,"class Circle:
@@ -238,15 +263,15 @@ Design a class in Python to represent a circle.,< noinput >,"class Circle:
 
     def get_area(self):
         """"""Calculate and return the area of the circle.""""""
-        return 3.14 * self.radius * self.radius",OOP,2782,"___
+        return 3.14 * self.radius * self.radius",OOP,2782,"___ Circle:
     """"""Class to represent a circle.""""""
-    ___
+    def __init__(___, radius):
         """"""Initialize the circle.""""""
-        ___ radius
+        ___.radius = radius
 
-    ___
+    def get_area(___):
         """"""Calculate and return the area of the circle.""""""
-        return 3.14 * self.radius * self.radius"
+        return 3.14 * ___.radius * ___.radius"
 Construct a Python class with the following atributes and methods.,"Attributes: name, ID
 Methods: setName, setID, getName, getID","class MyClass:
     def __init__(self):
@@ -263,22 +288,22 @@ Methods: setName, setID, getName, getID","class MyClass:
         return self.name
  
     def getID(self):
-        return self.ID",OOP,3142,"___
-    ___
-        ___ """"
-        ___ 0
+        return self.ID",OOP,3142,"___ MyClass:
+    def __init__(___):
+        ___.name = """"
+        ___.ID = 0
  
-    ___
-        ___ name
+    def setName(___, name):
+        ___.name = name
     
-    ___
-        ___ ID
+    def setID(___, ID):
+        ___.ID = ID
  
-    ___
-        return self.name
+    def getName(___):
+        return ___.name
  
-    ___
-        return self.ID"
+    def getID(___):
+        return ___.ID"
 Create a class in python that finds the sum of two numbers.,No input,"class Sum:
     def __init__(self, x, y):
         self.x = x
@@ -289,13 +314,13 @@ Create a class in python that finds the sum of two numbers.,No input,"class Sum:
         
 if __name__ == '__main__':
     s = Sum(10, 5)
-    print(s.find_sum())",OOP,3380,"___
-    ___
-        ___ x
-        ___ y
+    print(s.find_sum())",OOP,3380,"___ Sum:
+    def __init__(___, x, y):
+        ___.x = x
+        ___.y = y
     
-    ___
-        return self.x + self.y
+    def find_sum(___):
+        return ___.x + ___.y
         
 if __name__ == '__main__':
     s = Sum(10, 5)
@@ -313,12 +338,12 @@ Create a class in Python to generate a calendar.,"calendarName = ""My Calendar""
         return calendar
 
 calendar = CalendarGenerator(calendarName)
-calendar.generate_calendar()",OOP,3441,"___):
+calendar.generate_calendar()",OOP,3441,"___ CalendarGenerator(___):
 
-    ___
-        ___ name
+    def __init__(___, name):
+        ___.name = name
 
-    ___
+    def generate_calendar(___):
         calendar = []
 
         # Code to generate a calendar goes here
@@ -342,20 +367,20 @@ Marks: [80, 90, 85, 100]","class Student:
         return self.age
     
     def get_total_marks(self):
-        return sum(self.marks)",OOP,3483,"___
-    ___
-        ___ name
-        ___ age
-        ___ marks
+        return sum(self.marks)",OOP,3483,"___ Student:
+    def __init__(___, name, age, marks):
+        ___.name = name
+        ___.age = age
+        ___.marks = marks
         
-    ___
-        return self.name
+    def get_name(___):
+        return ___.name
     
-    ___
-        return self.age
+    def get_age(___):
+        return ___.age
     
-    ___
-        return sum(self.marks)"
+    def get_total_marks(___):
+        return sum(___.marks)"
 Rewrite a given Java class using Python syntax.,"Java class MyClass with fields ""x"" and ""y"":
 
 public class MyClass {
@@ -369,10 +394,10 @@ public class MyClass {
 }","class MyClass:
  def __init__(self, x, y):
   self.x = x
-  self.y = y",OOP,3924,"___
- ___
-  ___ x
-  ___ y"
+  self.y = y",OOP,3924,"___ MyClass:
+ def __init__(___, x, y):
+  ___.x = x
+  ___.y = y"
 Create a Python class with the given attributes and functions.,"Attributes: name (string), age (integer), email address (string)
 Function: toString() - return a string with the formatted attributes","class Person:
     
@@ -382,24 +407,24 @@ Function: toString() - return a string with the formatted attributes","class Per
         self.email = email
     
     def toString(self):
-        return f""Name: {self.name}, Age: {self.age}, Email: {self.email}""",OOP,3963,"___
+        return f""Name: {self.name}, Age: {self.age}, Email: {self.email}""",OOP,3963,"___ Person:
     
-    ___
-        ___ name
-        ___ age
-        ___ email
+    def __init__(___, name, age, email):
+        ___.name = name
+        ___.age = age
+        ___.email = email
     
-    ___
-        return f""Name: {self.name}, Age: {self.age}, Email: {self.email}"""
+    def toString(___):
+        return f""Name: {___.name}, Age: {___.age}, Email: {___.email}"""
 Generate a class in Python that can store the following data,"Month, Calories, Exercise Minutes","class HealthData:
     def __init__(self, month, calories, minutes):
         self.month = month
         self.calories = calories
-        self.minutes = minutes",OOP,4017,"___
-    ___
-        ___ month
-        ___ calories
-        ___ minutes"
+        self.minutes = minutes",OOP,4017,"___ HealthData:
+    def __init__(___, month, calories, minutes):
+        ___.month = month
+        ___.calories = calories
+        ___.minutes = minutes"
 Develop an object orientated program in Python to generate random numbers.,Range: 10-50,"import random
 
 class RandNumGenerator:
@@ -414,13 +439,13 @@ if __name__ == '__main__':
     gen = RandNumGenerator(10, 50)
     print(gen.generate_rand_num())",OOP,4276,"import random
 
-___
-    ___
-        ___ low
-        ___ high
+___ RandNumGenerator:
+    def __init__(___, low, high):
+        ___.low = low
+        ___.high = high
     
-    ___
-        return random.randint(self.low, self.high)
+    def generate_rand_num(___):
+        return random.randint(___.low, ___.high)
 
 if __name__ == '__main__':
     gen = RandNumGenerator(10, 50)
@@ -432,14 +457,14 @@ Create a class in Python that can represent a 3D point with the given fields.,x 
     self.z = z
 
   def __str__(self):
-    return 'Point3D is at {x}, {y}, {z}'.format(x = self.x, y = self.y, z = self.z)",OOP,4291,"___
-  ___
-    ___ x
-    ___ y
-    ___ z
+    return 'Point3D is at {x}, {y}, {z}'.format(x = self.x, y = self.y, z = self.z)",OOP,4291,"___ Point3D:
+  def __init__(___, x, y, z):
+    ___.x = x
+    ___.y = y
+    ___.z = z
 
-  ___
-    return 'Point3D is at {x}, {y}, {z}'.format(x = self.x, y = self.y, z = self.z)"
+  def __str__(___):
+    return 'Point3D is at {x}, {y}, {z}'.format(x = ___.x, y = ___.y, z = ___.z)"
 Create a class in Python which takes an employee name and salary as parameters and prints them.,"Employee Name: John Smith, Salary: 5000","class Employee:
     def __init__(self, name, salary):
         self.name = name
@@ -449,16 +474,27 @@ Create a class in Python which takes an employee name and salary as parameters a
         print('Employee Name: {}, Salary: {}'.format(self.name, self.salary))
 
 employee = Employee('John Smith', 5000)
-employee.print_employee_details()",OOP,4321,"___
-    ___
-        ___ name
-        ___ salary
+employee.print_employee_details()",OOP,4321,"___ Employee:
+    def __init__(___, name, salary):
+        ___.name = name
+        ___.salary = salary
     
-    ___
-        print('Employee Name: {}, Salary: {}'.format(self.name, self.salary))
+    def print_employee_details(___):
+        print('Employee Name: {}, Salary: {}'.format(___.name, ___.salary))
 
 employee = Employee('John Smith', 5000)
 employee.print_employee_details()"
+Format a numerical table of data into a JSON object in Python.,Numerical table of data.,"Assuming the numerical table of data is stored in a 2D list data, a function to format it into a JSON object can be written as follows:
+
+import json
+def formatData2JSON(data):
+    json_formatted_data = json.dumps(data)
+    return json_formatted_data",OOP,4340,"Assuming the numerical table of data is stored in a 2D list data, a function to format it into a JSON ___ can be written as follows:
+
+import json
+def formatData2JSON(data):
+    json_formatted_data = json.dumps(data)
+    return json_formatted_data"
 Design a class in Python that implements a stack,No input,"class Stack:
     def __init__(self):
         self.items = []
@@ -476,24 +512,24 @@ Design a class in Python that implements a stack,No input,"class Stack:
         return self.items[len(self.items)-1]
     
     def size(self):
-        return len(self.items)",OOP,4380,"___
-    ___
-        ___ []
+        return len(self.items)",OOP,4380,"___ Stack:
+    def __init__(___):
+        ___.items = []
     
-    ___
-        return ___= []
+    def isEmpty(___):
+        return ___.items == []
     
-    ___
-        self.items.append(item)
+    def push(___, item):
+        ___.items.append(item)
     
-    ___
-        return self.items.pop()
+    def pop(___):
+        return ___.items.pop()
     
-    ___
-        return self.items[len(self.items)-1]
+    def peek(___):
+        return ___.items[len(___.items)-1]
     
-    ___
-        return len(self.items)"
+    def size(___):
+        return len(___.items)"
 Design a python class to store fruit and its quantity in a grocery store.,"Banana - 200
 Orange - 300
 Grapes - 500","class FruitGrocery:
@@ -505,16 +541,16 @@ Grapes - 500","class FruitGrocery:
         }
 
     def get_item_quantity(self, item):
-        return self.items.get(item)",OOP,4742,"___
-    ___
-        ___ {
+        return self.items.get(item)",OOP,4742,"___ FruitGrocery:
+    def __init__(___):
+        ___.items = {
             'Banana': 200,
             'Orange': 300,
             'Grapes': 500
         }
 
-    ___
-        return self.items.get(item)"
+    def get_item_quantity(___, item):
+        return ___.items.get(item)"
 Write a Python class that takes 2 strings as arguments and prints them out in a concatenated form.,"string1 = ""Hello"" 
 string2 = ""World""","class ConcatStrings:
     def __init__(self, string1, string2):
@@ -522,13 +558,13 @@ string2 = ""World""","class ConcatStrings:
         self.string2 = string2
 
     def print_concat(self):
-        print(self.string1 + self.string2)",OOP,5493,"___
-    ___
-        ___ string1
-        ___ string2
+        print(self.string1 + self.string2)",OOP,5493,"___ ConcatStrings:
+    def __init__(___, string1, string2):
+        ___.string1 = string1
+        ___.string2 = string2
 
-    ___
-        print(self.string1 + self.string2)"
+    def print_concat(___):
+        print(___.string1 + ___.string2)"
 Use the given data structure to create a python class.,"data = { 
    ""name"": ""John Doe"",
    ""age"": 30,
@@ -537,24 +573,38 @@ Use the given data structure to create a python class.,"data = {
     def __init__(self, data):
         self.name = data['name']
         self.age = data['age']
-        self.city = data['city']",OOP,5552,"___
-    ___
-        ___ data['name']
-        ___ data['age']
-        ___ data['city']"
+        self.city = data['city']",OOP,5552,"___ Person:
+    def __init__(___, data):
+        ___.name = data['name']
+        ___.age = data['age']
+        ___.city = data['city']"
+Classify the following as a Python class,"def add(a, b):
+    return a + b",This is not a Python class. It is a Python function.,OOP,5758,This is not a Python ___. It is a Python function.
 Create a Python class that has the following functionality.,Create a class with a method to check if a given string contains any vowels or not.,"class StringChecker:
     def containsVowels(self, s):
         vowels = set('aeiouAEIOU')
         for letter in s:
             if letter in vowels:
                 return True
-        return False",OOP,5822,"___
-    ___
+        return False",OOP,5822,"___ StringChecker:
+    def containsVowels(___, s):
         vowels = set('aeiouAEIOU')
         for letter in s:
             if letter in vowels:
                 return True
         return False"
+Convert the following python class to XML format.,"class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age","<?xml version=""1.0"" ?>
+<person>
+    <name>{self.name}</name>
+    <age>{self.age}</age>
+</person>",OOP,5829,"<?xml version=""1.0"" ?>
+<person>
+    <name>{___.name}</name>
+    <age>{___.age}</age>
+</person>"
 Create a class in Python to represent a circle containing methods to calculate the area and circumference.,-,"class Circle:
     def __init__(self, radius):
         self.radius = radius
@@ -563,26 +613,26 @@ Create a class in Python to represent a circle containing methods to calculate t
         return 3.14 * self.radius * self.radius
 
     def circumference(self):
-        return 2 * 3.14 * self.radius",OOP,5908,"___
-    ___
-        ___ radius
+        return 2 * 3.14 * self.radius",OOP,5908,"___ Circle:
+    def __init__(___, radius):
+        ___.radius = radius
 
-    ___
-        return 3.14 * self.radius * self.radius
+    def area(___):
+        return 3.14 * ___.radius * ___.radius
 
-    ___
-        return 2 * 3.14 * self.radius"
+    def circumference(___):
+        return 2 * 3.14 * ___.radius"
 "Develop a Python class to represent an employee with name, position and salary.","The employee is named 'John', he is a software engineer and he earns 6000$ per month.","class Employee:
     def __init__(self, name, position, salary):
         self.name = name
         self.position = position
         self.salary = salary
 
-john = Employee('John', 'Software Engineer', 6000)",OOP,5925,"___
-    ___
-        ___ name
-        ___ position
-        ___ salary
+john = Employee('John', 'Software Engineer', 6000)",OOP,5925,"___ Employee:
+    def __init__(___, name, position, salary):
+        ___.name = name
+        ___.position = position
+        ___.salary = salary
 
 john = Employee('John', 'Software Engineer', 6000)"
 Write a Python program to generate a Python Class using the given description.,"description = ""This class should store the name, age, and height of a person.""","class Person:
@@ -598,20 +648,20 @@ Write a Python program to generate a Python Class using the given description.,"
  return self.age
  
  def get_height(self):
-return self.height",OOP,6033,"___
- ___
- ___ name
- ___ age
- ___ height
+return self.height",OOP,6033,"___ Person:
+ def __init__(___, name, age, height):
+ ___.name = name
+ ___.age = age
+ ___.height = height
  
- ___
- return self.name
+ def get_name(___):
+ return ___.name
  
- ___
- return self.age
+ def get_age(___):
+ return ___.age
  
- ___
-return self.height"
+ def get_height(___):
+return ___.height"
 "Create a class in Python that inherits from the given base class, and implements the given interface.","BaseClass: Animal
 Interface: eat(food)","class Animal:
     def __init__(self, name):
@@ -619,13 +669,13 @@ Interface: eat(food)","class Animal:
 
 class Cat(Animal):
     def eat(self, food):
-        print(""{} is eating {}!"".format(self.name, food))",OOP,6218,"___
-    ___
-        ___ name
+        print(""{} is eating {}!"".format(self.name, food))",OOP,6218,"___ Animal:
+    def __init__(___, name):
+        ___.name = name
 
-___):
-    ___
-        print(""{} is eating {}!"".format(self.name, food))"
+___ Cat(Animal):
+    def eat(___, food):
+        print(""{} is eating {}!"".format(___.name, food))"
 Develop a class in Python to keep track of stock prices,Symbol: AAPL,"class Stock:
   def __init__(self, symbol):
     self.symbol = symbol
@@ -641,16 +691,16 @@ AAPL = Stock('AAPL')
 AAPL.add_price(191.43)
 AAPL.add_price(193.57)
 AAPL.add_price(190.08)
-AAPL.get_prices()",OOP,6277,"___
-  ___
-    ___ symbol
-    ___ []
+AAPL.get_prices()",OOP,6277,"___ Stock:
+  def __init__(___, symbol):
+    ___.symbol = symbol
+    ___.prices = []
  
-  ___
-    self.prices.append(price)
+  def add_price(___, price):
+    ___.prices.append(price)
  
-  ___
-    return self.prices
+  def get_prices(___):
+    return ___.prices
       
 AAPL = Stock('AAPL')
 AAPL.add_price(191.43)
@@ -668,33 +718,33 @@ getInfo() - Returns a string with student's name and age","class Student:
         self.age = age
 
     def getInfo(self):
-        return ""Name: {}, Age: {}"".format(self.name, self.age)",OOP,6549,"___
-    ___
-        ___ name
-        ___ age
+        return ""Name: {}, Age: {}"".format(self.name, self.age)",OOP,6549,"___ Student:
+    def __init__(___, name, age):
+        ___.name = name
+        ___.age = age
 
-    ___
-        return ""Name: {}, Age: {}"".format(self.name, self.age)"
+    def getInfo(___):
+        return ""Name: {}, Age: {}"".format(___.name, ___.age)"
 Write a class definition in python that will initialize an object of the class with given parameters,"name, age","class Person:
     def __init__(self, name, age):
         self.name = name
-        self.age = age",OOP,6614,"___
-    ___
-        ___ name
-        ___ age"
+        self.age = age",OOP,6614,"___ Person:
+    def __init__(___, name, age):
+        ___.name = name
+        ___.age = age"
 Generate a Python code to create a class which creates an empty dictionary with the given keys.,"""name, age""","class EmptyDictionary:
     def __init__(self, keys):
         self.keys = [k.strip() for k in keys.split("","")]
         self.dictionary = {k: None for k in self.keys}
             
     def get_dictionary(self):
-        return self.dictionary",OOP,6690,"___
-    ___
-        ___ [k.strip() for k in keys.split("","")]
-        ___ {k: None for k in self.keys}
+        return self.dictionary",OOP,6690,"___ EmptyDictionary:
+    def __init__(___, keys):
+        ___.keys = [k.strip() for k in keys.split("","")]
+        ___.dictionary = {k: None for k in ___.keys}
             
-    ___
-        return self.dictionary"
+    def get_dictionary(___):
+        return ___.dictionary"
 Write a class that implements the singleton pattern in Python.,No input,"class Singleton:
     instance = None
 
@@ -702,10 +752,10 @@ Write a class that implements the singleton pattern in Python.,No input,"class S
     def get_instance():
         if Singleton.instance is None:
             Singleton.instance = Singleton()
-        return Singleton.instance",OOP,6757,"___
+        return Singleton.instance",OOP,6757,"___ Singleton:
     instance = None
 
-    ___
+    @staticmethod
     def get_instance():
         if Singleton.instance is None:
             Singleton.instance = Singleton()
@@ -721,16 +771,16 @@ Provide a valid Python class definition that uses the below given values.,"Class
         self.speed = speed
     
     def set_color(self, color):
-        self.color = color",OOP,6800,"___
-    ___
-        ___ speed
-        ___ color
+        self.color = color",OOP,6800,"___ Automobile:
+    def __init__(___, speed, color):
+        ___.speed = speed
+        ___.color = color
 
-    ___
-        ___ speed
+    def set_speed(___, speed):
+        ___.speed = speed
     
-    ___
-        ___ color"
+    def set_color(___, color):
+        ___.color = color"
 Develop a class in Python to optimize the existing code.,"def display_message(message):
   print(message)
 
@@ -743,12 +793,12 @@ display_message('Hello World!')","class Display():
     
 message = input('Enter a message: ')
 display_obj = Display(message)
-display_obj.display_message()",OOP,6889,"class Display():
-  ___
-    ___ message
+display_obj.display_message()",OOP,6889,"___ Display():
+  def __init__(___, message):
+    ___.message = message
     
-  ___
-    print(self.message)
+  def display_message(___):
+    print(___.message)
     
 message = input('Enter a message: ')
 display_obj = Display(message)
@@ -757,11 +807,11 @@ Create a class in Python to store user information with the given attributes.,"A
     def __init__(self, username, email, profile_picture):
         self.username = username
         self.email = email
-        self.profile_picture = profile_picture",OOP,7182,"___
-    ___
-        ___ username
-        ___ email
-        ___ profile_picture"
+        self.profile_picture = profile_picture",OOP,7182,"___ UserInformation:
+    def __init__(___, username, email, profile_picture):
+        ___.username = username
+        ___.email = email
+        ___.profile_picture = profile_picture"
 Use a given class to deserialize a JSON response into a Python dictionary.,"import json
 from some_library import Deserializer
 
@@ -775,8 +825,8 @@ response = '{""data"": ""abc""}'","class MyDeserializer(Deserializer):
 deserializer = MyDeserializer()
 deserialized_data = deserializer.deserialize(response)
 
-print(deserialized_data)",OOP,7206,"___):
-    ___
+print(deserialized_data)",OOP,7206,"___ MyDeserializer(Deserializer):
+    def deserialize(___, response):
         return json.loads(response)
 
 deserializer = MyDeserializer()
@@ -787,11 +837,11 @@ Generate a Python class with the following variables.,"name, job, age","class Pe
   def __init__(self, name, job, age):
     self.name = name
     self.job = job
-    self.age = age",OOP,7267,"___
-  ___
-    ___ name
-    ___ job
-    ___ age"
+    self.age = age",OOP,7267,"___ Person:
+  def __init__(___, name, job, age):
+    ___.name = name
+    ___.job = job
+    ___.age = age"
 Generate a valid python class that captures person information,"Name, Age, Gender, Nationality","class Person:
     def __init__(self, name, age, gender, nationality):
         self.name = name
@@ -801,13 +851,13 @@ Generate a valid python class that captures person information,"Name, Age, Gende
  
     def __str__(self):
         return 'Name: {}\nAge: {}\nGender: {}\nNationality: {}'.format(
-            self.name, self.age, self.gender, self.nationality)",OOP,7364,"___
-    ___
-        ___ name
-        ___ age
-        ___ gender
-        ___ nationality
+            self.name, self.age, self.gender, self.nationality)",OOP,7364,"___ Person:
+    def __init__(___, name, age, gender, nationality):
+        ___.name = name
+        ___.age = age
+        ___.gender = gender
+        ___.nationality = nationality
  
-    ___
+    def __str__(___):
         return 'Name: {}\nAge: {}\nGender: {}\nNationality: {}'.format(
-            self.name, self.age, self.gender, self.nationality)"
+            ___.name, ___.age, ___.gender, ___.nationality)"

@@ -1,19 +1,4 @@
-Instruction,Input,Output,materi,question_id,Template
-Create a Python program to check if an integer is divisible by 5,Integer : 10,"def is_divisible_by_5(number):
-    if (number % 5 == 0):
-        return True
-    else:
-        return False
-    
-number = 10
-is_divisible_by_5(number)",Control Structure,3,"def is_divisible_by_5(number):
-    ___
-        return True
-    ___
-        return False
-    
-number = 10
-is_divisible_by_5(number)"
+Instruction,Input,Output,materi,question_id,Template,correct_answer
 Write a python program to check if two sequences are identical.,"[1,2,3], [1,2,3]","def check_seq(seq1, seq2):
     if len (seq1) != len (seq2): 
         return False
@@ -22,13 +7,13 @@ Write a python program to check if two sequences are identical.,"[1,2,3], [1,2,3
             if seq1[i] != seq2[i]:
                 return False
     return True",Control Structure,32,"def check_seq(seq1, seq2):
-    if len (seq1) != len (seq2): 
+    if ___ (seq1) != len (seq2): 
         return False
-    ___ 
+    else: 
         for i in range(len (seq1)):
             if seq1[i] != seq2[i]:
                 return False
-    return True"
+    return True",len
 Write a Python program to take user input and check if it is a palindrome or not.,racecar,"def isPalindrome(inp):
  inp = inp.lower()
  return inp == inp[::-1]
@@ -42,10 +27,10 @@ else:
  return inp == inp[::-1]
 
 user_input = input('Enter string: ')
-if isPalindrome(user_input):
+if ___(user_input):
  print('It\'s a palindrome')
-___
- print('It\'s not a palindrome')"
+else:
+ print('It\'s not a palindrome')",isPalindrome
 Write a Python script that uses recursion to calculate the Fibonacci sequence for a given number of terms.,6,"def Fibonacci(n): 
    if n<0: 
       print(""Incorrect input"") 
@@ -59,18 +44,18 @@ Write a Python script that uses recursion to calculate the Fibonacci sequence fo
 # Driver Program 
 n = 6
 print(Fibonacci(n))",Control Structure,63,"def Fibonacci(n): 
-   if n<0: 
+   if ___<0: 
       print(""Incorrect input"") 
    elif n==1: 
       return 0
    elif n==2: 
       return 1
-   ___ 
+   else: 
       return Fibonacci(n-1)+Fibonacci(n-2) 
  
 # Driver Program 
 n = 6
-print(Fibonacci(n))"
+print(Fibonacci(n))",n
 Create an API wrapper in Python for the following API,"""https://example.com/api/users/list""","import requests 
 
 # API wrapper for the given API 
@@ -85,7 +70,7 @@ def api_wrapper(url):
     else: 
         return None",Control Structure,77,"import requests 
 
-# API wrapper for the given API 
+# API wrapper for ___ given API 
 def api_wrapper(url): 
     # get the API response 
     response = requests.get(url) 
@@ -94,8 +79,8 @@ def api_wrapper(url):
     if(response.status_code == 200): 
         # return json data 
         return response.json()
-    ___ 
-        return None"
+    else: 
+        return None",the
 Design a function in Python to determine if a given number is prime.,37,"def is_prime(n):
     if n <= 1: 
         return False
@@ -112,30 +97,63 @@ Design a function in Python to determine if a given number is prime.,37,"def is_
 
 if is_prime(37):
     print('37 is a prime number!')",Control Structure,94,"def is_prime(n):
-    if n <= 1: 
+    if ___ <= 1: 
         return False
-    ___ 
+    if n == 2: 
         return True
-    ___ 
+    if n > 2 and n % 2 == 0: 
         return False
 
     sqrt_n = int(n**0.5)
     for i in range(3, sqrt_n+1, 2):
-        ___
+        if n % i == 0:
             return False
     return True
 
 if is_prime(37):
-    print('37 is a prime number!')"
+    print('37 is a prime number!')",n
+Construct a python program to check if two given strings are anagrams.,"String1: army
+String2: mary","def isAnagram(str1, str2):  
+    n1 = len(str1)
+    n2 = len(str2) 
+    if n1 != n2: 
+        return False
+    str1 = ''.join(sorted(str1)) 
+    str2 = ''.join(sorted(str2))  
+    for i in range(n1):  
+        if str1[i] != str2[i]:  
+            return False
+    return True",Control Structure,134,"def isAnagram(str1, str2):  
+    n1 = len(str1)
+    n2 = len(str2) 
+    if ___ != n2: 
+        return False
+    str1 = ''.join(sorted(str1)) 
+    str2 = ''.join(sorted(str2))  
+    for i in range(n1):  
+        if str1[i] != str2[i]:  
+            return False
+    return True",n1
 "Create a Python program that reads an integer from the console and prints ""true"" if the number is even, and ""false"" if the number is odd.",3,"num = int(input())
 if num % 2 == 0:
     print(""true"")
 else:
     print(""false"")",Control Structure,141,"num = int(input())
-___
+if ___ % 2 == 0:
     print(""true"")
-___
-    print(""false"")"
+else:
+    print(""false"")",num
+Design a function for ordering a pizza in Python and use it to order a pizza with 3 toppings.,"Toppings: Pepperoni, Mushroom, Olives","def orderPizza(toppings):
+    print(""Ordering a pizza with the following toppings:"")
+    for topping in toppings:
+      print(topping)
+    print(""Thank you!"")
+orderPizza([""Pepperoni"", ""Mushroom"", ""Olives""])",Control Structure,143,"def orderPizza(toppings):
+    print(""Ordering a pizza with the following toppings:"")
+    for ___ in toppings:
+      print(topping)
+    print(""Thank you!"")
+orderPizza([""Pepperoni"", ""Mushroom"", ""Olives""])",topping
 Design a Python program for verifying the two strings are rotations of each other?,"s1 = ""Hello World""
 s2 = ""World Hello""","def check_rotation(str1, str2): 
 	if len(str1) != len(str2): 
@@ -149,7 +167,7 @@ if check_rotation(s1, s2):
 	print('These strings are rotations of each other'); 
 else: 
 	print('These strings are not rotations of each other')",Control Structure,164,"def check_rotation(str1, str2): 
-	if len(str1) != len(str2): 
+	if ___(str1) != len(str2): 
 		return False
 	temp = str1 + str1
 	return (str2 in temp) 
@@ -158,17 +176,17 @@ s1 = ""Hello World""
 s2 = ""World Hello""
 if check_rotation(s1, s2): 
 	print('These strings are rotations of each other'); 
-___ 
-	print('These strings are not rotations of each other')"
+else: 
+	print('These strings are not rotations of each other')",len
 Create a method in Python that takes two arguments and returns a specified error message if one of the two conditions is not met.,"error_message = ""The input must be a number!""","def check_input(arg1, arg2):
    if type(arg1) is not int or type(arg2) is not int:
       return ""The input must be a number!""
    else:
       return ""The input is valid!""",Control Structure,182,"def check_input(arg1, arg2):
-   ___
+   if ___(arg1) is not int or type(arg2) is not int:
       return ""The input must be a number!""
-   ___
-      return ""The input is valid!"""
+   else:
+      return ""The input is valid!""",type
 Create a program in Python to check for duplicate words in a given sentence.,"sentence = ""I am going to the store to buy food""","sentence = ""I am going to the store to buy food""
 
 words = sentence.split(' ')
@@ -187,18 +205,18 @@ words = sentence.split(' ')
 #Table to keep track of duplicates
 table = []
 
-for word in words:
+for ___ in words:
  if word in table:
  print(""Duplicate word found: ""+word)
- ___
- table.append(word)"
+ else:
+ table.append(word)",word
 Generate the following sequence using a while loop in Python.,"0, 1, 2, 4, 7, 11, ...","a, b = 0, 1
 while b < 100:
     print(a)
     a, b = b, a + b",Control Structure,221,"a, b = 0, 1
-___
+while ___ < 100:
     print(a)
-    a, b = b, a + b"
+    a, b = b, a + b",b
 Edit the Python program below to add an if condition to determine if an input number is odd or even.,"def odd_or_even(number):
     # your code here","def odd_or_even(number):
     # your code here
@@ -207,10 +225,10 @@ Edit the Python program below to add an if condition to determine if an input nu
     else:
         return ""odd""",Control Structure,250,"def odd_or_even(number):
     # your code here
-    ___
+    if ___ % 2 == 0:
         return ""even""
-    ___
-        return ""odd"""
+    else:
+        return ""odd""",number
 Create a python program that detects if a number is even or odd.,7,"def is_even_odd(num):
     if num % 2 == 0:
         return ""Even""
@@ -219,13 +237,13 @@ Create a python program that detects if a number is even or odd.,7,"def is_even_
 
 result = is_even_odd(7)
 print(result)",Control Structure,269,"def is_even_odd(num):
-    ___
+    if ___ % 2 == 0:
         return ""Even""
-    ___
+    else:
         return ""Odd""
 
 result = is_even_odd(7)
-print(result)"
+print(result)",num
 Design a program to find the nth term of the Fibonacci sequence for a given number n.,n = 10,"# Python 3 program to find the nth
 # Fibonacci number
 def Fibonacci(n):
@@ -247,7 +265,7 @@ print(Fibonacci(10))
 34",Control Structure,310,"# Python 3 program to find the nth
 # Fibonacci number
 def Fibonacci(n):
-    if n<0:
+    if ___<0:
         print(""Incorrect input"")
     # First Fibonacci number is 0
     elif n==1:
@@ -255,14 +273,14 @@ def Fibonacci(n):
     # Second Fibonacci number is 1
     elif n==2:
         return 1
-    ___
+    else:
         return Fibonacci(n-1)+Fibonacci(n-2)
  
 # Driver Program
 print(Fibonacci(10))
 
 # Output
-34"
+34",n
 "Create a Python program to grade a multiple choice test with 4 options for each question, and each correct answer is worth 3 points.","Example question:
 What color is the sky?
 A. Red B. White C. Yellow D. Blue
@@ -274,19 +292,28 @@ Correct Answer: D","def grade_test(questions):
             score += 3
     return score",Control Structure,366,"def grade_test(questions):
     score = 0
-    for question in questions:
-        ___
+    for ___ in questions:
+        if question['answer'] == question['correct_answer']:
             score += 3
-    return score"
+    return score",question
+Optimize the following python code for a more efficient solution.,"def to_square(nums):
+    squares = []
+    for num in nums:
+        squares.append(num * num)
+    return squares","def to_square(nums):
+    squares = [num * num for num in nums]
+    return squares",Control Structure,382,"def to_square(nums):
+    squares = [num * num for ___ in nums]
+    return squares",num
 Develop a Python program to detect if an entered number is even or odd.,The entered number is 344,"even_or_odd = int(input(""Please enter a number: ""))
 if even_or_odd % 2 == 0:
   print(""The number is Even."")
 else:
   print(""The number is Odd."")",Control Structure,429,"even_or_odd = int(input(""Please enter a number: ""))
-___
+if ___ % 2 == 0:
   print(""The number is Even."")
-___
-  print(""The number is Odd."")"
+else:
+  print(""The number is Odd."")",even_or_odd
 Modify the following code in Python to only repeat a segment of the code while a certain user input is given.,"while True:
 	print(""Hello World"")","# Get user input
 input = input('Enter ""repeat"" to repeat the code: ')
@@ -297,10 +324,10 @@ while input == 'repeat':
 	input = input('Enter ""repeat"" to repeat the code: ')",Control Structure,443,"# Get user input
 input = input('Enter ""repeat"" to repeat the code: ')
 
-# Execute the code while user input is ""repeat"" 
-___
+# Execute the code while ___ input is ""repeat"" 
+while input == 'repeat':
 	print(""Hello World"")
-	input = input('Enter ""repeat"" to repeat the code: ')"
+	input = input('Enter ""repeat"" to repeat the code: ')",user
 Write a Python script to search a given dictionary for a given word.,"dictionary = {""hello"": ""Str","def search_word(word, dictionary):
     if word in dictionary.keys():
         return dictionary[word]
@@ -318,9 +345,9 @@ if result:
 
 else:
     print('Word not found in dictionary.')",Control Structure,451,"def search_word(word, dictionary):
-    if word in dictionary.keys():
+    if ___ in dictionary.keys():
         return dictionary[word]
-    ___
+    else:
         return None
 
 dictionary = {'hello': 'string', 'goodbye': 'bye'}
@@ -332,8 +359,8 @@ result = search_word(word, dictionary)
 if result:
     print('Word found in dictionary: ' + result)
 
-___
-    print('Word not found in dictionary.')"
+else:
+    print('Word not found in dictionary.')",word
 Modify this Python code to add an exception for invalid input.,"def calculate(a, b):
     if b > 0:
         c = a / b
@@ -345,13 +372,14 @@ Modify this Python code to add an exception for invalid input.,"def calculate(a,
         return c
     else:
         raise ValueError",Control Structure,498,"def calculate(a, b):
-    ___
+    if ___ == 0:
         raise ZeroDivisionError
     elif b > 0:
         c = a / b
         return c
-    ___
-        raise ValueError"
+    else:
+        raise ValueError",b
+Suggest an web scraping algorithm for the following website.,https://www.example.com/,"A useful strategy for web scraping this site would be to use the Python library requests to make HTTP requests and BeautifulSoup to parse the HTML content. First, you should make an HTTP request to the website, then you should use BeautifulSoup to find the specific elements you are interested in and extract the data.",Control Structure,533,"A useful strategy for ___ scraping this site would be to use the Python library requests to make HTTP requests and BeautifulSoup to parse the HTML content. First, you should make an HTTP request to the website, then you should use BeautifulSoup to find the specific elements you are interested in and extract the data.",web
 Write an algorithm in Python to check if a number is a palindrome.,number = 121,"def is_palindrome(number): 
 num = number  
    
@@ -382,11 +410,11 @@ while(number > 0):
    reverse = (reverse * 10) + remainder 
    number = number // 10 
  
-# check if original and reverse numbers are same
-___ 
+# check if ___ and reverse numbers are same
+if (num == reverse): 
   return True
-___ 
-  return False"
+else: 
+  return False",original
 Develop Python code to check if a given number is plaindrome.,1454,"def is_plaindrome(num):
     original_num = num
     reversed_num = 0
@@ -403,7 +431,7 @@ else:
     print(num, ""is not a plaindrome"")",Control Structure,591,"def is_plaindrome(num):
     original_num = num
     reversed_num = 0
-    ___
+    while ___ > 0:
         remainder = num % 10
         reversed_num = (reversed_num * 10) + remainder
         num //= 10
@@ -412,8 +440,8 @@ else:
 num = 1454
 if is_plaindrome(num):
     print(num, ""is a plaindrome"")
-___
-    print(num, ""is not a plaindrome"")"
+else:
+    print(num, ""is not a plaindrome"")",num
 Test if a given number is a Prime or not using Python.,number = 32,"if number<=1: 
   print(""Number is not a prime number."") 
 for i in range(2,int(number**0.5)+1):
@@ -421,14 +449,40 @@ for i in range(2,int(number**0.5)+1):
     print(""Number is not a prime number."")
     break
 else: 
-  print(""Number is a prime number."")",Control Structure,596,"if number<=1: 
+  print(""Number is a prime number."")",Control Structure,596,"if ___<=1: 
   print(""Number is not a prime number."") 
 for i in range(2,int(number**0.5)+1):
   if(number % i == 0):
     print(""Number is not a prime number."")
-    ___
-___ 
-  print(""Number is a prime number."")"
+    break
+else: 
+  print(""Number is a prime number."")",number
+Create a function in Python to compare two strings and return true if the strings only differ by one character.,"s1 = 'apple'
+s2 = 'acple'","def compare_strings(s1, s2):
+    mismatch_count = 0
+
+    for i in range(len(s1)):
+        if s1[i] != s2[i]:
+            if mismatch_count > 0:
+                return False
+
+            mismatch_count += 1
+
+    return mismatch_count == 1
+
+compare_strings('apple', 'acple')",Control Structure,604,"def compare_strings(s1, s2):
+    mismatch_count = 0
+
+    for ___ in range(len(s1)):
+        if s1[i] != s2[i]:
+            if mismatch_count > 0:
+                return False
+
+            mismatch_count += 1
+
+    return mismatch_count == 1
+
+compare_strings('apple', 'acple')",i
 Write a Python program to calculate the average monthly temperature of a given city for the last 10 years.,"City: Los Angeles, California
 10 year average temperature from 2010 to 2020","import csv
 
@@ -446,36 +500,36 @@ def avg_month_temp(city):
  result = 0
  counter = 0
  temperatures = csv.reader(open('weatherdata.csv'))
- for row in temperatures:
- ___
+ for ___ in temperatures:
+ if row[1] == city:
  result += float(row[2])
  counter += 1
- return result/counter"
+ return result/counter",row
 Create a Python procedure to determine if two numbers are divisible.,14 and 7,"def divisible(x, y):
     if x % y == 0:
         return True
     else:
         return False",Control Structure,634,"def divisible(x, y):
-    ___
+    if ___ % y == 0:
         return True
-    ___
-        return False"
+    else:
+        return False",x
 Create a for loop in Python that prints the output of a multiplication table for numbers from 1 to 10.,-,"for i in range(1, 11):
   for j in range(1, 11):
     print(i * j, end='\t')
-  print()",Control Structure,644,"___
-  ___
+  print()",Control Structure,644,"for ___ in range(1, 11):
+  for j in range(1, 11):
     print(i * j, end='\t')
-  print()"
+  print()",i
 Develop a Python script for checking for palindromes.,<none>,"def is_palindrome(word):
   rev_word = word[::-1]
   if word == rev_word:
     return True
   return False",Control Structure,647,"def is_palindrome(word):
   rev_word = word[::-1]
-  ___
+  if ___ == rev_word:
     return True
-  return False"
+  return False",word
 Design an algorithm to check if a given number is prime in Python.,n = 19,"def is_prime(n):
     """"""Check if a given number is prime.""""""
     # Corner case
@@ -491,20 +545,20 @@ Design an algorithm to check if a given number is prime in Python.,n = 19,"def i
 
 # Output
 print(is_prime(n))",Control Structure,760,"def is_prime(n):
-    """"""Check if a given number is prime.""""""
+    """"""Check if ___ given number is prime.""""""
     # Corner case
     if n <= 1:
         return False
 
     # Check for divisibility
     for i in range(2, n):
-        ___
+        if n % i == 0:
             return False
     # Return true if it is not divisible by any number
     return True
 
 # Output
-print(is_prime(n))"
+print(is_prime(n))",a
 Design a function to tell if a number is even or odd using Python.,x = 5,"def isEven(x):
     if x % 2 == 0:
         return True
@@ -517,17 +571,17 @@ if isEven(x):
     print(""It is even"")
 else:
     print(""It is odd"")",Control Structure,778,"def isEven(x):
-    ___
+    if ___ % 2 == 0:
         return True
-    ___
+    else:
         return False
 
 x = 5
 
 if isEven(x):
     print(""It is even"")
-___
-    print(""It is odd"")"
+else:
+    print(""It is odd"")",x
 Suggest a completion for the following Python code to check if a given number is an Armstrong number.,def is_armstrong_number(num):,"def is_armstrong_number(num):
   order = len(str(num))
   sum = 0
@@ -543,14 +597,14 @@ Suggest a completion for the following Python code to check if a given number is
   order = len(str(num))
   sum = 0
   temp = num
-  ___
+  while ___ > 0:
     digit = temp % 10
     sum += digit ** order
     temp //= 10
-  ___
+  if num == sum:
     return True  
-  ___
-    return False"
+  else:
+    return False",temp
 Write a conditional statement in Python that checks if two lists have the same items.,"list1 = [9,8,7]
 list2 = [7,8,9]","list1 = [9,8,7]
 list2 = [7,8,9]
@@ -561,10 +615,29 @@ else:
     print(""The lists do not have the same items."")",Control Structure,818,"list1 = [9,8,7]
 list2 = [7,8,9]
 
-___
+if ___ == list2:
     print(""The lists have the same items."")
-___
-    print(""The lists do not have the same items."")"
+else:
+    print(""The lists do not have the same items."")",list1
+Create a function in Python that takes two strings and checks if they are anagrams of each other.,"""apple"", ""pleap""","def is_anagram(str1, str2): 
+    if len(str1)!= len(str2): 
+        return False
+    first_list = list(str1.lower())
+    second_list = list(str2.lower())
+    first_list.sort()
+    second_list.sort()
+    return first_list == second_list
+
+print(is_anagram(""apple"",""pleap""))",Control Structure,841,"def is_anagram(str1, str2): 
+    if ___(str1)!= len(str2): 
+        return False
+    first_list = list(str1.lower())
+    second_list = list(str2.lower())
+    first_list.sort()
+    second_list.sort()
+    return first_list == second_list
+
+print(is_anagram(""apple"",""pleap""))",len
 Construct a Python program that will search for a given word in a web page and return the number of occurrences.,"word=""Python""
 url=""www.example.com""","import requests
 
@@ -592,11 +665,44 @@ words = html_content.split()
 
 occurrences = 0
 
-for w in words:
-    ___
+for ___ in words:
+    if w == word:
         occurrences += 1
 
-print(""Found %d occurrences of '%s'"" % (occurrences, word))"
+print(""Found %d occurrences of '%s'"" % (occurrences, word))",w
+Develop a Python Webscraper for collecting data from a given URL.,Example URL: http://example.com/data,"import requests
+from bs4 import BeautifulSoup
+
+URL = 'http://example.com/data'
+
+# Send a request to the URL
+page = requests.get(URL)
+
+# Parse the page
+soup = BeautifulSoup(page.content, 'html.parser')
+
+# Get the data
+data = soup.find_all('div', class_='data')
+
+# Print the data
+for item in data:
+ print(item.text)",Control Structure,884,"import requests
+from bs4 import BeautifulSoup
+
+URL = 'http://example.com/data'
+
+# Send a request to the URL
+page = requests.get(URL)
+
+# Parse the page
+soup = BeautifulSoup(page.content, 'html.parser')
+
+# Get the data
+data = soup.find_all('div', class_='data')
+
+# Print the data
+for ___ in data:
+ print(item.text)",item
 "Convert the following Algorithm into Python code.
 
 Input: two numbers
@@ -620,18 +726,18 @@ num2 = 10
 result = compare_numbers(num1, num2)
 
 print(result)",Control Structure,891,"def compare_numbers(num1, num2):
- ___
+ if ___ == num2:
   return 0
  elif num1 > num2:
   return 1
- ___
+ else:
   return -1
 
 num1 = 5
 num2 = 10
 result = compare_numbers(num1, num2)
 
-print(result)"
+print(result)",num1
 Create a Python function that takes in two strings and returns True if they are anagrams (they contain the same letters).,"string1 = ""pizza""
 string2 = ""appaiz""","def isAnagram(string1, string2):
  s1 = sorted(string1.lower())
@@ -649,15 +755,30 @@ isAnagram(string1, string2); // True",Control Structure,906,"def isAnagram(strin
  s1 = sorted(string1.lower())
  s2 = sorted(string2.lower())
 
- ___
+ if ___ == s2:
  return True
- ___
+ else:
  return False
 
 string1 = ""pizza"";
 string2 = ""appaiz"";
 
-isAnagram(string1, string2); // True"
+isAnagram(string1, string2); // True",s1
+Write a function in Python to predict a label for a given input.,"[5, -2, 4]","def predict(x):
+    if x[0] > 0:
+        return 'positive'
+    if x[1] < 0:
+        return 'negative'
+    if x[2] > 0:
+        return 'positive'
+    return 'neutral'",Control Structure,948,"def predict(x):
+    if ___[0] > 0:
+        return 'positive'
+    if x[1] < 0:
+        return 'negative'
+    if x[2] > 0:
+        return 'positive'
+    return 'neutral'",x
 Create a Python program to check if a given date is valid or not.,"The date to be checked is ""2019/02/29"".","from datetime import datetime
  
 date_string = '2019/02/29'
@@ -672,15 +793,38 @@ except ValueError:
  print('Invalid Date')",Control Structure,1009,"from datetime import datetime
  
 date_string = '2019/02/29'
-___
+try:
  date = datetime.strptime(date_string, '%Y/%m/%d')
  
- ___
+ if ___.year % 4 == 0 and date.month == 2 and date.day == 29:
  print('Valid Date')
- ___
+ else:
  print('Invalid Date')
-___
- print('Invalid Date')"
+except ValueError:
+ print('Invalid Date')",date
+Consider the following statement and write a code for it in Python,A list of integers of length 5 is given. Calculate its sum and average.,"my_list = [1,2,3,4,5]
+total_sum = 0
+
+for x in my_list:
+    total_sum = total_sum + x 
+  
+average = total_sum / len(my_list)
+
+print(""Sum of all elements in given list: "" + str(total_sum))
+print(""Average of all elements in given list: "" + str(average))",Control Structure,1012,"my_list = [1,2,3,4,5]
+total_sum = 0
+
+for ___ in my_list:
+    total_sum = total_sum + x 
+  
+average = total_sum / len(my_list)
+
+print(""Sum of all elements in given list: "" + str(total_sum))
+print(""Average of all elements in given list: "" + str(average))",x
+Optimize the following Python code for faster runtime performance,"for i in range(5):
+    print(""Hello"")","for i in range(5):
+    print(""Hello"", end=""\n"")",Control Structure,1131,"for ___ in range(5):
+    print(""Hello"", end=""\n"")",i
 "Write a code for sorting the words within a sentence, alphabetically.",Python is a great language,"""""""
 Write a code for sorting the words within a sentence, alphabetically.
 """"""
@@ -693,7 +837,7 @@ def sort_words_alphabetically(sentence):
 if __name__ == '__main__':
     sentence = 'Python is a great language'
     print(sort_words_alphabetically(sentence))",Control Structure,1140,"""""""
-Write a code for sorting the words within a sentence, alphabetically.
+Write a code for ___ the words within a sentence, alphabetically.
 """"""
 
 def sort_words_alphabetically(sentence):
@@ -701,9 +845,9 @@ def sort_words_alphabetically(sentence):
     words.sort()
     return ' '.join(words)
 
-___
+if __name__ == '__main__':
     sentence = 'Python is a great language'
-    print(sort_words_alphabetically(sentence))"
+    print(sort_words_alphabetically(sentence))",sorting
 Trace the recursive Fibonacci algorithm in Python and test its execution time for different values of n.,num = 10,"import time 
 
 def fib(n): 
@@ -724,13 +868,13 @@ print(fib(num))
 print(""Time taken:"", time.time()-start)",Control Structure,1157,"import time 
 
 def fib(n): 
- if n<0: 
+ if ___<0: 
   print(""Incorrect input"") 
  elif n==1: 
   return 0
  elif n==2: 
   return 1
- ___ 
+ else: 
   return fib(n-1)+fib(n-2) 
 
 start = time.time() 
@@ -738,54 +882,57 @@ start = time.time()
 num = 10 
 print(fib(num))
 
-print(""Time taken:"", time.time()-start)"
-Can you develop a program using Python to check if number is prime?,13,"def is_prime(n):
-    if (n <= 1): 
-        return False
-    elif (n <= 3): 
-        return True
-    elif (n % 2 == 0 or n % 3 == 0): 
-        return False 
+print(""Time taken:"", time.time()-start)",n
+Author a Python program to check if a number is a palindrome.,1991,"def isPalindrome(num):
+  numStr = str(num)
+  for i in range(0, len(numStr)//2):
+    if numStr[i] != numStr[len(numStr)-i-1]:
+      return False
+  return True
 
-    i = 5
-    while(i * i <= n): 
-        if (n % i == 0 or n % (i + 2) == 0): 
-            return False
-        i = i + 6
-  
-    return True
+print(isPalindrome(1991)) # Output: True",Control Structure,1172,"def isPalindrome(num):
+  numStr = str(num)
+  for ___ in range(0, len(numStr)//2):
+    if numStr[i] != numStr[len(numStr)-i-1]:
+      return False
+  return True
 
-print(is_prime(13))",Control Structure,1187,"def is_prime(n):
-    if (n <= 1): 
-        return False
-    elif (n <= 3): 
-        return True
-    ___ 
-        return False 
+print(isPalindrome(1991)) # Output: True",i
+Write a Python script to extract all the values for a given key from a dictionary.,"dictionary = {
+    'key1': 'val1',
+    'key2': 'val2',
+    'key3': 'val3',
+    'key4': 'val4',
+}","def get_key_values(dictionary, key):
+    return [value for key, value in dictionary.items() if key == key]",Control Structure,1190,"def get_key_values(dictionary, key):
+    return [value for ___, value in dictionary.items() if key == key]",key
+Create a Python function for computing the Fibonacci sequence up to the nth number.,Number n: 10,"def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
 
-    i = 5
-    while(i * i <= n): 
-        ___ 
-            return False
-        i = i + 6
-  
-    return True
+print(fibonacci(10)) # outputs 55",Control Structure,1228,"def fibonacci(n):
+    a, b = 0, 1
+    for ___ in range(n):
+        a, b = b, a + b
+    return a
 
-print(is_prime(13))"
-"Write a Python program to calculate the sum of two given integers, but only if both of them are even.","num1 = 6
-num2 = 8","def sum_of_two_ints(a,b): 
-    if (a % 2 == 0 and b % 2 == 0): 
-        return a+b 
-    else: 
-        return ""Wrong input""
+print(fibonacci(10)) # outputs 55",_
+Generate a code to optimize the following program for better performance in Python.,"random_list = []
+for i in range(0, 10):
+    random_list.append(random.randint(0, 10))
 
-print(sum_of_two_ints(num1,num2))",Control Structure,1270,"def sum_of_two_ints(a,b): 
-    ___ 
-        return a+b 
-    ___ 
-        return ""Wrong input""
+unique_list = []
+for i in random_list:
+    if i not in unique_list:
+        unique_list.append(i)","import random
 
-print(sum_of_two_ints(num1,num2))"
+random_list = [random.randint(0, 10) for _ in range(10)]
+unique_list = list(set(random_list))",Control Structure,1298,"import random
+
+random_list = [random.randint(0, 10) for ___ in range(10)]
+unique_list = list(set(random_list))",_
 Write a Python program to compare two unordered lists to see if they are equal.,"list1 = [3, 4, 5]
 list2 = [4, 5, 3]","def compare_lists(list1, list2):
     if len(list1) != len(list2):
@@ -793,11 +940,11 @@ list2 = [4, 5, 3]","def compare_lists(list1, list2):
     if sorted(list1) == sorted(list2):
         return True
     return False",Control Structure,1309,"def compare_lists(list1, list2):
-    if len(list1) != len(list2):
+    if ___(list1) != len(list2):
         return False
-    ___
+    if sorted(list1) == sorted(list2):
         return True
-    return False"
+    return False",len
 Write a python program for binary search,"[2, 5, 7, 9, 11, 15]","def binarySearch(arr, target):
     left = 0
     right = len(arr) - 1
@@ -815,19 +962,19 @@ Write a python program for binary search,"[2, 5, 7, 9, 11, 15]","def binarySearc
     left = 0
     right = len(arr) - 1
 
-    ___
+    while ___ <= right:
         mid = (left + right) // 2
 
-        ___
+        if arr[mid] == target:
             return mid
         elif arr[mid] > target:
             right = mid - 1
-        ___
+        else:
             left = mid + 1
-    return -1"
+    return -1",left
 Create a Python code to display the multiplication table for a number between,Number: 4,"for i in range(1, 11):
-    print(""4 x"", i, ""="", 4*i)",Control Structure,1324,"___
-    print(""4 x"", i, ""="", 4*i)"
+    print(""4 x"", i, ""="", 4*i)",Control Structure,1324,"for ___ in range(1, 11):
+    print(""4 x"", i, ""="", 4*i)",i
 Create a Python program to check if a triangle is valid or not with the given values for its three sides.,"a = 2
 b = 2
 c = 3","def is_valid_triangle(a, b, c): 
@@ -844,15 +991,15 @@ c = 3","def is_valid_triangle(a, b, c):
 is_valid_triangle(2, 2, 3)",Control Structure,1341,"def is_valid_triangle(a, b, c): 
   
     # triangle should have 3 sides 
-    ___ 
+    if ___ + b <= c or a + c <= b or b + c <= a: 
         return False
   
     # sum of any two side should always be greater than third side 
-    ___ 
+    if a + b > c and a + c > b and b + c > a: 
         return True
     return False
 
-is_valid_triangle(2, 2, 3)"
+is_valid_triangle(2, 2, 3)",a
 Write a Python function for calculating factorials.,4,"def factorial(n):
     if n == 0:
         return 1
@@ -862,14 +1009,14 @@ Write a Python function for calculating factorials.,4,"def factorial(n):
 number = 4
 result = factorial(number)
 print(result)",Control Structure,1353,"def factorial(n):
-    ___
+    if ___ == 0:
         return 1
-    ___
+    else:
         return n * factorial(n-1)
 
 number = 4
 result = factorial(number)
-print(result)"
+print(result)",n
 Design a Python program for implementing a stack with the following methods.,"pop(), push(x), and is_empty().","class Stack:
     def __init__(self):
         self.items = []
@@ -892,13 +1039,13 @@ Design a Python program for implementing a stack with the following methods.,"po
         self.items.append(x) 
 
     def pop(self): 
-        if not self.is_empty():
+        if ___ self.is_empty():
             return self.items.pop()
-        ___
+        else:
             return None
         
     def is_empty(self): 
-        return len(self.items) == 0"
+        return len(self.items) == 0",not
 Compose a python program that can search a text document for a given word.,"text_file=""text.txt""
 query_word=""apple""","def search_for_word(text_file, query_word):
     words = []
@@ -914,13 +1061,73 @@ query_word=""apple""","def search_for_word(text_file, query_word):
     words = []
 
     with open(text_file, ""r"") as file:
-        for line in file:
+        for ___ in file:
             words.extend(line.split())
 
     if query_word in words:
         return True
-    ___
-        return False"
+    else:
+        return False",line
+can you provide a python for loop that prints out the product of two lists?,"list1 = [1, 2, 3]
+list2 = [4, 5, 6]","list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+for i in range(len(list1)):
+    product = list1[i] * list2[i]
+    print(product)",Control Structure,1447,"list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+for ___ in range(len(list1)):
+    product = list1[i] * list2[i]
+    print(product)",i
+Generate a Python program that searches for a given key in a dictionary.,key: 'name',"my_dict = {
+ 'name': 'John',
+ 'age': 26,
+ 'salary': 5000
+}
+
+find_key = 'name'
+
+if find_key in my_dict:
+ print(my_dict[find_key])",Control Structure,1477,"my_dict = {
+ 'name': 'John',
+ 'age': 26,
+ 'salary': 5000
+}
+
+find_key = 'name'
+
+if ___ in my_dict:
+ print(my_dict[find_key])",find_key
+Can you generate a greedy algorithm in Python for solving the coin change problem?,"Coins = [1, 6, 10], Change = 8","def get_coins(coins, change):
+	min_coins = change
+	if change in coins:
+		return [change]
+
+	for i in [c for c in coins if c <= change]:
+		num_coins = 1 + get_coins(coins, change-i)
+		if len(num_coins) < min_coins:
+			min_coins = num_coins
+	return min_coins
+
+# Test 
+coins = [1, 6, 10]
+change = 8
+print(get_coins(coins, change)) # [1, 6, 1]",Control Structure,1548,"def get_coins(coins, change):
+	min_coins = change
+	if ___ in coins:
+		return [change]
+
+	for i in [c for c in coins if c <= change]:
+		num_coins = 1 + get_coins(coins, change-i)
+		if len(num_coins) < min_coins:
+			min_coins = num_coins
+	return min_coins
+
+# Test 
+coins = [1, 6, 10]
+change = 8
+print(get_coins(coins, change)) # [1, 6, 1]",change
 Create a script in Python for classifying the sentiment of a text. The script should be able to handle input of various lengths and should return a sentiment score (on a scale from -1 to +1) for the text.,positive,"import nltk
 
 def sentiment_analysis(text):
@@ -937,13 +1144,13 @@ def sentiment_analysis(text):
 def sentiment_analysis(text):
  tokens = nltk.word_tokenize(text)
  score = 0
- for token in tokens:
+ for ___ in tokens:
  tag = nltk.pos_tag(token)[0]
- ___
+ if tag[1] == 'positive':
  score += 1
- ___
+ else:
  score -= 1
- return score / len(tokens)"
+ return score / len(tokens)",token
 Develop a Python program to check if a given number is a power of two.,Number = 16,"def is_power_of_two(x):
   while x % 2 == 0 and x > 1:
     x = x / 2
@@ -952,13 +1159,27 @@ Develop a Python program to check if a given number is a power of two.,Number = 
 num = 16
 
 print(is_power_of_two(num))",Control Structure,1580,"def is_power_of_two(x):
-  ___
+  while ___ % 2 == 0 and x > 1:
     x = x / 2
   return x == 1
 
 num = 16
 
-print(is_power_of_two(num))"
+print(is_power_of_two(num))",x
+"Create a function in Python to calculate the sum of squares for all numbers within a range given two integers, n and m.","n = 4
+m = 6","def sum_of_squares(n, m):
+    result = 0
+    for i in range(n, m+1):
+        result += i*i
+    return result
+  
+print(sum_of_squares(n, m))",Control Structure,1598,"def sum_of_squares(n, m):
+    result = 0
+    for ___ in range(n, m+1):
+        result += i*i
+    return result
+  
+print(sum_of_squares(n, m))",i
 Build a Python class to identify if a provided number is prime or composite.,10,"class PrimeNumber:
     def __init__(self, num):
         self.num = num
@@ -980,7 +1201,7 @@ else:
         self.num = num
 
     def is_prime(self):
-        for i in range(2, self.num):
+        for ___ in range(2, self.num):
             if(self.num % i == 0):
                 return False
         return True
@@ -990,8 +1211,66 @@ obj = PrimeNumber(num)
 
 if obj.is_prime():
     print(""Number is Prime"")
-___
-    print(""Number is Composite"")"
+else:
+    print(""Number is Composite"")",i
+Write a Python program to create a data visualization for a given dataset.,The dataset contains information about the number of students enrolled in various courses.,"import matplotlib.pyplot as plt
+
+def create_visualizations(data):
+ x = [x[0] for x in data]
+ y = [x[1] for x in data]
+ plt.plot(x, y, 'bo')
+ plt.xlabel('Courses')
+ plt.ylabel('Students')
+ plt.title('Number of Students Enrolled in Courses')
+ plt.show()",Control Structure,1654,"import matplotlib.pyplot as plt
+
+def create_visualizations(data):
+ x = [x[0] for ___ in data]
+ y = [x[1] for x in data]
+ plt.plot(x, y, 'bo')
+ plt.xlabel('Courses')
+ plt.ylabel('Students')
+ plt.title('Number of Students Enrolled in Courses')
+ plt.show()",x
+Create a Python program to check if two lists have overlapping elements,"A = [1,3,5,7], B = [2,4,5,7]","def has_overlapping(arr1, arr2):
+    for element in arr1:
+        if element in arr2:
+            return True
+    return False
+
+A = [1,3,5,7]
+B = [2,4,5,7]
+
+result = has_overlapping(A, B)
+print(result)",Control Structure,1683,"def has_overlapping(arr1, arr2):
+    for ___ in arr1:
+        if element in arr2:
+            return True
+    return False
+
+A = [1,3,5,7]
+B = [2,4,5,7]
+
+result = has_overlapping(A, B)
+print(result)",element
+"Given input and output examples, create a classification model in Python that can predict the output for a given input.","Inputs: [1, 2, 3] 
+Outputs: [2, 4, 6]","def pred_model(inputs): 
+  outputs=[]
+  for i in inputs:
+    outputs.append(i*2)
+  return outputs
+ 
+inputs = [1,2,3] 
+outputs = pred_model(inputs) 
+print(""Outputs:"", outputs)",Control Structure,1685,"def pred_model(inputs): 
+  outputs=[]
+  for ___ in inputs:
+    outputs.append(i*2)
+  return outputs
+ 
+inputs = [1,2,3] 
+outputs = pred_model(inputs) 
+print(""Outputs:"", outputs)",i
 Write a python program to check if a given number is prime or not.,27,"def is_prime(num):
     for i in range(2, num):
         if (num % i) == 0:
@@ -1004,8 +1283,8 @@ if is_prime(number):
     print(str(number) + ' is a prime number.')
 else:
     print(str(number) + ' is not a prime number.')",Control Structure,1698,"def is_prime(num):
-    for i in range(2, num):
-        ___
+    for ___ in range(2, num):
+        if (num % i) == 0:
             return False
     return True
 
@@ -1013,8 +1292,8 @@ number = 27
 
 if is_prime(number):
     print(str(number) + ' is a prime number.')
-___
-    print(str(number) + ' is not a prime number.')"
+else:
+    print(str(number) + ' is not a prime number.')",i
 Create a module in Python for validating a phone number.,"phone number = ""+1-800-867-5309""","import re
 
 phone_number = ""+1-800-867-5309""
@@ -1038,10 +1317,10 @@ def validate_phone_number(phone_number):
     return phone_pattern.search(phone_number)
 
 valid = validate_phone_number(phone_number)
-if valid:
+if ___:
     print(""Valid Phone number"")
-___
-    print(""Invalid Phone number"")"
+else:
+    print(""Invalid Phone number"")",valid
 Edit the following Python program such that it prints out the multiplication table for the given number n.,n = 5,"n = 5
 
 # printing the multiplication table
@@ -1049,8 +1328,8 @@ for i in range(1, 11):
     print(n, 'x', i, '=', n * i)",Control Structure,1726,"n = 5
 
 # printing the multiplication table
-___ 
-    print(n, 'x', i, '=', n * i)"
+for ___ in range(1, 11): 
+    print(n, 'x', i, '=', n * i)",i
 Edit the given Python program to optimize its code for better performance,"#Function to calculate the sum of the natural numbers 
 def sumOfNaturals(n): 
   
@@ -1071,21 +1350,38 @@ def sumOfNaturals(n):
 def sumOfNaturals(n): 
   
     #using Gauss formula
-    ___ 
+    if ___ % 2 == 0: 
         sum = (n//2)*(n+1) 
-    ___ 
+    else: 
         sum = (n//2)*(n+1) + (n+1)//2
   
-    return sum"
+    return sum",n
+Design a program in Python for computing the average height of a group of people.,"[1.78, 1.90, 1.75, 1.82]","def average_height(lst):
+    total = 0
+    for height in lst:
+        total += height
+    
+    return total / len(lst)
+
+result = average_height([1.78, 1.90, 1.75, 1.82])
+print(result)",Control Structure,1741,"def average_height(lst):
+    total = 0
+    for ___ in lst:
+        total += height
+    
+    return total / len(lst)
+
+result = average_height([1.78, 1.90, 1.75, 1.82])
+print(result)",height
 "Analyze the input provided and generate a function in Python that returns ""Invalid input"" if the input is not a valid integer number, or returns the number of digits in the input number otherwise.",212,"def count_digits(inp):
     if not isinstance(inp, int):
         return ""Invalid input""
     else:
         return len(str(inp))",Control Structure,1777,"def count_digits(inp):
-    if not isinstance(inp, int):
+    if ___ isinstance(inp, int):
         return ""Invalid input""
-    ___
-        return len(str(inp))"
+    else:
+        return len(str(inp))",not
 Create a function in Python that determines if a given number is an Armstrong number or not.,371,"def isArmstrongNumber(number):
   num_str = str(number)
   result = 0
@@ -1107,18 +1403,18 @@ else:
   result = 0
   power = len(num_str)
 
-  for c in num_str:
+  for ___ in num_str:
     result += int(c) ** power
 
-  ___
+  if result == number:
     return True
-  ___
+  else:
     return False
 
 if isArmstrongNumber(371):
   print('It is an Armstrong number.')
-___
-  print('It is not an Armstrong number.')"
+else:
+  print('It is not an Armstrong number.')",c
 Write an expression in python to check if a given number is prime,number = 15,"def is_prime(number):
     if number>1:
         for i in range(2,number):
@@ -1128,14 +1424,35 @@ Write an expression in python to check if a given number is prime,number = 15,"d
         return False
     return True
 print(is_prime(number))",Control Structure,1826,"def is_prime(number):
-    if number>1:
+    if ___>1:
         for i in range(2,number):
             if number%i==0:
                 return False
-    ___
+    else:
         return False
     return True
-print(is_prime(number))"
+print(is_prime(number))",number
+"Given two number arrays A and B, write a Python function to check if each element in A also exists in B","A = [1,2,3], B = [2,3,4]","def check_equality(arr1, arr2):
+    for num in arr1:
+        if num not in arr2:
+            return False
+    return True
+
+A = [1, 2, 3]
+B = [2, 3, 4]
+
+result = check_equality(A, B)
+print(result)",Control Structure,1852,"def check_equality(arr1, arr2):
+    for ___ in arr1:
+        if num not in arr2:
+            return False
+    return True
+
+A = [1, 2, 3]
+B = [2, 3, 4]
+
+result = check_equality(A, B)
+print(result)",num
 Convert the following for loop into a recursive function in Python.,"for i in range(5):
     print(i)","def printRange(start, end):
     if start == end:
@@ -1144,22 +1461,47 @@ Convert the following for loop into a recursive function in Python.,"for i in ra
     printRange(start+1, end)
 
 printRange(0, 5)",Control Structure,1869,"def printRange(start, end):
-    ___
+    if ___ == end:
         return
     print(start)
     printRange(start+1, end)
 
-printRange(0, 5)"
+printRange(0, 5)",start
 Design a positive feedback loop for the following python program.,"for i in range(10):
     print(""hello"")","for i in range(10):
     print(""hello"")
     i += 1
     if i == 10:
-        print(""You've got it!"")",Control Structure,1892,"for i in range(10):
+        print(""You've got it!"")",Control Structure,1892,"for ___ in range(10):
     print(""hello"")
     i += 1
-    ___
-        print(""You've got it!"")"
+    if i == 10:
+        print(""You've got it!"")",i
+Create a Python program to scrape a search engine for the top 10 results on a given query.,"Search query: ""best movies of 2019""","import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.google.com/search?q=best+movies+of+2019&num=10'
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+results = soup.find_all('div', class_='rc')
+
+for result in results:
+ title = result.find('h3').text
+ print(title)",Control Structure,1899,"import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.google.com/search?q=best+movies+of+2019&num=10'
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+results = soup.find_all('div', class_='rc')
+
+for ___ in results:
+ title = result.find('h3').text
+ print(title)",result
 Write a Python program to search for a given element in multiple lists,"my_list1 = [2, 3, 4, 5]
 my_list2 = [7, 9, 5]
 elem = 5","def search_elem(my_list1, my_list2, elem):
@@ -1175,18 +1517,18 @@ elem = 5","def search_elem(my_list1, my_list2, elem):
 
 found = search_elem(my_list1, my_list2, elem)
 print(found)",Control Structure,1914,"def search_elem(my_list1, my_list2, elem):
-    for list in [my_list1, my_list2]:
+    for ___ in [my_list1, my_list2]:
         found = False
         for val in list:
-            ___
+            if val == elem:
                 found = True
-                ___
+                break
         if found:
             return True
     return False
 
 found = search_elem(my_list1, my_list2, elem)
-print(found)"
+print(found)",list
 Create a python program for identifying if a given number is prime or not.,Use number 10 as an example.,"def is_prime(num): 
     if num < 2: 
         return False
@@ -1204,11 +1546,11 @@ if is_prime(number):
     print(number, ""is a prime number"") 
 else: 
     print(number, ""is not a prime number"")",Control Structure,1922,"def is_prime(num): 
-    if num < 2: 
+    if ___ < 2: 
         return False
   
     for i in range(2, num): 
-        ___ 
+        if num % i == 0: 
             return False
   
     return True
@@ -1218,21 +1560,43 @@ number = 10
   
 if is_prime(number): 
     print(number, ""is a prime number"") 
-___ 
-    print(number, ""is not a prime number"")"
-Implement a Python program to check if a number is divisible by another number.,"7, 2","def is_divisible(n, m):
-    if (n % m == 0):
-        return True
-    else:
+else: 
+    print(number, ""is not a prime number"")",num
+"Create a Python function that takes two lists, compare them, and return True if both lists are identical and False if they differ.","list1 = [1, 2, 3]
+list2 = [1, 2, 3]","def compare_lists(list1, list2):
+    if len(list1) != len(list2):
         return False
-    
-print(is_divisible(7, 2))  # Outputs False",Control Structure,1958,"def is_divisible(n, m):
-    ___
-        return True
-    ___
+
+    for i in range(len(list1)):
+        if list1[i] != list2[i]:
+            return False
+
+    return True",Control Structure,1934,"def compare_lists(list1, list2):
+    if ___(list1) != len(list2):
         return False
-    
-print(is_divisible(7, 2))  # Outputs False"
+
+    for i in range(len(list1)):
+        if list1[i] != list2[i]:
+            return False
+
+    return True",len
+Create a program in Python that uses a for loop to output the division of two numbers.,"Number 1: 5 
+Number 2: 3","for i in range(2):
+    print(5/3)",Control Structure,1944,"for ___ in range(2):
+    print(5/3)",i
+Write a Bash script to check if a specific program is installed on the current system.,Program Name = Python,"#!/usr/bin/env bash
+
+if type -p python &> /dev/null; then
+  echo 'Python is installed!'
+else 
+  echo 'Python is not installed!'
+fi",Control Structure,2069,"#!/usr/bin/env bash
+
+if ___ -p python &> /dev/null; then
+  echo 'Python is installed!'
+else 
+  echo 'Python is not installed!'
+fi",type
 Create a method in Python that returns the result for the factorial of a given number.,5,"def factorial(n): 
     if n == 0:
         return 1
@@ -1245,9 +1609,9 @@ print(result)
 
 # Output: 
 120",Control Structure,2135,"def factorial(n): 
-    ___
+    if ___ == 0:
         return 1
-    ___
+    else:
         return n*factorial(n-1) 
 
 x = 5
@@ -1255,7 +1619,62 @@ result = factorial(x)
 print(result) 
 
 # Output: 
-120"
+120",n
+Develop a python program for,Filter a given list of strings to only include strings that start with vowels.,"def filter_vowel_strings(string_list):
+    vowels = ('a', 'e', 'i', 'o', 'u')
+    filtered_list = []
+    for string in string_list:
+        if string.startswith(vowels):
+            filtered_list.append(string)
+    return filtered_list",Control Structure,2165,"def filter_vowel_strings(string_list):
+    vowels = ('a', 'e', 'i', 'o', 'u')
+    filtered_list = []
+    for ___ in string_list:
+        if string.startswith(vowels):
+            filtered_list.append(string)
+    return filtered_list",string
+Write a Python program to check if the given matris is a symmetric matrix.,"A = [[1,2,3],
+    [-2,0,4],
+    [3,-4,5]]","def is_symmetric(a):
+    n = len(a)
+    for i in range(n):
+        for j in range(n):
+            if a[i][j] != a[j][i]:
+                return False
+    return True
+
+A = [[1,2,3],
+    [-2,0,4],
+    [3,-4,5]]
+print(is_symmetric(A))",Control Structure,2197,"def is_symmetric(a):
+    n = len(a)
+    for ___ in range(n):
+        for j in range(n):
+            if a[i][j] != a[j][i]:
+                return False
+    return True
+
+A = [[1,2,3],
+    [-2,0,4],
+    [3,-4,5]]
+print(is_symmetric(A))",i
+Develop an algorithm in Python to find the minimum number of coins needed to make change for a given amount,n = 5,"def minCoinChange(n):
+    coins = [1, 2, 5]
+    mins = [0]+ [float('inf')]*n
+    for c in coins:
+        for i in range(c, n+1):
+            mins[i] = min(mins[i], mins[i-c]+1)
+    return mins[n]
+    
+print(minCoinChange(n))",Control Structure,2307,"def minCoinChange(n):
+    coins = [1, 2, 5]
+    mins = [0]+ [float('inf')]*n
+    for ___ in coins:
+        for i in range(c, n+1):
+            mins[i] = min(mins[i], mins[i-c]+1)
+    return mins[n]
+    
+print(minCoinChange(n))",c
 Write a Python script to detect if two strings contain the same characters. Output should be true or false.,"s1 = ""abc""
 s2 = ""bca""","def is_permutation(s1, s2):
     s1_list = list(s1)
@@ -1272,12 +1691,12 @@ print(is_permutation(""abc"", ""bca"")) # True",Control Structure,2327,"def is_p
     s2_list = list(s2)
     s1_list.sort()
     s2_list.sort()
-    ___
+    if ___ == s2_list:
         return True
-    ___
+    else:
         return False
 
-print(is_permutation(""abc"", ""bca"")) # True"
+print(is_permutation(""abc"", ""bca"")) # True",s1_list
 Generate a Python algorithm to check if a given word is a palindrome.,madam,"def isPalindrome(word): 
     left, right = 0, len(word) - 1
     while right >= left: 
@@ -1287,20 +1706,31 @@ Generate a Python algorithm to check if a given word is a palindrome.,madam,"def
         right -= 1
     return True",Control Structure,2330,"def isPalindrome(word): 
     left, right = 0, len(word) - 1
-    ___ 
-        ___ 
+    while ___ >= left: 
+        if not word[left] == word[right]: 
             return False
         left += 1
         right -= 1
-    return True"
+    return True",right
 Translate a Java loop into a while loop in Python.,"for (int i=1; i<=10; i++)
     System.out.println(""Hello World"");","i = 1
 while i <= 10:
     print(""Hello World"")
     i += 1",Control Structure,2357,"i = 1
-___
+while ___ <= 10:
     print(""Hello World"")
-    i += 1"
+    i += 1",i
+Create a Python script for formatting a sentence.,He  went  to the store,"def format_sentence(sentence):
+    sentence = sentence.split()
+    sentence = [word.capitalize() for word in sentence]
+    return ' '.join(sentence)
+
+print(format_sentence(""He went to the store""))",Control Structure,2360,"def format_sentence(sentence):
+    sentence = sentence.split()
+    sentence = [word.capitalize() for ___ in sentence]
+    return ' '.join(sentence)
+
+print(format_sentence(""He went to the store""))",word
 "Implement a Python function called “check_prime” which takes an integer as an argument and returns True if the number is prime, and False otherwise.",check_prime(125),"def check_prime(n):
  if n == 1:
  return False
@@ -1310,14 +1740,14 @@ ___
  return False
 
  return True",Control Structure,2363,"def check_prime(n):
- ___
+ if ___ == 1:
  return False
 
  for i in range(2, int(n ** 0.5) + 1):
- ___
+ if n % i == 0:
  return False
 
- return True"
+ return True",n
 Write a Python program to do a brute force search for a pair of elements which sum to a given target value.,"[1, 3, 4, 5, 6, 7], 8","# brute force search algorithm
 def brute_force_search(arr, target):
 	for i in range(len(arr)):
@@ -1334,9 +1764,9 @@ print(brute_force_search(lst, target))
 Output:
 pair = (3, 5)",Control Structure,2383,"# brute force search algorithm
 def brute_force_search(arr, target):
-	for i in range(len(arr)):
+	for ___ in range(len(arr)):
 		for j in range(len(arr)):
-			___
+			if arr[i] + arr[j] == target:
 				return arr[i], arr[j]
 	return None
 
@@ -1346,7 +1776,7 @@ lst = [1, 3, 4, 5, 6, 7]
 print(brute_force_search(lst, target))
 
 Output:
-pair = (3, 5)"
+pair = (3, 5)",i
 Create a Python code to check if a single integer is a prime number,int number = 11,"def is_prime(number):
     if number <= 1:
         return False
@@ -1355,13 +1785,13 @@ Create a Python code to check if a single integer is a prime number,int number =
         if number % i == 0:
             return False
     return True",Control Structure,2390,"def is_prime(number):
-    if number <= 1:
+    if ___ <= 1:
         return False
 
     for i in range(2, number):
-        ___
+        if number % i == 0:
             return False
-    return True"
+    return True",number
 Create a program in Python to check for palindrome numbers.,121,"def palindrome(num):
     num = str(num)
     if num == num[::-1]:
@@ -1372,13 +1802,13 @@ Create a program in Python to check for palindrome numbers.,121,"def palindrome(
 palindrome(121)
 // Output: 121 is a palindrome number",Control Structure,2391,"def palindrome(num):
     num = str(num)
-    ___
+    if ___ == num[::-1]:
         print(num + "" is a palindrome number"")
-    ___ 
+    else: 
         print(num + "" is not a palindrome number"")
 
 palindrome(121)
-// Output: 121 is a palindrome number"
+// Output: 121 is a palindrome number",num
 Debug the following Python code and make it functional (read the instructions for the code).,"def factorial(n):
  if n == 0:
     return 1
@@ -1392,13 +1822,13 @@ factorial(5)","def factorial(n):
 
 # call the method
 print(factorial(5))",Control Structure,2423,"def factorial(n):
- ___
+ if ___ == 0:
     return 1
- ___
+ else:
  return n * factorial(n - 1)
 
 # call the method
-print(factorial(5))"
+print(factorial(5))",n
 Create a method to verify if the following number is prime in Python:,7,"def is_prime(n):
     if (n <= 1):
         return False
@@ -1415,8 +1845,8 @@ else:
     print(""The number {} is not prime."".format(n))",Control Structure,2431,"def is_prime(n):
     if (n <= 1):
         return False
-    for i in range(2, n):
-        ___
+    for ___ in range(2, n):
+        if (n % i == 0):
             return False
     return True
 
@@ -1424,8 +1854,8 @@ n = 7
 
 if is_prime(n):
     print(""The number {} is prime."".format(n))
-___
-    print(""The number {} is not prime."".format(n))"
+else:
+    print(""The number {} is not prime."".format(n))",i
 Optimize the following Python code for best runtime.,"def is_prime(n):
     for i in range(2, n):
         if (n % i) == 0:
@@ -1441,16 +1871,16 @@ Optimize the following Python code for best runtime.,"def is_prime(n):
         if n % i == 0:
             return False
     return True",Control Structure,2444,"def is_prime(n):
-    ___
+    if ___ == 1:
         return False
     if n in (2, 3):
         return True
-    ___
+    if not (n & 1) and n > 2:
         return False
     for i in range(3, int(n**0.5)+1, 2):
-        ___
+        if n % i == 0:
             return False
-    return True"
+    return True",n
 Generate an algorithm in Python to check if a given number of years is a leap year.,year = 1999,"def is_leap_year(year):
     if year % 400 == 0:
         return True
@@ -1465,19 +1895,19 @@ if is_leap_year(year):
     print(""This is a leap year."")
 else:
     print(""This is not a leap year."")",Control Structure,2463,"def is_leap_year(year):
-    ___
+    if ___ % 400 == 0:
         return True
-    ___
+    if year % 100 == 0:
         return False
-    ___
+    if year % 4 == 0:
         return True
     return False
 
 year = 1999
 if is_leap_year(year):
     print(""This is a leap year."")
-___
-    print(""This is not a leap year."")"
+else:
+    print(""This is not a leap year."")",year
 Produce a Python program to compute the Fibonacci number for a given integer.,8,"def getFibonacci(n): 
     if n<0: 
         print(""Incorrect input"") 
@@ -1491,18 +1921,18 @@ Produce a Python program to compute the Fibonacci number for a given integer.,8,
 number = 8
 fibonacci_number = getFibonacci(number)
 print(fibonacci_number)",Control Structure,2512,"def getFibonacci(n): 
-    if n<0: 
+    if ___<0: 
         print(""Incorrect input"") 
     elif n==1: 
         return 0
     elif n==2: 
         return 1
-    ___ 
+    else: 
         return getFibonacci(n-1)+getFibonacci(n-2) 
 
 number = 8
 fibonacci_number = getFibonacci(number)
-print(fibonacci_number)"
+print(fibonacci_number)",n
 Optimize a Python program to check for prime numbers,"def isPrime(n):
   for i in range(2, n):
     if n % i == 0:
@@ -1526,29 +1956,29 @@ if isPrime(num):
  print(""Number is prime"")
 else:
  print(""Number is not prime"")",Control Structure,2514,"def isPrime(n):
- if n <= 1:
+ if ___ <= 1:
  return False
  for i in range(2, int(n ** 0.5) + 1):
- ___
+ if n % i == 0:
  return False
  return True
 
 num = 23
 if isPrime(num):
  print(""Number is prime"")
-___
- print(""Number is not prime"")"
+else:
+ print(""Number is not prime"")",n
 Create a Python program for implementing a linear search algorithm.,"[4, 6, 5, 2, 9]","def linearSearch(arr, key): 
  for idx, num in enumerate(arr):
  if num == key:
  return idx
  
  return -1",Control Structure,2522,"def linearSearch(arr, key): 
- for idx, num in enumerate(arr):
- ___
+ for ___, num in enumerate(arr):
+ if num == key:
  return idx
  
- return -1"
+ return -1",idx
 Create a Python program to check if the given number is divisible by 3 or not.,12,"def is_divisible_by_3(n):
   return (n % 3 == 0)
 
@@ -1560,18 +1990,49 @@ else:
   return (n % 3 == 0)
 
 n = 12
-if is_divisible_by_3(n):
+if ___(n):
   print(str(n) + ' is divisible by 3.')
-___
-  print(str(n) + ' is not divisible by 3.')"
+else:
+  print(str(n) + ' is not divisible by 3.')",is_divisible_by_3
 "Design a Python program for comparing two strings and printing ""Equal"" if the strings are equal, or ""Not Equal"" if the strings are not equal.","string1 = ""hello""
 string2 = ""world""","if string1 == string2:
     print(""Equal"")
 else:
-    print(""Not Equal"")",Control Structure,2531,"___
+    print(""Not Equal"")",Control Structure,2531,"if ___ == string2:
     print(""Equal"")
-___
-    print(""Not Equal"")"
+else:
+    print(""Not Equal"")",string1
+Generate a function in Python to return the highest value in a dictionary for the given key.,"dictionary = {'A': 10, 'B': 20, 'C': 30, 'D': 40}","def highestValue(dictionary, key): 
+    highest = 0 
+    for key,value in dictionary.items(): 
+        if value > highest: 
+            highest = value 
+    return highest 
+
+highestValue(dictionary, key)",Control Structure,2579,"def highestValue(dictionary, key): 
+    highest = 0 
+    for ___,value in dictionary.items(): 
+        if value > highest: 
+            highest = value 
+    return highest 
+
+highestValue(dictionary, key)",key
+Suggest a completion for the following Python code so that it prints all the numbers between 0 and 10 (inclusive).,for num in range(11),"for num in range(11):
+    print(num)",Control Structure,2600,"for ___ in range(11):
+    print(num)",num
+Optimize the following Python code by replacing the two for loops with one.,"list1 = [1,2,3]
+list2 = [4,5,6]
+for i in list1:
+  for j in list2:
+    print(i * j)","list1 = [1,2,3]
+list2 = [4,5,6]
+ 
+for i,j in zip(list1, list2):
+    print(i * j)",Control Structure,2604,"list1 = [1,2,3]
+list2 = [4,5,6]
+ 
+for ___,j in zip(list1, list2):
+    print(i * j)",i
 Create a search algorithm in Python that takes two inputs 'word' and 'text' and returns true if the word is present in the text.,"word = ""code""
 text = ""Today I wrote some code in Python""","def search(word, text):
     words = text.split()
@@ -1580,10 +2041,10 @@ text = ""Today I wrote some code in Python""","def search(word, text):
             return True
     return False",Control Structure,2630,"def search(word, text):
     words = text.split()
-    for w in words:
-        ___
+    for ___ in words:
+        if w == word:
             return True
-    return False"
+    return False",w
 Create an algorithm in Python to search for a given item in a dictionary.,"Dictionary = {'name': 'john', 'age': 22, 'city': 'New York'}, item = 'John'","def search(dict, item): 
     for key, value in dict.items(): 
         if item == value: 
@@ -1593,14 +2054,23 @@ Create an algorithm in Python to search for a given item in a dictionary.,"Dicti
 dict = {'name': 'john', 'age': 22, 'city': 'New York'}
 item = 'John'
 print(search(dict, item))",Control Structure,2664,"def search(dict, item): 
-    for key, value in dict.items(): 
-        ___ 
+    for ___, value in dict.items(): 
+        if item == value: 
             return True 
     return False
 
 dict = {'name': 'john', 'age': 22, 'city': 'New York'}
 item = 'John'
-print(search(dict, item))"
+print(search(dict, item))",key
+Design an algorithm in Python for finding out the factorial of a given number.,7,"def factorial(n):
+ fact = 1
+ for i in range(2,n+1):
+  fact = fact * i
+ return fact",Control Structure,2665,"def factorial(n):
+ fact = 1
+ for ___ in range(2,n+1):
+  fact = fact * i
+ return fact",i
 Create a module in Python to scrape the web for a particular website.,https://www.example.com/,"import requests
 from bs4 import BeautifulSoup
 
@@ -1624,27 +2094,10 @@ def scrape_website(url):
     soup = BeautifulSoup(html, 'html.parser')
     return soup
 
-___
+if ___ == '__main__':
     url = 'https://www.example.com/'
     soup = scrape_website(url)
-    print(soup)"
-Create a Python code to check if two DNA sequences are equal.,"ATTCTCA, ATTCCTA","def equal(dna1, dna2):
-    if (dna1 ==dna2):
-        return True
-    else:
-        return False
-dna1 = 'ATTCTCA'
-dna2 = 'ATTCCTA'
-
-print(equal(dna1,dna2))",Control Structure,2783,"def equal(dna1, dna2):
-    if (dna1 ==dna2):
-        return True
-    ___
-        return False
-dna1 = 'ATTCTCA'
-dna2 = 'ATTCCTA'
-
-print(equal(dna1,dna2))"
+    print(soup)",__name__
 Create a function in Python that checks if a given number is a prime.,15,"def isPrime(n):
     if n < 2:
         return False
@@ -1652,12 +2105,12 @@ Create a function in Python that checks if a given number is a prime.,15,"def is
         if n % i == 0:
             return False
     return True",Control Structure,2796,"def isPrime(n):
-    if n < 2:
+    if ___ < 2:
         return False
     for i in range(2, int(sqrt(n))+1):
-        ___
+        if n % i == 0:
             return False
-    return True"
+    return True",n
 "Write a Python function that creates a JSON response with fields for score and data. The data field should contain a message that varies depending on the score value. If the score is 0, the message should state ""Try again"". If the score is 1, the message should state ""Well done"".",score = 0,"def create_response(score):
  if score == 0:
   message = ""Try again""  
@@ -1667,14 +2120,69 @@ Create a function in Python that checks if a given number is a prime.,15,"def is
   message = """"
  
  return {""score"": score, ""message"": message}",Control Structure,2801,"def create_response(score):
- ___
+ if ___ == 0:
   message = ""Try again""  
- el___
+ elif score == 1:
   message = ""Well done""
- ___
+ else:
   message = """"
  
- return {""score"": score, ""message"": message}"
+ return {""score"": score, ""message"": message}",score
+"Using Python, generate a program for solving linear equations.","x + 2y = 8
+3x – 4y = -2","def solution(coefficients):
+	# get the coefficients of the equations
+	a = coefficients[0][0] 
+	b = coefficients[0][1] 
+	c = coefficients[0][2] 
+	d = coefficients[1][0] 
+	e = coefficients[1][1] 
+	f = coefficients[1][2] 
+
+	# solve for x and y
+	y = (a*f - c*d)/(a*e - b*d) 
+	x = (c*e - b*f)/(a*e - b*d) 
+
+	# return the solutions
+	return x, y
+
+
+# example
+solution([[1, 2, 8], [3, -4, -2]])",Control Structure,2816,"def solution(coefficients):
+	# get the coefficients of the equations
+	a = coefficients[0][0] 
+	b = coefficients[0][1] 
+	c = coefficients[0][2] 
+	d = coefficients[1][0] 
+	e = coefficients[1][1] 
+	f = coefficients[1][2] 
+
+	# solve for ___ and y
+	y = (a*f - c*d)/(a*e - b*d) 
+	x = (c*e - b*f)/(a*e - b*d) 
+
+	# return the solutions
+	return x, y
+
+
+# example
+solution([[1, 2, 8], [3, -4, -2]])",x
+Generate a Python program to apply custom formatting for the following output.,"Given a list of strings, output a HTML table with data in the strings","def create_html_table(slist):
+    table_html = ""<table>""
+    for str in slist:
+        table_html += ""<tr>""
+        table_html += ""<td>"" + str + ""</td>"" 
+        table_html += ""</tr>""
+
+    table_html += ""</table>""
+    return table_html",Control Structure,2842,"def create_html_table(slist):
+    table_html = ""<table>""
+    for ___ in slist:
+        table_html += ""<tr>""
+        table_html += ""<td>"" + str + ""</td>"" 
+        table_html += ""</tr>""
+
+    table_html += ""</table>""
+    return table_html",str
 "Modify the Python function so that it prints ""Success!"" if the input parameter is greater than 10, or prints ""Failed!"" if it is less than or equal to 10.",7,"def check_num(num):
     if num > 10:
         print(""Success!"")
@@ -1682,12 +2190,12 @@ Create a function in Python that checks if a given number is a prime.,15,"def is
         print(""Failed!"")
 
 check_num(7)",Control Structure,2878,"def check_num(num):
-    if num > 10:
+    if ___ > 10:
         print(""Success!"")
-    ___
+    else:
         print(""Failed!"")
 
-check_num(7)"
+check_num(7)",num
 Write a Python program that takes two given strings and checks if the first is a substring of the second one.,"string_1 = 'cat'
 string_2 = 'the cats meow'","def is_substring(string_1, string_2):
     
@@ -1696,10 +2204,20 @@ string_2 = 'the cats meow'","def is_substring(string_1, string_2):
     else:
         return False",Control Structure,2900,"def is_substring(string_1, string_2):
     
-    if string_1 in string_2:
+    if ___ in string_2:
         return True
-    ___
-        return False"
+    else:
+        return False",string_1
+Compare two arrays of Python objects and return True if all objects in arrayA are also in arrayB.,"arrayA = ['a', 'b', 'c', 'd']
+arrayB = ['c', 'b', 'a', 'd', 'e']","def compare_arrays(arrA, arrB):
+    for i in arrA:
+        if i not in arrB:
+            return False
+    return True",Control Structure,2920,"def compare_arrays(arrA, arrB):
+    for ___ in arrA:
+        if i not in arrB:
+            return False
+    return True",i
 Write a Python function to generate a multiplication table for a given number.,Number: 9,"def generate_table(num):
     # print the table heading
     print(""MULTIPLICATION TABLE FOR {}"".format(num))
@@ -1712,33 +2230,69 @@ generate_table(9)",Control Structure,2962,"def generate_table(num):
     # print the table heading
     print(""MULTIPLICATION TABLE FOR {}"".format(num))
     # generate the table
-    ___
+    for ___ in range(1, 11):
         print(""{} x {} = {}"".format(num, i, num*i))
 
 # generate table for 9
-generate_table(9)"
+generate_table(9)",i
+Develop a program in Python for printing an asterisk triangle consisting of n rows.,5,"def asterisk_triangle(n):
+    for i in range(n):
+        for j in range(i+1):
+            print('*', end="" "")
+        print()
+
+n = 5
+asterisk_triangle(n)",Control Structure,2994,"def asterisk_triangle(n):
+    for ___ in range(n):
+        for j in range(i+1):
+            print('*', end="" "")
+        print()
+
+n = 5
+asterisk_triangle(n)",i
 Generate a python program to check the sum of two numbers and determine if they are equal or not.,Compare a = 4 and b = 6,"def compare_sum(a, b):
   if a + b == 10:
     return True
   else:
     return False",Control Structure,2995,"def compare_sum(a, b):
-  ___
+  if ___ + b == 10:
     return True
-  ___
-    return False"
-Write a Python code to check if a given number is divisible by both 5 and 7,50,"def is_divisible_by_5_and_7(num):
-    if (num % 5 == 0 and num % 7 == 0):
-        return True
-    else:
-        return False
+  else:
+    return False",a
+Edit the following Python function to raise an exception if the given number is lower than 0.,"def square(num):
+    return num**2","def square(num):
+    if num < 0:
+        raise ValueError('Cannot square negative numbers.')
+    return num**2",Control Structure,3059,"def square(num):
+    if ___ < 0:
+        raise ValueError('Cannot square negative numbers.')
+    return num**2",num
+Optimize a given Python program for better runtime,"x = 0
+for i in range(1,10000):
+    x += i","x = 0
+for i in range(0,10000,2):
+    x += i
+x *= 2
+x += (10000 - 1)",Control Structure,3100,"x = 0
+for ___ in range(0,10000,2):
+    x += i
+x *= 2
+x += (10000 - 1)",i
+Create a Python dictionary for alphabetical order of numeric input,"[2, 3, 1]","def createDict(arr):
+  res = {}
+  for i in range(len(arr)):
+    res[arr[i]] = i + 1
+  return res
 
-print(is_divisible_by_5_and_7(50))",Control Structure,3027,"def is_divisible_by_5_and_7(num):
-    ___
-        return True
-    ___
-        return False
+d = createDict([2, 3, 1])
+print(d)",Control Structure,3107,"def createDict(arr):
+  res = {}
+  for ___ in range(len(arr)):
+    res[arr[i]] = i + 1
+  return res
 
-print(is_divisible_by_5_and_7(50))"
+d = createDict([2, 3, 1])
+print(d)",i
 Generate a program in Python that will check if a given number is a palindrome.,123321,"def is_palindrome(n):
  n = str(n)
  
@@ -1754,10 +2308,10 @@ else:
  return n == n[::-1]
  
 num = 123321
-if is_palindrome(num):
+if ___(num):
  print(f""{num} is a palindrome"")
-___
- print(f""{num} is not a palindrome"")"
+else:
+ print(f""{num} is not a palindrome"")",is_palindrome
 Write an algorithm in Python to determine if a number is an Armstrong number or not.,The number is 370.,"def armstrong_number(num):
   digits = [int(x) for x in str(num)]
   n_digits = len(digits)
@@ -1770,27 +2324,17 @@ Write an algorithm in Python to determine if a number is an Armstrong number or 
     return False
 
 armstrong_number(370)",Control Structure,3228,"def armstrong_number(num):
-  digits = [int(x) for x in str(num)]
+  digits = [int(x) for ___ in str(num)]
   n_digits = len(digits)
   sum_of_cubes = 0
   for digit in digits:
     sum_of_cubes += digit ** n_digits
-  ___
+  if sum_of_cubes == num:
     return True
-  ___
+  else:
     return False
 
-armstrong_number(370)"
-Edit the following Python code to add exception handling for user input.,"name = input('What is your name? ')
-print('Hello, ' + name)","try:
-  name = input('What is your name? ')
-  print('Hello, ' + name)
-except:
-  print('There was an error parsing your name.')",Control Structure,3240,"___
-  name = input('What is your name? ')
-  print('Hello, ' + name)
-except:
-  print('There was an error parsing your name.')"
+armstrong_number(370)",x
 Develop a Python script for creating a dictionary with all the occurrences of the words in a sentence.,John and Mary went to the school,"sentence = ""John and Mary went to the school""
 words = sentence.split()
 word_dict = {}
@@ -1805,13 +2349,13 @@ print(word_dict)",Control Structure,3248,"sentence = ""John and Mary went to the
 words = sentence.split()
 word_dict = {}
 
-for word in words:
+for ___ in words:
     if word in word_dict:
         word_dict[word] += 1
-    ___
+    else:
         word_dict[word] = 1
 
-print(word_dict)"
+print(word_dict)",word
 Create a python program to find if a number is a prime number,15,"def is_prime(num):
     for i in range(2, num):
         if not num % i:
@@ -1823,7 +2367,7 @@ if is_prime(num):
     print(""The number is prime"")
 else:
     print(""The number is not prime"")",Control Structure,3313,"def is_prime(num):
-    for i in range(2, num):
+    for ___ in range(2, num):
         if not num % i:
             return False
     return True
@@ -1831,8 +2375,8 @@ else:
 num = 15 
 if is_prime(num):
     print(""The number is prime"")
-___
-    print(""The number is not prime"")"
+else:
+    print(""The number is not prime"")",i
 Generate a python script to calculate the total public holiday hours for a given state.,"state = ""Illinois""","state = ""Illinois""
 
 def calculate_public_holiday_hours(state):
@@ -1845,13 +2389,13 @@ hours = calculate_public_holiday_hours(state)
 print(""Public holiday hours:"", hours)",Control Structure,3340,"state = ""Illinois""
 
 def calculate_public_holiday_hours(state):
-    # code to calculate public holiday hours for a given state
-    ___
+    # code to calculate public holiday hours for ___ given state
+    if state == ""Illinois"":
         return 8
     # code for other states
 
 hours = calculate_public_holiday_hours(state)
-print(""Public holiday hours:"", hours)"
+print(""Public holiday hours:"", hours)",a
 Generate a python code to calculate the factorial for a given number.,num = 5,"def factorial(number):
     if number == 0:
         return 1
@@ -1859,32 +2403,12 @@ Generate a python code to calculate the factorial for a given number.,num = 5,"d
         return number * factorial(number -1)
 
 factorial(num)",Control Structure,3363,"def factorial(number):
-    ___
+    if ___ == 0:
         return 1
-    ___
+    else:
         return number * factorial(number -1)
 
-factorial(num)"
-Write a Python program to determine if one number is a multiple of another.,"num1: 32
-num2: 8","def is_multiple(num1, num2):
-   if (num1 % num2 == 0):
-       print(f'{num1} is a multiple of {num2}')
-   else:
-       print(f'{num1} is not a multiple of {num2}')
-
-is_multiple(32, 8)
-
-Output:
-32 is a multiple of 8",Control Structure,3366,"def is_multiple(num1, num2):
-   ___
-       print(f'{num1} is a multiple of {num2}')
-   ___
-       print(f'{num1} is not a multiple of {num2}')
-
-is_multiple(32, 8)
-
-Output:
-32 is a multiple of 8"
+factorial(num)",number
 Create a Python script to calculate the Fibonacci sequence for a given integer n.,7,"# Fibonacci sequence
 def Fibonacci(n):
  a = 0
@@ -1908,13 +2432,13 @@ print(Fibonacci(7))
 def Fibonacci(n):
  a = 0
  b = 1
- if n < 0:
+ if ___ < 0:
  print(""Incorrect input"")
- el___
+ elif n == 0:
  return a
- el___
+ elif n == 1:
  return b
- ___
+ else:
  for i in range(2,n):
  c = a + b
  a = b
@@ -1923,7 +2447,23 @@ def Fibonacci(n):
 
 # Driver Program
 print(Fibonacci(7)) 
-# Output: 13"
+# Output: 13",n
+Identify errors and write fix for the following python code,"def uppercase_letter_count(string):
+    count = 0
+    for c in string
+        if c.isupper():
+            count += 1
+    return count","def uppercase_letter_count(string):
+    count = 0
+    for c in string: # Added missing colon
+        if c.isupper():
+            count += 1
+    return count # Removed an unnecessary '-'",Control Structure,3450,"def uppercase_letter_count(string):
+    count = 0
+    for ___ in string: # Added missing colon
+        if c.isupper():
+            count += 1
+    return count # Removed an unnecessary '-'",c
 Create a scoring system for a trivia game in Python. The system should take two inputs - the correct answer and user response - and return a single score value.,"correct_answer = '5'
 user_response = 'five'","def score_trivia(correct, user):
     correct = correct.lower()
@@ -1944,12 +2484,12 @@ user_response = 'five'","def score_trivia(correct, user):
     max_score = 10
     score = 0
 
-    ___
+    if ___ == user:
         score = max_score
-    ___
+    elif user in correct or correct in user:
         score = max_score * 0.8
 
-    return score"
+    return score",correct
 Optimize a code snippet in Python for maximum performance.,"import time
  
 def sleep_for_the_ night():
@@ -1971,7 +2511,7 @@ while True:
  sleep_for_the_night()",Control Structure,3471,"import time
 
 def sleep_for_the_night():
- ___
+ while ___:
   start_time = time.time()
   time.sleep(5)
   end_time = time.time()
@@ -1979,18 +2519,18 @@ def sleep_for_the_night():
   if elapsed_time < 5:
    time.sleep(5-elapsed_time)
 
-___
- sleep_for_the_night()"
+while True:
+ sleep_for_the_night()",True
 "Given two strings A and B, construct a Python program to determine if B is a substring of A.","A = ""I am here"" 
 B = ""here""","def is_substring(A, B): 
     if B in A: 
         return True 
     else: 
         return False",Control Structure,3498,"def is_substring(A, B): 
-    if B in A: 
+    if ___ in A: 
         return True 
-    ___ 
-        return False"
+    else: 
+        return False",B
 Optimize a Python function for maximum performance.,"def reverse_string(s): 
     return s[::-1]","def reverse_string(s): 
     start = 0 
@@ -2006,11 +2546,11 @@ Optimize a Python function for maximum performance.,"def reverse_string(s):
     end = len(s) 
     string="""" 
 
-    ___ 
+    while ___ > 0: 
         string += s[end-1] 
         end -= 1
 
-    return string"
+    return string",end
 Write a Python program that checks if a given number is prime.,7,"def is_prime(n):
     if n == 2 or n == 3:
         return True
@@ -2033,38 +2573,34 @@ Write a Python program that checks if a given number is prime.,7,"def is_prime(n
 
 num = 7
 print(""Is"", num, ""prime?: "", is_prime(num))",Control Structure,3595,"def is_prime(n):
-    ___
+    if ___ == 2 or n == 3:
         return True
-    ___
+    if n < 2 or n%2 == 0:
         return False
     if n < 9:
         return True
-    ___
+    if n%3 == 0:
         return False
 
     r = int(n**0.5)
     f = 5
-    ___
-        ___
+    while f <= r:
+        if n%f == 0:
             return False
-        ___
+        if n % (f+2) == 0:
             return False
         f += 6
     return True
 
 num = 7
-print(""Is"", num, ""prime?: "", is_prime(num))"
-Improve the following Python code to check if a number is in the range of 1 to 10 (inclusive).,"def check_number(num):
-if num >= 1 and num <= 10:
-   return True","def check_number(num):
-  if (num > 0 and num < 11):
-    return True
-  else:
-    return False",Control Structure,3664,"def check_number(num):
-  ___
-    return True
-  ___
-    return False"
+print(""Is"", num, ""prime?: "", is_prime(num))",n
+Develop a Python script for extracting data from a web page.,URL of a web page containing relevant data.,Properly functioning Python script for extracting data from a web page.,Control Structure,3598,Properly functioning Python script for ___ data from a web page.,extracting
+Edit the given Python program to use for loop instead of while loop.,"i = 0
+while i < 10:
+  print(i)
+  i = i + 1","for i in range(10):
+ print(i)",Control Structure,3631,"for ___ in range(10):
+ print(i)",i
 Develop a program in Python for finding the factorial of a given number.,7,"def factorial(n):
     if n < 0:
         return None
@@ -2078,18 +2614,18 @@ Develop a program in Python for finding the factorial of a given number.,7,"def 
 
 num = 7
 print('factorial of {} is {}'.format(num, factorial(num)))",Control Structure,3665,"def factorial(n):
-    if n < 0:
+    if ___ < 0:
         return None
-    el___
+    elif n == 0:
         return 1
-    ___
+    else:
         result = 1
         for i in range(1, n + 1):
             result *= i
         return result
 
 num = 7
-print('factorial of {} is {}'.format(num, factorial(num)))"
+print('factorial of {} is {}'.format(num, factorial(num)))",n
 Create a python program for the following purpose:,"Create a program that takes a positive integer N and an array A of length N, and outputs the total number of unique pairs of elements in A which sum up to an even number.","def count_even_pairs(N, A):
     n = 0
     for i in range(N):
@@ -2098,11 +2634,11 @@ Create a python program for the following purpose:,"Create a program that takes 
                 n += 1
     return n",Control Structure,3678,"def count_even_pairs(N, A):
     n = 0
-    for i in range(N):
+    for ___ in range(N):
         for j in range(i+1,N):
-            ___
+            if (A[i] + A[j]) % 2 == 0:
                 n += 1
-    return n"
+    return n",i
 Optimize a code snippet in Python. The code snippet is a function for computing the factorial of a number.,"def factorial(n):
  if n < 1:
   return 1
@@ -2115,13 +2651,25 @@ Optimize a code snippet in Python. The code snippet is a function for computing 
         for i in range(1, n+1):
             result *= i
         return result",Control Structure,3683,"def factorial(n):
-    ___
+    if ___ == 0:
         return 1
-    ___
+    else:
         result = 1
         for i in range(1, n+1):
             result *= i
-        return result"
+        return result",n
+"Write a function in Python that receives two positive integers and prints out all the numbers in the range of the two integers (inclusive), except for numbers divisible by three.","lower_bound = 5
+upper_bound = 15","def print_numbers(lower_bound, upper_bound):
+ for num in range(lower_bound, upper_bound+1):
+ if num % 3 != 0:
+ print(num)
+  
+print_numbers(5, 15)",Control Structure,3725,"def print_numbers(lower_bound, upper_bound):
+ for ___ in range(lower_bound, upper_bound+1):
+ if num % 3 != 0:
+ print(num)
+  
+print_numbers(5, 15)",num
 Create a Python program to detect if a number is a prime number.,No input.,"def is_prime(x):
     if x < 2:
         return False
@@ -2130,13 +2678,13 @@ Create a Python program to detect if a number is a prime number.,No input.,"def 
         if x % i == 0:
             return False
     return True",Control Structure,3745,"def is_prime(x):
-    if x < 2:
+    if ___ < 2:
         return False
     
     for i in range(2, x):
-        ___
+        if x % i == 0:
             return False
-    return True"
+    return True",x
 Create a program in Python that takes two lists and checks for common elements between them.,"list1 = [1,2,3,4]
 list2 = [3,4,5,6]","list1 = [1,2,3,4]
 list2 = [3,4,5,6] 
@@ -2155,14 +2703,33 @@ list2 = [3,4,5,6]
 
 def check_common(list1, list2): 
     result = False
-    for x in list1: 
+    for ___ in list1: 
         for y in list2: 
-            ___ 
+            if x == y: 
                 result = True
                 return result  
     return result 
   
-print(check_common(list1, list2))"
+print(check_common(list1, list2))",x
+Develop a python program that checks if a given word is consonant or not.,"word: ""hello""","def is_consonant(word): 
+    # List containing all consonants 
+    consonants = [""b"",""c"",""d"",""f"",""g"",""h"",""j"",""k"",""l"",""m"",""n"",""p"",""q"",""r"",""s"",""t"",""v"",""x"",""z""] 
+    for char in word: 
+        if char in consonants: 
+            return True
+    return False
+
+# Example
+print (is_consonant(""hello"")) # False",Control Structure,3753,"def is_consonant(word): 
+    # List containing all consonants 
+    consonants = [""b"",""c"",""d"",""f"",""g"",""h"",""j"",""k"",""l"",""m"",""n"",""p"",""q"",""r"",""s"",""t"",""v"",""x"",""z""] 
+    for ___ in word: 
+        if char in consonants: 
+            return True
+    return False
+
+# Example
+print (is_consonant(""hello"")) # False",char
 Create a Python algorithm to check if a given word exists in a dictionary.,"dictionary: {""hello"": ""greeting"", ""car"": ""vehicle""}
 word: ""hello""","# Function to test if a word exists in a dictionary 
 def wordExists(dictionary, word):
@@ -2175,10 +2742,10 @@ def wordExists(dictionary, word):
 # Main function
 dictionary = {""hello"": ""greeting"", ""car"": ""vehicle""}
 word = ""hello""
-print(wordExists(dictionary, word))",Control Structure,3763,"# Function to test if a word exists in a dictionary 
+print(wordExists(dictionary, word))",Control Structure,3763,"# Function to test if ___ word exists in a dictionary 
 def wordExists(dictionary, word):
     for key, value in dictionary.items():
-        ___
+        if key == word:
             return True
     
     return False
@@ -2186,7 +2753,31 @@ def wordExists(dictionary, word):
 # Main function
 dictionary = {""hello"": ""greeting"", ""car"": ""vehicle""}
 word = ""hello""
-print(wordExists(dictionary, word))"
+print(wordExists(dictionary, word))",a
+Generate a correct python program for solving the following problem,"Given a list of values, find the indices of all pairs whose sum is equal to a given target","def find_pairs_with_sum(values, target):
+    indices_list = []
+    for i in range(len(values)):
+        x = target - values[i]
+        if x in values[i+1:]:
+            indices_list.extend([i, values.index(x)])
+    return indices_list",Control Structure,3771,"def find_pairs_with_sum(values, target):
+    indices_list = []
+    for ___ in range(len(values)):
+        x = target - values[i]
+        if x in values[i+1:]:
+            indices_list.extend([i, values.index(x)])
+    return indices_list",i
+Tackle the task of optimizing a given Python program for faster execution.,"# Program to find the sum of two numbers
+def add_numbers(a, b):
+    return a + b","# Program to find the sum of two numbers
+def add_numbers(a, b):
+    # Use bitwise operators instead of normal arithmetic operations
+    # as they are much faster and more efficient 
+    return a ^ b if a <= b else b ^ a if b <= a else a ^ b",Control Structure,3795,"# Program to find the sum of two numbers
+def add_numbers(a, b):
+    # Use bitwise operators instead of normal arithmetic operations
+    # as they are much faster and more efficient 
+    return a ^ b if ___ <= b else b ^ a if b <= a else a ^ b",a
 Create a script in Python that checks a provided URL for a specific keyword within its content and outputs either a pass or fail result.,"URL: http://www.example.com
 Keyword: success","import requests
 
@@ -2203,20 +2794,20 @@ url = 'http://www.example.com'
 keyword = 'success'
 
 r = requests.get(url)
-if keyword in r.text:
+if ___ in r.text:
  print('Pass')
-___
- print('Fail')"
+else:
+ print('Fail')",keyword
 "Given two strings s and t, write a Python program to check if t is a substring of s.","s = ""abcabc""
 t = ""abc""","def is_substring(s, t):
     if t in s:
         return True
     else:
         return False",Control Structure,3811,"def is_substring(s, t):
-    if t in s:
+    if ___ in s:
         return True
-    ___
-        return False"
+    else:
+        return False",t
 "Create a function in Python which takes in a number n and returns ""Fizz"" if the number is divisible by 3, ""Buzz"" if the number is divisible by 5, and ""FizzBuzz"" if the number is divisible by both 3 and 5.",Number: 15,"def fizzbuzz(n):
  if n % 3 == 0 and n % 5 == 0:
   return 'FizzBuzz'
@@ -2226,21 +2817,91 @@ t = ""abc""","def is_substring(s, t):
   return 'Buzz'
  else:
   return n",Control Structure,3822,"def fizzbuzz(n):
- ___
+ if ___ % 3 == 0 and n % 5 == 0:
   return 'FizzBuzz'
- el___
+ elif n % 3 == 0:
   return 'Fizz'
- el___
+ elif n % 5 == 0:
   return 'Buzz'
- ___
-  return n"
+ else:
+  return n",n
+Build a function in Python for computing the Hamming Distance between two strings of equal length.,"String 1: python
+String 2: perl","def hammingDistance(s1, s2): 
+
+    # initialize with 0
+    distance = 0
+  
+    # Calculate the length of the string 
+    length_str1 = len(s1) 
+    # Compare adjacent characters and increment the count 
+    # if characters are not same 
+    for i in range(length_str1): 
+        if s1[i] != s2[i]: 
+            distance += 1
+  
+    return distance",Control Structure,3853,"def hammingDistance(s1, s2): 
+
+    # initialize with 0
+    distance = 0
+  
+    # Calculate the length of the string 
+    length_str1 = len(s1) 
+    # Compare adjacent characters and increment the count 
+    # if ___ are not same 
+    for i in range(length_str1): 
+        if s1[i] != s2[i]: 
+            distance += 1
+  
+    return distance",characters
+Generate a Python script for a query to fetch data from a given MySQL table.,"Table Name: Products
+Columns: product_id, name, price","import mysql.connector
+
+db = mysql.connector.connect(
+ host=""localhost"",
+ user=""root"",
+ passwd=""password"",
+ database=""dbname""
+)
+
+mycursor = db.cursor()
+
+sql = ""SELECT product_id, name, price FROM Products""
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for row in myresult:
+  print(row)",Control Structure,3940,"import mysql.connector
+
+db = mysql.connector.connect(
+ host=""localhost"",
+ user=""root"",
+ passwd=""password"",
+ database=""dbname""
+)
+
+mycursor = db.cursor()
+
+sql = ""SELECT product_id, name, price FROM Products""
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for ___ in myresult:
+  print(row)",row
 Write a Python statement to check if a given number is within a given range,"Number: 3, Range: 0-10","if 0 <= 3 <= 10:
  print('Number is within the range')
 else:
- print('Number is not within the range')",Control Structure,3975,"if 0 <= 3 <= 10:
+ print('Number is not within the range')",Control Structure,3975,"if ___ <= 3 <= 10:
  print('Number is within the range')
-___
- print('Number is not within the range')"
+else:
+ print('Number is not within the range')",0
+Design a for loop in Python which iterates over two given lists and prints their items in a orderly manner.,"list1 = [1, 2, 3]
+list2 = [""Apple"", ""Banana"", ""Cherry""]","for item1, item2 in zip(list1, list2):
+    print(f""{item1}: {item2}"")",Control Structure,3983,"for ___, item2 in zip(list1, list2):
+    print(f""{item1}: {item2}"")",item1
 Write a Python program that takes an integer as input and check if the number is prime or not.,45,"def is_prime(n):
     if n < 2: 
         return False
@@ -2250,14 +2911,14 @@ Write a Python program that takes an integer as input and check if the number is
             return False
 
     return True",Control Structure,4041,"def is_prime(n):
-    if n < 2: 
+    if ___ < 2: 
         return False
 
     for i in range(2, int(n**0.5) + 1):  
-        ___ 
+        if n % i == 0: 
             return False
 
-    return True"
+    return True",n
 Write a Python program to check if a given number is divisible by 3 and 5 or not.,10,"def check_divisible_3and5(num):
     if (num % 3 == 0 and num % 5 == 0):
         return True
@@ -2270,17 +2931,17 @@ if check_divisible_3and5(num):
     print(""%d is divisible by 3 and 5"" %num)
 else:
     print(""%d is not divisible by 3 and 5"" %num)",Control Structure,4062,"def check_divisible_3and5(num):
-    ___
+    if (num % 3 == 0 and num % 5 == 0):
         return True
-    ___
+    else:
         return False
 
 # test given number
 num = 10
-if check_divisible_3and5(num):
+if ___(num):
     print(""%d is divisible by 3 and 5"" %num)
-___
-    print(""%d is not divisible by 3 and 5"" %num)"
+else:
+    print(""%d is not divisible by 3 and 5"" %num)",check_divisible_3and5
 "Write a python function to compare two strings and return 1 if the strings are anagrams, 0 if not.","""bob"", ""bob""","def is_anagram(string1, string2):
     string1 = sorted(string1.replace("" "", """").lower())
     string2 = sorted(string2.replace("" "", """").lower())
@@ -2292,17 +2953,17 @@ ___
     string1 = sorted(string1.replace("" "", """").lower())
     string2 = sorted(string2.replace("" "", """").lower())
     
-    ___
+    if ___ == string2:
         return 1
-    ___
-        return 0"
+    else:
+        return 0",string1
 Write a Python program to check if two strings are a rotation of each other.,"Strings:”geeksforgeeks”, “forgeeksgeeks”","if len(string1) == len(string2) and string1 in string2*2:
     print(""The strings are a rotation of each other"")
 else:
-    print(""The strings are not a rotation of each other"")",Control Structure,4116,"___
+    print(""The strings are not a rotation of each other"")",Control Structure,4116,"if ___(string1) == len(string2) and string1 in string2*2:
     print(""The strings are a rotation of each other"")
-___
-    print(""The strings are not a rotation of each other"")"
+else:
+    print(""The strings are not a rotation of each other"")",len
 Analyze a given Python code and write a function that checks if a given number is prime.,def primeCheck(num):,"def primeCheck(num):
  if num > 1:
  for i in range(2, num):
@@ -2311,13 +2972,39 @@ Analyze a given Python code and write a function that checks if a given number i
  else:
   return False
  return True",Control Structure,4120,"def primeCheck(num):
- if num > 1:
+ if ___ > 1:
  for i in range(2, num):
-  ___
+  if (num % i) == 0:
    return False
- ___
+ else:
   return False
- return True"
+ return True",num
+Develop a python program for predicting a movie's rating based on its reviews.,"reviews = ['This movie was great', 'This movie was terrible']","#Code
+num_reviews = len(reviews)
+num_positive_reviews = 0
+
+for review in reviews:
+    if 'great' in review:
+        num_positive_reviews +=1
+
+rating = num_positive_reviews / num_reviews #Rating  
+print(rating) #Prints the rating",Control Structure,4129,"#Code
+num_reviews = len(reviews)
+num_positive_reviews = 0
+
+for ___ in reviews:
+    if 'great' in review:
+        num_positive_reviews +=1
+
+rating = num_positive_reviews / num_reviews #Rating  
+print(rating) #Prints the rating",review
+Create a program in Python for ASCII conversion.,String: “Hello World”,"def ascii_conversion(string):
+ return ''.join([f'{ord(c):08b}' for c in string])
+
+print(ascii_conversion(""Hello World""))",Control Structure,4161,"def ascii_conversion(string):
+ return ''.join([f'{ord(c):08b}' for ___ in string])
+
+print(ascii_conversion(""Hello World""))",c
 "Develop an API in Python that takes in two strings and returns true if they are anagrams, and false otherwise.","listen, silent","# anagram checker
 
 def check_anagrams(str1, str2):
@@ -2336,9 +3023,9 @@ else:
     print(""The strings aren't anagrams."")",Control Structure,4168,"# anagram checker
 
 def check_anagrams(str1, str2):
-    ___
+    if ___(str1) == sorted(str2):
         return True 
-    ___ 
+    else: 
         return False 
   
 # Driver code 
@@ -2347,8 +3034,8 @@ str2 = ""silent""
 
 if(check_anagrams(str1, str2)): 
     print(""The strings are anagrams."")  
-___ 
-    print(""The strings aren't anagrams."")"
+else: 
+    print(""The strings aren't anagrams."")",sorted
 Write a Python code to check if the given number is prime.,Number = 23,"def is_prime(n):
     if n <= 1:
         return False
@@ -2361,36 +3048,17 @@ if is_prime(23):
     print('The given number is prime')
 else:
     print('The given number is not prime')",Control Structure,4183,"def is_prime(n):
-    if n <= 1:
+    if ___ <= 1:
         return False
     for i in range(2, n//2 + 1):
-        ___
+        if n % i == 0:
             return False
     return True
 
 if is_prime(23):
     print('The given number is prime')
-___
-    print('The given number is not prime')"
-Write a Python program for finding the maximum of 3 numbers.,"4, 7, 6","def max_of_three(a, b, c):
-  if (a > b) and (a > c):
-    greatest = a
-  elif (b > a) and (b > c):
-    greatest = b
-  else:
-    greatest = c
-  return greatest
-
-print(""Max is: "", max_of_three(4, 7, 6))",Control Structure,4190,"def max_of_three(a, b, c):
-  ___
-    greatest = a
-  ___
-    greatest = b
-  ___
-    greatest = c
-  return greatest
-
-print(""Max is: "", max_of_three(4, 7, 6))"
+else:
+    print('The given number is not prime')",n
 Can you write a Python function to determine if a supplied number is prime?,num=20,"def is_prime(num):
     """"""Check if the given number is prime.
 
@@ -2412,7 +3080,7 @@ Can you write a Python function to determine if a supplied number is prime?,num=
 num = 20
 result = is_prime(num)
 print(f""Is {num} prime? {result}"")",Control Structure,4198,"def is_prime(num):
-    """"""Check if the given number is prime.
+    """"""Check if ___ given number is prime.
 
     Args:
         num (int): A number to check
@@ -2425,13 +3093,13 @@ print(f""Is {num} prime? {result}"")",Control Structure,4198,"def is_prime(num):
         return False
 
     for i in range(2, num):
-        ___
+        if (num % i) == 0:
             return False
     return True
 
 num = 20
 result = is_prime(num)
-print(f""Is {num} prime? {result}"")"
+print(f""Is {num} prime? {result}"")",the
 Create a Python Flask application for solving a linear equation. The application should have an endpoint that receives an equation as input and returns the solution as output.,3x + 2 = 5,"from flask import Flask, request
 from sympy import *
 
@@ -2457,8 +3125,8 @@ def solve():
  solution = solve(equation, x)
  return {'solution': str(solution[0])}
 
-___
- app.run(debug=True)"
+if ___ == 'main':
+ app.run(debug=True)",name
 Generate an automated unit test in Python for the following function,"def add(a, b):
     return a + b","import unittest
 
@@ -2483,8 +3151,8 @@ class TestAddition(unittest.TestCase):
         self.assertEqual(add(-8, 6), -2)
         self.assertEqual(add(-3, -3), -6)
 
-___
-    unittest.main()"
+if ___ == '__main__':
+    unittest.main()",__name__
 Generate a Python implementation for these pseudocode.,"Repeat Steps 1 and 2 until no unscanned barcodes remain. 
   1. Scan a barcode.
   2. Print the name of its product.","def print_product_names():
@@ -2496,10 +3164,10 @@ Generate a Python implementation for these pseudocode.,"Repeat Steps 1 and 2 unt
         print(product_name)",Control Structure,4259,"def print_product_names():
     unscanned_barcodes = [barcodes] #list of unscanned barcodes
 
-    ___
+    while ___(unscanned_barcodes) > 0:
         barcode = unscanned_barcodes.pop(0)
         product_name = scan_barcode(barcode) #function that returns product name
-        print(product_name)"
+        print(product_name)",len
 Write a Python program to modify a given dataset for a specific task.,"Dataset:
 {
     ""name"": ""John"", 
@@ -2516,11 +3184,11 @@ modified_data = []
  modified_data.append(d)
  return modified_data",Control Structure,4285,"def modify_data(dataset, task):
 modified_data = []
- ___
+ if ___ == ""filter age >18"":
  for d in dataset:
  if d['age'] > 18:
  modified_data.append(d)
- return modified_data"
+ return modified_data",task
 Create a function that takes two strings as its inputs and returns true if one of the two strings is a substring of the other.,"""python"", ""java""","def is_substring(string1, string2):
     for i in range(len(string1)):
         for j in range(len(string2)):
@@ -2530,14 +3198,36 @@ Create a function that takes two strings as its inputs and returns true if one o
 
 result = is_substring(""python"", ""java"")
 print(result)",Control Structure,4310,"def is_substring(string1, string2):
-    for i in range(len(string1)):
+    for ___ in range(len(string1)):
         for j in range(len(string2)):
-            ___
+            if string1[i] == string2[j]:
                 return True
     return False
 
 result = is_substring(""python"", ""java"")
-print(result)"
+print(result)",i
+Enhance the following Python code for saving a webpage to a local directory.,"import urllib.request
+
+def save_webpage(url, path):
+ urllib.request.urlretrieve(url, path)","import urllib.request
+from urllib.parse import urlparse
+import os
+
+def save_webpage(url, path):
+ parsed_url = urlparse(url)
+ path = os.path.join(path, parsed_url.netloc + parsed_url.path)
+ if not os.path.exists(os.path.dirname(path)):
+ os.makedirs(os.path.dirname(path))
+ urllib.request.urlretrieve(url, path)",Control Structure,4319,"import urllib.request
+from urllib.parse import urlparse
+import os
+
+def save_webpage(url, path):
+ parsed_url = urlparse(url)
+ path = os.path.join(path, parsed_url.netloc + parsed_url.path)
+ if ___ os.path.exists(os.path.dirname(path)):
+ os.makedirs(os.path.dirname(path))
+ urllib.request.urlretrieve(url, path)",not
 Design a function in Python to test if the given number is a prime or not.,N = 13,"def is_prime(n):
  if n <= 1:
  return False
@@ -2549,16 +3239,16 @@ Design a function in Python to test if the given number is a prime or not.,N = 1
  return True
 
 is_prime(13) # True",Control Structure,4351,"def is_prime(n):
- if n <= 1:
+ if ___ <= 1:
  return False
 
  for i in range(2, n):
- ___
+ if n % i == 0:
  return False
 
  return True
 
-is_prime(13) # True"
+is_prime(13) # True",n
 "Given two strings, write a Python program to check if one is an anagram of other.",listen and silent,"def isAnagram(str1, str2):
     str1_sorted = sorted(str1)
     str2_sorted = sorted(str2)
@@ -2575,15 +3265,15 @@ print(isAnagram(str1, str2))",Control Structure,4373,"def isAnagram(str1, str2):
     str1_sorted = sorted(str1)
     str2_sorted = sorted(str2)
     # Compare sorted strings
-    ___
+    if ___ == str2_sorted:
         return True
-    ___
+    else:
         return False
 
 str1 = ""listen""
 str2 = ""silent""
 
-print(isAnagram(str1, str2))"
+print(isAnagram(str1, str2))",str1_sorted
 Edit the code to make it in a Python program to check if a number is divisible by 5 and 11.,"def isDivisible(num): 
     if num % 5 == 0: 
         print(""Number is divisible by 5"") 
@@ -2593,10 +3283,23 @@ Edit the code to make it in a Python program to check if a number is divisible b
         print(""Number is divisible by 5 and 11"") 
     else:
         print(""Number is not divisible by 5 and 11"")",Control Structure,4395,"def isDivisible(num): 
-    ___
+    if ___ % 5 == 0 and num % 11 == 0:
         print(""Number is divisible by 5 and 11"") 
-    ___
-        print(""Number is not divisible by 5 and 11"")"
+    else:
+        print(""Number is not divisible by 5 and 11"")",num
+Create a Python script to fill empty cells in a Pandas DataFrame with the median value for that column.,A sample Pandas DataFrame,"import pandas as pd
+
+# Replace empty cells with the median value of the column
+df = df.fillna(df.median())
+
+# Check if the null values have been replaced
+print(df.isnull().sum())",Control Structure,4426,"import pandas as pd
+
+# Replace empty cells with the median value of the column
+df = df.fillna(df.median())
+
+# Check if ___ null values have been replaced
+print(df.isnull().sum())",the
 Create a Python program for finding all combinations of numbers that equal a given target number.,target = 10,"def find_combos(target):
  combos = []
  
@@ -2612,16 +3315,16 @@ combos = find_combos(10)
 print(combos)",Control Structure,4435,"def find_combos(target):
  combos = []
  
- for i in range(int(target/2)+1):
+ for ___ in range(int(target/2)+1):
  # increments of two to avoid duplicate results
  for j in range(i, int(target/2)+1, 2):
- ___
+ if i+j == target:
  combos.append((i,j))
  
  return combos
 
 combos = find_combos(10)
-print(combos)"
+print(combos)",i
 How would you design a Python program that checks if a number is divisible by three?,45,"def is_divisible(n):
     if n % 3 == 0:
         return True
@@ -2635,9 +3338,9 @@ if check_divisible:
     print(""Number is divisible by three."")
 else:
     print(""Number is not divisible by three."")",Control Structure,4482,"def is_divisible(n):
-    ___
+    if ___ % 3 == 0:
         return True
-    ___
+    else:
         return False
 
 num = 45
@@ -2645,8 +3348,33 @@ check_divisible = is_divisible(num)
 
 if check_divisible:
     print(""Number is divisible by three."")
-___
-    print(""Number is not divisible by three."")"
+else:
+    print(""Number is not divisible by three."")",n
+"Optimize the following python code to speed up execution time:
+
+arr = [2, 5, 3, 1]
+for i in range(len(arr)):
+  for j in range(i + 1, len(arr)):
+    if arr[i] > arr[j]:
+       arr[i], arr[j] = arr[j], arr[i]","[2, 5, 3, 1]","arr = [2, 5, 3, 1]
+
+# using Python's built in `sorted` function
+arr = sorted(arr)
+
+# using the Bubble Sort algorithm
+for i in range(len(arr) - 1):
+ for j in range(len(arr) - 1 - i):
+  if arr[j] > arr[j + 1]:
+   arr[j], arr[j + 1] = arr[j + 1], arr[j]",Control Structure,4511,"arr = [2, 5, 3, 1]
+
+# using Python's built in `sorted` function
+arr = sorted(arr)
+
+# using the Bubble Sort algorithm
+for ___ in range(len(arr) - 1):
+ for j in range(len(arr) - 1 - i):
+  if arr[j] > arr[j + 1]:
+   arr[j], arr[j + 1] = arr[j + 1], arr[j]",i
 Optimize a Python function for computing Fibonacci numbers.,"def fib(n):
     if n == 0 or n == 1:
         return n
@@ -2661,15 +3389,44 @@ Optimize a Python function for computing Fibonacci numbers.,"def fib(n):
             fibonacci_num.append(fibonacci_num[i-1]+fibonacci_num[i-2])
             i+=1
         return fibonacci_num[n]",Control Structure,4522,"def fibonacci(n): 
-    if n <= 1: 
+    if ___ <= 1: 
         return n 
-    ___
+    else:
         fibonacci_num=[0,1] #creating a fibonacci list
         i=2
-        ___
+        while i<=n:
             fibonacci_num.append(fibonacci_num[i-1]+fibonacci_num[i-2])
             i+=1
-        return fibonacci_num[n]"
+        return fibonacci_num[n]",n
+Create a python script to download a complete web page and cache it for faster offline access.,URL: https://www.example.com/page1,"import requests
+import os
+
+url = 'https://www.example.com/page1'
+
+if not os.path.exists('cache'):
+ os.makedirs('cache')
+
+r = requests.get(url)
+
+filename = url.rsplit('/', 1)[-1]
+file_path = os.path.join('cache', filename)
+
+with open(file_path, 'wb') as f:
+ f.write(r.content)",Control Structure,4535,"import requests
+import os
+
+url = 'https://www.example.com/page1'
+
+if ___ os.path.exists('cache'):
+ os.makedirs('cache')
+
+r = requests.get(url)
+
+filename = url.rsplit('/', 1)[-1]
+file_path = os.path.join('cache', filename)
+
+with open(file_path, 'wb') as f:
+ f.write(r.content)",not
 Write an algorithm for linear search in Python.,"List: [1, 3, 8, 10, 15, 20, 25]
 Number to search: 15","def linear_search(list, n):
   i = 0
@@ -2684,8 +3441,8 @@ n = 15
 index = linear_search(list, n)
 print(""Number found at index:"", index)",Control Structure,4565,"def linear_search(list, n):
   i = 0
-  ___
-    ___
+  while ___ < len(list):
+    if list[i] == n:
       return i
     i = i+1
   return -1
@@ -2693,7 +3450,28 @@ print(""Number found at index:"", index)",Control Structure,4565,"def linear_sea
 list = [1, 3, 8, 10, 15, 20, 25]
 n = 15
 index = linear_search(list, n)
-print(""Number found at index:"", index)"
+print(""Number found at index:"", index)",i
+Write a Python program to generate recurrence equation for a given sequence and initial condition.,"[2, 4, 6, 8], 2","def generate_recurrence(sequence, initial_condition): 
+ if len(sequence) <= 1: 
+ return initial_condition 
+ 
+ a_i = sequence[-1] 
+ a_i_1 = sequence[-2] 
+ recurrence = a_i + initial_condition - a_i_1 
+ return recurrence
+
+result = generate_recurrence([2, 4, 6, 8], 2)
+print(result)",Control Structure,4655,"def generate_recurrence(sequence, initial_condition): 
+ if ___(sequence) <= 1: 
+ return initial_condition 
+ 
+ a_i = sequence[-1] 
+ a_i_1 = sequence[-2] 
+ recurrence = a_i + initial_condition - a_i_1 
+ return recurrence
+
+result = generate_recurrence([2, 4, 6, 8], 2)
+print(result)",len
 Create a Python program to check if a number is an Armstrong number.,number = 153,"def isArmstrong(number): 
 	
 	num = number 
@@ -2714,15 +3492,15 @@ Create a Python program to check if a number is an Armstrong number.,number = 15
 	length = len(str(number)) 
 	sum_of_the_power_of_digits = 0 
 
-	___
+	while ___ > 0:
 		rem = num % 10 
 		sum_of_the_power_of_digits = sum_of_the_power_of_digits +  np.power(rem, length)
 		num //= 10
 		
-	___ 
+	if (sum_of_the_power_of_digits == number) : 
 		return True 
-	___ 
-		return False"
+	else : 
+		return False",num
 Design an algorithm in Python to check if an integer is even or odd.,n = 5,"def check_number(n):
     if n%2==0:
         return ""Even""
@@ -2731,13 +3509,13 @@ Design an algorithm in Python to check if an integer is even or odd.,n = 5,"def 
 
 check_number(5) 
 # Output: Odd",Control Structure,4752,"def check_number(n):
-    if n%2==0:
+    if ___%2==0:
         return ""Even""
-    ___
+    else:
         return ""Odd""
 
 check_number(5) 
-# Output: Odd"
+# Output: Odd",n
 Generate a python code for an algorithmic solution for the following problem:,"Given a list A and a number X, determine whether or not there exist two elements in A whose sum is exactly X.","def is_sum_possible(A, X): 
     n = len(A) 
     # create an empty hash set
@@ -2754,13 +3532,13 @@ Generate a python code for an algorithmic solution for the following problem:,"G
     # create an empty hash set
     s = set() 
   
-    for i in range(n): 
+    for ___ in range(n): 
         temp = X - A[i]  
-        ___ 
+        if temp >= 0 and temp in s: 
             return True 
         s.add(A[i])  
   
-    return False"
+    return False",i
 Build a Python generator that yields the next power of 2 for a given number.,4,"def nextPowerOf2Generator(n): 
     power = 1
     while True: 
@@ -2775,7 +3553,7 @@ for i in nextPowerOf2Generator(n):
         print(i)
         break",Control Structure,4902,"def nextPowerOf2Generator(n): 
     power = 1
-    ___ 
+    while ___: 
         pow_val = power * 2
         yield pow_val 
         power = pow_val 
@@ -2785,7 +3563,7 @@ n = 4
 for i in nextPowerOf2Generator(n):
     if i > n:
         print(i)
-        ___"
+        break",True
 Generate a Python program that takes an input of a number and checks if it is prime.,7,"def is_prime(num):
     if num == 2:
         return True
@@ -2796,26 +3574,80 @@ Generate a Python program that takes an input of a number and checks if it is pr
 num = 7
 result = is_prime(num)
 print(result)",Control Structure,4916,"def is_prime(num):
-    ___
+    if ___ == 2:
         return True
-    ___
+    elif num < 2 or not all(num % i for i in range(2, num)):
         return False
     return True
 
 num = 7
 result = is_prime(num)
-print(result)"
+print(result)",num
+Create a Python script which inputs a sentence and performs POS tagging and letter count for the text using NLTK library.,This is an example sentence.,"import nltk
+
+sentence = 'This is an example sentence.'
+words = nltk.word_tokenize(sentence)
+tagged_words = nltk.pos_tag(words)
+
+letter_count = 0
+for word in words:
+ letter_count += len(word)
+
+print('POS Tags: ', tagged_words)
+print('Letter Count: ', letter_count)",Control Structure,4973,"import nltk
+
+sentence = 'This is an example sentence.'
+words = nltk.word_tokenize(sentence)
+tagged_words = nltk.pos_tag(words)
+
+letter_count = 0
+for ___ in words:
+ letter_count += len(word)
+
+print('POS Tags: ', tagged_words)
+print('Letter Count: ', letter_count)",word
+Write a Python program to automatically generate the HTML for a table from a dictionary of data.,"d = {""col1"": [""A"", ""B"", ""C""],
+""col2"": [2, 4, 6],
+""col3"": [3, 5, 7]}","html_str = '<table><tr>'
+
+for key in d:
+ html_str += '<th>{}</th>'.format(key)
+html_str += '</tr>'
+
+for i in range(len(d['col1'])):
+ html_str += '<tr>'
+ for key in d:
+ html_str += '<td>{}</td>'.format(d[key][i])
+ html_str += '</tr>'
+
+html_str += '</table>'
+
+print(html_str)",Control Structure,5034,"html_str = '<table><tr>'
+
+for ___ in d:
+ html_str += '<th>{}</th>'.format(key)
+html_str += '</tr>'
+
+for i in range(len(d['col1'])):
+ html_str += '<tr>'
+ for key in d:
+ html_str += '<td>{}</td>'.format(d[key][i])
+ html_str += '</tr>'
+
+html_str += '</table>'
+
+print(html_str)",key
 Create a block of code for a Python program to generate a multiplication table for a given number.,num = 6,"# Create a multiplication table for a given number
 num = 6
 
 # Loop to generate the table
 for i in range(1, 11):
-  print(f'{num} x {i} = {num * i}')",Control Structure,5041,"# Create a multiplication table for a given number
+  print(f'{num} x {i} = {num * i}')",Control Structure,5041,"# Create a multiplication table for ___ given number
 num = 6
 
 # Loop to generate the table
-___
-  print(f'{num} x {i} = {num * i}')"
+for i in range(1, 11):
+  print(f'{num} x {i} = {num * i}')",a
 Create a web application in Python that displays a directory structure tree for a given path.,/home/myUser/myFolder,"import os
 
 def make_tree(path): 
@@ -2833,16 +3665,16 @@ make_tree(path)",Control Structure,5047,"import os
 
 def make_tree(path): 
  files = os.listdir(path) 
- for f in files: 
+ for ___ in files: 
      full_path = os.path.join(path, f) 
      if os.path.isdir(full_path): 
          print(f) 
          make_tree(full_path) 
-     ___ 
+     else: 
          print("" -"" + f) 
   
 path = '/home/myUser/myFolder' 
-make_tree(path)"
+make_tree(path)",f
 Write a Python code to determine if the user has enough money in the account for a given transaction.,"balance = 200
 amount = 50","def enough_balance(balance, amount):
     if amount > balance:
@@ -2851,20 +3683,28 @@ amount = 50","def enough_balance(balance, amount):
 
 if __name__ == '__main__':
     print(enough_balance(balance, amount))",Control Structure,5070,"def enough_balance(balance, amount):
-    if amount > balance:
+    if ___ > balance:
         return False
     return True
 
-___
-    print(enough_balance(balance, amount))"
+if __name__ == '__main__':
+    print(enough_balance(balance, amount))",amount
+Optimize the python code below for memory efficiency.,"my_list = []
+for i in range(20):
+    my_list.append(i**2)",my_list = [i**2 for i in range(20)],Control Structure,5080,my_list = [i**2 for ___ in range(20)],i
+Rewrite the following python code to be more concise while still producing the same output.,"for i in range(10):
+ for j in range(10):
+ print(""------------"")","for i in range(10):
+ print(""------------\n""*10)",Control Structure,5089,"for ___ in range(10):
+ print(""------------\n""*10)",i
 "Use the inputs provided, write Python code to check if two integers are equal.","First Integer: 10
 Second Integer: 10","if int(10) == int(10):
     print(""The two integers are equal"")
 else:
-    print(""The two integers are not equal"")",Control Structure,5097,"___
+    print(""The two integers are not equal"")",Control Structure,5097,"if ___(10) == int(10):
     print(""The two integers are equal"")
-___
-    print(""The two integers are not equal"")"
+else:
+    print(""The two integers are not equal"")",int
 Generate a Python program that can verify if a given sentence is correct or misspelled.,"The sentence: ""This is my new computer""","import re
 
 def spell_check(sentence):
@@ -2883,7 +3723,7 @@ else:
 
 def spell_check(sentence):
   words = re.findall(r'\w+', sentence)
-  for word in words:
+  for ___ in words:
     if not word.lower() in dict:
         return False
   return True
@@ -2892,8 +3732,36 @@ sentence = ""This is my new computer""
 result = spell_check(sentence)
 if result:
     print('Correct spelling')
-___
-    print('Incorrect spelling')"
+else:
+    print('Incorrect spelling')",word
+Write a Python code snippet for comparing two strings regardless of their case. You should use regular expressions.,"String 1: ""Hello""
+String 2: ""heLLo""","import re
+
+string1 = ""Hello""
+string2 = ""heLLo""
+
+if re.search(string1.lower(), string2.lower()):
+ print(""Strings are equal regardless of case."")",Control Structure,5222,"import re
+
+string1 = ""Hello""
+string2 = ""heLLo""
+
+if ___.search(string1.lower(), string2.lower()):
+ print(""Strings are equal regardless of case."")",re
+Code an algorithm in Python to check if two given sets are equal.,"A = {1, 2, 3, 4, 5}
+B = {4, 1, 2, 3, 5}","def is_equal(A, B):
+    if len(A) != len(B):
+        return False
+    for el in A:
+        if el not in B:
+            return False
+    return True",Control Structure,5229,"def is_equal(A, B):
+    if ___(A) != len(B):
+        return False
+    for el in A:
+        if el not in B:
+            return False
+    return True",len
 "Given two strings s and t, create a new Python function to check if s is an anagram of t.","s = ""anagram""
 t = ""nagaram""","def is_anagram(s, t):
  s_list = list(s)
@@ -2908,10 +3776,10 @@ t = ""nagaram""","def is_anagram(s, t):
  t_list = list(t)
  s_list.sort()
  t_list.sort()
- ___
+ if ___ == t_list:
  return True
- ___
- return False"
+ else:
+ return False",s_list
 Create a Python script that takes a number and prints the multiplication table for that number.,Number: 4,"num = 4 # Take input
   
 # To take input from the user 
@@ -2925,8 +3793,8 @@ for i in range(1, 11):
 # num = int(input(""Display multiplication table of? "")) 
   
 # Iterate 10 times from i = 1 to 10 
-___ 
-   print(num, 'x', i, '=', num*i)"
+for ___ in range(1, 11): 
+   print(num, 'x', i, '=', num*i)",i
 Write a Python program that uses a while loop to calculate a Fibonacci sequence up to the given upper limit.,Upper limit: 10,"upper_limit = 10
 
 fibonacci_sequence = [0, 1]
@@ -2947,13 +3815,13 @@ fibonacci_sequence = [0, 1]
 a = 0
 b = 1
 
-___
+while ___ <= upper_limit:
  c = a + b
  a = b
  b = c
  fibonacci_sequence.append(b)
 
-print(fibonacci_sequence) # Output: [0, 1, 1, 2, 3, 5, 8, 13]"
+print(fibonacci_sequence) # Output: [0, 1, 1, 2, 3, 5, 8, 13]",b
 Write a Python program to check if a number is prime by eliminating the multiples of all numbers from 2 to the square root of the number.,n = 99,"import math
 
 def is_prime(n):
@@ -2965,12 +3833,12 @@ def is_prime(n):
 print(is_prime(n))",Control Structure,5384,"import math
 
 def is_prime(n):
-    for i in range(2, int(math.sqrt(n))+1):
-        ___
+    for ___ in range(2, int(math.sqrt(n))+1):
+        if n % i == 0:
             return False
     return True
 
-print(is_prime(n))"
+print(is_prime(n))",i
 Optimize this while loop in the given Python code.,"i = 0
 while i < 5:
     i += 1
@@ -2978,9 +3846,9 @@ while i < 5:
 while i < 5:
     print(i)
     i += 1",Control Structure,5393,"i = 0
-___
+while ___ < 5:
     print(i)
-    i += 1"
+    i += 1",i
 Modify the following code in Python to check if a number is prime or not.,"def checkPrime(n):
     for i in range(2,n):
         if n%i==0:
@@ -2994,14 +3862,33 @@ Modify the following code in Python to check if a number is prime or not.,"def c
             return False
     
     return True",Control Structure,5403,"def checkPrime(n):
-    if n <= 1:
+    if ___ <= 1:
         return False
 
     for i in range(2,n):
-        ___
+        if n % i == 0:
             return False
     
-    return True"
+    return True",n
+Write a function in Python that takes two strings as input and return true if one is a rotation of the other.,"""listen"",""enlist""","def is_rotation(s1, s2):
+  # edge case check
+  if len(s1) != len(s2):
+    return False
+
+  # concatenate s2 to itself
+  concat_s2 = s2 + s2
+
+  #search s1 in concat_s2
+  return s1 in concat_s2",Control Structure,5512,"def is_rotation(s1, s2):
+  # edge case check
+  if ___(s1) != len(s2):
+    return False
+
+  # concatenate s2 to itself
+  concat_s2 = s2 + s2
+
+  #search s1 in concat_s2
+  return s1 in concat_s2",len
 Create a Python function for computing the Factorial of a number.,6,"def factorial(n):
    if n == 0:
       return 1
@@ -3009,43 +3896,31 @@ Create a Python function for computing the Factorial of a number.,6,"def factori
       return n * factorial(n-1)
 
 print(factorial(6))",Control Structure,5520,"def factorial(n):
-   ___
+   if ___ == 0:
       return 1
-   ___
+   else:
       return n * factorial(n-1)
 
-print(factorial(6))"
-Design an algorithm to check if a number is a perfect square in Python.,25,"import math 
-  
-def isPerfectSquare(n): 
-    # Find floating point value of 
-    # square root of x. 
-    sqr = math.sqrt(n) 
-   
-    # If square root is an integer 
-    return (sqr - math.floor(sqr) == 0) 
-  
-# Driver program 
-x = 25
-if(isPerfectSquare(x)): 
-    print(x, ""is a perfect square"") 
-else: 
-    print(x, ""is not a perfect square"")",Control Structure,5553,"import math 
-  
-def isPerfectSquare(n): 
-    # Find floating point value of 
-    # square root of x. 
-    sqr = math.sqrt(n) 
-   
-    # If square root is an integer 
-    return (sqr - math.floor(sqr) == 0) 
-  
-# Driver program 
-x = 25
-if(isPerfectSquare(x)): 
-    print(x, ""is a perfect square"") 
-___ 
-    print(x, ""is not a perfect square"")"
+print(factorial(6))",n
+Create a Python function that uses a given dictionary to calculate the sum of all the values for each key.,"{'a': 4, 'b': 2, 'c': 1}","def sum_dict_values(dict):
+  result = 0
+  for key in dict:
+    result += dict[key]
+
+  return result
+
+dict = {'a': 4, 'b': 2, 'c': 1}
+sum = sum_dict_values(dict)
+print(sum) # 7",Control Structure,5551,"def sum_dict_values(dict):
+  result = 0
+  for ___ in dict:
+    result += dict[key]
+
+  return result
+
+dict = {'a': 4, 'b': 2, 'c': 1}
+sum = sum_dict_values(dict)
+print(sum) # 7",key
 Develop an algorithm in Python for parsing a given text and counting the number of occurrences of a given word.,This is an example text.,"def parse_text(text, word):
   word_count = 0
   words = text.split()
@@ -3060,15 +3935,15 @@ word_count = parse_text(text, word)
 print('The word ""{}"" appears {} times in the text.'.format(word, word_count))",Control Structure,5620,"def parse_text(text, word):
   word_count = 0
   words = text.split()
-  for w in words:
-    ___
+  for ___ in words:
+    if w == word:
       word_count += 1
   return word_count
   
 text = 'This is an example text.'
 word = 'example'
 word_count = parse_text(text, word)
-print('The word ""{}"" appears {} times in the text.'.format(word, word_count))"
+print('The word ""{}"" appears {} times in the text.'.format(word, word_count))",w
 Implement a solutions for the Tower of Hanoi problem using Python.,int n = 4,"def hanoi(n, source, aux, dest):
  if n == 1:
   print('Move disk 1 from {0} to {1}'.format(source, dest))
@@ -3080,16 +3955,16 @@ Implement a solutions for the Tower of Hanoi problem using Python.,int n = 4,"de
 # Driver program
 n = 4
 hanoi(n, 'a', 'b', 'c')",Control Structure,5742,"def hanoi(n, source, aux, dest):
- ___
+ if ___ == 1:
   print('Move disk 1 from {0} to {1}'.format(source, dest))
- ___
+ else:
   hanoi(n-1, source, dest, aux)
   print('Move disk {0} from {1} to {2}'.format(n, source, dest))
   hanoi(n-1, aux, source, dest)
 
 # Driver program
 n = 4
-hanoi(n, 'a', 'b', 'c')"
+hanoi(n, 'a', 'b', 'c')",n
 Generate a program in Python for a simple chatbot. The program should accept a user input and output a response using the input provided.,Hello,"user_input = input(""User: "")
 
 if user_input == ""Hello"":
@@ -3097,10 +3972,66 @@ if user_input == ""Hello"":
 else:
  print(""Chatbot: I'm not sure what you mean, please try again."")",Control Structure,5781,"user_input = input(""User: "")
 
-___
+if ___ == ""Hello"":
  print(""Chatbot: Hi there!"")
-___
- print(""Chatbot: I'm not sure what you mean, please try again."")"
+else:
+ print(""Chatbot: I'm not sure what you mean, please try again."")",user_input
+You need to optimize a given Python code for improving speed.,"def find_corresponding_nums(nums1, nums2):
+  result = []
+  for num1 in nums1:
+    for num2 in nums2:
+      if num1 == num2:
+        result.append(num1)
+  return result","def find_corresponding_nums(nums1, nums2):
+    result = []
+    seen = set(nums2) 
+    for num1 in nums1:
+        if num1 in seen:
+            result.append(num1)
+    return result",Control Structure,5796,"def find_corresponding_nums(nums1, nums2):
+    result = []
+    seen = set(nums2) 
+    for ___ in nums1:
+        if num1 in seen:
+            result.append(num1)
+    return result",num1
+Generate a batch of X random numbers in Python using a for loop.,X = 10,"import random
+numbers = []
+
+for i in range(10):
+ number = random.randint(1, 100)
+ numbers.append(number)
+ 
+print(numbers)",Control Structure,5804,"import random
+numbers = []
+
+for ___ in range(10):
+ number = random.randint(1, 100)
+ numbers.append(number)
+ 
+print(numbers)",i
+Optimize this Python code for speed.,"lst = []
+ 
+for i in range(100):
+    lst.append(i)
+ 
+for i in lst:
+    print(i)","lst = list(range(100))
+ 
+for i in lst:
+    print(i)",Control Structure,5806,"lst = list(range(100))
+ 
+for ___ in lst:
+    print(i)",i
+Write a Python program to optimize the given code for speed and reduce memory usage.,"def func(a):
+    result = []
+    for x in range(len(a)):
+        result.append(a[x] + 5)
+    return result","def func(a):
+    result = [x + 5 for x in a]
+    return result",Control Structure,5828,"def func(a):
+    result = [x + 5 for ___ in a]
+    return result",x
 Edit the following Python code to include a while loop:,"a = 0
 b = 0","a = 0
 b = 0
@@ -3112,11 +4043,11 @@ while a < 10:
 print(b)",Control Structure,5853,"a = 0
 b = 0
 
-___
+while ___ < 10:
     a += 1
     b = b + a
 
-print(b)"
+print(b)",a
 Generate a function in Python that displays the Fibonacci sequence for a given value.,n = 10,"def fibonacci(n):
  a, b = 0, 1
  result = []
@@ -3131,13 +4062,13 @@ print(fibonacci(n))",Control Structure,5941,"def fibonacci(n):
  a, b = 0, 1
  result = []
  
- ___
+ while ___ < n:
  result.append(a)
  a, b = b, a + b
 
  return result
 
-print(fibonacci(n))"
+print(fibonacci(n))",a
 Write a function in Python that takes in two strings and returns true if both strings have the same letter counts.,"'abc', 'cba'","def isPermutation(s1, s2):
  s1_dict = {}
  s2_dict = {}
@@ -3155,18 +4086,18 @@ Write a function in Python that takes in two strings and returns true if both st
  return s1_dict == s2_dict",Control Structure,5999,"def isPermutation(s1, s2):
  s1_dict = {}
  s2_dict = {}
- for c in s1:
+ for ___ in s1:
   if c in s1_dict:
    s1_dict[c] += 1
-  ___
+  else:
    s1_dict[c] = 1
  for c in s2:
   if c in s2_dict:
    s2_dict[c] += 1
-  ___
+  else:
    s2_dict[c] = 1
  
- return s1_dict == s2_dict"
+ return s1_dict == s2_dict",c
 Create a Python script to check if a given word or phrase is a palindrome.,madam,"def is_palindrome(word):
     word_list = list(word)
     if word_list == word_list[::-1]:
@@ -3177,13 +4108,28 @@ Create a Python script to check if a given word or phrase is a palindrome.,madam
 result = is_palindrome('madam')
 print(result)",Control Structure,6002,"def is_palindrome(word):
     word_list = list(word)
-    ___
+    if ___ == word_list[::-1]:
         return True
-    ___
+    else:
         return False
 
 result = is_palindrome('madam')
-print(result)"
+print(result)",word_list
+Implement an algorithm in Python to check for palindromes.,noon,"def isPalindrome(text):
+    n = len(text)
+    for i in range(n // 2):
+        if text[i] != text[n - i - 1]:
+            return False
+    return True
+
+print(isPalindrome('noon'))",Control Structure,6032,"def isPalindrome(text):
+    n = len(text)
+    for ___ in range(n // 2):
+        if text[i] != text[n - i - 1]:
+            return False
+    return True
+
+print(isPalindrome('noon'))",i
 Optimize a given code in Python for higher efficiency.,"def power(base, exponent):
     answer = 1
     for _ in range(exponent):
@@ -3197,12 +4143,12 @@ Optimize a given code in Python for higher efficiency.,"def power(base, exponent
         exponent >>= 1
     return answer",Control Structure,6037,"def power(base, exponent):
     answer = 1
-    ___
+    while ___ > 0:
         if exponent & 1:
             answer *= base
         base *= base
         exponent >>= 1
-    return answer"
+    return answer",exponent
 Develop an algorithm in Python for generating the nth Fibonacci number.,N: 5,"def fibonacci(n):
  # base case
  if n == 1:
@@ -3216,16 +4162,66 @@ Develop an algorithm in Python for generating the nth Fibonacci number.,N: 5,"de
 # testing
 print(fibonacci(5)) # Output: 3",Control Structure,6049,"def fibonacci(n):
  # base case
- ___
+ if ___ == 1:
   return 0
- el___
+ elif n == 2:
   return 1
  # recursive case
- ___
+ else:
   return fibonacci(n-1) + fibonacci(n-2)
 
 # testing
-print(fibonacci(5)) # Output: 3"
+print(fibonacci(5)) # Output: 3",n
+Generate a Python script for searching for a pattern in a given text.,"Text: ""The cat jumped over the fence""
+Pattern: ""cat""","import re
+text = ""The cat jumped over the fence""
+pattern = ""cat""
+match = re.search(pattern, text)
+if match:
+    print(""Pattern found!"")",Control Structure,6052,"import re
+text = ""The cat jumped over the fence""
+pattern = ""cat""
+match = re.search(pattern, text)
+if ___:
+    print(""Pattern found!"")",match
+Optimize the following Python code for calculating the Fibonacci numbers up to n.,"def fibonacci(n):
+ if n <= 1:
+ return n
+ return fibonacci(n-1) + fibonacci(n-2)","def fibonacci(n):
+ # Initialize a memoization dictionary
+ memo = {
+ 0: 0,
+ 1: 1
+ }
+ 
+ # If n is in the memoization dictionary, return the value
+ if n in memo:
+ return memo[n]
+ 
+ # Calculate the Fibonacci number
+ if n > 1:
+ memo[n] = fibonacci(n-1) + fibonacci(n-2)
+ 
+ return memo[n]
+
+print(fibonacci(10))",Control Structure,6054,"def fibonacci(n):
+ # Initialize a memoization dictionary
+ memo = {
+ 0: 0,
+ 1: 1
+ }
+ 
+ # If n is in the memoization dictionary, return the value
+ if ___ in memo:
+ return memo[n]
+ 
+ # Calculate the Fibonacci number
+ if n > 1:
+ memo[n] = fibonacci(n-1) + fibonacci(n-2)
+ 
+ return memo[n]
+
+print(fibonacci(10))",n
 A number is said to be abundant if its proper divisors sum to more than the number itself. Create a python program to identify if a given number is abundant or not.,21,"def is_abundant(num):
     divisor_sum = 0
     for i in range(1, int(num/2)+1):
@@ -3241,8 +4237,8 @@ if is_abundant(num):
 else:
     print(f""{num} is not abundant"")",Control Structure,6058,"def is_abundant(num):
     divisor_sum = 0
-    for i in range(1, int(num/2)+1):
-        ___
+    for ___ in range(1, int(num/2)+1):
+        if num % i == 0:
             divisor_sum += i
 
     return divisor_sum > num
@@ -3251,8 +4247,8 @@ num = 21
 
 if is_abundant(num):
     print(f""{num} is abundant"")
-___
-    print(f""{num} is not abundant"")"
+else:
+    print(f""{num} is not abundant"")",i
 Create a python program for checking whether a number is a palindrome or not.,12321,"def is_palindrome(num):
   rev = 0
   tmp = num
@@ -3272,7 +4268,7 @@ else:
   rev = 0
   tmp = num
   
-  ___
+  while ___ > 0:
     rev = rev * 10
     rev = rev + (tmp % 10)
     tmp = tmp // 10
@@ -3282,8 +4278,8 @@ else:
 num = 12321
 if (is_palindrome(num)):
   print(""Number is a palindrome"")
-___
-  print(""Number is not a palindrome"")"
+else:
+  print(""Number is not a palindrome"")",tmp
 Optimize the Python code snippet (below) for performance efficiency.,"def process_data(data):
     processed_data = []
     for item in data:
@@ -3299,13 +4295,13 @@ Optimize the Python code snippet (below) for performance efficiency.,"def proces
 def process_data_fast(data):
     return [item for item in data if item % 10 == 0]",Control Structure,6105,"def process_data(data):
     processed_data = []
-    for item in data:
-        ___
+    for ___ in data:
+        if (item % 10) == 0:
             processed_data.append(item)
     return processed_data
 
 def process_data_fast(data):
-    return [item for item in data if item % 10 == 0]"
+    return [item for item in data if item % 10 == 0]",item
 Create a python program for searching for a word in a text document.,"The quick brown fox jumped over the lazy dog
 search: fox","import re
 
@@ -3324,10 +4320,10 @@ search = 'fox'
 
 result = re.findall(search, text)
 
-if result:
+if ___:
     print('Found!');
-___
-    print('Not Found!')"
+else:
+    print('Not Found!')",result
 Write a function in Python to check if an integer is prime or not.,37,"def is_prime(number):
   if number < 2:
     return False
@@ -3339,16 +4335,16 @@ Write a function in Python to check if an integer is prime or not.,37,"def is_pr
 
 n = 37
 print (is_prime(n)) # Output: True",Control Structure,6165,"def is_prime(number):
-  if number < 2:
+  if ___ < 2:
     return False
-  ___
+  else:
     for x in range(2, number):
-      ___
+      if number % x == 0:
         return False
     return True
 
 n = 37
-print (is_prime(n)) # Output: True"
+print (is_prime(n)) # Output: True",number
 Create a Python program to calculate the grade for a student.,"Maths = 85
 English = 70
 Science = 90","Maths = 85
@@ -3379,7 +4375,7 @@ Science = 90
 average = (Maths + English + Science) / 3
 
 # Check the grade
-if average >= 80:
+if ___ >= 80:
     grade = 'A'
 elif average >= 70:
     grade = 'B'
@@ -3387,18 +4383,18 @@ elif average >= 60:
     grade = 'C'
 elif average >= 50:
     grade = 'D'
-___
+else:
     grade = 'F'
 
 # Print the grade
-print(grade)"
+print(grade)",average
 Create a Python program that prints out a message if a given number is divisible by 7.,num = 49,"num = 49
 
 if num % 7 == 0:
     print(""The number %d is divisible by 7!"" %num)",Control Structure,6263,"num = 49
 
-___
-    print(""The number %d is divisible by 7!"" %num)"
+if ___ % 7 == 0:
+    print(""The number %d is divisible by 7!"" %num)",num
 Develop an algorithm using Python that determines if a number is a prime number or not.,12,"def is_prime(n):
     if n <= 1: 
         return False
@@ -3406,12 +4402,12 @@ Develop an algorithm using Python that determines if a number is a prime number 
         if n % i == 0: 
             return False
     return True",Control Structure,6290,"def is_prime(n):
-    if n <= 1: 
+    if ___ <= 1: 
         return False
     for i in range(2, n): 
-        ___ 
+        if n % i == 0: 
             return False
-    return True"
+    return True",n
 Optimize the following Python code for runtime and memory performance.,"def factorial(n):
     if n == 1:
         return 1
@@ -3424,13 +4420,13 @@ Optimize the following Python code for runtime and memory performance.,"def fact
     for i in range(2, n+1):
         res *= i
     return res",Control Structure,6309,"def factorial(n):
-    ___
+    if ___ == 0:
         return 1
 
     res = 1
     for i in range(2, n+1):
         res *= i
-    return res"
+    return res",n
 Create a Python function to check if a given number is abundant or not. An abundant number is a number which is less than the sum of its proper divisors.,number = 24,"def is_abundant(number):
     sum = 0
     for i in range(1, number):
@@ -3438,10 +4434,10 @@ Create a Python function to check if a given number is abundant or not. An abund
             sum += i
     return sum > number",Control Structure,6317,"def is_abundant(number):
     sum = 0
-    for i in range(1, number):
-        ___
+    for ___ in range(1, number):
+        if number % i == 0:
             sum += i
-    return sum > number"
+    return sum > number",i
 Create a program in Python for finding the greatest common divisor of two numbers.,"Number1: 20
 Number2: 45","def gcd(a, b):
     while b != 0:
@@ -3451,22 +4447,41 @@ Number2: 45","def gcd(a, b):
     return a
 
 print(gcd(20,45))",Control Structure,6330,"def gcd(a, b):
-    ___
+    while ___ != 0:
         temp = a
         a = b
         b = temp % b
     return a
 
-print(gcd(20,45))"
+print(gcd(20,45))",b
+Write a FOR loop to create a Pascal Triangle of size N in Python.,N = 5,"def pascal_triangle(n): 
+    trow = [1] 
+    y = [0] 
+    for x in range(max(n,0)): 
+        print(trow) 
+        trow=[l+r for l,r in zip(trow+y, y+trow)] 
+  
+# Driver program to test the above function 
+n = 5
+pascal_triangle(n)",Control Structure,6339,"def pascal_triangle(n): 
+    trow = [1] 
+    y = [0] 
+    for ___ in range(max(n,0)): 
+        print(trow) 
+        trow=[l+r for l,r in zip(trow+y, y+trow)] 
+  
+# Driver program to test the above function 
+n = 5
+pascal_triangle(n)",x
 Design an algorithm in Python for linear search.,"[3, 1, 5, 8], 8","def linear_search(arr, target):    
     for i in range(len(arr)):
         if arr[i] == target:
             return i
     return -1",Control Structure,6349,"def linear_search(arr, target):    
-    for i in range(len(arr)):
-        ___
+    for ___ in range(len(arr)):
+        if arr[i] == target:
             return i
-    return -1"
+    return -1",i
 Write a Python program for a program that checks if two strings are palindromes.,"Input strings: “radar”, “dad”","def is_palindrome(str1, str2):
  # Reverse str1
  reverse_str1 = str1[::-1]
@@ -3486,10 +4501,10 @@ print(is_palindrome(str1, str2)) # Output: True",Control Structure,6379,"def is_
  # Reverse str1
  reverse_str1 = str1[::-1]
 
- # Check if str1 is the same as the reversed version of str2
- ___
+ # Check if ___ is the same as the reversed version of str2
+ if reverse_str1 == str2:
  return True
- ___
+ else:
  return False
 
 # Sample input
@@ -3497,7 +4512,14 @@ str1 = 'radar'
 str2 = 'dad'
 
 # Check if the strings are palindromes
-print(is_palindrome(str1, str2)) # Output: True"
+print(is_palindrome(str1, str2)) # Output: True",str1
+Create a regex pattern that matches two different words and prints out the second word if found.,"text = ""Learn Python now or learn Java later","pattern = r""learn (Python|Java) (\w+)"" 
+match = re.search(pattern, text) 
+if match: 
+    print(match.group(2)) # Prints ""now"" or ""later""",Control Structure,6482,"pattern = r""learn (Python|Java) (\w+)"" 
+match = re.search(pattern, text) 
+if ___: 
+    print(match.group(2)) # Prints ""now"" or ""later""",match
 Create a function in Python to determine if a number is divisible by another number.,"6, 3","def isDivisible(num1, num2):
     # check if num1 is divisible by num2
     if (num1 % num2) == 0:
@@ -3510,17 +4532,17 @@ num2 = 3
 
 result = isDivisible(num1, num2)
 print(result)",Control Structure,6521,"def isDivisible(num1, num2):
-    # check if num1 is divisible by num2
-    ___
+    # check if ___ is divisible by num2
+    if (num1 % num2) == 0:
         return True
-    ___
+    else:
         return False
 
 num1 = 6
 num2 = 3
 
 result = isDivisible(num1, num2)
-print(result)"
+print(result)",num1
 Modify the following Python code for calculating the factorial of a number.,"def factorial(n):
     fact = 1
     for i in range(1,n+1):
@@ -3533,13 +4555,88 @@ Modify the following Python code for calculating the factorial of a number.,"def
         for i in range(1,n+1):
             fact = fact*i
         return fact",Control Structure,6575,"def factorial(n):
-    ___
+    if ___ == 0:
         return 1
-    ___
+    else:
         fact = 1
         for i in range(1,n+1):
             fact = fact*i
-        return fact"
+        return fact",n
+Optimize the following Python code for improved performance.,"def factorial(n):
+ if n == 0:
+   return 1
+ else:
+   return n * factorial(n - 1)","def factorial(n):
+ fact = 1
+ for i in range(1, n+1):
+   fact *= i
+  return fact",Control Structure,6585,"def factorial(n):
+ fact = 1
+ for ___ in range(1, n+1):
+   fact *= i
+  return fact",i
+Create a Python program for extracting text from an online book.,web address of the book (e.g. https://www.example.com/book.html),"import requests
+from bs4 import BeautifulSoup
+
+# Input web address of the book
+url = 'https://www.example.com/book.html'
+
+# Download the page
+page = requests.get(url)
+
+# Parse the HTML
+soup = BeautifulSoup(page.content, 'html.parser')
+
+# Extract the text
+text = soup.find_all('p')
+for p in text:
+ print(p.text)",Control Structure,6589,"import requests
+from bs4 import BeautifulSoup
+
+# Input web address of the book
+url = 'https://www.example.com/book.html'
+
+# Download the page
+page = requests.get(url)
+
+# Parse the HTML
+soup = BeautifulSoup(page.content, 'html.parser')
+
+# Extract the text
+text = soup.find_all('p')
+for ___ in text:
+ print(p.text)",p
+Design a python class for a shopping cart.,No input,"class ShoppingCart:
+    def __init__(self):
+        self.items = []
+    
+    def add_item(self, item):
+        self.items.append(item)
+    
+    def remove_item(self, item):
+        if item in self.items:
+            self.items.remove(item)
+    
+    def get_total_amount(self):
+        total_amount = 0
+        for item in self.items:
+            total_amount += item.price
+        return total_amount",Control Structure,6593,"class ShoppingCart:
+    def __init__(self):
+        self.items = []
+    
+    def add_item(self, item):
+        self.items.append(item)
+    
+    def remove_item(self, item):
+        if ___ in self.items:
+            self.items.remove(item)
+    
+    def get_total_amount(self):
+        total_amount = 0
+        for item in self.items:
+            total_amount += item.price
+        return total_amount",item
 Construct a function in Python to compare the two given dictionaries and return true if both of them contains the same elements.,"dict1 = {'A':1, 'B':2, 'C':3 }
 dict2 = {'A':1, 'C':3, 'B':2 }","def compare_dicts(dict1, dict2):
   # Iterate through keys in both dictionaries and compare values
@@ -3550,12 +4647,12 @@ dict2 = {'A':1, 'C':3, 'B':2 }","def compare_dicts(dict1, dict2):
   # If all elements matched
   return True",Control Structure,6603,"def compare_dicts(dict1, dict2):
   # Iterate through keys in both dictionaries and compare values
-  for key, value in dict1.items():
-    ___
+  for ___, value in dict1.items():
+    if key not in dict2 or dict2[key] != value:
       return False
  
   # If all elements matched
-  return True"
+  return True",key
 Write a Python program to compare two dictionaries to check if they are equal.,"d1 = {'a':1, 'b':2, 'c':3}
 d2 = {'a':1, 'b':2, 'c':4}","def compare_dicts(dict1, dict2):
     if dict1 == dict2:
@@ -3564,12 +4661,19 @@ d2 = {'a':1, 'b':2, 'c':4}","def compare_dicts(dict1, dict2):
 
 result = compare_dicts(d1, d2)
 print(result)",Control Structure,6683,"def compare_dicts(dict1, dict2):
-    ___
+    if ___ == dict2:
         return True
     return False
 
 result = compare_dicts(d1, d2)
-print(result)"
+print(result)",dict1
+Offer a suggestion for increasing the performance of the following Python Script,"def function(arg):
+    for i in range(len(arg)):
+        print(i)","def function(arg):
+    for i in arg:
+        print(i)",Control Structure,6687,"def function(arg):
+    for ___ in arg:
+        print(i)",i
 You need to write a Python program for computing the factorial of a number.,5,"def factorial(num):
     if num == 0:
         return 1
@@ -3577,12 +4681,12 @@ You need to write a Python program for computing the factorial of a number.,5,"d
         return num * factorial(num - 1)
 
 print(factorial(5))",Control Structure,6701,"def factorial(num):
-    ___
+    if ___ == 0:
         return 1
-    ___
+    else:
         return num * factorial(num - 1)
 
-print(factorial(5))"
+print(factorial(5))",num
 write a python program for its purpose,Compute the factorial of a given number,"""""""
 Compute the factorial of a given number
 """"""
@@ -3600,14 +4704,14 @@ Compute the factorial of a given number
 """"""
 
 def factorial(n): 
-	___ 
+	if ___ == 1: 
 		return 1
-	___ 
+	else: 
 		return n * factorial(n-1) 
 
-___ 
+if __name__ == '__main__': 
 	num = int(input()) 
-	print(factorial(num))"
+	print(factorial(num))",n
 Compare two strings to check if they are anagrams or not in Python.,"“silent”, “listen”","def is_anagram(w1, w2):
     # Check if lengths are equal
     if len(w1) == len(w2):
@@ -3624,13 +4728,13 @@ w1 = ""silent""
 w2 = ""listen""
 
 print(is_anagram(w1, w2)) #Output: True",Control Structure,6710,"def is_anagram(w1, w2):
-    # Check if lengths are equal
-    ___
+    # Check if ___ are equal
+    if len(w1) == len(w2):
         # Sort the strings
         s1 = sorted(w1)
         s2 = sorted(w2)
         # Check if sorted strings are equal
-        ___
+        if s1 == s2:
             return True
     return False
 
@@ -3638,7 +4742,7 @@ print(is_anagram(w1, w2)) #Output: True",Control Structure,6710,"def is_anagram(
 w1 = ""silent""
 w2 = ""listen""
 
-print(is_anagram(w1, w2)) #Output: True"
+print(is_anagram(w1, w2)) #Output: True",lengths
 Code up a web scraper in Python for a particular website.,The website is https://www.example.com,"import requests
 from bs4 import BeautifulSoup
 
@@ -3663,11 +4767,11 @@ soup = BeautifulSoup(page.text, 'html.parser')
 
 all_divs = soup.find_all('div')
 
-for div in all_divs:
-    ___
+for ___ in all_divs:
+    try:
         print(div['class'])
     except:
-        print(div.text)"
+        print(div.text)",div
 Develop a Python script for calculating the Fibonacci numbers for a given input.,8,"def Fibonacci(n): 
     if n<0: 
         print(""Incorrect input"") 
@@ -3683,7 +4787,7 @@ Develop a Python script for calculating the Fibonacci numbers for a given input.
 # Driver Program 
   
 print(Fibonacci(8))",Control Structure,6729,"def Fibonacci(n): 
-    if n<0: 
+    if ___<0: 
         print(""Incorrect input"") 
     # First Fibonacci number is 0 
     elif n==1: 
@@ -3691,12 +4795,12 @@ print(Fibonacci(8))",Control Structure,6729,"def Fibonacci(n):
     # Second Fibonacci number is 1 
     elif n==2: 
         return 1
-    ___ 
+    else: 
         return Fibonacci(n-1)+Fibonacci(n-2) 
 
 # Driver Program 
   
-print(Fibonacci(8))"
+print(Fibonacci(8))",n
 "Create a Python program that takes in a positive integer, then uses a while loop to output the numbers counting down to 1.",6,"num = int(input(""Enter a positive integer: ""))
 
 while num > 0:
@@ -3705,11 +4809,60 @@ while num > 0:
 
 print(""Done!"")",Control Structure,6736,"num = int(input(""Enter a positive integer: ""))
 
-___
+while ___ > 0:
     print(num)
     num -= 1
 
-print(""Done!"")"
+print(""Done!"")",num
+Optimize this Python program for better efficiency.,"def add_two_lists(l1, l2):
+    res = []
+    for i in range(len(l1)):
+        res.append(l1[i] + l2[i])
+    return res","def add_two_lists(l1, l2):
+    return [x + y for x, y in zip(l1, l2)]",Control Structure,6738,"def add_two_lists(l1, l2):
+    return [x + y for ___, y in zip(l1, l2)]",x
+Create a function in Python for evaluating a given polynomial expression.,Expression: 4x4 + 7x3 + 5x2 + 8x,"def evaluate_polynomial(expression):
+  expression = expression.strip()
+  tokens  = expression.split(""+"")
+  result = 0
+  for term in tokens:
+    term = term.strip()
+    coefficient, exponent = term.split(""x"")
+    result += float(coefficient) * float(expoent)
+
+  return result",Control Structure,6787,"def evaluate_polynomial(expression):
+  expression = expression.strip()
+  tokens  = expression.split(""+"")
+  result = 0
+  for ___ in tokens:
+    term = term.strip()
+    coefficient, exponent = term.split(""x"")
+    result += float(coefficient) * float(expoent)
+
+  return result",term
+Find the number of ways to reach nth step in a staircase if a person can take 1 or 2 steps at a time in Python.,n = 6,"def stairs(n): 
+    step = [0] * (n + 2) 
+    step[1] = 1
+    step[2] = 2
+  
+    for i in range(3, n + 2): 
+        step[i] = step[i - 1] + step[i - 2] 
+  
+    return step[n] 
+      
+n = 6
+print(stairs(n))",Control Structure,6854,"def stairs(n): 
+    step = [0] * (n + 2) 
+    step[1] = 1
+    step[2] = 2
+  
+    for ___ in range(3, n + 2): 
+        step[i] = step[i - 1] + step[i - 2] 
+  
+    return step[n] 
+      
+n = 6
+print(stairs(n))",i
 Develop a Python Program to determine if two given strings are an anagram or not.,"string1 = ""abcd""
 string2 = ""cbad""","def is_anagram(string1, string2):
     # check if strings have equal length 
@@ -3721,15 +4874,15 @@ string2 = ""cbad""","def is_anagram(string1, string2):
     if sorted1 == sorted2:
         return True 
     return False",Control Structure,6867,"def is_anagram(string1, string2):
-    # check if strings have equal length 
+    # check if ___ have equal length 
     if len(string1) != len(string2): 
         return False 
     sorted1 = sorted(string1); 
     sorted2 = sorted(string2); 
     # check if sorted strings are the same 
-    ___
+    if sorted1 == sorted2:
         return True 
-    return False"
+    return False",strings
 Write a Python program to compare two integers and prints if one is greater then another.,"int1=1, int2=2","# compare two integers
 int1=1
 int2=2
@@ -3741,12 +4894,12 @@ else:
     print(""int1 and int2 are equal"")",Control Structure,6873,"# compare two integers
 int1=1
 int2=2
-if int1 > int2:
+if ___ > int2:
     print(""int1 is greater than int2"")
 elif int2 > int1:
     print(""int2 is greater than int1"")
-___
-    print(""int1 and int2 are equal"")"
+else:
+    print(""int1 and int2 are equal"")",int1
 Create functions in Python for validating if a number is prime or not.,n = 12,"def is_prime(n):
     if n == 1:
         return False
@@ -3759,17 +4912,17 @@ if is_prime(12):
     print(""Prime"")
 else:
     print(""Not Prime"")",Control Structure,6922,"def is_prime(n):
-    ___
+    if ___ == 1:
         return False
     for i in range(2,int(n**(1/2))+1):
-        ___
+        if n%i == 0:
             return False
     return True
 
 if is_prime(12):
     print(""Prime"")
-___
-    print(""Not Prime"")"
+else:
+    print(""Not Prime"")",n
 Create an algorithm in Python for the classification of numbers into even or odd.,3,"def classifyNumber(num): 
     if num % 2 == 0: 
         return ""even""
@@ -3777,21 +4930,27 @@ Create an algorithm in Python for the classification of numbers into even or odd
         return ""odd"" 
   
 print(classifyNumber(3))",Control Structure,6930,"def classifyNumber(num): 
-    ___ 
+    if ___ % 2 == 0: 
         return ""even""
-    ___ 
+    else: 
         return ""odd"" 
   
-print(classifyNumber(3))"
-Write a Python program to check if it contains the specified substring.,"my_string = ""Hello World""","my_string = ""Hello World""
-if ""World"" in my_string:
-    print(""Yes, the specified substring is found."")
-else:
-    print(""No, the substring is not found."")",Control Structure,6956,"my_string = ""Hello World""
-if ""World"" in my_string:
-    print(""Yes, the specified substring is found."")
-___
-    print(""No, the substring is not found."")"
+print(classifyNumber(3))",num
+"Refactor the following code to use the most Pythonic approach:
+
+```
+for i in range(0, list_items_len):
+    if list_items[i] == target_item:
+        index = i
+        break
+```","list_items = ['a', 'b', 'c', 'd', 'e']
+target_item = 'c'","list_items = ['a', 'b', 'c', 'd', 'e']
+target_item = 'c'
+
+index = list_items.index(target_item) if target_item in list_items else None",Control Structure,6933,"list_items = ['a', 'b', 'c', 'd', 'e']
+target_item = 'c'
+
+index = list_items.index(target_item) if ___ in list_items else None",target_item
 Create a Python program to check if two strings are anagrams.,"leg, gel","def is_anagram(s1, s2): 
     # Convert both strings to lower case 
     s1 = s1.lower() 
@@ -3813,10 +4972,10 @@ Create a Python program to check if two strings are anagrams.,"leg, gel","def is
     s1 = sorted(s1) 
     s2 = sorted(s2) 
 
-    ___ 
+    if ___ == s2: 
         return True 
-    ___ 
-        return False"
+    else: 
+        return False",s1
 Create a Python program to calculate the sum of the digits for a number that is provided as input.,num = 1234,"# Function to find the sum of digits
 def sum_digits(num):
  # Variable to store the sum of digits
@@ -3837,7 +4996,7 @@ def sum_digits(num):
  # Variable to store the sum of digits
  sum = 0
  
- ___
+ while ___ > 0:
   digit = num % 10
   sum = sum + digit
   num = num // 10
@@ -3847,7 +5006,7 @@ def sum_digits(num):
 num = 1234
 sum = sum_digits(num)
 print(""Sum of digits of %d is %d"" % (num, sum))
-# Output: Sum of digits of 1234 is 10"
+# Output: Sum of digits of 1234 is 10",num
 "Write a Python program to calculate the sum of two given integers, if the two values are equal then return the triple of their sum.","2, 2","def calculate_sum(a, b):
     if a == b:
         return (a + b) * 3
@@ -3858,15 +5017,15 @@ a = 2
 b = 2
 result = calculate_sum(a, b)
 print(result)",Control Structure,7037,"def calculate_sum(a, b):
-    ___
+    if ___ == b:
         return (a + b) * 3
-    ___
+    else:
         return a + b
     
 a = 2
 b = 2
 result = calculate_sum(a, b)
-print(result)"
+print(result)",a
 Generate a Python program which determines if a given number is divisible by 7,28,"def is_divisible_by_7(num):
     if num % 7 == 0:
         return True
@@ -3875,13 +5034,13 @@ Generate a Python program which determines if a given number is divisible by 7,2
 
 result = is_divisible_by_7(28)
 print(result)",Control Structure,7059,"def is_divisible_by_7(num):
-    ___
+    if ___ % 7 == 0:
         return True
-    ___
+    else:
         return False
 
 result = is_divisible_by_7(28)
-print(result)"
+print(result)",num
 "Using a while loop, write a Python program to reverse a given sentence.","""Hello there my friend""","# Initialize an empty string 
 revString = """"
 
@@ -3903,14 +5062,14 @@ revString = """"
 idx = len(sent) - 1
  
 # Iterate in reverse through the string 
-___
+while ___ >= 0:
     # Append each individual character to the result string
     revString += sent[idx]
     # Decrement the index
     idx -= 1
 
 # Output the reversed result
-print(revString)"
+print(revString)",idx
 Write a Python program to determine if a number provided by the user is prime or not.,17,"# Ask the user for a number
 num = int(input('Enter a number: '))
 
@@ -3927,7 +5086,7 @@ for i in range(2, num):
 if is_prime:
  print(f'{num} is a prime number.')
 else:
- print(f'{num} is not a prime number.')",Control Structure,7164,"# Ask the user for a number
+ print(f'{num} is not a prime number.')",Control Structure,7164,"# Ask the user for ___ number
 num = int(input('Enter a number: '))
 
 # Set initial values
@@ -3935,15 +5094,15 @@ is_prime = True
 
 # Check for prime
 for i in range(2, num):
- ___
+ if num % i == 0:
  is_prime = False
- ___
+ break
 
 # Output result
 if is_prime:
  print(f'{num} is a prime number.')
-___
- print(f'{num} is not a prime number.')"
+else:
+ print(f'{num} is not a prime number.')",a
 Write a Python program to check if two strings are isomorphic.,"s1 = ""foo"", s2 = ""app""","def is_isomorphic(s1, s2):
     if len(s1) != len(s2):
         return False
@@ -3957,7 +5116,7 @@ Write a Python program to check if two strings are isomorphic.,"s1 = ""foo"", s2
             s1_dict[char] = s2[i]
 
     return True",Control Structure,7184,"def is_isomorphic(s1, s2):
-    if len(s1) != len(s2):
+    if ___(s1) != len(s2):
         return False
 
     s1_dict = dict()
@@ -3965,10 +5124,10 @@ Write a Python program to check if two strings are isomorphic.,"s1 = ""foo"", s2
         if char in s1_dict:
             if s1_dict[char] != s2[i]:
                 return False
-        ___
+        else:
             s1_dict[char] = s2[i]
 
-    return True"
+    return True",len
 Implement a python program to check if a number is powerful. A powerful number is one who has a power of 2 as any of its prime divisors.,number = 18,"def is_power(number):
     flag = False
     if number > 2:
@@ -3982,16 +5141,16 @@ Implement a python program to check if a number is powerful. A powerful number i
 
 print(is_power(18))",Control Structure,7185,"def is_power(number):
     flag = False
-    if number > 2:
+    if ___ > 2:
         for i in range(2, number // 2 + 1):
-            ___
-                ___
+            while number % i == 0:
+                if number % (i ** 2) == 0:
                     flag = True
                 number = number / i
     
     return flag
 
-print(is_power(18))"
+print(is_power(18))",number
 Write a Python code for converting a given sentence into pig latin.,The quick brown fox,"def convert_string_to_pig_latin(sentence):
     words = sentence.split()
     pig_latin_words = []
@@ -4004,13 +5163,13 @@ Write a Python code for converting a given sentence into pig latin.,The quick br
     return ' '.join(pig_latin_words)",Control Structure,7188,"def convert_string_to_pig_latin(sentence):
     words = sentence.split()
     pig_latin_words = []
-    for word in words:
+    for ___ in words:
         if word[0] in 'aeiou':
             pig_word = word + 'way'
-        ___
+        else:
             pig_word = word[1:] + word[0] + 'ay'
         pig_latin_words.append(pig_word)
-    return ' '.join(pig_latin_words)"
+    return ' '.join(pig_latin_words)",word
 Build a program in Python for finding the largest prime number in a given range.,1-100,"def largest_prime(num):
     largest_prime = 0
     for n in range (num):
@@ -4031,7 +5190,7 @@ def isPrime(n):
 
 print(largest_prime(100))",Control Structure,7214,"def largest_prime(num):
     largest_prime = 0
-    for n in range (num):
+    for ___ in range (num):
         if(isPrime(n)):
             largest_prime = n
     return largest_prime
@@ -4041,13 +5200,29 @@ def isPrime(n):
         return False
     elif(n == 2):
         return True
-    ___
+    else:
         for x in range(2,n//2+1):
             if(n % x == 0):
                 return False
         return True
 
-print(largest_prime(100))"
+print(largest_prime(100))",n
+Construct a Python program for finding the intersection of two arrays.,"Array 1: [1, 2, 3, 4]
+Array 2: [3, 4, 5, 6]","def intersection(arr1, arr2):
+  result = [i for i in arr1 if i in arr2]
+  return result
+
+arr1 = [1, 2, 3, 4]
+arr2 = [3, 4, 5, 6]
+result = intersection(arr1, arr2)
+print(result)  # [3, 4]",Control Structure,7230,"def intersection(arr1, arr2):
+  result = [i for ___ in arr1 if i in arr2]
+  return result
+
+arr1 = [1, 2, 3, 4]
+arr2 = [3, 4, 5, 6]
+result = intersection(arr1, arr2)
+print(result)  # [3, 4]",i
 Develop an algorithm in Python for solving the Tower of Hanoi problem.,Towers with 3 discs,"def hanoi(discs, source, aux, dest):
     if discs == 1:
         print (""Move disc 1 from {} to {}"".format(source, dest))
@@ -4058,7 +5233,7 @@ Develop an algorithm in Python for solving the Tower of Hanoi problem.,Towers wi
     hanoi(discs-1, aux, source, dest)
 
 hanoi(3,'A', 'B', 'C')",Control Structure,7234,"def hanoi(discs, source, aux, dest):
-    ___
+    if ___ == 1:
         print (""Move disc 1 from {} to {}"".format(source, dest))
         return
 
@@ -4066,7 +5241,7 @@ hanoi(3,'A', 'B', 'C')",Control Structure,7234,"def hanoi(discs, source, aux, de
     print (""Move disc {} from {} to {}"".format(discs, source, dest))
     hanoi(discs-1, aux, source, dest)
 
-hanoi(3,'A', 'B', 'C')"
+hanoi(3,'A', 'B', 'C')",discs
 Create a python program to calculate Fibonacci sequence for a given number.,n = 8,"def fibonacci(n):
     if n == 0:
         return 0
@@ -4078,43 +5253,65 @@ Create a python program to calculate Fibonacci sequence for a given number.,n = 
 if __name__ == '__main__':
     n = 8
     print(fibonacci(n))",Control Structure,7237,"def fibonacci(n):
-    ___
+    if ___ == 0:
         return 0
-    el___
+    elif n == 1:
         return 1
-    ___
+    else:
         return fibonacci(n-1) + fibonacci(n-2)
 
-___
+if __name__ == '__main__':
     n = 8
-    print(fibonacci(n))"
-Develop a program in Python for converting a base 10 number to binary.,17,"def decimalToBinary(n):
-    binary = 0
-    power = 1
-    
-    while (n != 0):
-        last_bit = n % 2
-        binary = binary + last_bit * power
-        n = n // 2
-        power = power * 10
- 
-    return binary
+    print(fibonacci(n))",n
+"Optimize a given Python program for speed, memory usage and readability.","def factorial(n):
+    f =1
+    for i in range(2,n+1):
+        f *=i
+    return f","def factorial(n):
+    result = 1
+    for i in range(2, n+1):
+        result *= i
+    return result",Control Structure,7260,"def factorial(n):
+    result = 1
+    for ___ in range(2, n+1):
+        result *= i
+    return result",i
+Create a web crawler in Python which searches for all links on a given website and prints them out in the terminal.,url = 'https://example.com',"import requests
+from bs4 import BeautifulSoup
 
-n = 17
-print('Binary Representation of', n, 'is', decimalToBinary(n))",Control Structure,7348,"def decimalToBinary(n):
-    binary = 0
-    power = 1
-    
-    ___
-        last_bit = n % 2
-        binary = binary + last_bit * power
-        n = n // 2
-        power = power * 10
- 
-    return binary
+# Get the HTML from the given URL
+resp = requests.get(url)
 
-n = 17
-print('Binary Representation of', n, 'is', decimalToBinary(n))"
+# Parse the HTML
+soup = BeautifulSoup(resp.text, 'html.parser')
+
+# Find all the links
+for link in soup.find_all('a'):
+    print(link.get('href'))",Control Structure,7320,"import requests
+from bs4 import BeautifulSoup
+
+# Get the HTML from the given URL
+resp = requests.get(url)
+
+# Parse the HTML
+soup = BeautifulSoup(resp.text, 'html.parser')
+
+# Find all the links
+for ___ in soup.find_all('a'):
+    print(link.get('href'))",link
+Create a Python function for encrypting strings using a “Vigenere Cipher”.,"""HELLO""","def encrypt_vigenere(plaintext, key):
+ ciphertext = """"
+ index = 0
+ for c in plaintext:
+     ciphertext += chr((ord(c) - 65 + ord(key[index]) - 65) % 26 + 65)
+     index = (index + 1) % len(key)
+ return ciphertext",Control Structure,7328,"def encrypt_vigenere(plaintext, key):
+ ciphertext = """"
+ index = 0
+ for ___ in plaintext:
+     ciphertext += chr((ord(c) - 65 + ord(key[index]) - 65) % 26 + 65)
+     index = (index + 1) % len(key)
+ return ciphertext",c
 Create a Python program to mark a character as asterisk (*) if it's the same as the previous one?,"test_string = ""SSSSSSSSSShellllllllllllooooooooo""","def mark_asterisk(input):
     res = """"
     temp = input[0]
@@ -4127,16 +5324,13 @@ Create a Python program to mark a character as asterisk (*) if it's the same as 
     return res",Control Structure,7354,"def mark_asterisk(input):
     res = """"
     temp = input[0]
-    for char in input:
-        ___
+    for ___ in input:
+        if char == temp:
             res += '*'
-        ___
+        else:
             res += char
             temp = char
-    return res"
-Create a Python script to break the given sentence into words.,"sentence = ""This is an example sentence.""","def break_sentence(sentence):  
-    return sentence.split("" "")",Control Structure,7402,"def ____sentence(sentence):  
-    return sentence.split("" "")"
+    return res",char
 Generate a python program to determine if two objects are mutually exclusive or not.,"Input objects are ([1,2,3], [4,5,6]).","def mutually_exclusive(object1, object2):
     if len(object1.intersection(object2)) > 0:
         return False
@@ -4148,16 +5342,16 @@ object2 = set([4, 5, 6])
 
 result = mutually_exclusive(object1, object2)
 print(result) # Outputs True as objects don't share elements.",Control Structure,7404,"def mutually_exclusive(object1, object2):
-    if len(object1.intersection(object2)) > 0:
+    if ___(object1.intersection(object2)) > 0:
         return False
-    ___
+    else:
         return True
     
 object1 = set([1, 2, 3])
 object2 = set([4, 5, 6])
 
 result = mutually_exclusive(object1, object2)
-print(result) # Outputs True as objects don't share elements."
+print(result) # Outputs True as objects don't share elements.",len
 Design a Python function to check if two given strings are anagrams or not.,"""abc"", ""cab""","def check_anagram(str1, str2):
  
     if sorted(str1) == sorted(str2):
@@ -4165,10 +5359,30 @@ Design a Python function to check if two given strings are anagrams or not.,"""a
     else:
         return False",Control Structure,7405,"def check_anagram(str1, str2):
  
-    ___
+    if ___(str1) == sorted(str2):
         return True
-    ___
-        return False"
+    else:
+        return False",sorted
+Create a web scraper in Python that searches a given website for a specified HTML element.,"Website: www.example.com
+HTML Element: div","import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.example.com'
+response = requests.get(url)
+html = response.content
+
+soup = BeautifulSoup(html, 'html.parser')
+for div in soup.find_all('div'):
+ print(div.text)",Control Structure,7422,"import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.example.com'
+response = requests.get(url)
+html = response.content
+
+soup = BeautifulSoup(html, 'html.parser')
+for ___ in soup.find_all('div'):
+ print(div.text)",div
 Compose a function in Python to check if a given number is a power of two.,10,"def is_power_two(num):
     if num == 0:
         return False
@@ -4178,14 +5392,33 @@ Compose a function in Python to check if a given number is a power of two.,10,"d
             return False
         num = num // 2
     return True",Control Structure,7438,"def is_power_two(num):
-    ___
+    if ___ == 0:
         return False
     
-    ___
+    while num != 1:
         if num % 2 != 0:
             return False
         num = num // 2
-    return True"
+    return True",num
+Write a Python function that will calculate the average temperature for the past week.,"[64.7, 67.3, 71.3, 73.1, 75.7, 73.2, 75.7]","def calc_avg_temperature(temperatures):
+  total = 0
+  for temp in temperatures:
+    total += temp
+  avg = total / len(temperatures)
+  return avg
+
+print(calc_avg_temperature([64.7, 67.3, 71.3, 73.1, 75.7, 73.2, 75.7]))
+
+# Output: 71.17142857142857",Control Structure,7447,"def calc_avg_temperature(temperatures):
+  total = 0
+  for ___ in temperatures:
+    total += temp
+  avg = total / len(temperatures)
+  return avg
+
+print(calc_avg_temperature([64.7, 67.3, 71.3, 73.1, 75.7, 73.2, 75.7]))
+
+# Output: 71.17142857142857",temp
 Create a Python script to detect if a number is prime.,10,"def is_prime(n):
     if n <= 1:
         return False
@@ -4200,19 +5433,19 @@ if __name__ == ""__main__"":
         print(""{} is a prime number"".format(n))
     else:
         print(""{} is not a prime number"".format(n))",Control Structure,7511,"def is_prime(n):
-    if n <= 1:
+    if ___ <= 1:
         return False
     for i in range(2, n):
-        ___
+        if n % i == 0:
             return False
     return True
 
-___
+if __name__ == ""__main__"":
     n = 10
     if is_prime(n):
         print(""{} is a prime number"".format(n))
-    ___
-        print(""{} is not a prime number"".format(n))"
+    else:
+        print(""{} is not a prime number"".format(n))",n
 Construct an algorithm for factoring a large number in Python.,Number = 600851475143,"def get_factor(n):
     factors = []
    
@@ -4226,14 +5459,32 @@ number = 600851475143
 print(get_factor(number))",Control Structure,7525,"def get_factor(n):
     factors = []
    
-    for i in range(2, n + 1):
-        ___
+    for ___ in range(2, n + 1):
+        if n % i == 0:
             factors.append(i)
             n //= i
     return factors
 
 number = 600851475143
-print(get_factor(number))"
+print(get_factor(number))",i
+Create a Python script to clean the given text and make it ready for processing.,"text = ""This is the teXt for procesSsing! 
+Some puncT!_UATion must be removed. 
+Let's, Trim the whitespace too.. 
+Please preServe the cases as is.""","text_cleaned = ""This is the text for processing!
+Some punctuation must be removed.
+Lets Trim the whitespace too.
+Please preserve the cases as is.""",Control Structure,7534,"text_cleaned = ""This is the text for ___!
+Some punctuation must be removed.
+Lets Trim the whitespace too.
+Please preserve the cases as is.""",processing
+Modify the following Python code to raise an exception if the input value is not an integer,"def square_root(x):
+    return x**0.5","def square_root(x):
+    if not isinstance(x, int):
+        raise TypeError('Input must be an integer')
+    return x**0.5",Control Structure,7547,"def square_root(x):
+    if ___ isinstance(x, int):
+        raise TypeError('Input must be an integer')
+    return x**0.5",not
 Design an algorithm in Python for finding and printing all prime numbers between 1 and a given number.,100,"def find_all_primes(n): 
   for num in range(2,n + 1):
     for i in range(2,num):
@@ -4243,11 +5494,11 @@ Design an algorithm in Python for finding and printing all prime numbers between
       print(num)
 
 find_all_primes(100)",Control Structure,7556,"def find_all_primes(n): 
-  for num in range(2,n + 1):
+  for ___ in range(2,n + 1):
     for i in range(2,num):
-      ___
-        ___
-    ___
+      if (num % i) == 0:
+        break 
+    else:
       print(num)
 
-find_all_primes(100)"
+find_all_primes(100)",num
