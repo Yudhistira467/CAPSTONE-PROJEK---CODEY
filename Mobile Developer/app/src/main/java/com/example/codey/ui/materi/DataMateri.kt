@@ -10,4 +10,3 @@ data class DataMateri(
     val gambar_materi: String,
     val gambar_display: String
 ) : Parcelable
-
