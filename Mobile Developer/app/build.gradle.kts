@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.googleGmsGoogleServices)
+    id ("kotlin-kapt")
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -55,6 +57,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation (libs.retrofit)
+    implementation (libs.retrofit2.converter.gson)
+    implementation (libs.androidx.recyclerview)
+    implementation (libs.picasso)
 
-
+    implementation (libs.glide)
 }

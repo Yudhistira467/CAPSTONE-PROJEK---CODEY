@@ -22,15 +22,8 @@
             android:layout_width="224dp"
             android:layout_height="198dp"
             android:layout_gravity="center"
-            android:src="@drawable/codey" />
+            android:src="@drawable/zcodeyfix" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/judul_login"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:gravity="center"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -52,7 +45,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="10dp">
 
             <EditText
                 android:id="@+id/login_password"
@@ -70,7 +63,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/birucodey"
+            android:backgroundTint="@color/navy"
+            android:background="@drawable/rounded_button"
             android:text="@string/judul_login"
             android:textSize="21sp" />
 
@@ -78,7 +72,7 @@
             android:id="@+id/signup_redirect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="@string/redirect_to_signup"
             android:textAlignment="center"
             android:textSize="17sp" />

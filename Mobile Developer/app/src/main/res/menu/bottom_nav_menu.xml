@@ -8,17 +8,17 @@
 
     <item
         android:id="@+id/navigation_materi"
-        android:icon="@drawable/materi"
+        android:icon="@drawable/zmateri"
         android:title="@string/title_materi"/>
 
     <item
         android:id="@+id/navigation_latihan"
-        android:icon="@drawable/latihan"
+        android:icon="@drawable/zlatihan"
         android:title="@string/title_latihan"/>
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/zprofile"
         android:title="@string/title_profile"/>
 
 

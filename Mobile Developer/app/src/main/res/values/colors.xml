@@ -8,5 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="navy">#1E2A5E</color>
+    <color name="biruterang">#f9fcfe</color>
+    <color name="blue">#7C93C3</color>
+    <color name="blu">#b3cde0</color>
     <color name="birucodey">#3A608F</color>
 </resources>
