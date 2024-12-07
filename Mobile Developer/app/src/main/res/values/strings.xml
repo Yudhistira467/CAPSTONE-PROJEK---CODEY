@@ -34,6 +34,8 @@
 
     <!--HOME FRAGMENT-->
     <string name="textHome">Knowledge\nis power</string>
+    <string name="textHome1">Knowledge is power</string>
+    <string name="isi">Knowledge\nis power</string>
 
 
 </resources>
