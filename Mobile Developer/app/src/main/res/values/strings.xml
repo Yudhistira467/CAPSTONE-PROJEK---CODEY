@@ -36,6 +36,14 @@
     <string name="textHome">Knowledge\nis power</string>
     <string name="textHome1">Knowledge is power</string>
     <string name="isi">Knowledge\nis power</string>
+    <string name="zbook_description">Cover of the ZBook</string>
+    <string name="zgambar1_description">Image 1 description</string>
+    <string name="zgambar2_description">Image 2 description</string>
+    <string name="zgambar3_description">Image 3 description</string>
+    <string name="zgambar4_description">Image 4 description</string>
+
+
+
 
 
 </resources>
