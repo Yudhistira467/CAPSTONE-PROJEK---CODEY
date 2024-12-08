@@ -16,6 +16,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/zbook"
+            android:layout_marginStart="5sp"
             android:contentDescription="@string/isi"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,12 +38,6 @@
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/textHome1"
-        android:textSize="18sp" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -56,46 +51,33 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/zcodey"
+                android:src="@drawable/zgambar1"
                 android:contentDescription="@string/isi" />
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/zcodey"
+                android:src="@drawable/zgambar2"
                 android:contentDescription="@string/isi" />
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/zcodey"
+                android:src="@drawable/zgambar3"
                 android:contentDescription="@string/isi" />
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/zcodey"
+                android:src="@drawable/zgambar4"
                 android:contentDescription="@string/isi" />
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/zcodey"
-                android:contentDescription="@string/isi" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/zcodey"
-                android:contentDescription="@string/isi" />
 
         </LinearLayout>
     </HorizontalScrollView>
