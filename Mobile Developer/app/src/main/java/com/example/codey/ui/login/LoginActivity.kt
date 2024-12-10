@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                             editor.apply()
 
 
-                            Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@LoginActivity, "Login Success welcome back $username!", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                             finish()
                             return
