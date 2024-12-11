@@ -52,7 +52,6 @@ class LoginActivity : AppCompatActivity() {
                     for (userSnapshot in dataSnapshot.children){
                         val dataUser = userSnapshot.getValue(DataUser::class.java)
 
-
                         if (dataUser != null && dataUser.password == password) {
                             val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
                             val editor = sharedPreferences.edit()
@@ -62,7 +61,9 @@ class LoginActivity : AppCompatActivity() {
 
 
                             Toast.makeText(this@LoginActivity, "Login Success welcome back $username!", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            startActivity(intent)
                             finish()
                             return
                         }
