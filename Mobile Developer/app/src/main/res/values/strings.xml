@@ -42,6 +42,12 @@
     <string name="zgambar3_description">Image 3 description</string>
     <string name="zgambar4_description">Image 4 description</string>
 
+    <!--LATIHAN-->
+    <string name="btnNext">Next</string>
+    <string name="jawaban">Masukkan Jawaban</string>
+    <string name="soal">Soal akan tampil di sini</string>
+    <string name="instruksi">Instruction will appear here</string>
+
 
 
 
