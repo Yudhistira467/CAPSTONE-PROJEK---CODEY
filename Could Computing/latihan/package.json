@@ -1,0 +1,39 @@
+{
+    "name": "soal-jawaban-rekomendasi",
+    "version": "1.0.0",
+    "description": "Sistem soal, jawaban, dan rekomendasi menggunakan Firestore, Cloud Storage, dan integrasi Python",
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+      "lint": "eslint .",
+      "start": "node app.js",
+      "dev": "nodemon app.js"
+    },
+    "dependencies": {
+      "@google-cloud/firestore": "^6.6.0",
+      "@google-cloud/storage": "^6.12.0",
+      "@tensorflow/tfjs-node": "^4.2.0",
+      "axios": "^0.27.2",
+      "body-parser": "^1.20.2",
+      "concurrently": "^7.0.0",
+      "express": "^4.18.2",
+      "firebase-admin": "^11.11.1"
+    },
+    "devDependencies": {
+      "eslint": "^8.0.0",
+      "nodemon": "^3.0.0"
+    },
+    "engines": {
+      "node": ">=20.0.0"
+    },
+    "author": "Yunas Wildan",
+    "license": "ISC",
+    "keywords": [
+      "firebase",
+      "firestore",
+      "cloud-storage",
+      "soal",
+      "jawaban",
+      "python-integration"
+    ]
+  }
