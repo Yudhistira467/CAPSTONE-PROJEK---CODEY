@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.codey.data.LatApiConfig
 import com.example.codey.ui.latihan.LatihanResponse
 import com.example.codey.ui.latihan.QuizItem
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,6 +23,7 @@ class DetailLatihanActivity : AppCompatActivity() {
     private lateinit var btnNext: Button
     private var currentSoalIndex = 0
     private var soalList: List<QuizItem> = listOf()
+    private val answersList: MutableList<JsonObject> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,15 +39,25 @@ class DetailLatihanActivity : AppCompatActivity() {
         fetchSoal(quizId)
 
         btnNext.setOnClickListener {
-            val jawaban = etJawaban.text.toString()
-
-            submitAnswer(currentSoalIndex, jawaban)
-
-            currentSoalIndex++
             if (currentSoalIndex < soalList.size) {
-                displaySoal(currentSoalIndex)
+                val jawaban = etJawaban.text.toString()
+                val soal = soalList[currentSoalIndex]
+
+                val answerObject = JsonObject().apply {
+                    addProperty("questionId", soal.questionId)
+                    addProperty("userAnswer", jawaban)
+                    addProperty("materi", soal.materi ?: "Unknown")
+                }
+                answersList.add(answerObject)
+
+                currentSoalIndex++
+                if (currentSoalIndex < soalList.size) {
+                    displaySoal(currentSoalIndex)
+                } else {
+                    submitAllAnswers()
+                }
             } else {
-                Toast.makeText(this, "Selamat! Kamu sudah menyelesaikan semua soal.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Tidak ada soal lagi.", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -71,21 +84,38 @@ class DetailLatihanActivity : AppCompatActivity() {
     }
 
     private fun displaySoal(index: Int) {
-        val soal = soalList[index]
+        if (index in 0 until soalList.size) {
+            val soal = soalList[index]
 
-        tvInstruction.text = soal.instruction ?: "Tidak ada instruksi"
-
-        tvSoal.text = soal.question ?: "Tidak ada pertanyaan"
-        etJawaban.text.clear()
+            tvInstruction.text = soal.instruction ?: "Tidak ada instruksi"
+            tvSoal.text = soal.question ?: "Tidak ada pertanyaan"
+            etJawaban.text.clear()
+        } else {
+            Toast.makeText(this, "Indeks soal tidak valid.", Toast.LENGTH_SHORT).show()
+        }
     }
 
-    private fun submitAnswer(index: Int, jawaban: String) {
-        val questionId = soalList[index].questionId
-        if (questionId != null) {
-            LatApiConfig.getLatApiService().submitAnswer(questionId, jawaban).enqueue(object : Callback<Void> {
+    private fun submitAllAnswers() {
+        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val userId = sharedPreferences.getString("LOGGED_IN_USER_ID", null)
+        val username = sharedPreferences.getString("LOGGED_IN_USERNAME", null)
+
+        if (userId.isNullOrEmpty() || username.isNullOrEmpty()) {
+            Toast.makeText(this, "User belum login, tidak dapat mengirim jawaban.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val requestBody = JsonObject().apply {
+            addProperty("id", userId)
+            addProperty("username", username)
+            add("answers", JsonArray().apply { answersList.forEach { add(it) } })
+        }
+
+        LatApiConfig.getLatApiService().submitAnswer(requestBody)
+            .enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     if (response.isSuccessful) {
-                        Toast.makeText(this@DetailLatihanActivity, "Jawaban berhasil dikirim.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@DetailLatihanActivity, "Semua jawaban berhasil dikirim.", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this@DetailLatihanActivity, "Gagal mengirim jawaban.", Toast.LENGTH_SHORT).show()
                     }
@@ -95,8 +125,5 @@ class DetailLatihanActivity : AppCompatActivity() {
                     Toast.makeText(this@DetailLatihanActivity, "Terjadi kesalahan: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })
-        } else {
-            Toast.makeText(this, "ID pertanyaan tidak ditemukan.", Toast.LENGTH_SHORT).show()
-        }
     }
 }

@@ -48,7 +48,9 @@
     <string name="soal">Soal akan tampil di sini</string>
     <string name="instruksi">Instruction will appear here</string>
 
-
+    <!--RESULT-->
+    <string name="hasil">Hasil Latihan</string>
+    <string name="btnResult">Kembali ke Beranda</string>
 
 
 
