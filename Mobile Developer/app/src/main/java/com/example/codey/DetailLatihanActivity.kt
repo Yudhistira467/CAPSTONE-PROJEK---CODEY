@@ -142,6 +142,7 @@ class DetailLatihanActivity : AppCompatActivity() {
                         putExtra("total_questions", totalAnswers)
                         putExtra("correct_answers", correctAnswers)
                         putExtra("score", score)
+                        putExtra("user_id", userId)
                     }
                     startActivity(intent)
                     finish()

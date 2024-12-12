@@ -23,6 +23,8 @@ interface LatApiService {
     ): Call<JsonObject>
 
     @GET("api/rekomendasi/get-recommendation")
-    fun getRecommendation(): Call<List<String>>
+    fun getRecommendation(
+        @Query("userId") userId: String
+    ): Call<JsonObject>
 
 }
