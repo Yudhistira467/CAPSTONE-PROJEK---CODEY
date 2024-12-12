@@ -19,6 +19,8 @@ class ResultLatihanActivity : AppCompatActivity() {
         val tvScore = findViewById<TextView>(R.id.tv_score)
         val btnBackHome = findViewById<Button>(R.id.btn_back_home)
 
+        //tambahin rekomendasi disini
+
         tvResultDetail.text = "Kamu menjawab $correctAnswers dari $totalQuestions soal dengan benar."
         tvScore.text = "Skor Kamu: ${String.format("%.2f", score)}"
 
