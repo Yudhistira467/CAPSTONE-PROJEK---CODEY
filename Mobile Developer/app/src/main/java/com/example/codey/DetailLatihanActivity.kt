@@ -1,5 +1,6 @@
 package com.example.codey
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -116,6 +117,7 @@ class DetailLatihanActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     if (response.isSuccessful) {
                         Toast.makeText(this@DetailLatihanActivity, "Semua jawaban berhasil dikirim.", Toast.LENGTH_SHORT).show()
+                        fetchScoreAndNavigate(userId)
                     } else {
                         Toast.makeText(this@DetailLatihanActivity, "Gagal mengirim jawaban.", Toast.LENGTH_SHORT).show()
                     }
@@ -125,5 +127,32 @@ class DetailLatihanActivity : AppCompatActivity() {
                     Toast.makeText(this@DetailLatihanActivity, "Terjadi kesalahan: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })
+    }
+
+    private fun fetchScoreAndNavigate(userId: String) {
+        LatApiConfig.getLatApiService().getScore(userId).enqueue(object : Callback<JsonObject> {
+            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+                if (response.isSuccessful) {
+                    val scoreData = response.body()
+                    val totalAnswers = scoreData?.get("totalAnswers")?.asInt ?: 0
+                    val correctAnswers = scoreData?.get("correctAnswers")?.asInt ?: 0
+                    val score = scoreData?.get("score")?.asDouble ?: 0.0
+
+                    val intent = Intent(this@DetailLatihanActivity, ResultLatihanActivity::class.java).apply {
+                        putExtra("total_questions", totalAnswers)
+                        putExtra("correct_answers", correctAnswers)
+                        putExtra("score", score)
+                    }
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(this@DetailLatihanActivity, "Gagal mendapatkan skor.", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+                Toast.makeText(this@DetailLatihanActivity, "Terjadi kesalahan: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

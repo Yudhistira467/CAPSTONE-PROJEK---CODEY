@@ -51,6 +51,7 @@
     <!--RESULT-->
     <string name="hasil">Hasil Latihan</string>
     <string name="btnResult">Kembali ke Beranda</string>
+    <string name="score">Skor Kamu: 0.00</string>
 
 
 

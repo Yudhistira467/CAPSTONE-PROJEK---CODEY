@@ -6,6 +6,7 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface LatApiService {
     @GET("api/soal")
@@ -15,6 +16,11 @@ interface LatApiService {
     fun submitAnswer(
         @Body body: JsonObject
     ): Call<Void>
+
+    @GET("api/score")
+    fun getScore(
+        @Query("id") userId: String
+    ): Call<JsonObject>
 
     @GET("api/rekomendasi/get-recommendation")
     fun getRecommendation(): Call<List<String>>
