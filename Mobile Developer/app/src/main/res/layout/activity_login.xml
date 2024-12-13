@@ -68,14 +68,6 @@
             android:text="@string/judul_login"
             android:textSize="21sp" />
 
-        <TextView
-            android:id="@+id/signup_redirect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/redirect_to_signup"
-            android:textAlignment="center"
-            android:textSize="17sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
