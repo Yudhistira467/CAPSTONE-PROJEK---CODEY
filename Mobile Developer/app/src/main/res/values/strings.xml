@@ -17,6 +17,7 @@
     <string name="nama_user">Name User</string>
     <string name="email_user">Email</string>
     <string name="activity">Youre Activity Learning</string>
+    <string name="logout">Logout</string>
 
     <!-- EDIT PROFILE-->
     <string name="edit_nama">Name</string>
@@ -44,14 +45,14 @@
 
     <!--LATIHAN-->
     <string name="btnNext">Next</string>
-    <string name="jawaban">Masukkan Jawaban</string>
-    <string name="soal">Soal akan tampil di sini</string>
+    <string name="jawaban">Enter your answer</string>
+    <string name="soal">The question will be displayed here</string>
     <string name="instruksi">Instruction will appear here</string>
 
     <!--RESULT-->
-    <string name="hasil">Hasil Latihan</string>
-    <string name="btnResult">Kembali ke Beranda</string>
-    <string name="score">Skor Kamu: 0.00</string>
-    <string name="rekomendasi">Rekomendasi akan muncul di sini.</string>
+    <string name="hasil">Quiz Result</string>
+    <string name="btnResult">Back to exercise</string>
+    <string name="score">Your score: 0.00</string>
+    <string name="rekomendasi">Recommendations will appear here.</string>
 
 </resources>

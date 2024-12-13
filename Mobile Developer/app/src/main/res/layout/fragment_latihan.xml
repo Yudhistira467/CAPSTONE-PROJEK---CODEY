@@ -21,6 +21,13 @@
             android:padding="10dp"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/iv_materi"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/zlatcodey"/>
+
             <TextView
                 android:id="@+id/tv_judul_latihan"
                 android:layout_width="match_parent"
