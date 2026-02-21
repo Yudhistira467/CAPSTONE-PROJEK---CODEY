@@ -1,3 +1,0 @@
-runtime: nodejs20
-env: standard
-service: backend
