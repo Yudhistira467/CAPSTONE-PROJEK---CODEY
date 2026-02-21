@@ -11,7 +11,8 @@ CODEY adalah proyek capstone yang dirancang untuk menjawab tantangan siswa dalam
 
 **🛠️ Tech Stack**
 Kami menggunakan kombinasi teknologi modern untuk memastikan performa dan keamanan:
-Mobile Development: [Kotlin dan Gradle ]
-Backend: [Ekpres.js, Flask, Yaml Dan Docker ]
+Mobile Development: [Kotlin dan Gradle]
+Backend: [Ekpres.js, Flask, Yaml Dan Docker]
 Database: [Cloud Storage dan Firestore]
 AI/ML Logic: algoritma Long Short-Term Memory (LSTM)
+
